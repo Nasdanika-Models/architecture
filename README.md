@@ -15,5 +15,5 @@ Use case: Load and publish the baseline model for analysis and to build new arch
 * Use [Excel](https://github.com/Nasdanika-Models/excel) model to load information from Excel spreadsheets
 * Use org-specific models to load information from internal systems
 * Resolve cross-references. E.g. Maven developer to a person in the organization directory
-* Use the resulting model for analysis, solution generation, and generation of reports and web sites.
+* Use the resulting model for analysis, solution generation, and generation of reports and web sites. [ECharts](https://github.com/Nasdanika-Models/echarts) model and [ECharts Java](https://github.com/ECharts-Java/ECharts-Java) can be used to generate visualizations
 
