@@ -1,7 +1,11 @@
 # Architecture
 
 Ecore model, graph nodes, and processors for architecture - architecture elements/building blocks, ...
-This model is intended to be a "physical" "reference implementation" of the [TOGAF](https://github.com/Nasdanika-Models/togaf) model. 
+This model is intended to be a "physical" "reference implementation" of the [TOGAF](https://github.com/Nasdanika-Models/togaf) model containing helper classes and refinements. 
+
+For example, TOGAF defines a ViewPoint and a View. This model may define RepresentationSpec and Representation as parts of ViewPoint and View respectively. 
+A representation by itself (e.g. a chart, a diagram, a list, or a table) might not be enough to address a stakeholder concern - it may need additional representations and textual description. 
+So, a View is a unit or addressing stakeholder concerns by providing multiple related representations to the stakeholder.
 
 The model shall be usable to define architectures and generate documentation. 
 It also can be used as a starting point to create organization-specific architecture repositories, which contain structures reflecting existing organizaion ways of working. E.g. how people are organized, how information systems are tracked.
