@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="architecture" nsURI="ecore://nasdanika.org/models/architecture"
+    nsPrefix="org.nasdanika.models.architecture">
+  <eClassifiers xsi:type="ecore:EClass" name="Representation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specification" upperBound="-1"
+        eType="#//RepresentationSpecification" eOpposite="#//RepresentationSpecification/governs"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RepresentationSpecification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="governs" upperBound="-1"
+        eType="#//Representation" eOpposite="#//Representation/specification"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArchitectureViewpoint" eSuperTypes="../../org.nasdanika.models.togaf.core/model/core.ecore#//ArchitectureViewpoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="representationSpecifications"
+        upperBound="-1" eType="#//RepresentationSpecification"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArchitectureView" eSuperTypes="../../org.nasdanika.models.togaf.core/model/core.ecore#//ArchitectureView">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="representation" upperBound="-1"
+        eType="#//Representation"/>
+  </eClassifiers>
+</ecore:EPackage>
