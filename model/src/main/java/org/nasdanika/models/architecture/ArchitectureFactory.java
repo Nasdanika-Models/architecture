@@ -22,40 +22,112 @@ public interface ArchitectureFactory extends EFactory {
 	ArchitectureFactory eINSTANCE = org.nasdanika.models.architecture.impl.ArchitectureFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Representation</em>'.
+	 * Returns a new object of class '<em>Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Representation</em>'.
+	 * @return a new object of class '<em>Element</em>'.
 	 * @generated
 	 */
-	Representation createRepresentation();
+	ArchitectureElement createArchitectureElement();
 
 	/**
-	 * Returns a new object of class '<em>Representation Specification</em>'.
+	 * Returns a new object of class '<em>Description Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Representation Specification</em>'.
+	 * @return a new object of class '<em>Description Element</em>'.
 	 * @generated
 	 */
-	RepresentationSpecification createRepresentationSpecification();
+	ArchitectureDescriptionElement createArchitectureDescriptionElement();
 
 	/**
-	 * Returns a new object of class '<em>Viewpoint</em>'.
+	 * Returns a new object of class '<em>Description</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Viewpoint</em>'.
+	 * @return a new object of class '<em>Description</em>'.
 	 * @generated
 	 */
-	ArchitectureViewpoint createArchitectureViewpoint();
+	ArchitectureDescription createArchitectureDescription();
 
 	/**
-	 * Returns a new object of class '<em>View</em>'.
+	 * Returns a new object of class '<em>Domain</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>View</em>'.
+	 * @return a new object of class '<em>Domain</em>'.
 	 * @generated
 	 */
-	ArchitectureView createArchitectureView();
+	Domain createDomain();
+
+	/**
+	 * Returns a new object of class '<em>Relationship Target</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Relationship Target</em>'.
+	 * @generated
+	 */
+	RelationshipTarget createRelationshipTarget();
+
+	/**
+	 * Returns a new object of class '<em>Composite Relationship Target</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Composite Relationship Target</em>'.
+	 * @generated
+	 */
+	CompositeRelationshipTarget createCompositeRelationshipTarget();
+
+	/**
+	 * Returns a new object of class '<em>Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Relationship</em>'.
+	 * @generated
+	 */
+	Relationship createRelationship();
+
+	/**
+	 * Returns a new object of class '<em>Relationship Source</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Relationship Source</em>'.
+	 * @generated
+	 */
+	RelationshipSource createRelationshipSource();
+
+	/**
+	 * Returns a new object of class '<em>Composite Relationship Source</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Composite Relationship Source</em>'.
+	 * @generated
+	 */
+	CompositeRelationshipSource createCompositeRelationshipSource();
+
+	/**
+	 * Returns a new object of class '<em>Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Node</em>'.
+	 * @generated
+	 */
+	Node createNode();
+
+	/**
+	 * Returns a new object of class '<em>Composite Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Composite Node</em>'.
+	 * @generated
+	 */
+	CompositeNode createCompositeNode();
+
+	/**
+	 * Returns a new object of class '<em>Tunnel</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Tunnel</em>'.
+	 * @generated
+	 */
+	Tunnel createTunnel();
 
 	/**
 	 * Returns the package supported by this factory.

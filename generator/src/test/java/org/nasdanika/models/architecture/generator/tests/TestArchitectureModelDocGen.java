@@ -34,6 +34,7 @@ import org.nasdanika.diagramgenerator.plantuml.PlantUMLDiagramGenerator;
 import org.nasdanika.graph.Connection;
 import org.nasdanika.graph.Element;
 import org.nasdanika.graph.emf.EObjectNode;
+import org.nasdanika.graph.model.ModelPackage;
 import org.nasdanika.graph.processor.NopEndpointProcessorConfigFactory;
 import org.nasdanika.graph.processor.ProcessorConfig;
 import org.nasdanika.graph.processor.ProcessorInfo;
@@ -48,7 +49,7 @@ import org.nasdanika.models.architecture.ArchitecturePackage;
 import org.nasdanika.models.architecture.processors.EcoreGenArchitectureProcessorsFactory;
 import org.nasdanika.models.ecore.graph.EcoreGraphFactory;
 import org.nasdanika.models.ecore.graph.processors.EcoreNodeProcessorFactory;
-import org.nasdanika.models.togaf.core.CorePackage;
+import org.nasdanika.ncore.NcorePackage;
 
 /**
  * Tests Ecore -> Graph -> Processor -> actions generation
@@ -59,7 +60,11 @@ public class TestArchitectureModelDocGen {
 	
 	@Test
 	public void testGenerateArchitectureModelDoc() throws IOException, DiagnosticException {
-		List<EPackage> ePackages = Arrays.asList(EcorePackage.eINSTANCE, CorePackage.eINSTANCE, ArchitecturePackage.eINSTANCE);
+		List<EPackage> ePackages = Arrays.asList(
+				EcorePackage.eINSTANCE, 
+				NcorePackage.eINSTANCE, 
+				ModelPackage.eINSTANCE, 
+				ArchitecturePackage.eINSTANCE);
 		ProgressMonitor progressMonitor = new NullProgressMonitor(); // new PrintStreamProgressMonitor();
 		Transformer<EObject,Element> graphFactory = new Transformer<>(new EcoreGraphFactory());
 		Map<EObject, Element> graph = graphFactory.transform(ePackages, false, progressMonitor);
@@ -105,7 +110,8 @@ public class TestArchitectureModelDocGen {
 		
 		Map<EPackage, URI> packageURIMap = Map.ofEntries(
 			Map.entry(EcorePackage.eINSTANCE, URI.createURI("https://ecore.models.nasdanika.org/")),			
-			Map.entry(CorePackage.eINSTANCE, URI.createURI("https://togaf.models.nasdanika.org/core/")),			
+			Map.entry(NcorePackage.eINSTANCE, URI.createURI("https://ncore.models.nasdanika.org/")),			
+			Map.entry(ModelPackage.eINSTANCE, URI.createURI("https://graph.models.nasdanika.org/")),			
 			Map.entry(ArchitecturePackage.eINSTANCE, baseActionURI)	
 		);
 		

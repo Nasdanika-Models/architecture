@@ -2,20 +2,88 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="architecture" nsURI="ecore://nasdanika.org/models/architecture"
     nsPrefix="org.nasdanika.models.architecture">
-  <eClassifiers xsi:type="ecore:EClass" name="Representation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specification" upperBound="-1"
-        eType="#//RepresentationSpecification" eOpposite="#//RepresentationSpecification/governs"/>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="Classes for documenting (software) architectures"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="ArchitectureElement" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedElement ../../org.nasdanika.ncore/model/ncore.ecore#//Period">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Base class for elements of architecture"/>
+    </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RepresentationSpecification">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="governs" upperBound="-1"
-        eType="#//Representation" eOpposite="#//Representation/specification"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArchitectureDescriptionElement" eSuperTypes="../../org.nasdanika.graph.model/model/graph.ecore#//DocumentedNamedGraphElement #//ArchitectureElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Base class for elements of architecture descriptions"/>
+    </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArchitectureViewpoint" eSuperTypes="../../org.nasdanika.models.togaf.core/model/core.ecore#//ArchitectureViewpoint">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="representationSpecifications"
-        upperBound="-1" eType="#//RepresentationSpecification"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArchitectureDescription">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Architecture description contains architecture elements and reference elements such as stakeholders. Architecture description elements are keyed by string identifiers which allows to implement architecture inheritance similar to inheritance in object-oriented languages such as Java or layering in Docker images - a new architecture may be derived from an existing architecture by applying a layer of deltas. This is also similar to a commit tree in Git."/>
+    </eAnnotations>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//DocumentedNamedGraph">
+      <eTypeArguments eClassifier="#//ArchitectureDescriptionElement"/>
+    </eGenericSuperTypes>
+    <eGenericSuperTypes eClassifier="#//ArchitectureElement"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArchitectureView" eSuperTypes="../../org.nasdanika.models.togaf.core/model/core.ecore#//ArchitectureView">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="representation" upperBound="-1"
-        eType="#//Representation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Domain" eSuperTypes="#//ArchitectureDescriptionElement #//ArchitectureDescription">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Domains allow to organize architecture descriptions into a hierarchy"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipTarget">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An architecture description which can have incoming relationships"/>
+    </eAnnotations>
+    <eGenericSuperTypes eClassifier="#//ArchitectureDescriptionElement"/>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//DocumentedNamedConnectionTarget">
+      <eTypeArguments eClassifier="#//Relationship"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeRelationshipTarget" eSuperTypes="#//Domain #//RelationshipTarget">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Relationship target which is also a domain, i.e. it may contain other architecture description elements"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Relationship between two architecture description elements. Relationships are contained by their source and uniquiely identified in the source by a string id. This allows to implement relationship inheritance behaviors such as overriding (replacing), adding, or removing."/>
+    </eAnnotations>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//DocumentedNamedConnection">
+      <eTypeArguments eClassifier="#//RelationshipTarget"/>
+    </eGenericSuperTypes>
+    <eGenericSuperTypes eClassifier="#//ArchitectureElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipSource">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Source of relationships uniquely identified by string ids. It provides support for architecture inheritance/layering - replacing (overriding), adding, or removing relationships"/>
+    </eAnnotations>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//DocumentedNamedConnectionSource">
+      <eTypeArguments eClassifier="#//Relationship"/>
+    </eGenericSuperTypes>
+    <eGenericSuperTypes eClassifier="#//ArchitectureDescriptionElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeRelationshipSource" eSuperTypes="#//Domain #//RelationshipSource">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Relationship source which is also a domain. I.e. it may contain other architecture description elements."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="#//RelationshipSource #//RelationshipTarget">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Node is both relationship source and target. I.e. it may have both incoming and outgoing relationships."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeNode" eSuperTypes="#//Domain #//Node">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Node which is also a domain. I.e. it may contain other architecture description elements."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tunnel">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Tunnel is a relationship which logically groups other relationships. For example, two composite nodes may have a tunnel relationship which groups relationships between their child elements. A real life example is a VPN tunnel between two networks."/>
+    </eAnnotations>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//DocumentedNamedTunnel">
+      <eTypeArguments eClassifier="#//RelationshipTarget"/>
+      <eTypeArguments eClassifier="#//Relationship"/>
+    </eGenericSuperTypes>
+    <eGenericSuperTypes eClassifier="#//Relationship"/>
   </eClassifiers>
 </ecore:EPackage>

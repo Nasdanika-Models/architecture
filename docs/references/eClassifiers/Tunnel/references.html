@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="EN">
+  <head>
+    <title>References</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css">
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/dark-head.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/jstree.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/components/table.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/components/table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9BRJVLK8CC');
+</script>    
+
+<script src="../../../search-documents.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
+
+<script>
+// Script for full-text search of JsTree
+
+window.nsdJsTreeSearchCallback = function(str, node) { 
+    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
+    if (sf.search(node.text).isMatch) {
+		return true;
+	} 
+    let searchResult = this.search(str); 
+    for (const sr in searchResult) {
+        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
+            return true;
+        } 
+    } 
+    return false; 
+}.bind(lunr(function () {
+			  this.ref('id');
+			  this.field('title');
+			  this.field('content');
+
+			  for (const key in searchDocuments) {
+				  let doc = searchDocuments[key];
+				this.add({
+					id: doc['action-uuid'],
+					title: doc.title,
+					path: doc.path,
+					content: doc.content
+				});  
+			  }
+			}));
+</script>
+</head>
+  <body>
+    <div class="container-fluid nsd-app-container">
+      <div class="row">
+        <div class="col nsd-app-header">
+          <a href="https://github.com/Nasdanika-Models" data-nsd-label-uuid="70ee9346-9f82-478c-a349-946ab9548ec2" class="nsd-app-header-title">
+            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Models</a>
+          <ul class="nav nsd-app-header-navs">
+            <li class="nav-item">
+              <a href="../../../search.html" data-nsd-label-uuid="223afb8b-f099-449c-8b1a-f90fbeb03652" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+            </li>
+            <li class="nav-item">
+              <a href="../../../glossary.html" data-nsd-label-uuid="09ff4299-b927-4e3a-add9-5d77c4c21247" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-navbar">
+          <ul class="navbar navbar-light navbar-expand-lg">
+            <a href="../../../index.html" title="Classes for documenting (software) architectures" data-nsd-label-uuid="2c40e9c3-1fc2-46a2-bfbb-10b847608b62" class="navbar-brand">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EPackage.gif" class="nsd-app-label-icon">architecture</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_bq" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="nsd_bq" class="collapse navbar-collapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a href="../../../classifiers.html" data-nsd-label-uuid="e46719fc-0189-437e-ab30-9c03821a2518" class="nav-link">Classifiers</a>
+                </li>
+                <li class="nav-item">
+                  <a href="../../../diagram.html" data-nsd-label-uuid="8338789d-3c0f-4a30-bc5c-54f2f92ba720" class="nav-link"><span class="fas fa-project-diagram nsd-app-label-icon"></span>Diagram</a>
+                </li>
+                <li class="nav-item">
+                  </li><li data-nsd-label-uuid="0b59c30e-9b88-4254-b8af-4d26f1caeec4" class="dropdown">
+                    <a role="button" data-toggle="dropdown" class="nav-link dropdown-toggle">
+                      <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/16/external-diagram-seo-media-dreamstale-lineal-dreamstale.png" class="nsd-app-label-icon">Graphs</a>
+                    <div class="dropdown-menu">
+                      <a href="../../../default-graph.html" data-nsd-label-uuid="cd9b349f-6dad-42f8-a628-3c56a8059cd5" class="dropdown-item">Default Graph</a>
+                      <a href="../../../circular-layout-graph.html" data-nsd-label-uuid="14c92d55-4c0a-4a51-80f4-e979ebacfddc" class="dropdown-item">Circular Graph</a>
+                      <a href="../../../force-layout-graph.html" data-nsd-label-uuid="6733665b-90ea-44f7-8647-96a790a6a5c8" class="dropdown-item">Force Graph</a>
+                      <div title="With dependencies and sub-packages" class="dropdown-divider"></div>
+                      <a href="../../../default-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="f364f4d5-ccf1-467a-a44b-d34d4e60e1ed" class="dropdown-item">Default Graph</a>
+                      <a href="../../../circular-layout-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="558c5ead-3aa9-4fe0-bf4e-2e5cef28bc59" class="dropdown-item">Circular Graph</a>
+                      <a href="../../../force-layout-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="4b97ffe6-29ed-4640-b65a-b32ea35be5bc" class="dropdown-item">Force Graph</a>
+                    </div>
+                  </li>
+                
+              </ul>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="row nsd-app-content-row">
+        <div class="col nsd-app-navigation-panel">
+          <div class="list-group list-group-flush">
+            <a href="../ArchitectureDescription/index.html" title="Architecture description contains architecture elements and reference elements such as stakeholders. Architecture description elements are keyed by string identifiers which allows to implement architecture inheritance similar to inheritance in object-oriented languages such as Java or layering in Docker images - a new architecture may be derived from an existing architecture by applying a layer of deltas. This is also similar to a commit tree in Git." data-nsd-label-uuid="8df74e16-a218-47f9-bf59-b477eb2009c9" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">ArchitectureDescription</a>
+            <a href="../ArchitectureDescriptionElement/index.html" title="Base class for elements of architecture descriptions" data-nsd-label-uuid="ab3247a1-5672-4eae-9b4d-62baf47b3f87" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">ArchitectureDescriptionElement</a>
+            <a href="../ArchitectureElement/index.html" title="Base class for elements of architecture" data-nsd-label-uuid="31a2baaa-73c4-4530-873b-fa32013825ef" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">ArchitectureElement</a>
+            <a href="../CompositeNode/index.html" title="Node which is also a domain. I.e. it may contain other architecture description elements." data-nsd-label-uuid="9802880b-36a7-4892-8f9f-7b4d62e1f913" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">CompositeNode</a>
+            <a href="../CompositeRelationshipSource/index.html" title="Relationship source which is also a domain. I.e. it may contain other architecture description elements." data-nsd-label-uuid="60fff214-1926-4d1c-8f23-a62bb26710ba" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">CompositeRelationshipSource</a>
+            <a href="../CompositeRelationshipTarget/index.html" title="Relationship target which is also a domain, i.e. it may contain other architecture description elements" data-nsd-label-uuid="8d665041-71ad-47d4-9b3c-10430c586306" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">CompositeRelationshipTarget</a>
+            <a href="../Domain/index.html" title="Domains allow to organize architecture descriptions into a hierarchy" data-nsd-label-uuid="7b9865de-9336-40ac-934e-826e27a2b0f7" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Domain</a>
+            <a href="../Node/index.html" title="Node is both relationship source and target. I.e. it may have both incoming and outgoing relationships." data-nsd-label-uuid="98059445-ed58-42ea-a92a-c254fbe796ba" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Node</a>
+            <a href="../Relationship/index.html" title="Relationship between two architecture description elements. Relationships are contained by their source and uniquiely identified in the source by a string id. This allows to implement relationship inheritance behaviors such as overriding (replacing), adding, or removing." data-nsd-label-uuid="f4384140-62ef-462a-8460-f83c959f050e" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Relationship</a>
+            <a href="../RelationshipSource/index.html" title="Source of relationships uniquely identified by string ids. It provides support for architecture inheritance/layering - replacing (overriding), adding, or removing relationships" data-nsd-label-uuid="6be1f001-3520-426e-8130-931e06f0e3ca" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">RelationshipSource</a>
+            <a href="../RelationshipTarget/index.html" title="An architecture description which can have incoming relationships" data-nsd-label-uuid="3eeb1577-fd43-44c3-9814-61cd8c718919" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">RelationshipTarget</a>
+            <a href="index.html" title="Tunnel is a relationship which logically groups other relationships. For example, two composite nodes may have a tunnel relationship which groups relationships between their child elements. A real life example is a VPN tunnel between two networks." data-nsd-label-uuid="7658c967-d62f-4c07-9dab-933ea5f9d41d" class="list-group-item list-group-action active">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Tunnel</a>
+          </div>
+        </div>
+        <div data-nsd-label-uuid="4070ae8c-ab96-4985-9df1-af23a248a7a0" data-nsd-action-uris="uuid:4070ae8c-ab96-4985-9df1-af23a248a7a0" class="col nsd-app-content-panel">
+          <div class="container-fluid">
+            <div class="row nsd-app-content-panel-breadcrumb-row">
+              <div class="col">
+                <nav aria-label="breadcrumb" class="nsd-app-content-panel-breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="index.html" title="Tunnel is a relationship which logically groups other relationships. For example, two composite nodes may have a tunnel relationship which groups relationships between their child elements. A real life example is a VPN tunnel between two networks." data-nsd-label-uuid="7658c967-d62f-4c07-9dab-933ea5f9d41d">
+                        <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Tunnel</a>
+                    </li>
+                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="4070ae8c-ab96-4985-9df1-af23a248a7a0"><img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif" class="nsd-app-label-icon">References</span>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div class="row nsd-app-content-panel-title-and-items-row">
+              <div class="col-auto">
+                <h1><span data-nsd-label-uuid="4070ae8c-ab96-4985-9df1-af23a248a7a0" class="nsd-app-content-panel-title"><img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif" class="nsd-app-label-icon">References</span>
+                </h1>
+              </div>
+            </div>
+            <div class="row nsd-app-content-panel-content-row">
+              <div class="col">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col">
+<div>
+  <div id="references-table">
+    <nsd-ecore-doc-table :columns="[{&quot;key&quot;:&quot;name&quot;,&quot;visible&quot;:true,&quot;label&quot;:&quot;Name&quot;},{&quot;key&quot;:&quot;description&quot;,&quot;visible&quot;:true,&quot;label&quot;:&quot;Description&quot;},{&quot;visible&quot;:true,&quot;sortable&quot;:true,&quot;label&quot;:&quot;Type&quot;,&quot;key&quot;:&quot;type&quot;},{&quot;visible&quot;:true,&quot;sortable&quot;:true,&quot;label&quot;:&quot;Multiplicity&quot;,&quot;key&quot;:&quot;multiplicity&quot;},{&quot;visible&quot;:true,&quot;sortable&quot;:true,&quot;label&quot;:&quot;Declaring Class&quot;,&quot;key&quot;:&quot;declaring-class&quot;},{&quot;key&quot;:&quot;changeable&quot;,&quot;visible&quot;:true,&quot;label&quot;:&quot;Changeable&quot;},{&quot;key&quot;:&quot;derived&quot;,&quot;visible&quot;:true,&quot;label&quot;:&quot;Derived&quot;}]" :items="[{&quot;name&quot;:&quot;\r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/ModelElement/references/eStructuralFeatures/annotations/index.html\&quot; title=\&quot;Annotations are used to store custom data similar to Java and Ecore annotations. \&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>annotations<\/a>&quot;,&quot;description&quot;:&quot;Annotations are used to store custom data similar to Java and Ecore annotations. &quot;,&quot;multiplicity&quot;:&quot;<B>0..*<\/B>&quot;,&quot;declaring-class&quot;:&quot;<!-- ModelElement--> \r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/ModelElement/index.html\&quot; title=\&quot;Base class for many Nasdanika model classes.\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/><i>ModelElement<\/i><\/a>&quot;,&quot;changeable&quot;:&quot;<i class=\&quot;fas fa-check\&quot;><\/i>&quot;,&quot;type&quot;:&quot;<!-- Property--> \r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/Property/index.html\&quot; title=\&quot;Base class for keyed values.\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EInterface.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/><i>Property<\/i><\/a>&quot;},{&quot;name&quot;:&quot;\r\n<a href=\&quot;https://graph.models.nasdanika.org/references/eClassifiers/Tunnel/references/eStructuralFeatures/connections/index.html\&quot; title=\&quot;Connections in this tunnel\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>connections<\/a>&quot;,&quot;description&quot;:&quot;Connections in this tunnel&quot;,&quot;multiplicity&quot;:&quot;0..*&quot;,&quot;declaring-class&quot;:&quot;<!-- Tunnel--> \r\n<a href=\&quot;https://graph.models.nasdanika.org/references/eClassifiers/Tunnel/index.html\&quot; title=\&quot;Tunnel is a connection which logically groups other connections. For example, two composite nodes may have a tunnel connection which groups connections between their child elements. A real life example is a VPN tunnel between two networks.\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>Tunnel<\/a>&quot;,&quot;changeable&quot;:&quot;<i class=\&quot;fas fa-check\&quot;><\/i>&quot;,&quot;type&quot;:&quot;<!-- Connection--> <span><img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/ETypeParameter.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>C<\/span>&quot;},{&quot;name&quot;:&quot;\r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/Documented/references/eStructuralFeatures/contextHelp/index.html\&quot; title=\&quot;Context help. It may be different from documentation.\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>contextHelp<\/a>&quot;,&quot;description&quot;:&quot;Context help. It may be different from documentation.&quot;,&quot;multiplicity&quot;:&quot;<B>0..*<\/B>&quot;,&quot;declaring-class&quot;:&quot;<!-- Documented--> \r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/Documented/index.html\&quot; title=\&quot;Mix-in interface for classess with documentation.\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EInterface.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/><i>Documented<\/i><\/a>&quot;,&quot;changeable&quot;:&quot;<i class=\&quot;fas fa-check\&quot;><\/i>&quot;,&quot;type&quot;:&quot;<!-- EObject--> \r\n<a href=\&quot;https://ecore.models.nasdanika.org/references/eClassifiers/EObject/index.html\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>EObject<\/a>&quot;},{&quot;name&quot;:&quot;\r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/Documented/references/eStructuralFeatures/documentation/index.html\&quot; title=\&quot;Element documentation.\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>documentation<\/a>&quot;,&quot;description&quot;:&quot;Element documentation.&quot;,&quot;multiplicity&quot;:&quot;<B>0..*<\/B>&quot;,&quot;declaring-class&quot;:&quot;<!-- Documented--> \r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/Documented/index.html\&quot; title=\&quot;Mix-in interface for classess with documentation.\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EInterface.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/><i>Documented<\/i><\/a>&quot;,&quot;changeable&quot;:&quot;<i class=\&quot;fas fa-check\&quot;><\/i>&quot;,&quot;type&quot;:&quot;<!-- EObject--> \r\n<a href=\&quot;https://ecore.models.nasdanika.org/references/eClassifiers/EObject/index.html\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>EObject<\/a>&quot;},{&quot;name&quot;:&quot;\r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/Period/references/eStructuralFeatures/end/index.html\&quot; title=\&quot;Period end.\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>end<\/a>&quot;,&quot;description&quot;:&quot;Period end.&quot;,&quot;multiplicity&quot;:&quot;<B>0..1<\/B>&quot;,&quot;declaring-class&quot;:&quot;<!-- Period--> \r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/Period/index.html\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>Period<\/a>&quot;,&quot;changeable&quot;:&quot;<i class=\&quot;fas fa-check\&quot;><\/i>&quot;,&quot;type&quot;:&quot;<!-- Temporal--> \r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/Temporal/index.html\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>Temporal<\/a>&quot;},{&quot;name&quot;:&quot;\r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/ModelElement/references/eStructuralFeatures/labelPrototype/index.html\&quot; title=\&quot;If this reference is not set then EObjectLabelBuilder creates a new Label of its subclass (Link or Action) using AppFactory in newLabel() method. \nIf this reference is set and is and instanceof Label then a copy of the label is created and returned.\nOtherwise the reference value it is adapted to LabelProvider which is used to create a label. \nThis allows to merge labels and chain label generation. \n\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>labelPrototype<\/a>&quot;,&quot;description&quot;:&quot;If this reference is not set then EObjectLabelBuilder creates a new Label of its subclass (Link or Action) using AppFactory in newLabel() method. \nIf this reference is set and is and instanceof Label then a copy of the label is created and returned.\nOtherwise the reference value it is adapted to LabelProvider which is used to create a label. \nThis allows to merge labels and chain label generation. \n&quot;,&quot;multiplicity&quot;:&quot;<B>0..1<\/B>&quot;,&quot;declaring-class&quot;:&quot;<!-- ModelElement--> \r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/ModelElement/index.html\&quot; title=\&quot;Base class for many Nasdanika model classes.\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/><i>ModelElement<\/i><\/a>&quot;,&quot;changeable&quot;:&quot;<i class=\&quot;fas fa-check\&quot;><\/i>&quot;,&quot;type&quot;:&quot;<!-- EObject--> \r\n<a href=\&quot;https://ecore.models.nasdanika.org/references/eClassifiers/EObject/index.html\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>EObject<\/a>&quot;},{&quot;name&quot;:&quot;\r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/Marked/references/eStructuralFeatures/markers/index.html\&quot; title=\&quot;Markers pointing to where this model element was loaded from - location, line and column numbers. \nMultiple markers are supported for situations when a single model element is loaded from multiple locations, e.g. a row in an Excel document or a database and then pom.xml and readme.md is a source repository.\nAnother possiblity is an element being created from a prototype and then loaded - in this case the object will inherit markers from its prototype and will have a marker point to the location where it was loaded from.\nMarkers are listed in the reverse order, i.e. the prototype marker would be after the load marker in the list.\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>markers<\/a>&quot;,&quot;description&quot;:&quot;Markers pointing to where this model element was loaded from - location, line and column numbers. \nMultiple markers are supported for situations when a single model element is loaded from multiple locations, e.g. a row in an Excel document or a database and then pom.xml and readme.md is a source repository.\nAnother possiblity is an element being created from a prototype and then loaded - in this case the object will inherit markers from its prototype and will have a marker point to the location where it was loaded from.\nMarkers are listed in the reverse order, i.e. the prototype marker would be after the load marker in the list.&quot;,&quot;multiplicity&quot;:&quot;<B>0..*<\/B>&quot;,&quot;declaring-class&quot;:&quot;<!-- Marked--> \r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/Marked/index.html\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EInterface.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/><i>Marked<\/i><\/a>&quot;,&quot;changeable&quot;:&quot;<i class=\&quot;fas fa-check\&quot;><\/i>&quot;,&quot;type&quot;:&quot;<!-- Marker--> \r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/Marker/index.html\&quot; title=\&quot;Provides information about location for a model element definition - URI, line and column numbers.\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>Marker<\/a>&quot;},{&quot;name&quot;:&quot;\r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/ModelElement/references/eStructuralFeatures/representations/index.html\&quot; title=\&quot;Mapping of representation keys to URI's of representation resources. URI's are resolved relative to the model element resource URI.\nDuring object loading resources are loaded and linked to the object. Additional processing depends on the resource type.\nIn case of Drawio diagrams, diagram elements are semantically mapped to model elements and representation resource root elements are added as children to the object.\nSee [Nasdanika Core Drawio](../drawio/index.html) and [Nasdanika Core EMF](../emf/index.html) documentation for more information.\n\n\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>representations<\/a>&quot;,&quot;description&quot;:&quot;Mapping of representation keys to URI's of representation resources. URI's are resolved relative to the model element resource URI.\nDuring object loading resources are loaded and linked to the object. Additional processing depends on the resource type.\nIn case of Drawio diagrams, diagram elements are semantically mapped to model elements and representation resource root elements are added as children to the object.\nSee [Nasdanika Core Drawio](../drawio/index.html) and [Nasdanika Core EMF](../emf/index.html) documentation for more information.\n\n&quot;,&quot;multiplicity&quot;:&quot;<B>0..*<\/B>&quot;,&quot;declaring-class&quot;:&quot;<!-- ModelElement--> \r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/ModelElement/index.html\&quot; title=\&quot;Base class for many Nasdanika model classes.\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/><i>ModelElement<\/i><\/a>&quot;,&quot;changeable&quot;:&quot;<i class=\&quot;fas fa-check\&quot;><\/i>&quot;,&quot;type&quot;:&quot;<!-- RepresentationEntry--> \r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/RepresentationEntry/index.html\&quot; title=\&quot;Mapping of representation key to a representation resource uri. Null values are supported to suppress inherited entries.\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>RepresentationEntry<\/a>&quot;},{&quot;name&quot;:&quot;\r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/Period/references/eStructuralFeatures/start/index.html\&quot; title=\&quot;Period start.\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>start<\/a>&quot;,&quot;description&quot;:&quot;Period start.&quot;,&quot;multiplicity&quot;:&quot;<B>0..1<\/B>&quot;,&quot;declaring-class&quot;:&quot;<!-- Period--> \r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/Period/index.html\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>Period<\/a>&quot;,&quot;changeable&quot;:&quot;<i class=\&quot;fas fa-check\&quot;><\/i>&quot;,&quot;type&quot;:&quot;<!-- Temporal--> \r\n<a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/Temporal/index.html\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>Temporal<\/a>&quot;},{&quot;name&quot;:&quot;\r\n<a href=\&quot;https://graph.models.nasdanika.org/references/eClassifiers/Connection/references/eStructuralFeatures/target/index.html\&quot; title=\&quot;Connection target\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>target<\/a>&quot;,&quot;description&quot;:&quot;Connection target&quot;,&quot;multiplicity&quot;:&quot;1&quot;,&quot;declaring-class&quot;:&quot;<!-- Connection--> \r\n<a href=\&quot;https://graph.models.nasdanika.org/references/eClassifiers/Connection/index.html\&quot; title=\&quot;Connections are contained by their source and uniquiely identified in the source by a string id. This allows to implement connection inheritance behaviors such as overriding (replacing), adding, or removing.\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>Connection<\/a>&quot;,&quot;changeable&quot;:&quot;<i class=\&quot;fas fa-check\&quot;><\/i>&quot;,&quot;type&quot;:&quot;<!-- ConnectionTarget--> <span><img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/ETypeParameter.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>T<\/span>&quot;}]" config-key="eclass-references" transitive-label="Inherited" />
+  </div>
+  <script>new Vue({ el: '#references-table' });</script>
+</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-footer">
+          <ul class="nav nsd-app-footer-navs">
+            <li class="nav-item">
+              <a href="https://github.com/Nasdanika-Models/architecture" data-nsd-label-uuid="98931a34-f63f-4754-8ffc-976007524d5f" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

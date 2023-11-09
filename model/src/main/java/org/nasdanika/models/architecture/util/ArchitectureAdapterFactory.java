@@ -9,7 +9,31 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.nasdanika.common.Adaptable;
+
+import org.nasdanika.graph.model.Connection;
+import org.nasdanika.graph.model.ConnectionSource;
+import org.nasdanika.graph.model.ConnectionTarget;
+import org.nasdanika.graph.model.DocumentedNamedConnection;
+import org.nasdanika.graph.model.DocumentedNamedConnectionSource;
+import org.nasdanika.graph.model.DocumentedNamedConnectionTarget;
+import org.nasdanika.graph.model.DocumentedNamedGraph;
+import org.nasdanika.graph.model.DocumentedNamedGraphElement;
+import org.nasdanika.graph.model.DocumentedNamedTunnel;
+import org.nasdanika.graph.model.Graph;
+import org.nasdanika.graph.model.GraphElement;
+
 import org.nasdanika.models.architecture.*;
+
+import org.nasdanika.ncore.Documented;
+import org.nasdanika.ncore.DocumentedNamedElement;
+import org.nasdanika.ncore.DocumentedNamedStringIdentity;
+import org.nasdanika.ncore.ModelElement;
+import org.nasdanika.ncore.NamedElement;
+import org.nasdanika.ncore.Period;
+import org.nasdanika.ncore.StringIdentity;
+
+import org.nasdanika.persistence.Marked;
 
 /**
  * <!-- begin-user-doc -->
@@ -68,28 +92,140 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl {
 	protected ArchitectureSwitch<Adapter> modelSwitch =
 		new ArchitectureSwitch<Adapter>() {
 			@Override
-			public Adapter caseRepresentation(Representation object) {
-				return createRepresentationAdapter();
+			public Adapter caseArchitectureElement(ArchitectureElement object) {
+				return createArchitectureElementAdapter();
 			}
 			@Override
-			public Adapter caseRepresentationSpecification(RepresentationSpecification object) {
-				return createRepresentationSpecificationAdapter();
+			public Adapter caseArchitectureDescriptionElement(ArchitectureDescriptionElement object) {
+				return createArchitectureDescriptionElementAdapter();
 			}
 			@Override
-			public Adapter caseArchitectureViewpoint(ArchitectureViewpoint object) {
-				return createArchitectureViewpointAdapter();
+			public Adapter caseArchitectureDescription(ArchitectureDescription object) {
+				return createArchitectureDescriptionAdapter();
 			}
 			@Override
-			public Adapter caseArchitectureView(ArchitectureView object) {
-				return createArchitectureViewAdapter();
+			public Adapter caseDomain(Domain object) {
+				return createDomainAdapter();
 			}
 			@Override
-			public Adapter caseCore_ArchitectureViewpoint(org.nasdanika.models.togaf.core.ArchitectureViewpoint object) {
-				return createCore_ArchitectureViewpointAdapter();
+			public Adapter caseRelationshipTarget(RelationshipTarget object) {
+				return createRelationshipTargetAdapter();
 			}
 			@Override
-			public Adapter caseCore_ArchitectureView(org.nasdanika.models.togaf.core.ArchitectureView object) {
-				return createCore_ArchitectureViewAdapter();
+			public Adapter caseCompositeRelationshipTarget(CompositeRelationshipTarget object) {
+				return createCompositeRelationshipTargetAdapter();
+			}
+			@Override
+			public Adapter caseRelationship(Relationship object) {
+				return createRelationshipAdapter();
+			}
+			@Override
+			public Adapter caseRelationshipSource(RelationshipSource object) {
+				return createRelationshipSourceAdapter();
+			}
+			@Override
+			public Adapter caseCompositeRelationshipSource(CompositeRelationshipSource object) {
+				return createCompositeRelationshipSourceAdapter();
+			}
+			@Override
+			public Adapter caseNode(Node object) {
+				return createNodeAdapter();
+			}
+			@Override
+			public Adapter caseCompositeNode(CompositeNode object) {
+				return createCompositeNodeAdapter();
+			}
+			@Override
+			public Adapter caseTunnel(Tunnel object) {
+				return createTunnelAdapter();
+			}
+			@Override
+			public Adapter caseIMarked(Marked object) {
+				return createIMarkedAdapter();
+			}
+			@Override
+			public Adapter caseMarked(org.nasdanika.ncore.Marked object) {
+				return createMarkedAdapter();
+			}
+			@Override
+			public Adapter caseAdaptable(Adaptable object) {
+				return createAdaptableAdapter();
+			}
+			@Override
+			public Adapter caseModelElement(ModelElement object) {
+				return createModelElementAdapter();
+			}
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseDocumented(Documented object) {
+				return createDocumentedAdapter();
+			}
+			@Override
+			public Adapter caseDocumentedNamedElement(DocumentedNamedElement object) {
+				return createDocumentedNamedElementAdapter();
+			}
+			@Override
+			public Adapter casePeriod(Period object) {
+				return createPeriodAdapter();
+			}
+			@Override
+			public Adapter caseStringIdentity(StringIdentity object) {
+				return createStringIdentityAdapter();
+			}
+			@Override
+			public Adapter caseGraphElement(GraphElement object) {
+				return createGraphElementAdapter();
+			}
+			@Override
+			public Adapter caseDocumentedNamedStringIdentity(DocumentedNamedStringIdentity object) {
+				return createDocumentedNamedStringIdentityAdapter();
+			}
+			@Override
+			public Adapter caseDocumentedNamedGraphElement(DocumentedNamedGraphElement object) {
+				return createDocumentedNamedGraphElementAdapter();
+			}
+			@Override
+			public <E extends GraphElement> Adapter caseGraph(Graph<E> object) {
+				return createGraphAdapter();
+			}
+			@Override
+			public <E extends GraphElement> Adapter caseDocumentedNamedGraph(DocumentedNamedGraph<E> object) {
+				return createDocumentedNamedGraphAdapter();
+			}
+			@Override
+			public <C extends Connection<?>> Adapter caseConnectionTarget(ConnectionTarget<C> object) {
+				return createConnectionTargetAdapter();
+			}
+			@Override
+			public <C extends Connection<?>> Adapter caseDocumentedNamedConnectionTarget(DocumentedNamedConnectionTarget<C> object) {
+				return createDocumentedNamedConnectionTargetAdapter();
+			}
+			@Override
+			public <T extends ConnectionTarget<?>> Adapter caseConnection(Connection<T> object) {
+				return createConnectionAdapter();
+			}
+			@Override
+			public <T extends ConnectionTarget<?>> Adapter caseDocumentedNamedConnection(DocumentedNamedConnection<T> object) {
+				return createDocumentedNamedConnectionAdapter();
+			}
+			@Override
+			public <C extends Connection<?>> Adapter caseConnectionSource(ConnectionSource<C> object) {
+				return createConnectionSourceAdapter();
+			}
+			@Override
+			public <C extends Connection<?>> Adapter caseDocumentedNamedConnectionSource(DocumentedNamedConnectionSource<C> object) {
+				return createDocumentedNamedConnectionSourceAdapter();
+			}
+			@Override
+			public <T extends ConnectionTarget<?>, C extends Connection<?>> Adapter caseModel_Tunnel(org.nasdanika.graph.model.Tunnel<T, C> object) {
+				return createModel_TunnelAdapter();
+			}
+			@Override
+			public <T extends ConnectionTarget<?>, C extends Connection<?>> Adapter caseDocumentedNamedTunnel(DocumentedNamedTunnel<T, C> object) {
+				return createDocumentedNamedTunnelAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -112,86 +248,478 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.Representation <em>Representation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.ArchitectureElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.models.architecture.Representation
+	 * @see org.nasdanika.models.architecture.ArchitectureElement
 	 * @generated
 	 */
-	public Adapter createRepresentationAdapter() {
+	public Adapter createArchitectureElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.RepresentationSpecification <em>Representation Specification</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.ArchitectureDescriptionElement <em>Description Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.models.architecture.RepresentationSpecification
+	 * @see org.nasdanika.models.architecture.ArchitectureDescriptionElement
 	 * @generated
 	 */
-	public Adapter createRepresentationSpecificationAdapter() {
+	public Adapter createArchitectureDescriptionElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.ArchitectureViewpoint <em>Viewpoint</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.ArchitectureDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.models.architecture.ArchitectureViewpoint
+	 * @see org.nasdanika.models.architecture.ArchitectureDescription
 	 * @generated
 	 */
-	public Adapter createArchitectureViewpointAdapter() {
+	public Adapter createArchitectureDescriptionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.ArchitectureView <em>View</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.Domain <em>Domain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.models.architecture.ArchitectureView
+	 * @see org.nasdanika.models.architecture.Domain
 	 * @generated
 	 */
-	public Adapter createArchitectureViewAdapter() {
+	public Adapter createDomainAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.togaf.core.ArchitectureViewpoint <em>Architecture Viewpoint</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.RelationshipTarget <em>Relationship Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.models.togaf.core.ArchitectureViewpoint
+	 * @see org.nasdanika.models.architecture.RelationshipTarget
 	 * @generated
 	 */
-	public Adapter createCore_ArchitectureViewpointAdapter() {
+	public Adapter createRelationshipTargetAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.togaf.core.ArchitectureView <em>Architecture View</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.CompositeRelationshipTarget <em>Composite Relationship Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.models.togaf.core.ArchitectureView
+	 * @see org.nasdanika.models.architecture.CompositeRelationshipTarget
 	 * @generated
 	 */
-	public Adapter createCore_ArchitectureViewAdapter() {
+	public Adapter createCompositeRelationshipTargetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.Relationship <em>Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.architecture.Relationship
+	 * @generated
+	 */
+	public Adapter createRelationshipAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.RelationshipSource <em>Relationship Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.architecture.RelationshipSource
+	 * @generated
+	 */
+	public Adapter createRelationshipSourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.CompositeRelationshipSource <em>Composite Relationship Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.architecture.CompositeRelationshipSource
+	 * @generated
+	 */
+	public Adapter createCompositeRelationshipSourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.Node <em>Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.architecture.Node
+	 * @generated
+	 */
+	public Adapter createNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.CompositeNode <em>Composite Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.architecture.CompositeNode
+	 * @generated
+	 */
+	public Adapter createCompositeNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.Tunnel <em>Tunnel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.architecture.Tunnel
+	 * @generated
+	 */
+	public Adapter createTunnelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.persistence.Marked <em>IMarked</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.persistence.Marked
+	 * @generated
+	 */
+	public Adapter createIMarkedAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ncore.Marked <em>Marked</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ncore.Marked
+	 * @generated
+	 */
+	public Adapter createMarkedAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.common.Adaptable <em>Adaptable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.common.Adaptable
+	 * @generated
+	 */
+	public Adapter createAdaptableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ncore.ModelElement <em>Model Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ncore.ModelElement
+	 * @generated
+	 */
+	public Adapter createModelElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ncore.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ncore.NamedElement
+	 * @generated
+	 */
+	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ncore.Documented <em>Documented</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ncore.Documented
+	 * @generated
+	 */
+	public Adapter createDocumentedAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ncore.DocumentedNamedElement <em>Documented Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ncore.DocumentedNamedElement
+	 * @generated
+	 */
+	public Adapter createDocumentedNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ncore.Period <em>Period</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ncore.Period
+	 * @generated
+	 */
+	public Adapter createPeriodAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ncore.StringIdentity <em>String Identity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ncore.StringIdentity
+	 * @generated
+	 */
+	public Adapter createStringIdentityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.graph.model.GraphElement <em>Graph Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.graph.model.GraphElement
+	 * @generated
+	 */
+	public Adapter createGraphElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ncore.DocumentedNamedStringIdentity <em>Documented Named String Identity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ncore.DocumentedNamedStringIdentity
+	 * @generated
+	 */
+	public Adapter createDocumentedNamedStringIdentityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.graph.model.DocumentedNamedGraphElement <em>Documented Named Graph Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.graph.model.DocumentedNamedGraphElement
+	 * @generated
+	 */
+	public Adapter createDocumentedNamedGraphElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.graph.model.Graph <em>Graph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.graph.model.Graph
+	 * @generated
+	 */
+	public Adapter createGraphAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.graph.model.DocumentedNamedGraph <em>Documented Named Graph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.graph.model.DocumentedNamedGraph
+	 * @generated
+	 */
+	public Adapter createDocumentedNamedGraphAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.graph.model.ConnectionTarget <em>Connection Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.graph.model.ConnectionTarget
+	 * @generated
+	 */
+	public Adapter createConnectionTargetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.graph.model.DocumentedNamedConnectionTarget <em>Documented Named Connection Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.graph.model.DocumentedNamedConnectionTarget
+	 * @generated
+	 */
+	public Adapter createDocumentedNamedConnectionTargetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.graph.model.Connection <em>Connection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.graph.model.Connection
+	 * @generated
+	 */
+	public Adapter createConnectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.graph.model.DocumentedNamedConnection <em>Documented Named Connection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.graph.model.DocumentedNamedConnection
+	 * @generated
+	 */
+	public Adapter createDocumentedNamedConnectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.graph.model.ConnectionSource <em>Connection Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.graph.model.ConnectionSource
+	 * @generated
+	 */
+	public Adapter createConnectionSourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.graph.model.DocumentedNamedConnectionSource <em>Documented Named Connection Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.graph.model.DocumentedNamedConnectionSource
+	 * @generated
+	 */
+	public Adapter createDocumentedNamedConnectionSourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.graph.model.Tunnel <em>Tunnel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.graph.model.Tunnel
+	 * @generated
+	 */
+	public Adapter createModel_TunnelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.graph.model.DocumentedNamedTunnel <em>Documented Named Tunnel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.graph.model.DocumentedNamedTunnel
+	 * @generated
+	 */
+	public Adapter createDocumentedNamedTunnelAdapter() {
 		return null;
 	}
 

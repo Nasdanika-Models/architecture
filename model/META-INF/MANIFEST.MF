@@ -13,5 +13,7 @@ Export-Package: org.nasdanika.models.architecture,
  org.nasdanika.models.architecture.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.nasdanika.models.togaf.core;visibility:=reexport
+ org.nasdanika.models.togaf.core;visibility:=reexport,
+ org.nasdanika.graph.model;visibility:=reexport,
+ org.nasdanika.ncore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

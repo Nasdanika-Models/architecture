@@ -56,10 +56,18 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ArchitecturePackage.REPRESENTATION: return createRepresentation();
-			case ArchitecturePackage.REPRESENTATION_SPECIFICATION: return createRepresentationSpecification();
-			case ArchitecturePackage.ARCHITECTURE_VIEWPOINT: return createArchitectureViewpoint();
-			case ArchitecturePackage.ARCHITECTURE_VIEW: return createArchitectureView();
+			case ArchitecturePackage.ARCHITECTURE_ELEMENT: return createArchitectureElement();
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT: return createArchitectureDescriptionElement();
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION: return createArchitectureDescription();
+			case ArchitecturePackage.DOMAIN: return createDomain();
+			case ArchitecturePackage.RELATIONSHIP_TARGET: return createRelationshipTarget();
+			case ArchitecturePackage.COMPOSITE_RELATIONSHIP_TARGET: return createCompositeRelationshipTarget();
+			case ArchitecturePackage.RELATIONSHIP: return createRelationship();
+			case ArchitecturePackage.RELATIONSHIP_SOURCE: return createRelationshipSource();
+			case ArchitecturePackage.COMPOSITE_RELATIONSHIP_SOURCE: return createCompositeRelationshipSource();
+			case ArchitecturePackage.NODE: return createNode();
+			case ArchitecturePackage.COMPOSITE_NODE: return createCompositeNode();
+			case ArchitecturePackage.TUNNEL: return createTunnel();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -71,9 +79,9 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
 	 * @generated
 	 */
 	@Override
-	public Representation createRepresentation() {
-		RepresentationImpl representation = new RepresentationImpl();
-		return representation;
+	public ArchitectureElement createArchitectureElement() {
+		ArchitectureElementImpl architectureElement = new ArchitectureElementImpl();
+		return architectureElement;
 	}
 
 	/**
@@ -82,9 +90,9 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
 	 * @generated
 	 */
 	@Override
-	public RepresentationSpecification createRepresentationSpecification() {
-		RepresentationSpecificationImpl representationSpecification = new RepresentationSpecificationImpl();
-		return representationSpecification;
+	public ArchitectureDescriptionElement createArchitectureDescriptionElement() {
+		ArchitectureDescriptionElementImpl architectureDescriptionElement = new ArchitectureDescriptionElementImpl();
+		return architectureDescriptionElement;
 	}
 
 	/**
@@ -93,9 +101,9 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
 	 * @generated
 	 */
 	@Override
-	public ArchitectureViewpoint createArchitectureViewpoint() {
-		ArchitectureViewpointImpl architectureViewpoint = new ArchitectureViewpointImpl();
-		return architectureViewpoint;
+	public ArchitectureDescription createArchitectureDescription() {
+		ArchitectureDescriptionImpl architectureDescription = new ArchitectureDescriptionImpl();
+		return architectureDescription;
 	}
 
 	/**
@@ -104,9 +112,97 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
 	 * @generated
 	 */
 	@Override
-	public ArchitectureView createArchitectureView() {
-		ArchitectureViewImpl architectureView = new ArchitectureViewImpl();
-		return architectureView;
+	public Domain createDomain() {
+		DomainImpl domain = new DomainImpl();
+		return domain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RelationshipTarget createRelationshipTarget() {
+		RelationshipTargetImpl relationshipTarget = new RelationshipTargetImpl();
+		return relationshipTarget;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public CompositeRelationshipTarget createCompositeRelationshipTarget() {
+		CompositeRelationshipTargetImpl compositeRelationshipTarget = new CompositeRelationshipTargetImpl();
+		return compositeRelationshipTarget;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Relationship createRelationship() {
+		RelationshipImpl relationship = new RelationshipImpl();
+		return relationship;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RelationshipSource createRelationshipSource() {
+		RelationshipSourceImpl relationshipSource = new RelationshipSourceImpl();
+		return relationshipSource;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public CompositeRelationshipSource createCompositeRelationshipSource() {
+		CompositeRelationshipSourceImpl compositeRelationshipSource = new CompositeRelationshipSourceImpl();
+		return compositeRelationshipSource;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Node createNode() {
+		NodeImpl node = new NodeImpl();
+		return node;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public CompositeNode createCompositeNode() {
+		CompositeNodeImpl compositeNode = new CompositeNodeImpl();
+		return compositeNode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Tunnel createTunnel() {
+		TunnelImpl tunnel = new TunnelImpl();
+		return tunnel;
 	}
 
 	/**

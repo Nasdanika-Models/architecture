@@ -3,18 +3,29 @@
 package org.nasdanika.models.architecture.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.nasdanika.graph.model.ModelPackage;
+
+import org.nasdanika.models.architecture.ArchitectureDescription;
+import org.nasdanika.models.architecture.ArchitectureDescriptionElement;
+import org.nasdanika.models.architecture.ArchitectureElement;
 import org.nasdanika.models.architecture.ArchitectureFactory;
 import org.nasdanika.models.architecture.ArchitecturePackage;
-import org.nasdanika.models.architecture.ArchitectureView;
-import org.nasdanika.models.architecture.ArchitectureViewpoint;
-import org.nasdanika.models.architecture.Representation;
-import org.nasdanika.models.architecture.RepresentationSpecification;
-import org.nasdanika.models.togaf.core.CorePackage;
+import org.nasdanika.models.architecture.CompositeNode;
+import org.nasdanika.models.architecture.CompositeRelationshipSource;
+import org.nasdanika.models.architecture.CompositeRelationshipTarget;
+import org.nasdanika.models.architecture.Domain;
+import org.nasdanika.models.architecture.Node;
+import org.nasdanika.models.architecture.Relationship;
+import org.nasdanika.models.architecture.RelationshipSource;
+import org.nasdanika.models.architecture.RelationshipTarget;
+import org.nasdanika.models.architecture.Tunnel;
+
+import org.nasdanika.ncore.NcorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,28 +39,84 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass representationEClass = null;
+	private EClass architectureElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass representationSpecificationEClass = null;
+	private EClass architectureDescriptionElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass architectureViewpointEClass = null;
+	private EClass architectureDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass architectureViewEClass = null;
+	private EClass domainEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass relationshipTargetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass compositeRelationshipTargetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass relationshipEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass relationshipSourceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass compositeRelationshipSourceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass nodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass compositeNodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tunnelEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -98,7 +165,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		isInited = true;
 
 		// Initialize simple dependencies
-		CorePackage.eINSTANCE.eClass();
+		ModelPackage.eINSTANCE.eClass();
+		NcorePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theArchitecturePackage.createPackageContents();
@@ -120,8 +188,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * @generated
 	 */
 	@Override
-	public EClass getRepresentation() {
-		return representationEClass;
+	public EClass getArchitectureElement() {
+		return architectureElementEClass;
 	}
 
 	/**
@@ -130,8 +198,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * @generated
 	 */
 	@Override
-	public EReference getRepresentation_Specification() {
-		return (EReference)representationEClass.getEStructuralFeatures().get(0);
+	public EClass getArchitectureDescriptionElement() {
+		return architectureDescriptionElementEClass;
 	}
 
 	/**
@@ -140,8 +208,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * @generated
 	 */
 	@Override
-	public EClass getRepresentationSpecification() {
-		return representationSpecificationEClass;
+	public EClass getArchitectureDescription() {
+		return architectureDescriptionEClass;
 	}
 
 	/**
@@ -150,8 +218,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * @generated
 	 */
 	@Override
-	public EReference getRepresentationSpecification_Governs() {
-		return (EReference)representationSpecificationEClass.getEStructuralFeatures().get(0);
+	public EClass getDomain() {
+		return domainEClass;
 	}
 
 	/**
@@ -160,8 +228,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * @generated
 	 */
 	@Override
-	public EClass getArchitectureViewpoint() {
-		return architectureViewpointEClass;
+	public EClass getRelationshipTarget() {
+		return relationshipTargetEClass;
 	}
 
 	/**
@@ -170,8 +238,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * @generated
 	 */
 	@Override
-	public EReference getArchitectureViewpoint_RepresentationSpecifications() {
-		return (EReference)architectureViewpointEClass.getEStructuralFeatures().get(0);
+	public EClass getCompositeRelationshipTarget() {
+		return compositeRelationshipTargetEClass;
 	}
 
 	/**
@@ -180,8 +248,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * @generated
 	 */
 	@Override
-	public EClass getArchitectureView() {
-		return architectureViewEClass;
+	public EClass getRelationship() {
+		return relationshipEClass;
 	}
 
 	/**
@@ -190,8 +258,48 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * @generated
 	 */
 	@Override
-	public EReference getArchitectureView_Representation() {
-		return (EReference)architectureViewEClass.getEStructuralFeatures().get(0);
+	public EClass getRelationshipSource() {
+		return relationshipSourceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getCompositeRelationshipSource() {
+		return compositeRelationshipSourceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getNode() {
+		return nodeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getCompositeNode() {
+		return compositeNodeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getTunnel() {
+		return tunnelEClass;
 	}
 
 	/**
@@ -223,17 +331,29 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		isCreated = true;
 
 		// Create classes and their features
-		representationEClass = createEClass(REPRESENTATION);
-		createEReference(representationEClass, REPRESENTATION__SPECIFICATION);
+		architectureElementEClass = createEClass(ARCHITECTURE_ELEMENT);
 
-		representationSpecificationEClass = createEClass(REPRESENTATION_SPECIFICATION);
-		createEReference(representationSpecificationEClass, REPRESENTATION_SPECIFICATION__GOVERNS);
+		architectureDescriptionElementEClass = createEClass(ARCHITECTURE_DESCRIPTION_ELEMENT);
 
-		architectureViewpointEClass = createEClass(ARCHITECTURE_VIEWPOINT);
-		createEReference(architectureViewpointEClass, ARCHITECTURE_VIEWPOINT__REPRESENTATION_SPECIFICATIONS);
+		architectureDescriptionEClass = createEClass(ARCHITECTURE_DESCRIPTION);
 
-		architectureViewEClass = createEClass(ARCHITECTURE_VIEW);
-		createEReference(architectureViewEClass, ARCHITECTURE_VIEW__REPRESENTATION);
+		domainEClass = createEClass(DOMAIN);
+
+		relationshipTargetEClass = createEClass(RELATIONSHIP_TARGET);
+
+		compositeRelationshipTargetEClass = createEClass(COMPOSITE_RELATIONSHIP_TARGET);
+
+		relationshipEClass = createEClass(RELATIONSHIP);
+
+		relationshipSourceEClass = createEClass(RELATIONSHIP_SOURCE);
+
+		compositeRelationshipSourceEClass = createEClass(COMPOSITE_RELATIONSHIP_SOURCE);
+
+		nodeEClass = createEClass(NODE);
+
+		compositeNodeEClass = createEClass(COMPOSITE_NODE);
+
+		tunnelEClass = createEClass(TUNNEL);
 	}
 
 	/**
@@ -260,31 +380,180 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		NcorePackage theNcorePackage = (NcorePackage)EPackage.Registry.INSTANCE.getEPackage(NcorePackage.eNS_URI);
+		ModelPackage theModelPackage = (ModelPackage)EPackage.Registry.INSTANCE.getEPackage(ModelPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		architectureViewpointEClass.getESuperTypes().add(theCorePackage.getArchitectureViewpoint());
-		architectureViewEClass.getESuperTypes().add(theCorePackage.getArchitectureView());
+		architectureElementEClass.getESuperTypes().add(theNcorePackage.getDocumentedNamedElement());
+		architectureElementEClass.getESuperTypes().add(theNcorePackage.getPeriod());
+		architectureDescriptionElementEClass.getESuperTypes().add(theModelPackage.getDocumentedNamedGraphElement());
+		architectureDescriptionElementEClass.getESuperTypes().add(this.getArchitectureElement());
+		EGenericType g1 = createEGenericType(theModelPackage.getDocumentedNamedGraph());
+		EGenericType g2 = createEGenericType(this.getArchitectureDescriptionElement());
+		g1.getETypeArguments().add(g2);
+		architectureDescriptionEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getArchitectureElement());
+		architectureDescriptionEClass.getEGenericSuperTypes().add(g1);
+		domainEClass.getESuperTypes().add(this.getArchitectureDescriptionElement());
+		domainEClass.getESuperTypes().add(this.getArchitectureDescription());
+		g1 = createEGenericType(this.getArchitectureDescriptionElement());
+		relationshipTargetEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theModelPackage.getDocumentedNamedConnectionTarget());
+		g2 = createEGenericType(this.getRelationship());
+		g1.getETypeArguments().add(g2);
+		relationshipTargetEClass.getEGenericSuperTypes().add(g1);
+		compositeRelationshipTargetEClass.getESuperTypes().add(this.getDomain());
+		compositeRelationshipTargetEClass.getESuperTypes().add(this.getRelationshipTarget());
+		g1 = createEGenericType(theModelPackage.getDocumentedNamedConnection());
+		g2 = createEGenericType(this.getRelationshipTarget());
+		g1.getETypeArguments().add(g2);
+		relationshipEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getArchitectureElement());
+		relationshipEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theModelPackage.getDocumentedNamedConnectionSource());
+		g2 = createEGenericType(this.getRelationship());
+		g1.getETypeArguments().add(g2);
+		relationshipSourceEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getArchitectureDescriptionElement());
+		relationshipSourceEClass.getEGenericSuperTypes().add(g1);
+		compositeRelationshipSourceEClass.getESuperTypes().add(this.getDomain());
+		compositeRelationshipSourceEClass.getESuperTypes().add(this.getRelationshipSource());
+		nodeEClass.getESuperTypes().add(this.getRelationshipSource());
+		nodeEClass.getESuperTypes().add(this.getRelationshipTarget());
+		compositeNodeEClass.getESuperTypes().add(this.getDomain());
+		compositeNodeEClass.getESuperTypes().add(this.getNode());
+		g1 = createEGenericType(theModelPackage.getDocumentedNamedTunnel());
+		g2 = createEGenericType(this.getRelationshipTarget());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(this.getRelationship());
+		g1.getETypeArguments().add(g2);
+		tunnelEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getRelationship());
+		tunnelEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(representationEClass, Representation.class, "Representation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRepresentation_Specification(), this.getRepresentationSpecification(), this.getRepresentationSpecification_Governs(), "specification", null, 0, -1, Representation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(architectureElementEClass, ArchitectureElement.class, "ArchitectureElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(representationSpecificationEClass, RepresentationSpecification.class, "RepresentationSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRepresentationSpecification_Governs(), this.getRepresentation(), this.getRepresentation_Specification(), "governs", null, 0, -1, RepresentationSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(architectureDescriptionElementEClass, ArchitectureDescriptionElement.class, "ArchitectureDescriptionElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(architectureViewpointEClass, ArchitectureViewpoint.class, "ArchitectureViewpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getArchitectureViewpoint_RepresentationSpecifications(), this.getRepresentationSpecification(), null, "representationSpecifications", null, 0, -1, ArchitectureViewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(architectureDescriptionEClass, ArchitectureDescription.class, "ArchitectureDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(architectureViewEClass, ArchitectureView.class, "ArchitectureView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getArchitectureView_Representation(), this.getRepresentation(), null, "representation", null, 0, -1, ArchitectureView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(domainEClass, Domain.class, "Domain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(relationshipTargetEClass, RelationshipTarget.class, "RelationshipTarget", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(compositeRelationshipTargetEClass, CompositeRelationshipTarget.class, "CompositeRelationshipTarget", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(relationshipEClass, Relationship.class, "Relationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(relationshipSourceEClass, RelationshipSource.class, "RelationshipSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(compositeRelationshipSourceEClass, CompositeRelationshipSource.class, "CompositeRelationshipSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(compositeNodeEClass, CompositeNode.class, "CompositeNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(tunnelEClass, Tunnel.class, "Tunnel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/GenModel
+		createGenModelAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/GenModel</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGenModelAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/GenModel";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "documentation", "Classes for documenting (software) architectures"
+		   });
+		addAnnotation
+		  (architectureElementEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Base class for elements of architecture"
+		   });
+		addAnnotation
+		  (architectureDescriptionElementEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Base class for elements of architecture descriptions"
+		   });
+		addAnnotation
+		  (architectureDescriptionEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Architecture description contains architecture elements and reference elements such as stakeholders. Architecture description elements are keyed by string identifiers which allows to implement architecture inheritance similar to inheritance in object-oriented languages such as Java or layering in Docker images - a new architecture may be derived from an existing architecture by applying a layer of deltas. This is also similar to a commit tree in Git."
+		   });
+		addAnnotation
+		  (domainEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Domains allow to organize architecture descriptions into a hierarchy"
+		   });
+		addAnnotation
+		  (relationshipTargetEClass,
+		   source,
+		   new String[] {
+			   "documentation", "An architecture description which can have incoming relationships"
+		   });
+		addAnnotation
+		  (compositeRelationshipTargetEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Relationship target which is also a domain, i.e. it may contain other architecture description elements"
+		   });
+		addAnnotation
+		  (relationshipEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Relationship between two architecture description elements. Relationships are contained by their source and uniquiely identified in the source by a string id. This allows to implement relationship inheritance behaviors such as overriding (replacing), adding, or removing."
+		   });
+		addAnnotation
+		  (relationshipSourceEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Source of relationships uniquely identified by string ids. It provides support for architecture inheritance/layering - replacing (overriding), adding, or removing relationships"
+		   });
+		addAnnotation
+		  (compositeRelationshipSourceEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Relationship source which is also a domain. I.e. it may contain other architecture description elements."
+		   });
+		addAnnotation
+		  (nodeEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Node is both relationship source and target. I.e. it may have both incoming and outgoing relationships."
+		   });
+		addAnnotation
+		  (compositeNodeEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Node which is also a domain. I.e. it may contain other architecture description elements."
+		   });
+		addAnnotation
+		  (tunnelEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Tunnel is a relationship which logically groups other relationships. For example, two composite nodes may have a tunnel relationship which groups relationships between their child elements. A real life example is a VPN tunnel between two networks."
+		   });
 	}
 
 } //ArchitecturePackageImpl

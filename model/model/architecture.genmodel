@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.nasdanika.models.architecture/src/main/java"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.nasdanika.models.architecture/src/main/java"
     creationIcons="false" editorDirectory="" modelPluginID="org.nasdanika.models.architecture"
     modelName="Architecture" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" featureDelegation="Dynamic" complianceLevel="17.0"
-    suppressGenModelAnnotations="false" copyrightFields="false" usedGenPackages="../../org.nasdanika.models.togaf.core/model/core.genmodel#//core"
+    suppressGenModelAnnotations="false" copyrightFields="false" usedGenPackages="../../org.nasdanika.graph.model/model/graph.genmodel#//model ../../org.nasdanika.ncore/model/ncore.genmodel#//ncore"
     operationReflection="true" importOrganizing="true">
   <foreignModel>architecture.ecore</foreignModel>
   <genPackages prefix="Architecture" basePackage="org.nasdanika.models" disposableProviderFactory="true"
       ecorePackage="architecture.ecore#/">
-    <genClasses ecoreClass="architecture.ecore#//Representation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference architecture.ecore#//Representation/specification"/>
-    </genClasses>
-    <genClasses ecoreClass="architecture.ecore#//RepresentationSpecification">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference architecture.ecore#//RepresentationSpecification/governs"/>
-    </genClasses>
-    <genClasses ecoreClass="architecture.ecore#//ArchitectureViewpoint">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference architecture.ecore#//ArchitectureViewpoint/representationSpecifications"/>
-    </genClasses>
-    <genClasses ecoreClass="architecture.ecore#//ArchitectureView">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference architecture.ecore#//ArchitectureView/representation"/>
-    </genClasses>
+    <genClasses ecoreClass="architecture.ecore#//ArchitectureElement"/>
+    <genClasses ecoreClass="architecture.ecore#//ArchitectureDescriptionElement"/>
+    <genClasses ecoreClass="architecture.ecore#//ArchitectureDescription"/>
+    <genClasses ecoreClass="architecture.ecore#//Domain"/>
+    <genClasses ecoreClass="architecture.ecore#//RelationshipTarget"/>
+    <genClasses ecoreClass="architecture.ecore#//CompositeRelationshipTarget"/>
+    <genClasses ecoreClass="architecture.ecore#//Relationship"/>
+    <genClasses ecoreClass="architecture.ecore#//RelationshipSource"/>
+    <genClasses ecoreClass="architecture.ecore#//CompositeRelationshipSource"/>
+    <genClasses ecoreClass="architecture.ecore#//Node"/>
+    <genClasses ecoreClass="architecture.ecore#//CompositeNode"/>
+    <genClasses ecoreClass="architecture.ecore#//Tunnel"/>
   </genPackages>
 </genmodel:GenModel>
