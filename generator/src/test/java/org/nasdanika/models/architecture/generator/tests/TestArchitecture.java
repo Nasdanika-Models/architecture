@@ -3,6 +3,7 @@ package org.nasdanika.models.architecture.generator.tests;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -21,6 +22,7 @@ import org.nasdanika.common.Transformer;
 import org.nasdanika.drawio.model.ModelElement;
 import org.nasdanika.drawio.model.Page;
 import org.nasdanika.graph.model.util.GraphPropertySetterFeatureMapper;
+import org.nasdanika.models.architecture.ArchitectureDescriptionElement;
 import org.nasdanika.models.architecture.util.ArchitectureDrawioFactory;
 import org.nasdanika.persistence.Marked;
 
@@ -41,6 +43,25 @@ public class TestArchitecture {
 				ArchitectureDrawioFactory self = this; 
 				
 				return new GraphPropertySetterFeatureMapper() {
+					
+//					@Override
+//					protected boolean wireContainerFeature(EObject container, EObject containerValue,
+//							EStructuralFeature containerValueFeature, EObject contents, EObject contentsValue,
+//							LinkedList<EObject> sourcePath, Map<EObject, EObject> registry,
+//							ProgressMonitor progressMonitor) {
+//						
+//						if (contents instanceof ModelElement) {
+//							ModelElement cme = (ModelElement) contents;
+//							System.out.println("Here we are: " + cme.getLabel());
+//							if ("UEzPUAAOIrF-is8g5C7q-177".equals(cme.getId())) {
+//								System.out.println("Here we are");
+//							}
+//						}
+//						
+//						// TODO Auto-generated method stub
+//						return super.wireContainerFeature(container, containerValue, containerValueFeature, contents, contentsValue, sourcePath,
+//								registry, progressMonitor);
+//					}
 
 					@Override
 					protected Setter<EObject, EObject> getFeatureSetter(
