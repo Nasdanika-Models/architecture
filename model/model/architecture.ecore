@@ -9,8 +9,42 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Base class for elements of architecture"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Architecture element icon. Treated as URL if contains ``/`` or as a CSS class otherwise. E.g. ``fas fa-wrench`` would be treated as a CSS class. If this attribute is blank then the type icon is used. For example, a generic server icon defined at the Server type can be overridden by an icon defined at a server instance (e.g. Web Server)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArchitectureDescriptionElement" eSuperTypes="../../org.nasdanika.graph.model/model/graph.ecore#//DocumentedNamedGraphElement #//ArchitectureElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//ArchitectureElement ../../org.nasdanika.ncore/model/ncore.ecore#//StringIdentity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Actors play roles/have responsibilies on model elements implementing Undergoer "/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
+        eType="#//Role" eOpposite="#//Role/actors">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Roles played by this actor"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//ArchitectureElement ../../org.nasdanika.ncore/model/ncore.ecore#//StringIdentity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A role is played by an Actor performing activities on the containing Undergoer"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actors" upperBound="-1"
+        eType="#//Actor" eOpposite="#//Actor/roles"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Undergoer" abstract="true" interface="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Something operated on by actors in roles. A container of roles referencing actors. For example, a Server is patched by the &quot;Unix Support&quot; role and Joe Doe plays this role."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
+        eType="#//Role" containment="true" eKeys="../../org.nasdanika.ncore/model/ncore.ecore#//StringIdentity/id">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Actors in this role"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArchitectureDescriptionElement" eSuperTypes="../../org.nasdanika.graph.model/model/graph.ecore#//DocumentedNamedGraphElement #//ArchitectureElement #//Undergoer">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Base class for elements of architecture descriptions"/>
     </eAnnotations>
@@ -19,6 +53,12 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Architecture description contains architecture elements and reference elements such as stakeholders. Architecture description elements are keyed by string identifiers which allows to implement architecture inheritance similar to inheritance in object-oriented languages such as Java or layering in Docker images - a new architecture may be derived from an existing architecture by applying a layer of deltas. This is also similar to a commit tree in Git."/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actors" upperBound="-1"
+        eType="#//Actor" containment="true" eKeys="../../org.nasdanika.ncore/model/ncore.ecore#//StringIdentity/id">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Actors operating on the elements of this architecture description"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//DocumentedNamedGraph">
       <eTypeArguments eClassifier="#//ArchitectureDescriptionElement"/>
     </eGenericSuperTypes>
@@ -51,6 +91,7 @@
       <eTypeArguments eClassifier="#//RelationshipTarget"/>
     </eGenericSuperTypes>
     <eGenericSuperTypes eClassifier="#//ArchitectureElement"/>
+    <eGenericSuperTypes eClassifier="#//Undergoer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RelationshipSource">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

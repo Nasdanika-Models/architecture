@@ -4,11 +4,14 @@ package org.nasdanika.models.architecture.impl;
 
 import java.time.Duration;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.graph.model.impl.DocumentedNamedConnectionImpl;
 
 import org.nasdanika.models.architecture.ArchitectureElement;
@@ -16,6 +19,8 @@ import org.nasdanika.models.architecture.ArchitecturePackage;
 import org.nasdanika.models.architecture.Relationship;
 import org.nasdanika.models.architecture.RelationshipTarget;
 
+import org.nasdanika.models.architecture.Role;
+import org.nasdanika.models.architecture.Undergoer;
 import org.nasdanika.ncore.NcorePackage;
 import org.nasdanika.ncore.Period;
 import org.nasdanika.ncore.Temporal;
@@ -31,6 +36,8 @@ import org.nasdanika.ncore.Temporal;
  *   <li>{@link org.nasdanika.models.architecture.impl.RelationshipImpl#getStart <em>Start</em>}</li>
  *   <li>{@link org.nasdanika.models.architecture.impl.RelationshipImpl#getEnd <em>End</em>}</li>
  *   <li>{@link org.nasdanika.models.architecture.impl.RelationshipImpl#getDuration <em>Duration</em>}</li>
+ *   <li>{@link org.nasdanika.models.architecture.impl.RelationshipImpl#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.nasdanika.models.architecture.impl.RelationshipImpl#getRoles <em>Roles</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +52,16 @@ public class RelationshipImpl extends DocumentedNamedConnectionImpl<Relationship
 	 * @ordered
 	 */
 	protected static final Duration DURATION_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIcon()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ICON_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,12 +168,45 @@ public class RelationshipImpl extends DocumentedNamedConnectionImpl<Relationship
 	 * @generated
 	 */
 	@Override
+	public String getIcon() {
+		return (String)eDynamicGet(ArchitecturePackage.RELATIONSHIP__ICON, ArchitecturePackage.Literals.ARCHITECTURE_ELEMENT__ICON, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIcon(String newIcon) {
+		eDynamicSet(ArchitecturePackage.RELATIONSHIP__ICON, ArchitecturePackage.Literals.ARCHITECTURE_ELEMENT__ICON, newIcon);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Role> getRoles() {
+		return (EList<Role>)eDynamicGet(ArchitecturePackage.RELATIONSHIP__ROLES, ArchitecturePackage.Literals.UNDERGOER__ROLES, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ArchitecturePackage.RELATIONSHIP__START:
 				return basicSetStart(null, msgs);
 			case ArchitecturePackage.RELATIONSHIP__END:
 				return basicSetEnd(null, msgs);
+			case ArchitecturePackage.RELATIONSHIP__ROLES:
+				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -175,6 +225,10 @@ public class RelationshipImpl extends DocumentedNamedConnectionImpl<Relationship
 				return getEnd();
 			case ArchitecturePackage.RELATIONSHIP__DURATION:
 				return getDuration();
+			case ArchitecturePackage.RELATIONSHIP__ICON:
+				return getIcon();
+			case ArchitecturePackage.RELATIONSHIP__ROLES:
+				return getRoles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -184,6 +238,7 @@ public class RelationshipImpl extends DocumentedNamedConnectionImpl<Relationship
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -195,6 +250,13 @@ public class RelationshipImpl extends DocumentedNamedConnectionImpl<Relationship
 				return;
 			case ArchitecturePackage.RELATIONSHIP__DURATION:
 				setDuration((Duration)newValue);
+				return;
+			case ArchitecturePackage.RELATIONSHIP__ICON:
+				setIcon((String)newValue);
+				return;
+			case ArchitecturePackage.RELATIONSHIP__ROLES:
+				getRoles().clear();
+				getRoles().addAll((Collection<? extends Role>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -217,6 +279,12 @@ public class RelationshipImpl extends DocumentedNamedConnectionImpl<Relationship
 			case ArchitecturePackage.RELATIONSHIP__DURATION:
 				setDuration(DURATION_EDEFAULT);
 				return;
+			case ArchitecturePackage.RELATIONSHIP__ICON:
+				setIcon(ICON_EDEFAULT);
+				return;
+			case ArchitecturePackage.RELATIONSHIP__ROLES:
+				getRoles().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -235,6 +303,10 @@ public class RelationshipImpl extends DocumentedNamedConnectionImpl<Relationship
 				return getEnd() != null;
 			case ArchitecturePackage.RELATIONSHIP__DURATION:
 				return DURATION_EDEFAULT == null ? getDuration() != null : !DURATION_EDEFAULT.equals(getDuration());
+			case ArchitecturePackage.RELATIONSHIP__ICON:
+				return ICON_EDEFAULT == null ? getIcon() != null : !ICON_EDEFAULT.equals(getIcon());
+			case ArchitecturePackage.RELATIONSHIP__ROLES:
+				return !getRoles().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -256,6 +328,13 @@ public class RelationshipImpl extends DocumentedNamedConnectionImpl<Relationship
 		}
 		if (baseClass == ArchitectureElement.class) {
 			switch (derivedFeatureID) {
+				case ArchitecturePackage.RELATIONSHIP__ICON: return ArchitecturePackage.ARCHITECTURE_ELEMENT__ICON;
+				default: return -1;
+			}
+		}
+		if (baseClass == Undergoer.class) {
+			switch (derivedFeatureID) {
+				case ArchitecturePackage.RELATIONSHIP__ROLES: return ArchitecturePackage.UNDERGOER__ROLES;
 				default: return -1;
 			}
 		}
@@ -279,6 +358,13 @@ public class RelationshipImpl extends DocumentedNamedConnectionImpl<Relationship
 		}
 		if (baseClass == ArchitectureElement.class) {
 			switch (baseFeatureID) {
+				case ArchitecturePackage.ARCHITECTURE_ELEMENT__ICON: return ArchitecturePackage.RELATIONSHIP__ICON;
+				default: return -1;
+			}
+		}
+		if (baseClass == Undergoer.class) {
+			switch (baseFeatureID) {
+				case ArchitecturePackage.UNDERGOER__ROLES: return ArchitecturePackage.RELATIONSHIP__ROLES;
 				default: return -1;
 			}
 		}

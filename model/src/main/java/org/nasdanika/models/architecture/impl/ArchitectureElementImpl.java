@@ -29,6 +29,7 @@ import org.nasdanika.ncore.impl.DocumentedNamedElementImpl;
  *   <li>{@link org.nasdanika.models.architecture.impl.ArchitectureElementImpl#getStart <em>Start</em>}</li>
  *   <li>{@link org.nasdanika.models.architecture.impl.ArchitectureElementImpl#getEnd <em>End</em>}</li>
  *   <li>{@link org.nasdanika.models.architecture.impl.ArchitectureElementImpl#getDuration <em>Duration</em>}</li>
+ *   <li>{@link org.nasdanika.models.architecture.impl.ArchitectureElementImpl#getIcon <em>Icon</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,6 +44,16 @@ public class ArchitectureElementImpl extends DocumentedNamedElementImpl implemen
 	 * @ordered
 	 */
 	protected static final Duration DURATION_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIcon()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ICON_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -149,6 +160,26 @@ public class ArchitectureElementImpl extends DocumentedNamedElementImpl implemen
 	 * @generated
 	 */
 	@Override
+	public String getIcon() {
+		return (String)eDynamicGet(ArchitecturePackage.ARCHITECTURE_ELEMENT__ICON, ArchitecturePackage.Literals.ARCHITECTURE_ELEMENT__ICON, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIcon(String newIcon) {
+		eDynamicSet(ArchitecturePackage.ARCHITECTURE_ELEMENT__ICON, ArchitecturePackage.Literals.ARCHITECTURE_ELEMENT__ICON, newIcon);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ArchitecturePackage.ARCHITECTURE_ELEMENT__START:
@@ -173,6 +204,8 @@ public class ArchitectureElementImpl extends DocumentedNamedElementImpl implemen
 				return getEnd();
 			case ArchitecturePackage.ARCHITECTURE_ELEMENT__DURATION:
 				return getDuration();
+			case ArchitecturePackage.ARCHITECTURE_ELEMENT__ICON:
+				return getIcon();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -193,6 +226,9 @@ public class ArchitectureElementImpl extends DocumentedNamedElementImpl implemen
 				return;
 			case ArchitecturePackage.ARCHITECTURE_ELEMENT__DURATION:
 				setDuration((Duration)newValue);
+				return;
+			case ArchitecturePackage.ARCHITECTURE_ELEMENT__ICON:
+				setIcon((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -215,6 +251,9 @@ public class ArchitectureElementImpl extends DocumentedNamedElementImpl implemen
 			case ArchitecturePackage.ARCHITECTURE_ELEMENT__DURATION:
 				setDuration(DURATION_EDEFAULT);
 				return;
+			case ArchitecturePackage.ARCHITECTURE_ELEMENT__ICON:
+				setIcon(ICON_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -233,6 +272,8 @@ public class ArchitectureElementImpl extends DocumentedNamedElementImpl implemen
 				return getEnd() != null;
 			case ArchitecturePackage.ARCHITECTURE_ELEMENT__DURATION:
 				return DURATION_EDEFAULT == null ? getDuration() != null : !DURATION_EDEFAULT.equals(getDuration());
+			case ArchitecturePackage.ARCHITECTURE_ELEMENT__ICON:
+				return ICON_EDEFAULT == null ? getIcon() != null : !ICON_EDEFAULT.equals(getIcon());
 		}
 		return super.eIsSet(featureID);
 	}

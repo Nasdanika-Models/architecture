@@ -4,13 +4,17 @@ package org.nasdanika.models.architecture.impl;
 
 import java.time.Duration;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.graph.model.impl.DocumentedNamedGraphImpl;
 
+import org.nasdanika.models.architecture.Actor;
 import org.nasdanika.models.architecture.ArchitectureDescription;
 import org.nasdanika.models.architecture.ArchitectureDescriptionElement;
 import org.nasdanika.models.architecture.ArchitectureElement;
@@ -31,6 +35,8 @@ import org.nasdanika.ncore.Temporal;
  *   <li>{@link org.nasdanika.models.architecture.impl.ArchitectureDescriptionImpl#getStart <em>Start</em>}</li>
  *   <li>{@link org.nasdanika.models.architecture.impl.ArchitectureDescriptionImpl#getEnd <em>End</em>}</li>
  *   <li>{@link org.nasdanika.models.architecture.impl.ArchitectureDescriptionImpl#getDuration <em>Duration</em>}</li>
+ *   <li>{@link org.nasdanika.models.architecture.impl.ArchitectureDescriptionImpl#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.nasdanika.models.architecture.impl.ArchitectureDescriptionImpl#getActors <em>Actors</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +51,16 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 	 * @ordered
 	 */
 	protected static final Duration DURATION_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIcon()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ICON_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,12 +167,45 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 	 * @generated
 	 */
 	@Override
+	public String getIcon() {
+		return (String)eDynamicGet(ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ICON, ArchitecturePackage.Literals.ARCHITECTURE_ELEMENT__ICON, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIcon(String newIcon) {
+		eDynamicSet(ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ICON, ArchitecturePackage.Literals.ARCHITECTURE_ELEMENT__ICON, newIcon);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Actor> getActors() {
+		return (EList<Actor>)eDynamicGet(ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ACTORS, ArchitecturePackage.Literals.ARCHITECTURE_DESCRIPTION__ACTORS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__START:
 				return basicSetStart(null, msgs);
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__END:
 				return basicSetEnd(null, msgs);
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ACTORS:
+				return ((InternalEList<?>)getActors()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -175,6 +224,10 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 				return getEnd();
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__DURATION:
 				return getDuration();
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ICON:
+				return getIcon();
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ACTORS:
+				return getActors();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -184,6 +237,7 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -195,6 +249,13 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 				return;
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__DURATION:
 				setDuration((Duration)newValue);
+				return;
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ICON:
+				setIcon((String)newValue);
+				return;
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ACTORS:
+				getActors().clear();
+				getActors().addAll((Collection<? extends Actor>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -217,6 +278,12 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__DURATION:
 				setDuration(DURATION_EDEFAULT);
 				return;
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ICON:
+				setIcon(ICON_EDEFAULT);
+				return;
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ACTORS:
+				getActors().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -235,6 +302,10 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 				return getEnd() != null;
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__DURATION:
 				return DURATION_EDEFAULT == null ? getDuration() != null : !DURATION_EDEFAULT.equals(getDuration());
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ICON:
+				return ICON_EDEFAULT == null ? getIcon() != null : !ICON_EDEFAULT.equals(getIcon());
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ACTORS:
+				return !getActors().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -256,6 +327,7 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 		}
 		if (baseClass == ArchitectureElement.class) {
 			switch (derivedFeatureID) {
+				case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ICON: return ArchitecturePackage.ARCHITECTURE_ELEMENT__ICON;
 				default: return -1;
 			}
 		}
@@ -279,6 +351,7 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 		}
 		if (baseClass == ArchitectureElement.class) {
 			switch (baseFeatureID) {
+				case ArchitecturePackage.ARCHITECTURE_ELEMENT__ICON: return ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ICON;
 				default: return -1;
 			}
 		}

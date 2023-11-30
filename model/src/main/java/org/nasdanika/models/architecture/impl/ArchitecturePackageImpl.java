@@ -2,14 +2,17 @@
  */
 package org.nasdanika.models.architecture.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.nasdanika.graph.model.ModelPackage;
 
+import org.nasdanika.models.architecture.Actor;
 import org.nasdanika.models.architecture.ArchitectureDescription;
 import org.nasdanika.models.architecture.ArchitectureDescriptionElement;
 import org.nasdanika.models.architecture.ArchitectureElement;
@@ -23,8 +26,10 @@ import org.nasdanika.models.architecture.Node;
 import org.nasdanika.models.architecture.Relationship;
 import org.nasdanika.models.architecture.RelationshipSource;
 import org.nasdanika.models.architecture.RelationshipTarget;
+import org.nasdanika.models.architecture.Role;
 import org.nasdanika.models.architecture.Tunnel;
 
+import org.nasdanika.models.architecture.Undergoer;
 import org.nasdanika.ncore.NcorePackage;
 
 /**
@@ -40,6 +45,27 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * @generated
 	 */
 	private EClass architectureElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass actorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass roleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass undergoerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,6 +224,76 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * @generated
 	 */
 	@Override
+	public EAttribute getArchitectureElement_Icon() {
+		return (EAttribute)architectureElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getActor() {
+		return actorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getActor_Roles() {
+		return (EReference)actorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRole() {
+		return roleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRole_Actors() {
+		return (EReference)roleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getUndergoer() {
+		return undergoerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUndergoer_Roles() {
+		return (EReference)undergoerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getArchitectureDescriptionElement() {
 		return architectureDescriptionElementEClass;
 	}
@@ -210,6 +306,16 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	@Override
 	public EClass getArchitectureDescription() {
 		return architectureDescriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getArchitectureDescription_Actors() {
+		return (EReference)architectureDescriptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -332,10 +438,21 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 
 		// Create classes and their features
 		architectureElementEClass = createEClass(ARCHITECTURE_ELEMENT);
+		createEAttribute(architectureElementEClass, ARCHITECTURE_ELEMENT__ICON);
+
+		actorEClass = createEClass(ACTOR);
+		createEReference(actorEClass, ACTOR__ROLES);
+
+		roleEClass = createEClass(ROLE);
+		createEReference(roleEClass, ROLE__ACTORS);
+
+		undergoerEClass = createEClass(UNDERGOER);
+		createEReference(undergoerEClass, UNDERGOER__ROLES);
 
 		architectureDescriptionElementEClass = createEClass(ARCHITECTURE_DESCRIPTION_ELEMENT);
 
 		architectureDescriptionEClass = createEClass(ARCHITECTURE_DESCRIPTION);
+		createEReference(architectureDescriptionEClass, ARCHITECTURE_DESCRIPTION__ACTORS);
 
 		domainEClass = createEClass(DOMAIN);
 
@@ -390,8 +507,13 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		// Add supertypes to classes
 		architectureElementEClass.getESuperTypes().add(theNcorePackage.getDocumentedNamedElement());
 		architectureElementEClass.getESuperTypes().add(theNcorePackage.getPeriod());
+		actorEClass.getESuperTypes().add(this.getArchitectureElement());
+		actorEClass.getESuperTypes().add(theNcorePackage.getStringIdentity());
+		roleEClass.getESuperTypes().add(this.getArchitectureElement());
+		roleEClass.getESuperTypes().add(theNcorePackage.getStringIdentity());
 		architectureDescriptionElementEClass.getESuperTypes().add(theModelPackage.getDocumentedNamedGraphElement());
 		architectureDescriptionElementEClass.getESuperTypes().add(this.getArchitectureElement());
+		architectureDescriptionElementEClass.getESuperTypes().add(this.getUndergoer());
 		EGenericType g1 = createEGenericType(theModelPackage.getDocumentedNamedGraph());
 		EGenericType g2 = createEGenericType(this.getArchitectureDescriptionElement());
 		g1.getETypeArguments().add(g2);
@@ -413,6 +535,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		g1.getETypeArguments().add(g2);
 		relationshipEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getArchitectureElement());
+		relationshipEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getUndergoer());
 		relationshipEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(theModelPackage.getDocumentedNamedConnectionSource());
 		g2 = createEGenericType(this.getRelationship());
@@ -437,10 +561,23 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(architectureElementEClass, ArchitectureElement.class, "ArchitectureElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getArchitectureElement_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, ArchitectureElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActor_Roles(), this.getRole(), this.getRole_Actors(), "roles", null, 0, -1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRole_Actors(), this.getActor(), this.getActor_Roles(), "actors", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(undergoerEClass, Undergoer.class, "Undergoer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUndergoer_Roles(), this.getRole(), null, "roles", null, 0, -1, Undergoer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUndergoer_Roles().getEKeys().add(theNcorePackage.getStringIdentity_Id());
 
 		initEClass(architectureDescriptionElementEClass, ArchitectureDescriptionElement.class, "ArchitectureDescriptionElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(architectureDescriptionEClass, ArchitectureDescription.class, "ArchitectureDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getArchitectureDescription_Actors(), this.getActor(), null, "actors", null, 0, -1, ArchitectureDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getArchitectureDescription_Actors().getEKeys().add(theNcorePackage.getStringIdentity_Id());
 
 		initEClass(domainEClass, Domain.class, "Domain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -489,6 +626,42 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 			   "documentation", "Base class for elements of architecture"
 		   });
 		addAnnotation
+		  (getArchitectureElement_Icon(),
+		   source,
+		   new String[] {
+			   "documentation", "Architecture element icon. Treated as URL if contains ``/`` or as a CSS class otherwise. E.g. ``fas fa-wrench`` would be treated as a CSS class. If this attribute is blank then the type icon is used. For example, a generic server icon defined at the Server type can be overridden by an icon defined at a server instance (e.g. Web Server)."
+		   });
+		addAnnotation
+		  (actorEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Actors play roles/have responsibilies on model elements implementing Undergoer "
+		   });
+		addAnnotation
+		  (getActor_Roles(),
+		   source,
+		   new String[] {
+			   "documentation", "Roles played by this actor"
+		   });
+		addAnnotation
+		  (roleEClass,
+		   source,
+		   new String[] {
+			   "documentation", "A role is played by an Actor performing activities on the containing Undergoer"
+		   });
+		addAnnotation
+		  (undergoerEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Something operated on by actors in roles. A container of roles referencing actors. For example, a Server is patched by the \"Unix Support\" role and Joe Doe plays this role."
+		   });
+		addAnnotation
+		  (getUndergoer_Roles(),
+		   source,
+		   new String[] {
+			   "documentation", "Actors in this role"
+		   });
+		addAnnotation
 		  (architectureDescriptionElementEClass,
 		   source,
 		   new String[] {
@@ -499,6 +672,12 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		   source,
 		   new String[] {
 			   "documentation", "Architecture description contains architecture elements and reference elements such as stakeholders. Architecture description elements are keyed by string identifiers which allows to implement architecture inheritance similar to inheritance in object-oriented languages such as Java or layering in Docker images - a new architecture may be derived from an existing architecture by applying a layer of deltas. This is also similar to a commit tree in Git."
+		   });
+		addAnnotation
+		  (getArchitectureDescription_Actors(),
+		   source,
+		   new String[] {
+			   "documentation", "Actors operating on the elements of this architecture description"
 		   });
 		addAnnotation
 		  (domainEClass,

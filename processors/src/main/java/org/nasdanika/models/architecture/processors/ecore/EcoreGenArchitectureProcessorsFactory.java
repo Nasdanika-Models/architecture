@@ -1,4 +1,4 @@
-package org.nasdanika.models.architecture.processors;
+package org.nasdanika.models.architecture.processors.ecore;
 
 import org.nasdanika.common.Context;
 import org.nasdanika.models.architecture.ArchitecturePackage;

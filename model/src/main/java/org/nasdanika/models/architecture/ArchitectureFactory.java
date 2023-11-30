@@ -31,6 +31,24 @@ public interface ArchitectureFactory extends EFactory {
 	ArchitectureElement createArchitectureElement();
 
 	/**
+	 * Returns a new object of class '<em>Actor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Actor</em>'.
+	 * @generated
+	 */
+	Actor createActor();
+
+	/**
+	 * Returns a new object of class '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Role</em>'.
+	 * @generated
+	 */
+	Role createRole();
+
+	/**
 	 * Returns a new object of class '<em>Description Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

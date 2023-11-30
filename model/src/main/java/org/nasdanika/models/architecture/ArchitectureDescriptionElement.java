@@ -18,5 +18,5 @@ import org.nasdanika.graph.model.DocumentedNamedGraphElement;
  * @model
  * @generated
  */
-public interface ArchitectureDescriptionElement extends DocumentedNamedGraphElement, ArchitectureElement {
+public interface ArchitectureDescriptionElement extends DocumentedNamedGraphElement, ArchitectureElement, Undergoer {
 } // ArchitectureDescriptionElement

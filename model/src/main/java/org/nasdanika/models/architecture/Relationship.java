@@ -18,5 +18,5 @@ import org.nasdanika.graph.model.DocumentedNamedConnection;
  * @model
  * @generated
  */
-public interface Relationship extends DocumentedNamedConnection<RelationshipTarget>, ArchitectureElement {
+public interface Relationship extends DocumentedNamedConnection<RelationshipTarget>, ArchitectureElement, Undergoer {
 } // Relationship

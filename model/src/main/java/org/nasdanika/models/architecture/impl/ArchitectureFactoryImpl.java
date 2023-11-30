@@ -57,6 +57,8 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ArchitecturePackage.ARCHITECTURE_ELEMENT: return createArchitectureElement();
+			case ArchitecturePackage.ACTOR: return createActor();
+			case ArchitecturePackage.ROLE: return createRole();
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT: return createArchitectureDescriptionElement();
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION: return createArchitectureDescription();
 			case ArchitecturePackage.DOMAIN: return createDomain();
@@ -82,6 +84,28 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
 	public ArchitectureElement createArchitectureElement() {
 		ArchitectureElementImpl architectureElement = new ArchitectureElementImpl();
 		return architectureElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Actor createActor() {
+		ActorImpl actor = new ActorImpl();
+		return actor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Role createRole() {
+		RoleImpl role = new RoleImpl();
+		return role;
 	}
 
 	/**

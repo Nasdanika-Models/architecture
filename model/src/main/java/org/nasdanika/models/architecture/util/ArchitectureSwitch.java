@@ -104,11 +104,50 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ArchitecturePackage.ACTOR: {
+				Actor actor = (Actor)theEObject;
+				T1 result = caseActor(actor);
+				if (result == null) result = caseArchitectureElement(actor);
+				if (result == null) result = caseStringIdentity(actor);
+				if (result == null) result = caseDocumentedNamedElement(actor);
+				if (result == null) result = casePeriod(actor);
+				if (result == null) result = caseNamedElement(actor);
+				if (result == null) result = caseDocumented(actor);
+				if (result == null) result = caseModelElement(actor);
+				if (result == null) result = caseMarked(actor);
+				if (result == null) result = caseAdaptable(actor);
+				if (result == null) result = caseIMarked(actor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArchitecturePackage.ROLE: {
+				Role role = (Role)theEObject;
+				T1 result = caseRole(role);
+				if (result == null) result = caseArchitectureElement(role);
+				if (result == null) result = caseStringIdentity(role);
+				if (result == null) result = caseDocumentedNamedElement(role);
+				if (result == null) result = casePeriod(role);
+				if (result == null) result = caseNamedElement(role);
+				if (result == null) result = caseDocumented(role);
+				if (result == null) result = caseModelElement(role);
+				if (result == null) result = caseMarked(role);
+				if (result == null) result = caseAdaptable(role);
+				if (result == null) result = caseIMarked(role);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArchitecturePackage.UNDERGOER: {
+				Undergoer undergoer = (Undergoer)theEObject;
+				T1 result = caseUndergoer(undergoer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT: {
 				ArchitectureDescriptionElement architectureDescriptionElement = (ArchitectureDescriptionElement)theEObject;
 				T1 result = caseArchitectureDescriptionElement(architectureDescriptionElement);
 				if (result == null) result = caseDocumentedNamedGraphElement(architectureDescriptionElement);
 				if (result == null) result = caseArchitectureElement(architectureDescriptionElement);
+				if (result == null) result = caseUndergoer(architectureDescriptionElement);
 				if (result == null) result = caseGraphElement(architectureDescriptionElement);
 				if (result == null) result = caseDocumentedNamedStringIdentity(architectureDescriptionElement);
 				if (result == null) result = casePeriod(architectureDescriptionElement);
@@ -147,6 +186,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseArchitectureDescription(domain);
 				if (result == null) result = caseDocumentedNamedGraphElement(domain);
 				if (result == null) result = caseArchitectureElement(domain);
+				if (result == null) result = caseUndergoer(domain);
 				if (result == null) result = caseDocumentedNamedGraph(domain);
 				if (result == null) result = caseGraphElement(domain);
 				if (result == null) result = caseDocumentedNamedStringIdentity(domain);
@@ -170,6 +210,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseDocumentedNamedConnectionTarget(relationshipTarget);
 				if (result == null) result = caseDocumentedNamedGraphElement(relationshipTarget);
 				if (result == null) result = caseArchitectureElement(relationshipTarget);
+				if (result == null) result = caseUndergoer(relationshipTarget);
 				if (result == null) result = caseConnectionTarget(relationshipTarget);
 				if (result == null) result = caseGraphElement(relationshipTarget);
 				if (result == null) result = caseDocumentedNamedStringIdentity(relationshipTarget);
@@ -195,6 +236,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseDocumentedNamedConnectionTarget(compositeRelationshipTarget);
 				if (result == null) result = caseDocumentedNamedGraphElement(compositeRelationshipTarget);
 				if (result == null) result = caseArchitectureElement(compositeRelationshipTarget);
+				if (result == null) result = caseUndergoer(compositeRelationshipTarget);
 				if (result == null) result = caseDocumentedNamedGraph(compositeRelationshipTarget);
 				if (result == null) result = caseConnectionTarget(compositeRelationshipTarget);
 				if (result == null) result = caseGraphElement(compositeRelationshipTarget);
@@ -217,6 +259,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				T1 result = caseRelationship(relationship);
 				if (result == null) result = caseDocumentedNamedConnection(relationship);
 				if (result == null) result = caseArchitectureElement(relationship);
+				if (result == null) result = caseUndergoer(relationship);
 				if (result == null) result = caseConnection(relationship);
 				if (result == null) result = caseDocumentedNamedStringIdentity(relationship);
 				if (result == null) result = casePeriod(relationship);
@@ -239,6 +282,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseDocumentedNamedGraphElement(relationshipSource);
 				if (result == null) result = caseConnectionSource(relationshipSource);
 				if (result == null) result = caseArchitectureElement(relationshipSource);
+				if (result == null) result = caseUndergoer(relationshipSource);
 				if (result == null) result = caseGraphElement(relationshipSource);
 				if (result == null) result = caseDocumentedNamedStringIdentity(relationshipSource);
 				if (result == null) result = casePeriod(relationshipSource);
@@ -263,6 +307,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseDocumentedNamedConnectionSource(compositeRelationshipSource);
 				if (result == null) result = caseDocumentedNamedGraphElement(compositeRelationshipSource);
 				if (result == null) result = caseArchitectureElement(compositeRelationshipSource);
+				if (result == null) result = caseUndergoer(compositeRelationshipSource);
 				if (result == null) result = caseDocumentedNamedGraph(compositeRelationshipSource);
 				if (result == null) result = caseConnectionSource(compositeRelationshipSource);
 				if (result == null) result = caseGraphElement(compositeRelationshipSource);
@@ -291,6 +336,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseDocumentedNamedGraphElement(node);
 				if (result == null) result = caseConnectionSource(node);
 				if (result == null) result = caseArchitectureElement(node);
+				if (result == null) result = caseUndergoer(node);
 				if (result == null) result = caseConnectionTarget(node);
 				if (result == null) result = caseGraphElement(node);
 				if (result == null) result = caseDocumentedNamedStringIdentity(node);
@@ -316,6 +362,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseRelationshipTarget(compositeNode);
 				if (result == null) result = caseArchitectureDescriptionElement(compositeNode);
 				if (result == null) result = caseArchitectureElement(compositeNode);
+				if (result == null) result = caseUndergoer(compositeNode);
 				if (result == null) result = caseDocumentedNamedGraph(compositeNode);
 				if (result == null) result = caseDocumentedNamedConnectionSource(compositeNode);
 				if (result == null) result = caseDocumentedNamedConnectionTarget(compositeNode);
@@ -345,6 +392,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseModel_Tunnel(tunnel);
 				if (result == null) result = caseDocumentedNamedConnection(tunnel);
 				if (result == null) result = caseArchitectureElement(tunnel);
+				if (result == null) result = caseUndergoer(tunnel);
 				if (result == null) result = caseConnection(tunnel);
 				if (result == null) result = caseDocumentedNamedStringIdentity(tunnel);
 				if (result == null) result = casePeriod(tunnel);
@@ -375,6 +423,51 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseArchitectureElement(ArchitectureElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Actor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Actor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseActor(Actor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseRole(Role object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Undergoer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Undergoer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseUndergoer(Undergoer object) {
 		return null;
 	}
 

@@ -5,42 +5,52 @@ package org.nasdanika.models.architecture.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.nasdanika.graph.model.DocumentedNamedGraph;
-import org.nasdanika.graph.model.Graph;
-import org.nasdanika.graph.model.ModelPackage;
+
 import org.nasdanika.models.architecture.Actor;
-import org.nasdanika.models.architecture.ArchitectureDescription;
-import org.nasdanika.models.architecture.ArchitectureDescriptionElement;
 import org.nasdanika.models.architecture.ArchitecturePackage;
-import org.nasdanika.models.architecture.Domain;
+import org.nasdanika.models.architecture.Role;
+
+import org.nasdanika.ncore.NcorePackage;
+import org.nasdanika.ncore.StringIdentity;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Domain</b></em>'.
+ * An implementation of the model object '<em><b>Role</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.models.architecture.impl.DomainImpl#getElements <em>Elements</em>}</li>
- *   <li>{@link org.nasdanika.models.architecture.impl.DomainImpl#getActors <em>Actors</em>}</li>
+ *   <li>{@link org.nasdanika.models.architecture.impl.RoleImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.nasdanika.models.architecture.impl.RoleImpl#getActors <em>Actors</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DomainImpl extends ArchitectureDescriptionElementImpl implements Domain {
+public class RoleImpl extends ArchitectureElementImpl implements Role {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DomainImpl() {
+	protected RoleImpl() {
 		super();
 	}
 
@@ -51,7 +61,7 @@ public class DomainImpl extends ArchitectureDescriptionElementImpl implements Do
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ArchitecturePackage.Literals.DOMAIN;
+		return ArchitecturePackage.Literals.ROLE;
 	}
 
 	/**
@@ -59,10 +69,19 @@ public class DomainImpl extends ArchitectureDescriptionElementImpl implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
-	public EList<ArchitectureDescriptionElement> getElements() {
-		return (EList<ArchitectureDescriptionElement>)eDynamicGet(ArchitecturePackage.DOMAIN__ELEMENTS, ModelPackage.Literals.GRAPH__ELEMENTS, true, true);
+	public String getId() {
+		return (String)eDynamicGet(ArchitecturePackage.ROLE__ID, NcorePackage.Literals.STRING_IDENTITY__ID, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(String newId) {
+		eDynamicSet(ArchitecturePackage.ROLE__ID, NcorePackage.Literals.STRING_IDENTITY__ID, newId);
 	}
 
 	/**
@@ -73,7 +92,22 @@ public class DomainImpl extends ArchitectureDescriptionElementImpl implements Do
 	@SuppressWarnings("unchecked")
 	@Override
 	public EList<Actor> getActors() {
-		return (EList<Actor>)eDynamicGet(ArchitecturePackage.DOMAIN__ACTORS, ArchitecturePackage.Literals.ARCHITECTURE_DESCRIPTION__ACTORS, true, true);
+		return (EList<Actor>)eDynamicGet(ArchitecturePackage.ROLE__ACTORS, ArchitecturePackage.Literals.ROLE__ACTORS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ArchitecturePackage.ROLE__ACTORS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getActors()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -84,9 +118,7 @@ public class DomainImpl extends ArchitectureDescriptionElementImpl implements Do
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ArchitecturePackage.DOMAIN__ELEMENTS:
-				return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
-			case ArchitecturePackage.DOMAIN__ACTORS:
+			case ArchitecturePackage.ROLE__ACTORS:
 				return ((InternalEList<?>)getActors()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -100,9 +132,9 @@ public class DomainImpl extends ArchitectureDescriptionElementImpl implements Do
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ArchitecturePackage.DOMAIN__ELEMENTS:
-				return getElements();
-			case ArchitecturePackage.DOMAIN__ACTORS:
+			case ArchitecturePackage.ROLE__ID:
+				return getId();
+			case ArchitecturePackage.ROLE__ACTORS:
 				return getActors();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -117,11 +149,10 @@ public class DomainImpl extends ArchitectureDescriptionElementImpl implements Do
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ArchitecturePackage.DOMAIN__ELEMENTS:
-				getElements().clear();
-				getElements().addAll((Collection<? extends ArchitectureDescriptionElement>)newValue);
+			case ArchitecturePackage.ROLE__ID:
+				setId((String)newValue);
 				return;
-			case ArchitecturePackage.DOMAIN__ACTORS:
+			case ArchitecturePackage.ROLE__ACTORS:
 				getActors().clear();
 				getActors().addAll((Collection<? extends Actor>)newValue);
 				return;
@@ -137,10 +168,10 @@ public class DomainImpl extends ArchitectureDescriptionElementImpl implements Do
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ArchitecturePackage.DOMAIN__ELEMENTS:
-				getElements().clear();
+			case ArchitecturePackage.ROLE__ID:
+				setId(ID_EDEFAULT);
 				return;
-			case ArchitecturePackage.DOMAIN__ACTORS:
+			case ArchitecturePackage.ROLE__ACTORS:
 				getActors().clear();
 				return;
 		}
@@ -155,9 +186,9 @@ public class DomainImpl extends ArchitectureDescriptionElementImpl implements Do
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ArchitecturePackage.DOMAIN__ELEMENTS:
-				return !getElements().isEmpty();
-			case ArchitecturePackage.DOMAIN__ACTORS:
+			case ArchitecturePackage.ROLE__ID:
+				return ID_EDEFAULT == null ? getId() != null : !ID_EDEFAULT.equals(getId());
+			case ArchitecturePackage.ROLE__ACTORS:
 				return !getActors().isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -170,20 +201,9 @@ public class DomainImpl extends ArchitectureDescriptionElementImpl implements Do
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Graph.class) {
+		if (baseClass == StringIdentity.class) {
 			switch (derivedFeatureID) {
-				case ArchitecturePackage.DOMAIN__ELEMENTS: return ModelPackage.GRAPH__ELEMENTS;
-				default: return -1;
-			}
-		}
-		if (baseClass == DocumentedNamedGraph.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == ArchitectureDescription.class) {
-			switch (derivedFeatureID) {
-				case ArchitecturePackage.DOMAIN__ACTORS: return ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ACTORS;
+				case ArchitecturePackage.ROLE__ID: return NcorePackage.STRING_IDENTITY__ID;
 				default: return -1;
 			}
 		}
@@ -197,24 +217,13 @@ public class DomainImpl extends ArchitectureDescriptionElementImpl implements Do
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Graph.class) {
+		if (baseClass == StringIdentity.class) {
 			switch (baseFeatureID) {
-				case ModelPackage.GRAPH__ELEMENTS: return ArchitecturePackage.DOMAIN__ELEMENTS;
-				default: return -1;
-			}
-		}
-		if (baseClass == DocumentedNamedGraph.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == ArchitectureDescription.class) {
-			switch (baseFeatureID) {
-				case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ACTORS: return ArchitecturePackage.DOMAIN__ACTORS;
+				case NcorePackage.STRING_IDENTITY__ID: return ArchitecturePackage.ROLE__ID;
 				default: return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
-} //DomainImpl
+} //RoleImpl
