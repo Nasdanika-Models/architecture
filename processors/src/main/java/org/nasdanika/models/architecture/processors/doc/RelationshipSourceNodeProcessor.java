@@ -8,7 +8,7 @@ import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.models.architecture.RelationshipSource;
 import org.nasdanika.models.graph.processors.doc.DocumentedNamedConnectionSourceNodeProcessor;
 
-public class RelationshipSourceNodeProcessor<T extends RelationshipSource> extends DocumentedNamedConnectionSourceNodeProcessor<T> {
+public class RelationshipSourceNodeProcessor<T extends RelationshipSource> extends DocumentedNamedConnectionSourceNodeProcessor<T> implements RelationshipSourceNodeProcessorMixIn {
 	
 	public RelationshipSourceNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 

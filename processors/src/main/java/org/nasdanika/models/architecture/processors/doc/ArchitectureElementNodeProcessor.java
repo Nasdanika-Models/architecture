@@ -14,7 +14,7 @@ import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.html.model.app.graph.emf.EObjectNodeProcessor;
 import org.nasdanika.models.architecture.ArchitectureElement;
 
-public class ArchitectureElementNodeProcessor<T extends ArchitectureElement> extends EObjectNodeProcessor<T> {
+public class ArchitectureElementNodeProcessor<T extends ArchitectureElement> extends EObjectNodeProcessor<T> implements ArchitectureElementNodeProcessorMixIn {
 	
 	public ArchitectureElementNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 

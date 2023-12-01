@@ -8,7 +8,7 @@ import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.models.architecture.ArchitectureDescriptionElement;
 import org.nasdanika.models.graph.processors.doc.DocumentedNamedGraphElementNodeProcessor;
 
-public class ArchitectureDescriptionElementNodeProcessor<T extends ArchitectureDescriptionElement> extends DocumentedNamedGraphElementNodeProcessor<T> {
+public class ArchitectureDescriptionElementNodeProcessor<T extends ArchitectureDescriptionElement> extends DocumentedNamedGraphElementNodeProcessor<T> implements ArchitectureDescriptionElementNodeProcessorMixIn {
 	
 	public ArchitectureDescriptionElementNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 

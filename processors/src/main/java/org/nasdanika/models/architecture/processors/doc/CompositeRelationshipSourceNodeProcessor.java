@@ -7,7 +7,7 @@ import org.nasdanika.html.model.app.Action;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.models.architecture.CompositeRelationshipSource;
 
-public class CompositeRelationshipSourceNodeProcessor<T extends CompositeRelationshipSource> extends DomainNodeProcessor<T> {
+public class CompositeRelationshipSourceNodeProcessor<T extends CompositeRelationshipSource> extends DomainNodeProcessor<T> implements CompositeRelationshipSourceNodeProcessorMixIn {
 	
 	public CompositeRelationshipSourceNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 

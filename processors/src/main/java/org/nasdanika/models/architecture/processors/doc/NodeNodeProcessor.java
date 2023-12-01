@@ -7,7 +7,7 @@ import org.nasdanika.html.model.app.Action;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.models.architecture.Node;
 
-public class NodeNodeProcessor<T extends Node> extends RelationshipSourceNodeProcessor<T> {
+public class NodeNodeProcessor<T extends Node> extends RelationshipSourceNodeProcessor<T> implements NodeNodeProcessorMixIn {
 	
 	public NodeNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 

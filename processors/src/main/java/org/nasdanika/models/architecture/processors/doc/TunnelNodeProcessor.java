@@ -8,7 +8,7 @@ import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.models.architecture.Tunnel;
 import org.nasdanika.models.graph.processors.doc.DocumentedNamedTunnelNodeProcessor;
 
-public class TunnelNodeProcessor<T extends Tunnel> extends DocumentedNamedTunnelNodeProcessor<T> {
+public class TunnelNodeProcessor<T extends Tunnel> extends DocumentedNamedTunnelNodeProcessor<T> implements TunnelNodeProcessorMixIn {
 	
 	public TunnelNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
