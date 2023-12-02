@@ -2,6 +2,8 @@
  */
 package org.nasdanika.models.architecture.processors.doc;
 
-public interface NodeNodeProcessorMixIn extends RelationshipSourceNodeProcessorMixIn, RelationshipTargetNodeProcessorMixIn {
+import org.nasdanika.models.architecture.Node;
+
+public interface NodeNodeProcessorMixIn<T extends Node> extends RelationshipSourceNodeProcessorMixIn<T>, RelationshipTargetNodeProcessorMixIn<T> {
 	
 } 

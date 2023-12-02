@@ -14,7 +14,7 @@ import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.html.model.app.graph.emf.EObjectNodeProcessor;
 import org.nasdanika.models.architecture.ArchitectureElement;
 
-public class ArchitectureElementNodeProcessor<T extends ArchitectureElement> extends EObjectNodeProcessor<T> implements ArchitectureElementNodeProcessorMixIn {
+public class ArchitectureElementNodeProcessor<T extends ArchitectureElement> extends EObjectNodeProcessor<T> implements ArchitectureElementNodeProcessorMixIn<T> {
 	
 	public ArchitectureElementNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
@@ -34,6 +34,12 @@ public class ArchitectureElementNodeProcessor<T extends ArchitectureElement> ext
 		Map<EReferenceConnection, Collection<Label>> outgoingLabels, 
 		ProgressMonitor progressMonitor) {
 	}	
+	
+	@Override
+	public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {
+		super.configureLabel(source, label, progressMonitor);
+		ArchitectureElementNodeProcessorMixIn.super.configureLabel(source, label, progressMonitor);
+	}
 	
 	// Period
 

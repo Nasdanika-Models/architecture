@@ -105,6 +105,11 @@ public class TestArchitecture {
 					protected EClassifier getType(String type, EObject context) {
 						return self.getType(type, context instanceof Marked ? (Marked) context : null);
 					}
+
+					@Override
+					protected URI getBaseURI(ModelElement source) {
+						return self.getBaseURI(source);
+					}
 					
 				};		
 			}
@@ -178,6 +183,11 @@ public class TestArchitecture {
 					@Override
 					protected EClassifier getType(String type, EObject context) {
 						return self.getType(type, context instanceof Marked ? (Marked) context : null);
+					}
+
+					@Override
+					protected URI getBaseURI(ModelElement source) {
+						return self.getBaseURI(source);
 					}
 					
 				};		
@@ -311,7 +321,7 @@ public class TestArchitecture {
 		String pageTemplateResource = "page-template.yml";
 		URI pageTemplateURI = URI.createFileURI(new File(pageTemplateResource).getAbsolutePath());//.appendFragment("/");
 		
-		String siteMapDomain = "https://flow.models.nasdanika.org/demo";		
+		String siteMapDomain = "https://architecture.models.nasdanika.org/demo/aws";		
 		ActionSiteGenerator actionSiteGenerator = new ActionSiteGenerator() {
 			
 			@Override

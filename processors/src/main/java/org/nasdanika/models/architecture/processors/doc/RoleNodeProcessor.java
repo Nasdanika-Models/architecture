@@ -7,7 +7,7 @@ import org.nasdanika.html.model.app.Action;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.models.architecture.Role;
 
-public class RoleNodeProcessor<T extends Role> extends ArchitectureElementNodeProcessor<T> implements RoleNodeProcessorMixIn {
+public class RoleNodeProcessor<T extends Role> extends ArchitectureElementNodeProcessor<T> implements RoleNodeProcessorMixIn<T> {
 	
 	public RoleNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 

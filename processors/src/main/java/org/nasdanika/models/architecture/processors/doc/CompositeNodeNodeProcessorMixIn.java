@@ -1,5 +1,7 @@
 package org.nasdanika.models.architecture.processors.doc;
 
-public interface CompositeNodeNodeProcessorMixIn extends DomainNodeProcessorMixIn, NodeNodeProcessorMixIn {
+import org.nasdanika.models.architecture.CompositeNode;
+
+public interface CompositeNodeNodeProcessorMixIn<T extends CompositeNode> extends DomainNodeProcessorMixIn<T>, NodeNodeProcessorMixIn<T> {
 	
 } 

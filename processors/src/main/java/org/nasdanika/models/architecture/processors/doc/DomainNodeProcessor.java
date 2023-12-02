@@ -7,7 +7,7 @@ import org.nasdanika.html.model.app.Action;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.models.architecture.Domain;
 
-public class DomainNodeProcessor<T extends Domain> extends ArchitectureDescriptionElementNodeProcessor<T> implements DomainNodeProcessorMixIn {
+public class DomainNodeProcessor<T extends Domain> extends ArchitectureDescriptionElementNodeProcessor<T> implements DomainNodeProcessorMixIn<T> {
 	
 	public DomainNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 

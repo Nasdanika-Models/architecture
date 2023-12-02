@@ -7,7 +7,7 @@ import org.nasdanika.html.model.app.Action;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.models.architecture.CompositeNode;
 
-public class CompositeNodeNodeProcessor<T extends CompositeNode> extends DomainNodeProcessor<T> implements CompositeNodeNodeProcessorMixIn {
+public class CompositeNodeNodeProcessor<T extends CompositeNode> extends DomainNodeProcessor<T> implements CompositeNodeNodeProcessorMixIn<T> {
 	
 	public CompositeNodeNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 

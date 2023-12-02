@@ -2,6 +2,8 @@
  */
 package org.nasdanika.models.architecture.processors.doc;
 
-public interface DomainNodeProcessorMixIn extends ArchitectureDescriptionElementNodeProcessorMixIn, ArchitectureDescriptionNodeProcessorMixIn {
+import org.nasdanika.models.architecture.Domain;
+
+public interface DomainNodeProcessorMixIn<T extends Domain> extends ArchitectureDescriptionElementNodeProcessorMixIn<T>, ArchitectureDescriptionNodeProcessorMixIn<T> {
 	
 } 

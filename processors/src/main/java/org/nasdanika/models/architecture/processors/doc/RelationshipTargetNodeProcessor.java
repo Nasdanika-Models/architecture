@@ -7,7 +7,7 @@ import org.nasdanika.html.model.app.Action;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.models.architecture.RelationshipTarget;
 
-public class RelationshipTargetNodeProcessor<T extends RelationshipTarget> extends ArchitectureDescriptionElementNodeProcessor<T> implements RelationshipTargetNodeProcessorMixIn {
+public class RelationshipTargetNodeProcessor<T extends RelationshipTarget> extends ArchitectureDescriptionElementNodeProcessor<T> implements RelationshipTargetNodeProcessorMixIn<T> {
 	
 	public RelationshipTargetNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
