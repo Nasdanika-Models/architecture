@@ -30,6 +30,7 @@ import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.common.Transformer;
 import org.nasdanika.diagramgenerator.plantuml.PlantUMLDiagramGenerator;
+import org.nasdanika.drawio.model.Document;
 import org.nasdanika.drawio.model.ModelElement;
 import org.nasdanika.drawio.model.Page;
 import org.nasdanika.graph.Connection;
@@ -47,6 +48,7 @@ import org.nasdanika.html.model.app.Link;
 import org.nasdanika.html.model.app.gen.ActionSiteGenerator;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.html.model.app.graph.emf.EObjectReflectiveProcessorFactoryProvider;
+import org.nasdanika.models.architecture.ArchitectureDescription;
 import org.nasdanika.models.architecture.ArchitecturePackage;
 import org.nasdanika.models.architecture.processors.doc.ArchitectureNodeProcessorFactory;
 import org.nasdanika.models.architecture.util.ArchitectureDrawioFactory;
@@ -192,6 +194,37 @@ public class TestArchitecture {
 					
 				};		
 			}
+			
+			@Override
+			protected ArchitectureDescription configureDocumentElement(
+					Document document,
+					ArchitectureDescription documentElement,
+					BiConsumer<EObject, BiConsumer<EObject, ProgressMonitor>> elementProvider,
+					Consumer<BiConsumer<Map<EObject, EObject>, ProgressMonitor>> registry,
+					ProgressMonitor progressMonitor) {
+				
+				documentElement.setName("My AWS Architecture");
+				
+//				```
+//				${representations/drawio/info}
+//				```				
+				
+				EObject doc = createMarkdownDoc(
+						"""
+						Hello!
+						
+						```drawio
+						${representations/drawio/diagram}
+						```
+						
+						""",
+					diagramURI, 
+					progressMonitor);
+				
+				documentElement.getDocumentation().add(doc);			
+				return super.configureDocumentElement(document, documentElement, elementProvider, registry, progressMonitor);
+			}
+			
 		};
 		
 		Transformer<EObject,EObject> graphFactory = new Transformer<>(architectureDrawioFactory);
