@@ -4,7 +4,7 @@
     creationIcons="false" editorDirectory="" modelPluginID="org.nasdanika.models.architecture"
     modelName="Architecture" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" featureDelegation="Dynamic" complianceLevel="17.0"
-    suppressGenModelAnnotations="false" copyrightFields="false" usedGenPackages="../../org.nasdanika.graph.model/model/graph.genmodel#//model ../../org.nasdanika.ncore/model/ncore.genmodel#//ncore"
+    suppressGenModelAnnotations="false" copyrightFields="false" usedGenPackages="../../org.nasdanika.graph.model/model/graph.genmodel#//model ../../org.nasdanika.ncore/model/ncore.genmodel#//ncore ../../org.nasdanika.drawio.model/model/drawio.genmodel#//model"
     operationReflection="true" importOrganizing="true">
   <foreignModel>architecture.ecore</foreignModel>
   <genPackages prefix="Architecture" basePackage="org.nasdanika.models" disposableProviderFactory="true"

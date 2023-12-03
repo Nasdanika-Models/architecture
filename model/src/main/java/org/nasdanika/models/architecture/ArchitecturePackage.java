@@ -618,6 +618,15 @@ public interface ArchitecturePackage extends EPackage {
 	int ARCHITECTURE_DESCRIPTION_ELEMENT__ID = ModelPackage.DOCUMENTED_NAMED_GRAPH_ELEMENT__ID;
 
 	/**
+	 * The feature id for the '<em><b>Semantic Mappings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHITECTURE_DESCRIPTION_ELEMENT__SEMANTIC_MAPPINGS = ModelPackage.DOCUMENTED_NAMED_GRAPH_ELEMENT__SEMANTIC_MAPPINGS;
+
+	/**
 	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -962,6 +971,15 @@ public interface ArchitecturePackage extends EPackage {
 	int DOMAIN__ID = ARCHITECTURE_DESCRIPTION_ELEMENT__ID;
 
 	/**
+	 * The feature id for the '<em><b>Semantic Mappings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN__SEMANTIC_MAPPINGS = ARCHITECTURE_DESCRIPTION_ELEMENT__SEMANTIC_MAPPINGS;
+
+	/**
 	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1152,6 +1170,15 @@ public interface ArchitecturePackage extends EPackage {
 	int RELATIONSHIP_TARGET__ID = ARCHITECTURE_DESCRIPTION_ELEMENT__ID;
 
 	/**
+	 * The feature id for the '<em><b>Semantic Mappings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIP_TARGET__SEMANTIC_MAPPINGS = ARCHITECTURE_DESCRIPTION_ELEMENT__SEMANTIC_MAPPINGS;
+
+	/**
 	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1331,6 +1358,15 @@ public interface ArchitecturePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPOSITE_RELATIONSHIP_TARGET__ID = DOMAIN__ID;
+
+	/**
+	 * The feature id for the '<em><b>Semantic Mappings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_RELATIONSHIP_TARGET__SEMANTIC_MAPPINGS = DOMAIN__SEMANTIC_MAPPINGS;
 
 	/**
 	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
@@ -1722,6 +1758,15 @@ public interface ArchitecturePackage extends EPackage {
 	int RELATIONSHIP_SOURCE__ID = ModelPackage.DOCUMENTED_NAMED_CONNECTION_SOURCE__ID;
 
 	/**
+	 * The feature id for the '<em><b>Semantic Mappings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIP_SOURCE__SEMANTIC_MAPPINGS = ModelPackage.DOCUMENTED_NAMED_CONNECTION_SOURCE__SEMANTIC_MAPPINGS;
+
+	/**
 	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1901,6 +1946,15 @@ public interface ArchitecturePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPOSITE_RELATIONSHIP_SOURCE__ID = DOMAIN__ID;
+
+	/**
+	 * The feature id for the '<em><b>Semantic Mappings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_RELATIONSHIP_SOURCE__SEMANTIC_MAPPINGS = DOMAIN__SEMANTIC_MAPPINGS;
 
 	/**
 	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
@@ -2102,6 +2156,15 @@ public interface ArchitecturePackage extends EPackage {
 	int NODE__ID = RELATIONSHIP_SOURCE__ID;
 
 	/**
+	 * The feature id for the '<em><b>Semantic Mappings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__SEMANTIC_MAPPINGS = RELATIONSHIP_SOURCE__SEMANTIC_MAPPINGS;
+
+	/**
 	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2290,6 +2353,15 @@ public interface ArchitecturePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPOSITE_NODE__ID = DOMAIN__ID;
+
+	/**
+	 * The feature id for the '<em><b>Semantic Mappings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_NODE__SEMANTIC_MAPPINGS = DOMAIN__SEMANTIC_MAPPINGS;
 
 	/**
 	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.

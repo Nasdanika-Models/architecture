@@ -193,6 +193,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		// Initialize simple dependencies
 		ModelPackage.eINSTANCE.eClass();
 		NcorePackage.eINSTANCE.eClass();
+		org.nasdanika.drawio.model.ModelPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theArchitecturePackage.createPackageContents();

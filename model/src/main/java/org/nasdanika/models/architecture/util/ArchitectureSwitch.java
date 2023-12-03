@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import org.nasdanika.common.Adaptable;
 
+import org.nasdanika.drawio.model.SemanticElement;
 import org.nasdanika.graph.model.Connection;
 import org.nasdanika.graph.model.ConnectionSource;
 import org.nasdanika.graph.model.ConnectionTarget;
@@ -152,6 +153,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseDocumentedNamedStringIdentity(architectureDescriptionElement);
 				if (result == null) result = casePeriod(architectureDescriptionElement);
 				if (result == null) result = caseStringIdentity(architectureDescriptionElement);
+				if (result == null) result = caseSemanticElement(architectureDescriptionElement);
 				if (result == null) result = caseDocumentedNamedElement(architectureDescriptionElement);
 				if (result == null) result = caseNamedElement(architectureDescriptionElement);
 				if (result == null) result = caseDocumented(architectureDescriptionElement);
@@ -193,6 +195,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = casePeriod(domain);
 				if (result == null) result = caseGraph(domain);
 				if (result == null) result = caseStringIdentity(domain);
+				if (result == null) result = caseSemanticElement(domain);
 				if (result == null) result = caseDocumentedNamedElement(domain);
 				if (result == null) result = caseNamedElement(domain);
 				if (result == null) result = caseDocumented(domain);
@@ -216,6 +219,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseDocumentedNamedStringIdentity(relationshipTarget);
 				if (result == null) result = casePeriod(relationshipTarget);
 				if (result == null) result = caseStringIdentity(relationshipTarget);
+				if (result == null) result = caseSemanticElement(relationshipTarget);
 				if (result == null) result = caseDocumentedNamedElement(relationshipTarget);
 				if (result == null) result = caseNamedElement(relationshipTarget);
 				if (result == null) result = caseDocumented(relationshipTarget);
@@ -244,6 +248,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = casePeriod(compositeRelationshipTarget);
 				if (result == null) result = caseGraph(compositeRelationshipTarget);
 				if (result == null) result = caseStringIdentity(compositeRelationshipTarget);
+				if (result == null) result = caseSemanticElement(compositeRelationshipTarget);
 				if (result == null) result = caseDocumentedNamedElement(compositeRelationshipTarget);
 				if (result == null) result = caseNamedElement(compositeRelationshipTarget);
 				if (result == null) result = caseDocumented(compositeRelationshipTarget);
@@ -287,6 +292,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseDocumentedNamedStringIdentity(relationshipSource);
 				if (result == null) result = casePeriod(relationshipSource);
 				if (result == null) result = caseStringIdentity(relationshipSource);
+				if (result == null) result = caseSemanticElement(relationshipSource);
 				if (result == null) result = caseDocumentedNamedElement(relationshipSource);
 				if (result == null) result = caseNamedElement(relationshipSource);
 				if (result == null) result = caseDocumented(relationshipSource);
@@ -315,6 +321,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = casePeriod(compositeRelationshipSource);
 				if (result == null) result = caseGraph(compositeRelationshipSource);
 				if (result == null) result = caseStringIdentity(compositeRelationshipSource);
+				if (result == null) result = caseSemanticElement(compositeRelationshipSource);
 				if (result == null) result = caseDocumentedNamedElement(compositeRelationshipSource);
 				if (result == null) result = caseNamedElement(compositeRelationshipSource);
 				if (result == null) result = caseDocumented(compositeRelationshipSource);
@@ -342,6 +349,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseDocumentedNamedStringIdentity(node);
 				if (result == null) result = casePeriod(node);
 				if (result == null) result = caseStringIdentity(node);
+				if (result == null) result = caseSemanticElement(node);
 				if (result == null) result = caseDocumentedNamedElement(node);
 				if (result == null) result = caseNamedElement(node);
 				if (result == null) result = caseDocumented(node);
@@ -374,6 +382,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseConnectionTarget(compositeNode);
 				if (result == null) result = caseGraphElement(compositeNode);
 				if (result == null) result = caseStringIdentity(compositeNode);
+				if (result == null) result = caseSemanticElement(compositeNode);
 				if (result == null) result = caseDocumentedNamedElement(compositeNode);
 				if (result == null) result = caseNamedElement(compositeNode);
 				if (result == null) result = caseDocumented(compositeNode);
@@ -768,6 +777,21 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseStringIdentity(StringIdentity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Semantic Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Semantic Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseSemanticElement(SemanticElement object) {
 		return null;
 	}
 

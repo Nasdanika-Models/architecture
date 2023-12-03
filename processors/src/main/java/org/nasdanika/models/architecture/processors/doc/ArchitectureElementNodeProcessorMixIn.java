@@ -8,6 +8,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.URI;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.common.Util;
+import org.nasdanika.drawio.model.util.AbstractDrawioFactory;
 import org.nasdanika.html.model.app.Action;
 import org.nasdanika.html.model.app.Label;
 import org.nasdanika.models.architecture.ArchitectureElement;
@@ -38,7 +39,11 @@ public interface ArchitectureElementNodeProcessorMixIn<T extends ArchitectureEle
 	}
 	
 	default Map<String,String> getRepresentations() {
-		// TODO - default behavior is to look for the page annotation and return a single-page document if found
+		T target = getTarget();
+		String drawioRepresentation = target.getRepresentations().get(AbstractDrawioFactory.DRAWIO_REPRESENTATION);
+		if (!Util.isBlank(drawioRepresentation)) {
+			return Collections.singletonMap(AbstractDrawioFactory.DRAWIO_REPRESENTATION, drawioRepresentation);
+		}
 		return Collections.emptyMap();
 	}
 

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.nasdanika.common.Adaptable;
 
+import org.nasdanika.drawio.model.SemanticElement;
 import org.nasdanika.graph.model.Connection;
 import org.nasdanika.graph.model.ConnectionSource;
 import org.nasdanika.graph.model.ConnectionTarget;
@@ -186,6 +187,10 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseStringIdentity(StringIdentity object) {
 				return createStringIdentityAdapter();
+			}
+			@Override
+			public Adapter caseSemanticElement(SemanticElement object) {
+				return createSemanticElementAdapter();
 			}
 			@Override
 			public Adapter caseGraphElement(GraphElement object) {
@@ -592,6 +597,20 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStringIdentityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.drawio.model.SemanticElement <em>Semantic Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.drawio.model.SemanticElement
+	 * @generated
+	 */
+	public Adapter createSemanticElementAdapter() {
 		return null;
 	}
 
