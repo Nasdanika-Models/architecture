@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="EN">
+  <head>
+    <title>My AWS Architecture</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css">
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/dark-head.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/jstree.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/components/table.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/components/table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9BRJVLK8CC');
+</script>    
+
+<script src="search-documents.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
+
+<script>
+// Script for full-text search of JsTree
+
+window.nsdJsTreeSearchCallback = function(str, node) { 
+    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
+    if (sf.search(node.text).isMatch) {
+		return true;
+	} 
+    let searchResult = this.search(str); 
+    for (const sr in searchResult) {
+        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
+            return true;
+        } 
+    } 
+    return false; 
+}.bind(lunr(function () {
+			  this.ref('id');
+			  this.field('title');
+			  this.field('content');
+
+			  for (const key in searchDocuments) {
+				  let doc = searchDocuments[key];
+				this.add({
+					id: doc['action-uuid'],
+					title: doc.title,
+					path: doc.path,
+					content: doc.content
+				});  
+			  }
+			}));
+</script>
+</head>
+  <body>
+    <div class="container-fluid nsd-app-container">
+      <div class="row">
+        <div class="col nsd-app-header">
+          <a href="https://architecture.models.nasdanika.org" data-nsd-label-uuid="fa0ffd0d-58b2-427e-aa6c-2f6a042f7e87" class="nsd-app-header-title">
+            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Architecture Model</a>
+          <ul class="nav nsd-app-header-navs">
+            <li class="nav-item">
+              <a href="search.html" data-nsd-label-uuid="3b9e8789-1bdb-47ce-be13-89748465c3fe" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+            </li>
+            <li class="nav-item">
+              <a href="glossary.html" data-nsd-label-uuid="105bca37-fdc6-469b-bf0f-5a228e1ffd63" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-navbar">
+          <ul class="navbar navbar-light navbar-expand-lg"><span data-nsd-label-uuid="25136cc5-b60f-4eaa-80b6-974312c80617" class="navbar-brand">My AWS Architecture</span>
+            <button type="button" data-toggle="collapse" data-target="#nsd_8f" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="nsd_8f" class="collapse navbar-collapse"></div>
+          </ul>
+        </div>
+      </div>
+      <div class="row nsd-app-content-row">
+        <div class="col nsd-app-navigation-panel">
+          <input type="text" id="99d6f218-5232-45c0-acaa-a971934c95c3-navigation-panel_searchInput" title="Full-text search. You can use wildcards, e.g. 'foo*' or 'f*o'; title or content fields, e.g. 'title:foo* bar'; boosts, e.g. 'foo^10 bar'; fuzzy matches, e.g. 'foo~1'; and term presence, e.g. '+foo bar -baz'" class="form-control mt-1">
+          <div id="99d6f218-5232-45c0-acaa-a971934c95c3-navigation-panel"></div>
+          <script>$(document).ready( function() {
+$('#99d6f218-5232-45c0-acaa-a971934c95c3-navigation-panel').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; };  tree.search.search_callback = function(searchStr, node) { if (typeof window.nsdJsTreeSearchCallback === 'function') return window.nsdJsTreeSearchCallback(searchStr, node); var sf = new $.vakata.search(searchStr, true, { caseSensitive : false, fuzzy : false }); return sf.search(node.text).isMatch; }; return tree; }({"core":{"data":[{"a_attr":{"onclick":"window.location='references/elements/0/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-178/index.html';"},"data-nsd-label-uuid":"c729aed7-08db-42a4-8a6a-5cb8956aac81","id":"nsd-app-nav-item-4634104f-750d-4789-b881-0477e6701d2e","text":"AWS CodePipeline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-179/index.html';"},"data-nsd-label-uuid":"5acc9374-2506-47e6-a85d-2bc6c0197306","id":"nsd-app-nav-item-254178b4-c0f1-4929-8589-9ef333d1f17d","text":"AWS Organizations","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-183/index.html';"},"data-nsd-label-uuid":"f338b42e-f633-4b5c-856d-13adcf6623be","id":"nsd-app-nav-item-cdec82b9-250c-4a94-b079-a2d0f95578ae","text":"AWS Parameter Store","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-182/index.html';"},"data-nsd-label-uuid":"3203914c-894a-4f7b-88b0-caa4869d143f","id":"nsd-app-nav-item-7d931573-8128-435f-b685-551814d0dd65","text":"AWS Service Catalog","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-180/index.html';"},"data-nsd-label-uuid":"edd58cf0-e145-498c-ade9-0401ed7f8a74","id":"nsd-app-nav-item-379ae6d9-837c-4868-a0fc-9fe2ee0c1068","text":"AWS Single Sign-on","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-181/index.html';"},"data-nsd-label-uuid":"b753600d-e094-44eb-914e-865b5bccb72c","id":"nsd-app-nav-item-277d0ece-3fc1-486d-86b8-c3dc7491618b","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-177/index.html';"},"data-nsd-label-uuid":"1a5ed05d-2a66-4db4-bf2f-dc94d7042a4d","icon":"https://img.icons8.com/material-two-tone/16/waterbucket.png","id":"nsd-app-nav-item-40436f65-2642-4c3a-8661-53661588f451","text":"Amazon S3 Bucket","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-184/index.html';"},"data-nsd-label-uuid":"d51e8455-0fa5-416d-bb8a-e5d1a3eea0d8","id":"nsd-app-nav-item-cd323a9e-4dff-4f60-a343-1cba925ecf4f","text":"Core OU","type":"leaf"}],"data-nsd-label-uuid":"803c8b5c-e0b1-4b40-bb6e-737da531c86c","id":"nsd-app-nav-item-562ab9c6-4e44-450e-aa76-539d46745f60","text":"AWS Cloud"},{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-185/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html';"},"data-nsd-label-uuid":"4e13390b-7001-4605-a75b-6cf3632ca2ba","id":"nsd-app-nav-item-94df14dd-1e94-45ea-a289-cd8d2ed548dc","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html';"},"data-nsd-label-uuid":"89b3b73c-7ea0-472e-8ff6-3cd9654d1335","id":"nsd-app-nav-item-f8ade09f-8f2b-40f6-be2d-063f322dff08","text":"Aggregate CloudTrail and Config Logs","type":"leaf"}],"data-nsd-label-uuid":"5abeafaf-1b2a-43a1-8f4f-52a401a27d07","id":"nsd-app-nav-item-580df687-a968-473a-9f09-129611b2d5bc","text":"Log Archive Account"},{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-186/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html';"},"data-nsd-label-uuid":"e6ae65d4-6f89-4753-95b9-4cfeb836b3c3","id":"nsd-app-nav-item-ae06f2e5-e803-4021-bc2a-66280fa302d1","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html';"},"data-nsd-label-uuid":"3a0d092d-d902-443d-99b8-85dc40bb1428","id":"nsd-app-nav-item-454bea29-dcd3-4495-988a-8384fdec3702","text":"Amazon GuardDuty","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html';"},"data-nsd-label-uuid":"7b221e1c-ba8a-48ba-b3d2-e84adb266026","id":"nsd-app-nav-item-132f9623-218a-4044-8574-06b79661b2d6","text":"Amazon SNS","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html';"},"data-nsd-label-uuid":"52e3c9f0-95aa-433d-9dd7-96e484937741","icon":"fas fa-key","id":"nsd-app-nav-item-8d10e7e2-01dd-4de3-8358-39f7b7af2d70","text":"Security Cross-Account Roles","type":"leaf"}],"data-nsd-label-uuid":"3a6d1a3d-f034-40e0-9942-6d98cbb7dbf6","id":"nsd-app-nav-item-04a8e522-4854-4186-99d1-5332ee7222f8","text":"Security Account"},{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-176/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html';"},"data-nsd-label-uuid":"b9d4687d-b073-4856-9970-d2a26f5bbd30","id":"nsd-app-nav-item-c4e613d7-27ee-41cf-b709-731e6a4a5e37","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-188/index.html';"},"data-nsd-label-uuid":"f0b2e254-a50b-4029-bb70-f5872a7363f1","id":"nsd-app-nav-item-9c096402-af87-4cfb-9520-605dae8ac4dc","text":"Amazon VPC","type":"leaf"}],"data-nsd-label-uuid":"a63b1d6f-15bb-40b4-a7ae-5c47dd139994","id":"nsd-app-nav-item-3880862a-d586-47e4-afc8-fbe4b30af236","text":"Shared Services Account"}],"data-nsd-label-uuid":"664ed7d5-c252-47be-9f27-08a111f2b5e3","id":"nsd-app-nav-item-5daf2fa4-413a-46e5-8527-1b7d55594535","text":"AWS"}]},"search":{"show_only_matches":true,"show_only_matches_children":true},"types":{"leaf":{"icon":"jstree-file"}},"plugins":["state","type","search"],"state":{"key":"99d6f218-5232-45c0-acaa-a971934c95c3-navigation-panel"}}));
+
+});</script>
+        </div>
+        <div data-nsd-label-uuid="25136cc5-b60f-4eaa-80b6-974312c80617" data-nsd-action-uris="uuid:25136cc5-b60f-4eaa-80b6-974312c80617" class="col nsd-app-content-panel">
+          <div class="container-fluid">
+            <div class="row nsd-app-content-panel-content-row">
+              <div class="col">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col"><div class="markdown-body"><p>Hello!</p>
+<p></p><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;<mxfile agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36\&quot; etag=\&quot;V8ktUZyTU34tnOal0rFB\&quot; host=\&quot;Electron\&quot; modified=\&quot;2023-12-03T20:04:27.912Z\&quot; pages=\&quot;1\&quot; type=\&quot;device\&quot; version=\&quot;22.1.2\&quot;><diagram id=\&quot;Ht1M8jgEwFfnCIfOTk4-\&quot; name=\&quot;AWS\&quot;>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<\/diagram><\/mxfile>&quot;,&quot;resize&quot;:true}"></div>
+<script type="text/javascript" src="https://app.diagrams.net/js/viewer-static.min.js"></script>
+<p></p>
+</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-footer">
+          <ul class="nav nsd-app-footer-navs">
+            <li class="nav-item">
+              <a href="https://github.com/Nasdanika-Models/architecture" data-nsd-label-uuid="2956128f-cc8e-44fa-b71c-120888d1b0f9" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

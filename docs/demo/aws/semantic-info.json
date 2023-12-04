@@ -1,0 +1,359 @@
+[
+    {
+        "identifiers": ["uuid:fa0ffd0d-58b2-427e-aa6c-2f6a042f7e87"],
+        "name": "Nasdanika Architecture Model",
+        "icon": "https://docs.nasdanika.org/images/nasdanika-logo.png",
+        "location": "https://architecture.models.nasdanika.org",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "children",
+            "identifiers": ["uuid:fa0ffd0d-58b2-427e-aa6c-2f6a042f7e87"]
+        },
+        "identifiers": ["uuid:3b9e8789-1bdb-47ce-be13-89748465c3fe"],
+        "name": "Search",
+        "icon": "fas fa-search",
+        "location": "search.html",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "children",
+            "identifiers": ["uuid:fa0ffd0d-58b2-427e-aa6c-2f6a042f7e87"]
+        },
+        "identifiers": ["uuid:105bca37-fdc6-469b-bf0f-5a228e1ffd63"],
+        "name": "Glossary",
+        "icon": "fas fa-book",
+        "location": "glossary.html",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "navigation",
+            "identifiers": ["uuid:fa0ffd0d-58b2-427e-aa6c-2f6a042f7e87"]
+        },
+        "identifiers": ["uuid:2956128f-cc8e-44fa-b71c-120888d1b0f9"],
+        "name": "Sources",
+        "icon": "fab fa-github",
+        "location": "https://github.com/Nasdanika-Models/architecture",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "identifiers": ["uuid:57acf813-385f-4173-bd44-63651f834a14"],
+        "name": "My AWS Architecture",
+        "location": "index.html",
+        "type": {
+            "name": "ArchitectureDescription",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:57acf813-385f-4173-bd44-63651f834a14"],
+            "name": "My AWS Architecture"
+        },
+        "identifiers": ["uuid:4de3cd05-2909-4740-a0f9-5e5814ddd7a5"],
+        "name": "AWS",
+        "location": "references/elements/0/index.html",
+        "type": {
+            "name": "Domain",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:4de3cd05-2909-4740-a0f9-5e5814ddd7a5"],
+            "name": "AWS"
+        },
+        "identifiers": ["uuid:bc9a62b1-c204-48a6-b8b7-2a47df2d2772"],
+        "name": "AWS Cloud",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/index.html",
+        "type": {
+            "name": "Domain",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:bc9a62b1-c204-48a6-b8b7-2a47df2d2772"],
+            "name": "AWS Cloud"
+        },
+        "identifiers": ["uuid:8f530532-4283-4210-9b52-1d510745048c"],
+        "name": "AWS CodePipeline",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-178/index.html",
+        "type": {
+            "name": "Node",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:bc9a62b1-c204-48a6-b8b7-2a47df2d2772"],
+            "name": "AWS Cloud"
+        },
+        "identifiers": ["uuid:e9dc91bf-0ee8-4061-b0a0-de89fce55b1b"],
+        "name": "AWS Organizations",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-179/index.html",
+        "type": {
+            "name": "Node",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:bc9a62b1-c204-48a6-b8b7-2a47df2d2772"],
+            "name": "AWS Cloud"
+        },
+        "identifiers": ["uuid:f07963b7-1a05-4b23-bc22-4cd6dcef8b94"],
+        "name": "AWS Parameter Store",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-183/index.html",
+        "type": {
+            "name": "Node",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:bc9a62b1-c204-48a6-b8b7-2a47df2d2772"],
+            "name": "AWS Cloud"
+        },
+        "identifiers": ["uuid:32c959ae-c6a3-4360-b393-0c0db430a913"],
+        "name": "AWS Service Catalog",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-182/index.html",
+        "type": {
+            "name": "Node",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:bc9a62b1-c204-48a6-b8b7-2a47df2d2772"],
+            "name": "AWS Cloud"
+        },
+        "identifiers": ["uuid:abe92990-c538-483d-926d-311821469be1"],
+        "name": "AWS Single Sign-on",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-180/index.html",
+        "type": {
+            "name": "Node",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:bc9a62b1-c204-48a6-b8b7-2a47df2d2772"],
+            "name": "AWS Cloud"
+        },
+        "identifiers": ["uuid:ca78b997-1f7c-4d16-9cbe-aa36d8aef763"],
+        "name": "Account Baseline",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-181/index.html",
+        "type": {
+            "name": "Node",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:bc9a62b1-c204-48a6-b8b7-2a47df2d2772"],
+            "name": "AWS Cloud"
+        },
+        "identifiers": ["uuid:e521edf2-24e3-457a-9115-cbc3ed4d396c"],
+        "name": "Amazon S3 Bucket",
+        "icon": "https://img.icons8.com/material-two-tone/16/waterbucket.png",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-177/index.html",
+        "type": {
+            "name": "Node",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:bc9a62b1-c204-48a6-b8b7-2a47df2d2772"],
+            "name": "AWS Cloud"
+        },
+        "identifiers": ["uuid:f7e0aefe-19c7-4de2-8eaa-825de99de471"],
+        "name": "Core OU",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-184/index.html",
+        "type": {
+            "name": "Node",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:4de3cd05-2909-4740-a0f9-5e5814ddd7a5"],
+            "name": "AWS"
+        },
+        "identifiers": ["uuid:5bb743d4-cffe-4f94-a79a-79c35cf0c097"],
+        "name": "Log Archive Account",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-185/index.html",
+        "type": {
+            "name": "CompositeNode",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:5bb743d4-cffe-4f94-a79a-79c35cf0c097"],
+            "name": "Log Archive Account"
+        },
+        "identifiers": ["uuid:4cd911ef-dad8-4ef6-b2ee-e96c058bbfbf"],
+        "name": "Account Baseline",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html",
+        "type": {
+            "name": "ArchitectureDescriptionElement",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:5bb743d4-cffe-4f94-a79a-79c35cf0c097"],
+            "name": "Log Archive Account"
+        },
+        "identifiers": ["uuid:c7a5a474-2d21-4836-88d3-4591869f966d"],
+        "name": "Aggregate CloudTrail and Config Logs",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html",
+        "type": {
+            "name": "ArchitectureDescriptionElement",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:4de3cd05-2909-4740-a0f9-5e5814ddd7a5"],
+            "name": "AWS"
+        },
+        "identifiers": ["uuid:23ea9701-e6e3-4fea-8786-b3f6cff2604c"],
+        "name": "Security Account",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-186/index.html",
+        "type": {
+            "name": "CompositeNode",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:23ea9701-e6e3-4fea-8786-b3f6cff2604c"],
+            "name": "Security Account"
+        },
+        "identifiers": ["uuid:92438841-4d55-4949-aae3-0dbec36147d4"],
+        "name": "Account Baseline",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html",
+        "type": {
+            "name": "ArchitectureDescriptionElement",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:23ea9701-e6e3-4fea-8786-b3f6cff2604c"],
+            "name": "Security Account"
+        },
+        "identifiers": ["uuid:156444b1-ee36-4081-becf-48e7955e346c"],
+        "name": "Amazon GuardDuty",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html",
+        "type": {
+            "name": "ArchitectureDescriptionElement",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:23ea9701-e6e3-4fea-8786-b3f6cff2604c"],
+            "name": "Security Account"
+        },
+        "identifiers": ["uuid:0b9e0665-13b4-4c74-9ab1-dbebca2791d3"],
+        "name": "Amazon SNS",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html",
+        "type": {
+            "name": "ArchitectureDescriptionElement",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:23ea9701-e6e3-4fea-8786-b3f6cff2604c"],
+            "name": "Security Account"
+        },
+        "identifiers": ["uuid:129f0ee9-be45-40b9-a68d-9204f27a0fb2"],
+        "name": "Security Cross-Account Roles",
+        "icon": "fas fa-key",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html",
+        "type": {
+            "name": "ArchitectureDescriptionElement",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:4de3cd05-2909-4740-a0f9-5e5814ddd7a5"],
+            "name": "AWS"
+        },
+        "identifiers": ["uuid:ef32f661-b2b5-48ad-93c4-c4eff7f41a2f"],
+        "name": "Shared Services Account",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-176/index.html",
+        "type": {
+            "name": "CompositeNode",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:ef32f661-b2b5-48ad-93c4-c4eff7f41a2f"],
+            "name": "Shared Services Account"
+        },
+        "identifiers": ["uuid:703eac0e-717a-429d-89c5-6b0e3df042e4"],
+        "name": "Account Baseline",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html",
+        "type": {
+            "name": "ArchitectureDescriptionElement",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:ef32f661-b2b5-48ad-93c4-c4eff7f41a2f"],
+            "name": "Shared Services Account"
+        },
+        "identifiers": ["uuid:a419453b-a817-4df6-84a6-c8f37776e4dd"],
+        "name": "Amazon VPC",
+        "location": "references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-188/index.html",
+        "type": {
+            "name": "ArchitectureDescriptionElement",
+            "ns-uri": "ecore://nasdanika.org/models/architecture"
+        }
+    }
+]
