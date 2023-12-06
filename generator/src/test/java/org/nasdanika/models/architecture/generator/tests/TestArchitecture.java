@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
-import java.util.UUID;
 import java.util.Map.Entry;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
@@ -197,12 +196,10 @@ public class TestArchitecture {
 			}
 			
 			@Override
-			protected ArchitectureDescription configureDocumentElement(
-					Document document,
+			protected void configureDocumentElement(
+					Document document, 
 					ArchitectureDescription documentElement,
-					BiConsumer<EObject, BiConsumer<EObject, ProgressMonitor>> elementProvider,
-					Consumer<BiConsumer<Map<EObject, EObject>, ProgressMonitor>> registry,
-					ProgressMonitor progressMonitor) {
+					Map<EObject, EObject> registry, ProgressMonitor progressMonitor) {
 				
 				documentElement.setName("My AWS Architecture");
 				
@@ -223,7 +220,7 @@ public class TestArchitecture {
 					progressMonitor);
 				
 				documentElement.getDocumentation().add(doc);			
-				return super.configureDocumentElement(document, documentElement, elementProvider, registry, progressMonitor);
+				super.configureDocumentElement(document, documentElement, registry, progressMonitor);
 			}
 			
 		};
@@ -279,7 +276,15 @@ public class TestArchitecture {
 		ArchitectureNodeProcessorFactory architectureNodeProcessorFactory = new ArchitectureNodeProcessorFactory(context, null);		
 		
 		EObjectNodeProcessorReflectiveFactory<WidgetFactory, WidgetFactory> eObjectNodeProcessorReflectiveFactory = new EObjectNodeProcessorReflectiveFactory<>(architectureNodeProcessorFactory);
-		EObjectReflectiveProcessorFactoryProvider eObjectReflectiveProcessorFactoryProvider = new EObjectReflectiveProcessorFactoryProvider(eObjectNodeProcessorReflectiveFactory);
+		EObjectReflectiveProcessorFactoryProvider eObjectReflectiveProcessorFactoryProvider = new EObjectReflectiveProcessorFactoryProvider(eObjectNodeProcessorReflectiveFactory) {
+			
+			@Override
+			protected boolean isCompactPath() {
+				return true;
+			}
+			
+			
+		};
 		Map<Element, ProcessorInfo<Object>> registry = eObjectReflectiveProcessorFactoryProvider.getFactory().createProcessors(configs.values(), false, progressMonitor);
 		
 		WidgetFactory architectureProcessor = null;

@@ -48,7 +48,7 @@ public interface ArchitectureDescriptionNodeProcessorMixIn<T extends Architectur
 				}
 			}
 		}
-		return Collections.emptyMap();
+		return ArchitectureElementNodeProcessorMixIn.super.getRepresentations();
 	}
 	
 
