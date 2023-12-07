@@ -2,122 +2,117 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" >
   <url>
     <loc>https://architecture.models.nasdanika.org/demo/aws/glossary.html</loc>
-    <lastmod>2023-12-04T10:12:41.220-05:00</lastmod>
+    <lastmod>2023-12-07T11:56:35.538-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demo/aws/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.102-05:00</lastmod>
+    <lastmod>2023-12-07T11:56:35.385-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.109-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/0/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.487-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.114-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/0/rh/0/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.494-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-177/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.160-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/0/rh/1/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.490-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-178/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.140-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/1/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.451-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-179/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.142-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/1/rh/0/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.456-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-180/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.154-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/1/rh/1/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.458-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-181/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.157-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/2/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.465-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-182/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.149-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/2/rh/0/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.468-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-183/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.145-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/2/rh/1/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.484-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-184/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.166-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/2/rh/2/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.475-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-176/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.202-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/2/rh/3/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.477-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.206-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/3/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.388-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-188/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.208-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/3/rh/0/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.441-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-185/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.170-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/3/rh/1/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.392-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.177-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/3/rh/2/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.399-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.182-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/3/rh/3/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.435-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-186/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.186-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/3/rh/4/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.439-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.190-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/3/rh/5/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.408-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.200-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/3/rh/6/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.401-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.193-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://architecture.models.nasdanika.org/demo/aws/references/elements/0/references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html</loc>
-    <lastmod>2023-12-04T10:12:41.197-05:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demo/aws/rh/3/rh/7/index.html</loc>
+    <lastmod>2023-12-07T11:56:35.449-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demo/aws/search.html</loc>
-    <lastmod>2023-12-04T10:12:41.211-05:00</lastmod>
+    <lastmod>2023-12-07T11:56:35.534-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
