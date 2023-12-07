@@ -257,7 +257,14 @@ public class TestArchitecture {
 		URI awsURI = URI.createFileURI(new File("target/aws.xmi").getCanonicalPath());
 		Resource awsResource = resourceSet.getResource(awsURI, true);
 		
-		Transformer<EObject,Element> graphFactory = new Transformer<>(new EObjectGraphFactory());
+		Transformer<EObject,Element> graphFactory = new Transformer<>(new EObjectGraphFactory() {
+			
+			@Override
+			protected boolean isCompactPath() {
+				return true;
+			}
+			
+		});
 		Map<EObject, Element> graph = graphFactory.transform(awsResource.getContents(), false, progressMonitor);
 
 		NopEndpointProcessorConfigFactory<WidgetFactory> configFactory = new NopEndpointProcessorConfigFactory<>() {
