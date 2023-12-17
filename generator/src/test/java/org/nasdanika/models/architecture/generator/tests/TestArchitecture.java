@@ -1,10 +1,13 @@
 package org.nasdanika.models.architecture.generator.tests;
 
 import java.io.File;
+import java.lang.module.ModuleDescriptor;
+import java.lang.module.ModuleDescriptor.Requires;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.emf.common.util.URI;
@@ -15,6 +18,16 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.icepear.echarts.charts.graph.GraphEdgeLineStyle;
+import org.icepear.echarts.charts.graph.GraphEmphasis;
+import org.icepear.echarts.charts.graph.GraphSeries;
+import org.icepear.echarts.components.series.SeriesLabel;
+import org.icepear.echarts.render.Engine;
+import org.jgrapht.alg.drawing.FRLayoutAlgorithm2D;
+import org.jgrapht.alg.drawing.model.Box2D;
+import org.jgrapht.alg.drawing.model.MapLayoutModel2D;
+import org.jgrapht.alg.drawing.model.Point2D;
+import org.jgrapht.graph.DefaultUndirectedGraph;
 import org.junit.jupiter.api.Test;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.Diagnostic;
@@ -49,6 +62,10 @@ import org.nasdanika.models.architecture.ArchitectureDescription;
 import org.nasdanika.models.architecture.ArchitecturePackage;
 import org.nasdanika.models.architecture.processors.doc.ArchitectureNodeProcessorFactory;
 import org.nasdanika.models.architecture.util.ArchitectureDrawioFactory;
+import org.nasdanika.models.echarts.graph.Graph;
+import org.nasdanika.models.echarts.graph.GraphFactory;
+import org.nasdanika.models.echarts.graph.Item;
+import org.nasdanika.models.echarts.graph.Node;
 import org.nasdanika.ncore.NcorePackage;
 import org.nasdanika.persistence.Marked;
 
@@ -367,5 +384,150 @@ public class TestArchitecture {
 		}		
 		
 	}
+	
+	// --- Module dependency graph ---
+	
+	private Node getModuleNode(
+			Module module, 
+			ModuleLayer layer, 
+			Graph graph, 
+			Item nsdCategory,
+			Item eclipseCategory,
+			Item javaCategory,
+			Item otherCategory) {
+		for (Node n: graph.getNodes()) {
+			if (n.getName().equals(module.getName())) {
+				return n;
+			}
+		}
+		Node ret = GraphFactory.eINSTANCE.createNode();
+		ret.setName(module.getName());
+		
+		if (ret.getName().startsWith("org.nasdanika.")) {
+			ret.setCategory(nsdCategory);
+		} else if (ret.getName().startsWith("org.eclipse.")) {
+			ret.setCategory(eclipseCategory);
+		} else if (ret.getName().startsWith("java.")) {
+			ret.setCategory(javaCategory);
+		} else {
+			ret.setCategory(otherCategory);
+		}
+		
+		ret.getSymbolSize().add(10.0 + Math.log(1 + module.getDescriptor().exports().size()));
+		
+//		org.nasdanika.models.echarts.graph.Label label = GraphFactory.eINSTANCE.createLabel();
+//		label.setColor("red");
+//		ret.setLabel(label);
+		
+		graph.getNodes().add(ret);
+		return ret;
+	}
+	
+	private Node moduleToNode(
+			Module module, 
+			ModuleLayer layer, 
+			Graph graph,
+			Item nsdCategory,
+			Item eclipseCategory,
+			Item javaCategory,
+			Item otherCategory) {
+		ModuleDescriptor moduleDescriptor = module.getDescriptor();		
+		Node moduleNode = getModuleNode(module, layer, graph, nsdCategory, eclipseCategory, javaCategory, otherCategory);
+		for (Requires req: moduleDescriptor.requires()) {
+			Optional<Module> rmo = layer.findModule(req.name());
+			if (rmo.isPresent()) {
+				Node reqNode = moduleToNode(rmo.get(), layer, graph, nsdCategory, eclipseCategory, javaCategory, otherCategory);
+				org.nasdanika.models.echarts.graph.Link reqLink = GraphFactory.eINSTANCE.createLink();				
+				reqLink.setTarget(reqNode);
+				moduleNode.getOutgoingLinks().add(reqLink);
+			}
+		}		
+		return moduleNode;
+	}
+	
+	/**
+	 * Generates Graph JSON from a model
+	 */
+	@Test
+	public void testModuleGraphForce() {
+		Module thisModule = getClass().getModule();
+		ModuleLayer moduleLayer = thisModule.getLayer();
+		
+		Graph graph = GraphFactory.eINSTANCE.createGraph();
+		
+		Item nsdCategory = GraphFactory.eINSTANCE.createItem();
+		nsdCategory.setName("Nasdanika");
+		graph.getCategories().add(nsdCategory);
+		
+		Item eclipseCategory = GraphFactory.eINSTANCE.createItem();
+		eclipseCategory.setName("Eclipse");
+		graph.getCategories().add(eclipseCategory);
+		
+		Item javaCategory = GraphFactory.eINSTANCE.createItem();
+		javaCategory.setName("Java");
+		graph.getCategories().add(javaCategory);
+		
+		Item otherCategory = GraphFactory.eINSTANCE.createItem();
+		otherCategory.setName("Other");
+		graph.getCategories().add(otherCategory);
+		
+		moduleToNode(thisModule, moduleLayer, graph, nsdCategory, eclipseCategory, javaCategory, otherCategory);
+		forceLayout(graph);
+		
+		GraphSeries graphSeries = new org.icepear.echarts.charts.graph.GraphSeries()
+				.setSymbolSize(16)
+				.setDraggable(true)				
+				.setLayout("none")
+	            .setLabel(new SeriesLabel().setShow(true).setPosition("right"))
+	            .setLineStyle(new GraphEdgeLineStyle().setColor("source").setCurveness(0))
+	            .setRoam(true)
+	            .setEmphasis(new GraphEmphasis().setFocus("adjacency"))
+	            .setEdgeSymbol(new String[] { "none", "arrow" }); // Line style width 10?
+		
+		graph.configureGraphSeries(graphSeries);
+		
+    	org.icepear.echarts.Graph echartsGraph = new org.icepear.echarts.Graph()
+                .setTitle("Module Dependencies")
+//                .setTooltip("item")
+                .setLegend()
+                .addSeries(graphSeries);
+    	
+	    Engine engine = new Engine();
+	    new File("target/charts").mkdirs();
+	    engine.render("target/charts/module-graph-force.html", echartsGraph, "90%", "2000px", false);		
+	}
+	
+	/**
+	 * Uses JGraphT {@link FRLayoutAlgorithm2D} to force layout the graph.
+	 * @param graph
+	 */
+	protected void forceLayout(Graph graph) {
+		// Using JGraphT for force layout
+		DefaultUndirectedGraph<Node, org.nasdanika.models.echarts.graph.Link> dGraph = new DefaultUndirectedGraph<>(org.nasdanika.models.echarts.graph.Link.class);
+		
+		// Populating
+		for (Node node: graph.getNodes()) {
+			dGraph.addVertex(node);
+		}	
+		
+		for (Node node: graph.getNodes()) {
+			for (org.nasdanika.models.echarts.graph.Link link: node.getOutgoingLinks()) {
+				if (dGraph.getEdge(link.getTarget(), node) == null) { // Not yet connected, connect
+					dGraph.addEdge(node, link.getTarget(), link);
+				}
+			}
+		}		
+		
+		FRLayoutAlgorithm2D<Node, org.nasdanika.models.echarts.graph.Link> forceLayout = new FRLayoutAlgorithm2D<>();
+		MapLayoutModel2D<Node> model = new MapLayoutModel2D<>(new Box2D(1000.0, 800.0));
+		forceLayout.layout(dGraph, model);
+		model.forEach(ne -> {
+			Node node = ne.getKey();
+			Point2D point = ne.getValue();
+			node.setX(point.getX());
+			node.setY(point.getY());
+		});
+		
+	}	
 	
 }
