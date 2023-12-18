@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="EN">
+  <head>
+    <title>AWS CodePipeline</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css">
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/dark-head.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/jstree.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/components/table.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/components/table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9BRJVLK8CC');
+</script>    
+
+<script src="../../../../../../search-documents.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
+
+<script>
+// Script for full-text search of JsTree
+
+window.nsdJsTreeSearchCallback = function(str, node) { 
+    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
+    if (sf.search(node.text).isMatch) {
+		return true;
+	} 
+    let searchResult = this.search(str); 
+    for (const sr in searchResult) {
+        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
+            return true;
+        } 
+    } 
+    return false; 
+}.bind(lunr(function () {
+			  this.ref('id');
+			  this.field('title');
+			  this.field('content');
+
+			  for (const key in searchDocuments) {
+				  let doc = searchDocuments[key];
+				this.add({
+					id: doc['action-uuid'],
+					title: doc.title,
+					path: doc.path,
+					content: doc.content
+				});  
+			  }
+			}));
+</script>
+</head>
+  <body>
+    <div class="container-fluid nsd-app-container">
+      <div class="row">
+        <div class="col nsd-app-header">
+          <a href="https://architecture.models.nasdanika.org" data-nsd-label-uuid="b89c2a25-ee3f-4e69-af47-8796e30f9ca6" class="nsd-app-header-title">
+            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Architecture Model</a>
+          <ul class="nav nsd-app-header-navs">
+            <li class="nav-item">
+              <a href="../../../../../../search.html" data-nsd-label-uuid="d26837f7-ee8f-4028-9bae-fbd715bb51b4" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+            </li>
+            <li class="nav-item">
+              <a href="../../../../../../glossary.html" data-nsd-label-uuid="fce51cb0-1f94-4b3e-900f-5a224a885016" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-navbar">
+          <ul class="navbar navbar-light navbar-expand-lg">
+            <a href="../../../../../../index.html" data-nsd-label-uuid="9f3a883a-9f4e-485f-9249-4a43e9c98219" class="navbar-brand">AWS</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_2h" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="nsd_2h" class="collapse navbar-collapse"></div>
+          </ul>
+        </div>
+      </div>
+      <div class="row nsd-app-content-row">
+        <div class="col nsd-app-navigation-panel">
+          <div class="card">
+            <div class="card-header">
+              <a href="../../../index.html">AWS Cloud</a>
+            </div>
+            <div class="list-group list-group-flush"><span data-nsd-label-uuid="1d519cbe-b39e-4b8c-b5f9-03cc777d7906" class="active list-group-item list-group-action">AWS CodePipeline</span>
+              <a href="../UEzPUAAOIrF-is8g5C7q-179/index.html" data-nsd-label-uuid="d4a8c205-7c0b-4eaf-ab5d-3598adaa3c25" class="list-group-item list-group-action">AWS Organizations</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-183/index.html" data-nsd-label-uuid="8c3175c2-bb04-43f0-b18e-61689dd6161c" class="list-group-item list-group-action">AWS Parameter Store</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-182/index.html" data-nsd-label-uuid="6d0f316d-d15c-4638-85e6-ac70ff32050b" class="list-group-item list-group-action">AWS Service Catalog</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-180/index.html" data-nsd-label-uuid="fee5d169-4835-4434-bb92-0229f057cf47" class="list-group-item list-group-action">AWS Single Sign-on</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-181/index.html" data-nsd-label-uuid="0abb65f4-9906-4a00-a743-e405f1ffd998" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-177/index.html" data-nsd-label-uuid="08ad3916-4050-4057-bd19-aa657be45d64" class="list-group-item list-group-action">
+                <img src="https://img.icons8.com/material-two-tone/16/waterbucket.png" class="nsd-app-label-icon">Amazon S3 Bucket</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-184/index.html" data-nsd-label-uuid="c2109ee8-d51c-4d23-8c07-5565ce2c9f70" class="list-group-item list-group-action">Core OU</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-185/index.html">Log Archive Account</a>
+            </div>
+            <div class="list-group list-group-flush">
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html" data-nsd-label-uuid="2190c63e-8a3d-41c6-a724-c20f730a02a2" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html" data-nsd-label-uuid="6a00d02f-d84f-46f5-b1f0-a868800e31f9" class="list-group-item list-group-action">Aggregate CloudTrail and Config Logs</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/index.html">Security Account</a>
+            </div>
+            <div class="list-group list-group-flush">
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html" data-nsd-label-uuid="b412b46b-43cf-4da4-a213-2e00f0fb2426" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html" data-nsd-label-uuid="48f94705-6340-4151-ad8e-ee5f80944bd5" class="list-group-item list-group-action">Amazon GuardDuty</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html" data-nsd-label-uuid="661c0867-3b7f-417a-8a38-f17f36b7d5bb" class="list-group-item list-group-action">Amazon SNS</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html" data-nsd-label-uuid="98ffa110-6480-4bc2-bca2-7fd09ef4a6ac" class="list-group-item list-group-action"><span class="fas fa-key nsd-app-label-icon"></span>Security Cross-Account Roles</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-176/index.html">Shared Services Account</a>
+            </div>
+            <div class="list-group list-group-flush">
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html" data-nsd-label-uuid="09bd4d7c-581a-4560-b957-cb17cfec60fd" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-188/index.html" data-nsd-label-uuid="cb97dc94-ece2-4ba7-b324-b02156303b61" class="list-group-item list-group-action">Actor</a>
+            </div>
+          </div>
+        </div>
+        <div data-nsd-label-uuid="1d519cbe-b39e-4b8c-b5f9-03cc777d7906" data-nsd-action-uris="uuid:1d519cbe-b39e-4b8c-b5f9-03cc777d7906" class="col nsd-app-content-panel">
+          <div class="container-fluid">
+            <div class="row nsd-app-content-panel-breadcrumb-row">
+              <div class="col">
+                <nav aria-label="breadcrumb" class="nsd-app-content-panel-breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="../../../index.html" data-nsd-label-uuid="7b380a6c-aa71-4573-8cd0-3ed2f9fca140">AWS Cloud</a>
+                    </li>
+                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="1d519cbe-b39e-4b8c-b5f9-03cc777d7906">AWS CodePipeline</span>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div class="row nsd-app-content-panel-title-and-items-row">
+              <div class="col-auto">
+                <h1><span data-nsd-label-uuid="1d519cbe-b39e-4b8c-b5f9-03cc777d7906" class="nsd-app-content-panel-title">AWS CodePipeline</span>
+                </h1>
+              </div>
+            </div>
+            <div class="row nsd-app-content-panel-content-row">
+              <div class="col">
+                <div class="container-fluid"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-footer">
+          <ul class="nav nsd-app-footer-navs">
+            <li class="nav-item">
+              <a href="https://github.com/Nasdanika-Models/architecture" data-nsd-label-uuid="ff75f960-0118-4bf3-b5fd-8eff1878a84e" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

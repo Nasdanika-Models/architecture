@@ -13,7 +13,7 @@ import org.nasdanika.models.architecture.ArchitecturePackage;
  * @param <G>
  * @param <E>
  */
-public class ArchitectureDrawioFactory extends GraphDrawioFactory<EObject> {
+public abstract class ArchitectureDrawioFactory extends GraphDrawioFactory<EObject> {
 
 	/**
 	 * Returns a map with graph and ncore entries.
