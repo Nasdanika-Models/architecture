@@ -16,6 +16,7 @@ import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.common.Transformer;
 import org.nasdanika.drawio.emf.DrawioResource;
 import org.nasdanika.drawio.model.ModelFactory;
+import org.nasdanika.drawio.model.util.AbstractDrawioFactory;
 import org.nasdanika.persistence.Marker;
 import org.springframework.expression.EvaluationContext;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
@@ -67,6 +68,11 @@ public class ArchitectureDrawioResource extends ResourceImpl {
 				return ArchitectureDrawioResource.this.createEvaluationContext();
 			}
 			
+			@Override
+			protected URI getAppBase() {
+				return ArchitectureDrawioResource.this.getAppBase();
+			}
+			
 		};
 		
 		Transformer<EObject,EObject> graphFactory = new Transformer<>(architectureDrawioFactory);
@@ -110,6 +116,11 @@ public class ArchitectureDrawioResource extends ResourceImpl {
 	
 	protected EvaluationContext createEvaluationContext() {
 		return new StandardEvaluationContext();
-	}	
+	}
+	
+	protected URI getAppBase() {
+		return AbstractDrawioFactory.DEFAULT_APP_BASE;
+	}
+	
 
 }
