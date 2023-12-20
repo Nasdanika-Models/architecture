@@ -43,8 +43,7 @@ public final class ArchitectureUtil {
 			Context context, 
 			java.util.function.BiFunction<URI, ProgressMonitor, Action> prototypeProvider,
 			Consumer<Diagnostic> diagnosticConsumer,
-			ProgressMonitor progressMonitor) {
-		
+			ProgressMonitor progressMonitor) {		
 		
 		ArchitectureNodeProcessorFactory nodeProcessorFactory = new ArchitectureNodeProcessorFactory(context, null);
 		
@@ -54,8 +53,7 @@ public final class ArchitectureUtil {
 				Map.entry(GraphPackage.eINSTANCE, URI.createURI("https://graph.models.nasdanika.org/")),			
 				Map.entry(ArchitecturePackage.eINSTANCE, URI.createURI("https://architecture.models.nasdanika.org/"))			
 			);				
-		
-		
+				
 		return org.nasdanika.html.model.app.graph.emf.Util.generateActionModel(
 				source, 
 				baseURI, 
