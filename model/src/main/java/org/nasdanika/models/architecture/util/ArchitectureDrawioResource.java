@@ -75,19 +75,20 @@ public class ArchitectureDrawioResource extends ResourceImpl {
 			
 		};
 		
-		Transformer<EObject,EObject> graphFactory = new Transformer<>(architectureDrawioFactory);
+		Transformer<EObject,EObject> architectureFactory = new Transformer<>(architectureDrawioFactory);
 		Collection<EObject> diagramModelContents = new ArrayList<>();
 		diagramResource.getAllContents().forEachRemaining(e -> {
 			if (e instanceof org.nasdanika.drawio.model.Document
 					|| e instanceof org.nasdanika.drawio.model.Page
-					|| e instanceof org.nasdanika.drawio.model.ModelElement) {
+					|| e instanceof org.nasdanika.drawio.model.ModelElement
+					|| e instanceof org.nasdanika.drawio.model.Tag) {
 				diagramModelContents.add(e);
 			}
 		});
 		
-		Map<EObject, EObject> graphElements = graphFactory.transform(diagramModelContents, false, getProgressMonitor());
+		Map<EObject, EObject> architectureElements = architectureFactory.transform(diagramModelContents, false, getProgressMonitor());
 		
-		diagramResource.getContents().stream().map(graphElements::get).forEach(getContents()::add);
+		diagramResource.getContents().stream().map(architectureElements::get).forEach(getContents()::add);
 	}
 
 	protected ProgressMonitor getProgressMonitor() {
