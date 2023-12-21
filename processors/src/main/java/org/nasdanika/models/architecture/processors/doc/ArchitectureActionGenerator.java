@@ -18,15 +18,22 @@ import org.nasdanika.models.architecture.ArchitecturePackage;
 import org.nasdanika.models.echarts.graph.GraphPackage;
 import org.nasdanika.ncore.NcorePackage;
 
-public final class ArchitectureUtil {
+public class ArchitectureActionGenerator {
 	
-	// Singleton
-	private ArchitectureUtil() {
-		
+	protected ArchitectureNodeProcessorFactory nodeProcessorFactory;
+	
+	public ArchitectureActionGenerator() {
+		this(Context.EMPTY_CONTEXT, null);
+	}
+	
+	public ArchitectureActionGenerator(Context context, java.util.function.BiFunction<URI, ProgressMonitor, Action> prototypeProvider) {
+		this(new ArchitectureNodeProcessorFactory(context, prototypeProvider));
 	}
 		
-	// --- Single source and base URI ---	
-	
+	public ArchitectureActionGenerator(ArchitectureNodeProcessorFactory nodeProcessorFactory) {
+		this.nodeProcessorFactory = nodeProcessorFactory;
+	}
+		
 	/**
 	 * Generates actions for a single source with a baseURI
 	 * @param source
@@ -37,31 +44,29 @@ public final class ArchitectureUtil {
 	 * @param progressMonitor
 	 * @return
 	 */
-	public static Map<EObject,Collection<Label>> generateActionModel(
+	public Map<EObject,Collection<Label>> generateActionModel(
 			EObject source,
 			URI baseURI,
-			Context context, 
-			java.util.function.BiFunction<URI, ProgressMonitor, Action> prototypeProvider,
 			Consumer<Diagnostic> diagnosticConsumer,
 			ProgressMonitor progressMonitor) {		
 		
-		ArchitectureNodeProcessorFactory nodeProcessorFactory = new ArchitectureNodeProcessorFactory(context, null);
-		
-		Map<EObject, URI> references = Map.ofEntries(
-				Map.entry(EcorePackage.eINSTANCE, URI.createURI("https://ecore.models.nasdanika.org/")),			
-				Map.entry(NcorePackage.eINSTANCE, URI.createURI("https://ncore.models.nasdanika.org/")),			
-				Map.entry(GraphPackage.eINSTANCE, URI.createURI("https://graph.models.nasdanika.org/")),			
-				Map.entry(ArchitecturePackage.eINSTANCE, URI.createURI("https://architecture.models.nasdanika.org/"))			
-			);				
-				
 		return org.nasdanika.html.model.app.graph.emf.Util.generateActionModel(
 				source, 
 				baseURI, 
 				nodeProcessorFactory, 
-				references, 
+				getReferencedEPackages(), 
 				diagnosticConsumer, 
 				progressMonitor);
 		
+	}
+
+	protected Map<EObject, URI> getReferencedEPackages() {
+		return Map.ofEntries(
+				Map.entry(EcorePackage.eINSTANCE, URI.createURI("https://ecore.models.nasdanika.org/")),			
+				Map.entry(NcorePackage.eINSTANCE, URI.createURI("https://ncore.models.nasdanika.org/")),			
+				Map.entry(GraphPackage.eINSTANCE, URI.createURI("https://graph.models.nasdanika.org/")),			
+				Map.entry(ArchitecturePackage.eINSTANCE, URI.createURI("https://architecture.models.nasdanika.org/"))			
+			);
 	}
 	
 	/**
@@ -75,11 +80,9 @@ public final class ArchitectureUtil {
 	 * @param progressMonitor
 	 * @throws IOException
 	 */
-	public static void generateActionModel(
+	public void generateActionModel(
 			EObject source,
 			URI baseURI,
-			Context context, 
-			java.util.function.BiFunction<URI, ProgressMonitor, Action> prototypeProvider,
 			Consumer<Diagnostic> diagnosticConsumer,
 			URI actionModelResourceURI,
 			ProgressMonitor progressMonitor) throws IOException {
@@ -87,8 +90,6 @@ public final class ArchitectureUtil {
 		Map<EObject, Collection<Label>> labelMap = generateActionModel(
 				source,
 				baseURI,
-				context, 
-				prototypeProvider, 
 				diagnosticConsumer, 
 				progressMonitor);
 		
@@ -106,11 +107,9 @@ public final class ArchitectureUtil {
 	 * @param progressMonitor
 	 * @throws IOException
 	 */
-	public static void generateActionModel(
+	public void generateActionModel(
 			EObject source,
 			URI baseURI,
-			Context context, 
-			java.util.function.BiFunction<URI, ProgressMonitor, Action> prototypeProvider,
 			Consumer<Diagnostic> diagnosticConsumer,
 			File actionModelFile,
 			ProgressMonitor progressMonitor) throws IOException {
@@ -118,10 +117,9 @@ public final class ArchitectureUtil {
 		generateActionModel(
 				source,
 				baseURI,
-				context, 
-				prototypeProvider, 
 				diagnosticConsumer, 
-				URI.createFileURI(actionModelFile.getCanonicalFile().getAbsolutePath()), progressMonitor);
+				URI.createFileURI(actionModelFile.getCanonicalFile().getAbsolutePath()), 
+				progressMonitor);
 	}
 	
 	
@@ -136,18 +134,14 @@ public final class ArchitectureUtil {
 	 * @param progressMonitor
 	 * @return
 	 */
-	public static Map<EObject,Collection<Label>> generateActionModel(
+	public Map<EObject,Collection<Label>> generateActionModel(
 			EObject source,
-			Context context, 
-			java.util.function.BiFunction<URI, ProgressMonitor, Action> prototypeProvider,
 			Consumer<Diagnostic> diagnosticConsumer,
 			ProgressMonitor progressMonitor) {
 		
 		return generateActionModel(
 				source, 
 				null,
-				context, 
-				prototypeProvider, 
 				diagnosticConsumer,
 				progressMonitor);
 		
@@ -163,10 +157,8 @@ public final class ArchitectureUtil {
 	 * @param progressMonitor
 	 * @throws IOException
 	 */
-	public static void generateActionModel(
+	public void generateActionModel(
 			EObject source,
-			Context context, 
-			java.util.function.BiFunction<URI, ProgressMonitor, Action> prototypeProvider,
 			Consumer<Diagnostic> diagnosticConsumer,
 			URI actionModelResourceURI,
 			ProgressMonitor progressMonitor) throws IOException {
@@ -174,8 +166,6 @@ public final class ArchitectureUtil {
 		generateActionModel(
 				source,
 				null,
-				context, 
-				prototypeProvider, 
 				diagnosticConsumer,
 				actionModelResourceURI,
 				progressMonitor);
@@ -191,10 +181,8 @@ public final class ArchitectureUtil {
 	 * @param progressMonitor
 	 * @throws IOException
 	 */
-	public static void generateActionModel(
+	public void generateActionModel(
 			EObject source,
-			Context context, 
-			java.util.function.BiFunction<URI, ProgressMonitor, Action> prototypeProvider,
 			Consumer<Diagnostic> diagnosticConsumer,
 			File actionModelFile,
 			ProgressMonitor progressMonitor) throws IOException {
@@ -202,8 +190,6 @@ public final class ArchitectureUtil {
 		generateActionModel(
 				source,
 				null,
-				context, 
-				prototypeProvider, 
 				diagnosticConsumer, 
 				URI.createFileURI(actionModelFile.getCanonicalFile().getAbsolutePath()), 
 				progressMonitor);
