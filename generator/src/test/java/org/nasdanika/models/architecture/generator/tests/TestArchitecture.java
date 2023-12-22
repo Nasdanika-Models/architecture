@@ -33,7 +33,8 @@ import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.diagramgenerator.plantuml.PlantUMLDiagramGenerator;
 import org.nasdanika.html.model.app.gen.ActionSiteGenerator;
-import org.nasdanika.models.architecture.processors.doc.ArchitectureUtil;
+import org.nasdanika.models.architecture.processors.doc.ArchitectureActionGenerator;
+import org.nasdanika.models.architecture.processors.doc.ArchitectureNodeProcessorFactory;
 import org.nasdanika.models.architecture.util.ArchitectureDrawioResourceFactory;
 import org.nasdanika.models.echarts.graph.Graph;
 import org.nasdanika.models.echarts.graph.GraphFactory;
@@ -61,10 +62,11 @@ public class TestArchitecture {
 								
 		File output = new File(actionModelsDir, "aws-actions.xmi");
 		
-		ArchitectureUtil.generateActionModel(
-				awsResource.getContents().get(0), 
-				context, 
-				null,
+		ArchitectureActionGenerator actionGenerator = new ArchitectureActionGenerator(
+				awsResource.getContents().get(0),
+				new ArchitectureNodeProcessorFactory(context, null));
+		
+		actionGenerator.generateActionModel(
 				diagnosticConsumer, 
 				output,
 				progressMonitor);

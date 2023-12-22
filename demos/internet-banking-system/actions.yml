@@ -1,6 +1,6 @@
 app-action:
   icon: https://docs.nasdanika.org/images/nasdanika-logo.png
-  text: Nasdanika Architecture Models
+  text: Nasdanika Architecture Model
   location: https://architecture.models.nasdanika.org/
   children:
     - app-action-reference: "target/action-models/ibs.xmi#/"

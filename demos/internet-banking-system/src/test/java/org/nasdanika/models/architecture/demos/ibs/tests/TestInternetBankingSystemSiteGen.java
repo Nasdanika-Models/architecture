@@ -20,7 +20,8 @@ import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.diagramgenerator.plantuml.PlantUMLDiagramGenerator;
 import org.nasdanika.html.model.app.gen.ActionSiteGenerator;
-import org.nasdanika.models.architecture.processors.doc.ArchitectureUtil;
+import org.nasdanika.models.architecture.processors.doc.ArchitectureActionGenerator;
+import org.nasdanika.models.architecture.processors.doc.ArchitectureNodeProcessorFactory;
 import org.nasdanika.models.architecture.util.ArchitectureDrawioResourceFactory;
 
 public class TestInternetBankingSystemSiteGen {
@@ -29,8 +30,8 @@ public class TestInternetBankingSystemSiteGen {
 	public void testGenerateInternetBankingSystemSiteWithMapping() throws Exception {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("drawio", new ArchitectureDrawioResourceFactory(uri -> resourceSet.getEObject(uri, true)));
-		File familyDiagramFile = new File("internet-banking-system.drawio").getCanonicalFile();
-		Resource familyResource = resourceSet.getResource(URI.createFileURI(familyDiagramFile.getAbsolutePath()), true);
+		File ibsDiagramFile = new File("internet-banking-system.drawio").getCanonicalFile();
+		Resource ibsResource = resourceSet.getResource(URI.createFileURI(ibsDiagramFile.getAbsolutePath()), true);
 		
 		// Generating an action model
 		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
@@ -43,11 +44,12 @@ public class TestInternetBankingSystemSiteGen {
 		actionModelsDir.mkdirs();
 								
 		File output = new File(actionModelsDir, "ibs.xmi");
+				
+		ArchitectureActionGenerator actionGenerator = new ArchitectureActionGenerator(
+				ibsResource.getContents().get(0),
+				new ArchitectureNodeProcessorFactory(context, null));
 		
-		ArchitectureUtil.generateActionModel(
-				familyResource.getContents().get(0), 
-				context, 
-				null,
+		actionGenerator.generateActionModel(
 				diagnosticConsumer, 
 				output,
 				progressMonitor);
