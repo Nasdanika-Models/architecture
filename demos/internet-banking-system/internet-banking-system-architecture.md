@@ -84,7 +84,6 @@ Tooltips are copied from descriptions on the C4 Model diagram.
 The "Internet Banking System" diagram element is mapped to [CompositeNode](https://architecture.models.nasdanika.org/references/eClassifiers/CompositeNode/index.html) because it has sub-elements.
 It is linked to the "Container Diagram" page. As such, its semantic element is mapped to the "Container Diagram" page element as well allowing further mapping on [that page](references/elements/internet-banking-system/index.html).
 
-
 ## Generation
 
-TODO: Maven plug-in.
+This site was generated with [85 lines of Java code](https://github.com/Nasdanika-Models/architecture/blob/main/demos/internet-banking-system/src/test/java/org/nasdanika/models/architecture/demos/ibs/tests/TestInternetBankingSystemSiteGen.java#L33) in a JUnit test.

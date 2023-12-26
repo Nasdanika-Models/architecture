@@ -18,11 +18,11 @@ This is a selector of the "E-mail System":
 getDocument().getModelElementByProperty('semantic-id', 'microsoft-exchange')
 ```
 
-The generation process "carries over" tooltips from the System Context Diagram to this diagram.
+The loading logic "carries over" tooltips from the System Context Diagram to this diagram.
 
 ### Internet Banking System
 
-The "Internet Banking System" container maps to the same semantic element as on the System Context Diagram because:
+The "Internet Banking System" container maps to the same semantic element as on the System Context diagram because:
 
 * The "Internet Banking System" element on the System Context Diagram links to this diagram page.
 * The "Internet Banking System" element on this diagram has ``page-element`` property set to ``true``.   
