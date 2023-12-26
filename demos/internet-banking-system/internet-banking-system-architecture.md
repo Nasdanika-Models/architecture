@@ -40,7 +40,8 @@ with the ``type`` property set to ``ArchitectureDescription``
 ../../root-properties.png
 ```
 
-This documentation was generated from [internet-banking-system-architecture.md](https://github.com/Nasdanika-Models/architecture/blob/main/demos/internet-banking-system/internet-banking-system-architecture.md) markdown file with the image above embedded using ``png-resource`` fenced block.
+This documentation was generated from [internet-banking-system-architecture.md](https://github.com/Nasdanika-Models/architecture/blob/main/demos/internet-banking-system/internet-banking-system-architecture.md) markdown file with the image above embedded using ``png-resource`` fenced block
+and the diagram embedded using ``drawio`` fenced block with ``representations/drawio/diagram`` expansion token.
 
 Diagram semantic elements were mapped to the root semantic element (``ArchitectureDescription``) using the following [``feature-map``](https://github.com/Nasdanika-Models/family#feature-map):
 
@@ -78,9 +79,12 @@ icon: https://img.icons8.com/officel/16/user.png
 
 Tooltips are copied from descriptions on the C4 Model diagram.
 
-The "Internet Banking System" diagram element is linked to the "Container Diagram" page. As such, its semantic element is mapped to the "Container Diagram" page element as well allowing further mapping on [that page](references/elements/internet-banking-system/index.html).
+### Internet Banking System -> CompositeNode
+
+The "Internet Banking System" diagram element is mapped to [CompositeNode](https://architecture.models.nasdanika.org/references/eClassifiers/CompositeNode/index.html) because it has sub-elements.
+It is linked to the "Container Diagram" page. As such, its semantic element is mapped to the "Container Diagram" page element as well allowing further mapping on [that page](references/elements/internet-banking-system/index.html).
 
 
 ## Generation
 
-...
+TODO: Maven plug-in.

@@ -1,28 +1,59 @@
-This site was generated as explained below:
-
-* A [Drawio](https://www.drawio.com/) diagram of an Internet Banking System was created based on images and descriptions from [The C4 model for visualising software architecture](https://c4model.com/). Descriptions of elements and diagrams were copied verbatim. The diagram uses free icons from [Icons8](https://icons8.com/) to provide visual distinction between architecture elements. 
-* The diagram was [mapped](https://github.com/Nasdanika-Models/family#mapping) the [Architecture model](https://architecture.models.nasdanika.org/) using properties of the diagram elements.
-* Then the architecture model was transformed to the [HTML Application model](https://html-app.models.nasdanika.org/index.html) and a static web site was generated from that model.
-
-Some highlights:
-
-* Diagram elements have tooltips with descriptions from the C4 model site.
-* A click on a diagram element navigates to the element page.
-* The left navigation provides full-text search which also searches for text in diagrams.
-* [Search](search.html) is a more featureful interface to the same search. 
-* [Glossary](glossary.html) provides a list of "terms" - a dictionary of the language of the system. It needs improvements - currently it shows all actions. Uncheck "Hide UUID" to see the elements. Elements can be filtered using the filter text field.
-* There is a link to the [source code on GitHub](https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system) in the footer.
 
 ```drawio
 ${representations/drawio/diagram}
 ```
 
-The the above diagram is a [System Context diagram](https://c4model.com/#SystemContextDiagram), which is
+The the above diagram is a [Container diagram](https://c4model.com/#ContainerDiagram), which is "zoom-in to the system boundary".
 
-> a good starting point for diagramming and 
-> documenting a software system, allowing you to step back 
-> and see the big picture. Draw a diagram showing your system as a box
->  in the centre, surrounded by its users and the other systems that it
-> interacts with.
+## Mapping
+
+### Surroundings -> selectors
+
+"Personal Banking Customer", "E-mail System", and "Mainframe Banking System" diagram elements are mapped to the same semantic elements as on the System Context Diagram using [``selector``](https://github.com/Nasdanika-Models/family#selector)s. 
+The system context diagram defines the surrounding nodes and this diagram references them.
+
+This is a selector of the "E-mail System":
+
+```yaml
+getDocument().getModelElementByProperty('semantic-id', 'microsoft-exchange')
+```
+
+The generation process "carries over" tooltips from the System Context Diagram to this diagram.
+
+### Internet Banking System
+
+The "Internet Banking System" container maps to the same semantic element as on the System Context Diagram because:
+
+* The "Internet Banking System" element on the System Context Diagram links to this diagram page.
+* The "Internet Banking System" element on this diagram has ``page-element`` property set to ``true``.   
+
+Semantic elements of the child elements of the "Internet Banking System" element are mapped to the ``elements`` reference and ordered with the [``flow``](https://github.com/Nasdanika-Models/family#flow) comparator:
+
+```yaml
+container:
+  self: 
+    elements:
+      path: 1
+      comparator: 
+        flow: 
+          fallback: label
+          condition: id != 'send-email'
+```          
+
+The condition prevents traversal of the "API Application" -> "E-mail System" connection. 
+It is not really necessary here - the order would not change without it.
+It is provided as an example because connection conditions may be necessary in some cases for proper ordering in diagrams with connection cycles.
+
+### Containers
+
+All containers within the system except the "API Application" are mapped to [Node](https://architecture.models.nasdanika.org/references/eClassifiers/Node/index.html)s, similar to the surroundings on the System Context diagram.
 
 
+#### API Application 
+
+The "API Application" diagram element is mapped to [CompositeNode](https://architecture.models.nasdanika.org/references/eClassifiers/CompositeNode/index.html) because it has sub-elements.
+It is linked to the "Container Diagram" page. As such, its semantic element is mapped to the "API Application Component Diagram" page element as well allowing further mapping on [that page](references/elements/api-application/index.html).
+
+This diagram element defines [``base-uri``](https://github.com/Nasdanika-Models/family#base-uri) property as ``%id%/``.
+Because "Placeholders" is checked, ``%id%/`` expands to ``api-application/`` during loading. 
+``doc-ref`` is set to ``readme.md``, which in combination with ``base-uri`` resolves to [``api-appliction/readme.md``](https://github.com/Nasdanika-Models/architecture/blob/main/demos/internet-banking-system/api-application/readme.md).
