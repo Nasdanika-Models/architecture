@@ -9,8 +9,8 @@ Notes:
 
 * Diagram elements have tooltips with descriptions from the C4 model site.
 * A click on a diagram element navigates to the element page.
-* The left navigation provides full-text search which also searches for text in diagrams.
-* [Search](search.html) is a more featureful interface to the same search. 
+* The left navigation provides a filter to quickly find a model element by name.
+* [Search](search.html) provides full-text search which also searches for text in diagrams. 
 * [Glossary](glossary.html) provides a list of "terms" - a dictionary of the language of the system. It needs improvements - currently it shows all actions. Uncheck "Hide UUID" to see the elements. Elements can be filtered using the filter text field.
 * There is a link to the [source code on GitHub](https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system) in the footer.
 * Connections (relationships) are not mapped in this demo.
