@@ -21,7 +21,6 @@ import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.diagramgenerator.plantuml.PlantUMLDiagramGenerator;
 import org.nasdanika.drawio.Node;
-import org.nasdanika.graph.Element;
 import org.nasdanika.html.model.app.gen.ActionSiteGenerator;
 import org.nasdanika.models.architecture.processors.doc.ArchitectureActionGenerator;
 import org.nasdanika.models.architecture.processors.doc.ArchitectureNodeProcessorFactory;
@@ -36,7 +35,7 @@ public class TestInternetBankingSystemSiteGen {
 			
 			@Override
 			protected void filterRepresentationElement(
-					Element representationElement, 
+					org.nasdanika.drawio.ModelElement representationElement, 
 					EObject semanticElement,
 					Map<EObject, EObject> registry, 
 					ProgressMonitor progressMonitor) {
