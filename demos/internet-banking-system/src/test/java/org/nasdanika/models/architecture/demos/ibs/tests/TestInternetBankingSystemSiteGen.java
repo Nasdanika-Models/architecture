@@ -22,6 +22,7 @@ import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.diagramgenerator.plantuml.PlantUMLDiagramGenerator;
 import org.nasdanika.drawio.Node;
 import org.nasdanika.html.model.app.gen.ActionSiteGenerator;
+import org.nasdanika.html.model.app.graph.emf.EObjectReflectiveProcessorFactoryProvider;
 import org.nasdanika.models.architecture.processors.doc.ArchitectureActionGenerator;
 import org.nasdanika.models.architecture.processors.doc.ArchitectureNodeProcessorFactory;
 import org.nasdanika.models.architecture.util.ArchitectureDrawioResourceFactory;
@@ -71,7 +72,23 @@ public class TestInternetBankingSystemSiteGen {
 				
 		ArchitectureActionGenerator actionGenerator = new ArchitectureActionGenerator(
 				ibsResource.getContents().get(0),
-				new ArchitectureNodeProcessorFactory(context, null));
+				new ArchitectureNodeProcessorFactory(context, null)) {
+			
+
+			@Override
+			protected org.nasdanika.html.model.app.graph.emf.EObjectReflectiveProcessorFactoryProvider createReflectiveFactoryProvider(Object reflectiveFactory) {
+				return new EObjectReflectiveProcessorFactoryProvider(reflectiveFactory) {
+					
+					@Override
+					protected boolean isCompactPath() {
+						return true;
+						
+					}					
+					
+				};				
+			}
+			
+		};
 		
 		actionGenerator.generateActionModel(
 				diagnosticConsumer, 
