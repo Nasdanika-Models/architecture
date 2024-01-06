@@ -53,8 +53,7 @@ public class TestInternetBankingSystemSiteGen {
 			}
 						
 		});
-		
-		
+				
 		File ibsDiagramFile = new File("internet-banking-system.drawio").getCanonicalFile();
 		Resource ibsResource = resourceSet.getResource(URI.createFileURI(ibsDiagramFile.getAbsolutePath()), true);
 		
