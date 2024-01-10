@@ -2,6 +2,9 @@ package org.nasdanika.models.architecture.util;
 
 import java.util.Map;
 import java.util.function.Function;
+import java.util.function.Supplier;
+
+import javax.script.ScriptEngine;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -32,8 +35,40 @@ public class ArchitectureDrawioResourceFactory implements Resource.Factory {
 		return new ArchitectureDrawioResource(uri, uriResolver) {
 			
 			@Override
-			protected EvaluationContext createEvaluationContext() {
-				return ArchitectureDrawioResourceFactory.this.createEvaluationContext();
+			protected EvaluationContext createEvaluationContext(EObject context) {
+				return ArchitectureDrawioResourceFactory.this.createEvaluationContext(context);				
+			};
+			
+			@Override
+			protected ClassLoader getClassLoader(EObject context, URI baseURI, Supplier<ClassLoader> logicalParentClassLoaderSupplier) {
+				return ArchitectureDrawioResourceFactory.this.getClassLoader(context, baseURI, logicalParentClassLoaderSupplier);
+			};
+			
+			@Override
+			protected void configureScriptEngine(
+					ScriptEngine engine, 
+					EObject diagramElement, 
+					EObject semanticElement,
+					Map<EObject, EObject> registry, 
+					int pass, 
+					ProgressMonitor progressMonitor) {
+				
+				super.configureScriptEngine(
+						engine, 
+						diagramElement, 
+						semanticElement, 
+						registry, 
+						pass, 
+						progressMonitor);
+				
+				ArchitectureDrawioResourceFactory.this.configureScriptEngine(
+						engine, 
+						this,
+						diagramElement, 
+						semanticElement, 
+						registry, 
+						pass, 
+						progressMonitor);
 			}
 			
 			@Override
@@ -65,8 +100,12 @@ public class ArchitectureDrawioResourceFactory implements Resource.Factory {
 		return new NullProgressMonitor();
 	}
 	
-	protected EvaluationContext createEvaluationContext() {
+	protected EvaluationContext createEvaluationContext(Object context) {
 		return new StandardEvaluationContext();
+	}	
+	
+	protected ClassLoader getClassLoader(EObject context, URI baseURI, Supplier<ClassLoader> logicalParentClassLoaderSupplier) {
+		return logicalParentClassLoaderSupplier == null ? getClass().getClassLoader() : logicalParentClassLoaderSupplier.get();
 	}	
 
 	protected URI getAppBase() {
@@ -87,5 +126,16 @@ public class ArchitectureDrawioResourceFactory implements Resource.Factory {
 			ProgressMonitor progressMonitor) {
 		
 	}
+	
+	protected void configureScriptEngine(
+			ScriptEngine engine, 
+			ArchitectureDrawioResource resource,
+			EObject diagramElement, 
+			EObject semanticElement,
+			Map<EObject, EObject> registry, 
+			int pass, 
+			ProgressMonitor progressMonitor) {		
+		
+	}	
 			
 }
