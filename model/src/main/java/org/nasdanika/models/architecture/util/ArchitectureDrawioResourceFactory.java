@@ -1,6 +1,8 @@
 package org.nasdanika.models.architecture.util;
 
+import java.util.Collections;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -35,41 +37,9 @@ public class ArchitectureDrawioResourceFactory implements Resource.Factory {
 		return new ArchitectureDrawioResource(uri, uriResolver) {
 			
 			@Override
-			protected EvaluationContext createEvaluationContext(EObject context) {
-				return ArchitectureDrawioResourceFactory.this.createEvaluationContext(context);				
-			};
-			
-			@Override
 			protected ClassLoader getClassLoader(EObject context, URI baseURI, Supplier<ClassLoader> logicalParentClassLoaderSupplier) {
 				return ArchitectureDrawioResourceFactory.this.getClassLoader(context, baseURI, logicalParentClassLoaderSupplier);
 			};
-			
-			@Override
-			protected void configureScriptEngine(
-					ScriptEngine engine, 
-					EObject diagramElement, 
-					EObject semanticElement,
-					Map<EObject, EObject> registry, 
-					int pass, 
-					ProgressMonitor progressMonitor) {
-				
-				super.configureScriptEngine(
-						engine, 
-						diagramElement, 
-						semanticElement, 
-						registry, 
-						pass, 
-						progressMonitor);
-				
-				ArchitectureDrawioResourceFactory.this.configureScriptEngine(
-						engine, 
-						this,
-						diagramElement, 
-						semanticElement, 
-						registry, 
-						pass, 
-						progressMonitor);
-			}
 			
 			@Override
 			protected URI getAppBase() {
@@ -84,6 +54,11 @@ public class ArchitectureDrawioResourceFactory implements Resource.Factory {
 					ProgressMonitor progressMonitor) {
 				ArchitectureDrawioResourceFactory.this.filterRepresentationElement(representationElement, semanticElement, registry, progressMonitor);
 			}
+			
+			@Override
+			protected Iterable<Map.Entry<String,Object>> getVariables(EObject context) {
+				return ArchitectureDrawioResourceFactory.this.getVariables(this, context);
+			};
 			
 		};
 	}
@@ -137,5 +112,9 @@ public class ArchitectureDrawioResourceFactory implements Resource.Factory {
 			ProgressMonitor progressMonitor) {		
 		
 	}	
+	
+	protected Iterable<Entry<String, Object>> getVariables(ArchitectureDrawioResource resource, EObject context) {
+		return Collections.emptySet();
+	}
 			
 }
