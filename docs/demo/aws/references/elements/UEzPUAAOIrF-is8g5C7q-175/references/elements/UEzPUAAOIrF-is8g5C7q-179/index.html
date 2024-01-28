@@ -70,19 +70,55 @@ window.nsdJsTreeSearchCallback = function(str, node) {
 			  }
 			}));
 </script>
+
+<script src="../../../../../../../../search-documents.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
+
+<script>
+// Script for full-text search of JsTree
+
+window.nsdJsTreeSearchCallback = function(str, node) { 
+    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
+    if (sf.search(node.text).isMatch) {
+		return true;
+	} 
+    let searchResult = this.search(str); 
+    for (const sr in searchResult) {
+        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
+            return true;
+        } 
+    } 
+    return false; 
+}.bind(lunr(function () {
+			  this.ref('id');
+			  this.field('title');
+			  this.field('content');
+
+			  for (const key in searchDocuments) {
+				  let doc = searchDocuments[key];
+				this.add({
+					id: doc['action-uuid'],
+					title: doc.title,
+					path: doc.path,
+					content: doc.content
+				});  
+			  }
+			}));
+</script>
 </head>
   <body>
     <div class="container-fluid nsd-app-container">
       <div class="row">
         <div class="col nsd-app-header">
-          <a href="https://architecture.models.nasdanika.org" data-nsd-label-uuid="a1f94561-8a82-4a5e-9926-cd1fe64f46d8" class="nsd-app-header-title">
+          <a href="https://architecture.models.nasdanika.org" data-nsd-label-uuid="9a469735-ebf8-4afa-91e9-1e8903b9219b" class="nsd-app-header-title">
             <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Architecture Model</a>
           <ul class="nav nsd-app-header-navs">
             <li class="nav-item">
-              <a href="../../../../../../search.html" data-nsd-label-uuid="4d21f087-afef-4f4f-95be-d36f9edf3f23" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+              <a href="../../../../../../search.html" data-nsd-label-uuid="7c3685b0-10a6-46fb-9242-e1486129a73e" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
             </li>
             <li class="nav-item">
-              <a href="../../../../../../glossary.html" data-nsd-label-uuid="d2973190-b9a9-4778-9bc2-2b2453fcdfa5" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+              <a href="../../../../../../glossary.html" data-nsd-label-uuid="4d82a9de-de24-4915-9d01-7c47db542769" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
             </li>
           </ul>
         </div>
@@ -90,10 +126,10 @@ window.nsdJsTreeSearchCallback = function(str, node) {
       <div class="row">
         <div class="col nsd-app-navbar">
           <ul class="navbar navbar-light navbar-expand-lg">
-            <a href="../../../../../../index.html" data-nsd-label-uuid="b16205bc-69db-4619-955d-43371f8798e6" class="navbar-brand">AWS</a>
-            <button type="button" data-toggle="collapse" data-target="#nsd_b8" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            <a href="../../../../../../index.html" data-nsd-label-uuid="ba844307-a9f2-4396-a6ae-81d617e55524" class="navbar-brand">AWS</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_5e" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_b8" class="collapse navbar-collapse"></div>
+            <div id="nsd_5e" class="collapse navbar-collapse"></div>
           </ul>
         </div>
       </div>
@@ -104,8 +140,8 @@ window.nsdJsTreeSearchCallback = function(str, node) {
               <a href="../../../../UEzPUAAOIrF-is8g5C7q-176/index.html">Shared Services Account</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-176/references/elements/5XkNxeRv2VUHAX8nPhkU-1/index.html" data-nsd-label-uuid="3b2cece6-dd23-4f6c-992b-1ff9e21477ef" class="list-group-item list-group-action">Amazon VPC</a>
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html" data-nsd-label-uuid="8792e5e1-b909-410a-b65b-5618833deafa" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-188/index.html" data-nsd-label-uuid="8beaa849-318b-49b9-be0e-662a3d47992a" class="list-group-item list-group-action">Actor</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html" data-nsd-label-uuid="e7d0f231-993e-4113-9291-5f571b2b9950" class="list-group-item list-group-action">Account Baseline</a>
             </div>
           </div>
           <div class="card">
@@ -113,8 +149,8 @@ window.nsdJsTreeSearchCallback = function(str, node) {
               <a href="../../../../UEzPUAAOIrF-is8g5C7q-185/index.html">Log Archive Account</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html" data-nsd-label-uuid="d8322de3-4c4b-42ea-a3f7-3d937f08167d" class="list-group-item list-group-action">Account Baseline</a>
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html" data-nsd-label-uuid="39e40dc7-5f09-4a7b-aeb4-a7b18c5b528e" class="list-group-item list-group-action">Aggregate CloudTrail and Config Logs</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html" data-nsd-label-uuid="3366bcc1-60f1-47ab-9542-9c5e2763b692" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html" data-nsd-label-uuid="8b5efd7d-bb8e-4b19-bfe9-72be93d93c20" class="list-group-item list-group-action">Aggregate CloudTrail and Config Logs</a>
             </div>
           </div>
           <div class="card">
@@ -122,10 +158,10 @@ window.nsdJsTreeSearchCallback = function(str, node) {
               <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/index.html">Security Account</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html" data-nsd-label-uuid="d36f40bd-294c-4e92-9ec8-d2b97d5b0090" class="list-group-item list-group-action">Account Baseline</a>
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html" data-nsd-label-uuid="5a4bec49-c264-42e4-9c56-5884510c9db2" class="list-group-item list-group-action"><span class="fas fa-key nsd-app-label-icon"></span>Security Cross-Account Roles</a>
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html" data-nsd-label-uuid="ba00c1bc-672c-4304-b821-fe5fb5e72c32" class="list-group-item list-group-action">Amazon GuardDuty</a>
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html" data-nsd-label-uuid="c6a465b6-b544-411d-be71-c12912402cb9" class="list-group-item list-group-action">Amazon SNS</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html" data-nsd-label-uuid="aa4fd316-e4d8-4780-b610-afda9be811c9" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html" data-nsd-label-uuid="479fea5d-5980-495c-86c3-b76874560a4f" class="list-group-item list-group-action"><span class="fas fa-key nsd-app-label-icon"></span>Security Cross-Account Roles</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html" data-nsd-label-uuid="22e50f2b-4fda-41ee-9d24-69c2a9e5d122" class="list-group-item list-group-action">Amazon GuardDuty</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html" data-nsd-label-uuid="2ae42dc0-a610-48ac-a8af-8c5d93cc9025" class="list-group-item list-group-action">Amazon SNS</a>
             </div>
           </div>
           <div class="card">
@@ -133,27 +169,27 @@ window.nsdJsTreeSearchCallback = function(str, node) {
               <a href="../../../index.html">AWS Cloud</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="../UEzPUAAOIrF-is8g5C7q-177/index.html" data-nsd-label-uuid="1eeb0710-7f32-47d9-b3a8-852ebdf1dd19" class="list-group-item list-group-action">
+              <a href="../UEzPUAAOIrF-is8g5C7q-177/index.html" data-nsd-label-uuid="c85bb622-29fb-4ba1-bfa6-3e75b54cb9eb" class="list-group-item list-group-action">
                 <img src="https://img.icons8.com/material-two-tone/16/waterbucket.png" class="nsd-app-label-icon">Amazon S3 Bucket</a>
-              <a href="../UEzPUAAOIrF-is8g5C7q-178/index.html" data-nsd-label-uuid="f3c6ddf4-8a5f-4d50-9721-970d66e3067f" class="list-group-item list-group-action">AWS CodePipeline</a><span data-nsd-label-uuid="95c6e230-edd1-4805-bfa9-67c9210c5d41" class="active list-group-item list-group-action">AWS Organizations</span>
-              <a href="../UEzPUAAOIrF-is8g5C7q-180/index.html" data-nsd-label-uuid="88dc982d-e84c-482b-bcda-d46a01fb21eb" class="list-group-item list-group-action">AWS Single Sign-on</a>
-              <a href="../UEzPUAAOIrF-is8g5C7q-181/index.html" data-nsd-label-uuid="e90a3693-6c46-48e3-a31d-4d1596983873" class="list-group-item list-group-action">Account Baseline</a>
-              <a href="../UEzPUAAOIrF-is8g5C7q-182/index.html" data-nsd-label-uuid="08fd74e5-85dd-4659-b36c-cbe606994810" class="list-group-item list-group-action">AWS Service Catalog</a>
-              <a href="../UEzPUAAOIrF-is8g5C7q-183/index.html" data-nsd-label-uuid="3aad004e-76d4-47c2-af8e-5f596f2a8819" class="list-group-item list-group-action">AWS Parameter Store</a>
-              <a href="../UEzPUAAOIrF-is8g5C7q-184/index.html" data-nsd-label-uuid="26c96c70-31e6-45bb-a081-aa847ec88204" class="list-group-item list-group-action">Core OU</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-178/index.html" data-nsd-label-uuid="3dcb673f-28f0-40da-b868-529dd8fdb7e6" class="list-group-item list-group-action">AWS CodePipeline</a><span data-nsd-label-uuid="8f822eb3-6656-47fe-8ec2-bd1861601297" class="active list-group-item list-group-action">AWS Organizations</span>
+              <a href="../UEzPUAAOIrF-is8g5C7q-180/index.html" data-nsd-label-uuid="6c9bda27-ead6-4a1e-b99b-94db63193c11" class="list-group-item list-group-action">AWS Single Sign-on</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-181/index.html" data-nsd-label-uuid="c007b6cb-a5d2-4930-9254-8ea2ea79ba12" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-182/index.html" data-nsd-label-uuid="7ec6c39b-c6b3-4780-a132-9e7fa8d479ed" class="list-group-item list-group-action">AWS Service Catalog</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-183/index.html" data-nsd-label-uuid="895e82bd-643f-4906-bdc8-61dd38a3e177" class="list-group-item list-group-action">AWS Parameter Store</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-184/index.html" data-nsd-label-uuid="30ddadf9-cef0-4e7d-b64c-2cfaa68f2ddc" class="list-group-item list-group-action">Core OU</a>
             </div>
           </div>
         </div>
-        <div data-nsd-label-uuid="95c6e230-edd1-4805-bfa9-67c9210c5d41" data-nsd-action-uris="uuid:95c6e230-edd1-4805-bfa9-67c9210c5d41" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="8f822eb3-6656-47fe-8ec2-bd1861601297" data-nsd-action-uris="uuid:8f822eb3-6656-47fe-8ec2-bd1861601297" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-breadcrumb-row">
               <div class="col">
                 <nav aria-label="breadcrumb" class="nsd-app-content-panel-breadcrumb">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                      <a href="../../../index.html" data-nsd-label-uuid="63650356-51fb-48b2-a089-9478b1bf145e">AWS Cloud</a>
+                      <a href="../../../index.html" data-nsd-label-uuid="0a6c7740-7039-4240-ac4e-2b9bb0334986">AWS Cloud</a>
                     </li>
-                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="95c6e230-edd1-4805-bfa9-67c9210c5d41">AWS Organizations</span>
+                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="8f822eb3-6656-47fe-8ec2-bd1861601297">AWS Organizations</span>
                     </li>
                   </ol>
                 </nav>
@@ -161,7 +197,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
             </div>
             <div class="row nsd-app-content-panel-title-and-items-row">
               <div class="col-auto">
-                <h1><span data-nsd-label-uuid="95c6e230-edd1-4805-bfa9-67c9210c5d41" class="nsd-app-content-panel-title">AWS Organizations</span>
+                <h1><span data-nsd-label-uuid="8f822eb3-6656-47fe-8ec2-bd1861601297" class="nsd-app-content-panel-title">AWS Organizations</span>
                 </h1>
               </div>
             </div>
@@ -177,7 +213,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
         <div class="col nsd-app-footer">
           <ul class="nav nsd-app-footer-navs">
             <li class="nav-item">
-              <a href="https://github.com/Nasdanika-Models/architecture" data-nsd-label-uuid="f544c8c4-1d4d-49f3-988d-fdad48b476f0" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+              <a href="https://github.com/Nasdanika-Models/architecture" data-nsd-label-uuid="490dcd58-73a0-48c7-b23b-124261b7add9" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
             </li>
           </ul>
         </div>

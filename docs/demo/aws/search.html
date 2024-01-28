@@ -1,21 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="EN">
   <head>
     <title>Search</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet"/>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/css/app.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css">
     <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/common.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/dark-head.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/jstree.min.js"></script>
@@ -34,18 +34,54 @@
 
   gtag('config', 'G-9BRJVLK8CC');
 </script>    
+
+<script src="../../search-documents.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
+
+<script>
+// Script for full-text search of JsTree
+
+window.nsdJsTreeSearchCallback = function(str, node) { 
+    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
+    if (sf.search(node.text).isMatch) {
+		return true;
+	} 
+    let searchResult = this.search(str); 
+    for (const sr in searchResult) {
+        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
+            return true;
+        } 
+    } 
+    return false; 
+}.bind(lunr(function () {
+			  this.ref('id');
+			  this.field('title');
+			  this.field('content');
+
+			  for (const key in searchDocuments) {
+				  let doc = searchDocuments[key];
+				this.add({
+					id: doc['action-uuid'],
+					title: doc.title,
+					path: doc.path,
+					content: doc.content
+				});  
+			  }
+			}));
+</script>
 </head>
   <body>
     <div class="container-fluid nsd-app-container">
       <div class="row">
         <div class="col nsd-app-header">
-          <a href="https://architecture.models.nasdanika.org" data-nsd-label-uuid="a1f94561-8a82-4a5e-9926-cd1fe64f46d8" class="nsd-app-header-title">
-            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon"/>Nasdanika Architecture Model</a>
+          <a href="https://architecture.models.nasdanika.org" data-nsd-label-uuid="9a469735-ebf8-4afa-91e9-1e8903b9219b" class="nsd-app-header-title">
+            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Architecture Model</a>
           <ul class="nav nsd-app-header-navs">
-            <li class="nav-item"><span data-nsd-label-uuid="4d21f087-afef-4f4f-95be-d36f9edf3f23" class="navbar-text"><span class="fas fa-search nsd-app-label-icon"></span>Search</span>
+            <li class="nav-item"><span data-nsd-label-uuid="7c3685b0-10a6-46fb-9242-e1486129a73e" class="navbar-text"><span class="fas fa-search nsd-app-label-icon"></span>Search</span>
             </li>
             <li class="nav-item">
-              <a href="glossary.html" data-nsd-label-uuid="d2973190-b9a9-4778-9bc2-2b2453fcdfa5" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+              <a href="glossary.html" data-nsd-label-uuid="4d82a9de-de24-4915-9d01-7c47db542769" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
             </li>
           </ul>
         </div>
@@ -53,10 +89,10 @@
       <div class="row">
         <div class="col nsd-app-navbar">
           <ul class="navbar navbar-light navbar-expand-lg">
-            <a href="index.html" data-nsd-label-uuid="b16205bc-69db-4619-955d-43371f8798e6" class="navbar-brand">AWS</a>
-            <button type="button" data-toggle="collapse" data-target="#nsd_32" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            <a href="index.html" data-nsd-label-uuid="ba844307-a9f2-4396-a6ae-81d617e55524" class="navbar-brand">AWS</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_75" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_32" class="collapse navbar-collapse"></div>
+            <div id="nsd_75" class="collapse navbar-collapse"></div>
           </ul>
         </div>
       </div>
@@ -67,8 +103,8 @@
               <a href="references/elements/UEzPUAAOIrF-is8g5C7q-176/index.html">Shared Services Account</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/5XkNxeRv2VUHAX8nPhkU-1/index.html" data-nsd-label-uuid="3b2cece6-dd23-4f6c-992b-1ff9e21477ef" class="list-group-item list-group-action">Amazon VPC</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html" data-nsd-label-uuid="8792e5e1-b909-410a-b65b-5618833deafa" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-188/index.html" data-nsd-label-uuid="8beaa849-318b-49b9-be0e-662a3d47992a" class="list-group-item list-group-action">Actor</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html" data-nsd-label-uuid="e7d0f231-993e-4113-9291-5f571b2b9950" class="list-group-item list-group-action">Account Baseline</a>
             </div>
           </div>
           <div class="card">
@@ -76,8 +112,8 @@
               <a href="references/elements/UEzPUAAOIrF-is8g5C7q-185/index.html">Log Archive Account</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html" data-nsd-label-uuid="d8322de3-4c4b-42ea-a3f7-3d937f08167d" class="list-group-item list-group-action">Account Baseline</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html" data-nsd-label-uuid="39e40dc7-5f09-4a7b-aeb4-a7b18c5b528e" class="list-group-item list-group-action">Aggregate CloudTrail and Config Logs</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html" data-nsd-label-uuid="3366bcc1-60f1-47ab-9542-9c5e2763b692" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html" data-nsd-label-uuid="8b5efd7d-bb8e-4b19-bfe9-72be93d93c20" class="list-group-item list-group-action">Aggregate CloudTrail and Config Logs</a>
             </div>
           </div>
           <div class="card">
@@ -85,10 +121,10 @@
               <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/index.html">Security Account</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html" data-nsd-label-uuid="d36f40bd-294c-4e92-9ec8-d2b97d5b0090" class="list-group-item list-group-action">Account Baseline</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html" data-nsd-label-uuid="5a4bec49-c264-42e4-9c56-5884510c9db2" class="list-group-item list-group-action"><span class="fas fa-key nsd-app-label-icon"></span>Security Cross-Account Roles</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html" data-nsd-label-uuid="ba00c1bc-672c-4304-b821-fe5fb5e72c32" class="list-group-item list-group-action">Amazon GuardDuty</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html" data-nsd-label-uuid="c6a465b6-b544-411d-be71-c12912402cb9" class="list-group-item list-group-action">Amazon SNS</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html" data-nsd-label-uuid="aa4fd316-e4d8-4780-b610-afda9be811c9" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html" data-nsd-label-uuid="479fea5d-5980-495c-86c3-b76874560a4f" class="list-group-item list-group-action"><span class="fas fa-key nsd-app-label-icon"></span>Security Cross-Account Roles</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html" data-nsd-label-uuid="22e50f2b-4fda-41ee-9d24-69c2a9e5d122" class="list-group-item list-group-action">Amazon GuardDuty</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html" data-nsd-label-uuid="2ae42dc0-a610-48ac-a8af-8c5d93cc9025" class="list-group-item list-group-action">Amazon SNS</a>
             </div>
           </div>
           <div class="card">
@@ -96,24 +132,24 @@
               <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/index.html">AWS Cloud</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-177/index.html" data-nsd-label-uuid="1eeb0710-7f32-47d9-b3a8-852ebdf1dd19" class="list-group-item list-group-action">
-                <img src="https://img.icons8.com/material-two-tone/16/waterbucket.png" class="nsd-app-label-icon"/>Amazon S3 Bucket</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-178/index.html" data-nsd-label-uuid="f3c6ddf4-8a5f-4d50-9721-970d66e3067f" class="list-group-item list-group-action">AWS CodePipeline</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-179/index.html" data-nsd-label-uuid="95c6e230-edd1-4805-bfa9-67c9210c5d41" class="list-group-item list-group-action">AWS Organizations</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-180/index.html" data-nsd-label-uuid="88dc982d-e84c-482b-bcda-d46a01fb21eb" class="list-group-item list-group-action">AWS Single Sign-on</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-181/index.html" data-nsd-label-uuid="e90a3693-6c46-48e3-a31d-4d1596983873" class="list-group-item list-group-action">Account Baseline</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-182/index.html" data-nsd-label-uuid="08fd74e5-85dd-4659-b36c-cbe606994810" class="list-group-item list-group-action">AWS Service Catalog</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-183/index.html" data-nsd-label-uuid="3aad004e-76d4-47c2-af8e-5f596f2a8819" class="list-group-item list-group-action">AWS Parameter Store</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-184/index.html" data-nsd-label-uuid="26c96c70-31e6-45bb-a081-aa847ec88204" class="list-group-item list-group-action">Core OU</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-177/index.html" data-nsd-label-uuid="c85bb622-29fb-4ba1-bfa6-3e75b54cb9eb" class="list-group-item list-group-action">
+                <img src="https://img.icons8.com/material-two-tone/16/waterbucket.png" class="nsd-app-label-icon">Amazon S3 Bucket</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-178/index.html" data-nsd-label-uuid="3dcb673f-28f0-40da-b868-529dd8fdb7e6" class="list-group-item list-group-action">AWS CodePipeline</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-179/index.html" data-nsd-label-uuid="8f822eb3-6656-47fe-8ec2-bd1861601297" class="list-group-item list-group-action">AWS Organizations</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-180/index.html" data-nsd-label-uuid="6c9bda27-ead6-4a1e-b99b-94db63193c11" class="list-group-item list-group-action">AWS Single Sign-on</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-181/index.html" data-nsd-label-uuid="c007b6cb-a5d2-4930-9254-8ea2ea79ba12" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-182/index.html" data-nsd-label-uuid="7ec6c39b-c6b3-4780-a132-9e7fa8d479ed" class="list-group-item list-group-action">AWS Service Catalog</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-183/index.html" data-nsd-label-uuid="895e82bd-643f-4906-bdc8-61dd38a3e177" class="list-group-item list-group-action">AWS Parameter Store</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-184/index.html" data-nsd-label-uuid="30ddadf9-cef0-4e7d-b64c-2cfaa68f2ddc" class="list-group-item list-group-action">Core OU</a>
             </div>
           </div>
         </div>
-        <div data-nsd-label-uuid="4d21f087-afef-4f4f-95be-d36f9edf3f23" data-nsd-action-uris="uuid:4d21f087-afef-4f4f-95be-d36f9edf3f23" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="7c3685b0-10a6-46fb-9242-e1486129a73e" data-nsd-action-uris="uuid:7c3685b0-10a6-46fb-9242-e1486129a73e" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-title-and-items-row">
               <div class="col-auto">
-                <H1><span data-nsd-label-uuid="4d21f087-afef-4f4f-95be-d36f9edf3f23" class="nsd-app-content-panel-title"><span class="fas fa-search nsd-app-label-icon"></span>Search</span>
-                </H1>
+                <h1><span data-nsd-label-uuid="7c3685b0-10a6-46fb-9242-e1486129a73e" class="nsd-app-content-panel-title"><span class="fas fa-search nsd-app-label-icon"></span>Search</span>
+                </h1>
               </div>
             </div>
             <div class="row nsd-app-content-panel-content-row">
@@ -125,23 +161,9 @@
      	<div id="search-app" class="container-fluid">
      		<div class="row">
      			<div class="col">
-					<b-form-group
-			          label="Filter"
-			          label-for="filter-input"
-			          label-cols-sm="3"
-			          label-align-sm="right"
-			          label-size="sm"
-			          class="mb-0"
-					  description="You can use wildcards, e.g. 'foo*' or 'f*o'; title or content fields, e.g. 'title:foo* bar'; boosts, e.g. 'foo^10 bar'; fuzzy matches, e.g. 'foo~1'; and term presence, e.g. '+foo bar -baz'"	          
-			        >
+					<b-form-group label="Filter" label-for="filter-input" label-cols-sm="3" label-align-sm="right" label-size="sm" class="mb-0" description="You can use wildcards, e.g. 'foo*' or 'f*o'; title or content fields, e.g. 'title:foo* bar'; boosts, e.g. 'foo^10 bar'; fuzzy matches, e.g. 'foo~1'; and term presence, e.g. '+foo bar -baz'">
 			          <b-input-group size="sm">
-			            <b-form-input
-			              id="filter-input"
-			              v-model="filter"
-			              type="search"
-			              placeholder="Type to Search"
-			              debounce="700"
-			            ></b-form-input>
+			            <b-form-input id="filter-input" v-model="filter" type="search" placeholder="Type to Search" debounce="700"></b-form-input>
 			
 			            <b-input-group-append>
 			              <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
@@ -157,12 +179,7 @@
 	        		</div>
 	        	</div>
 	        	<div class="col">
-			        <b-card 
-			        	v-for="searchResult in searchResults" 
-			        	:header-html="searchResult.title" 
-			        	:footer="searchResult.path"
-			        	class="my-1"
-			        	>
+			        <b-card v-for="searchResult in searchResults" :header-html="searchResult.title" :footer="searchResult.path" class="my-1">
 			        	
 			        	<b-card-text><span v-html="searchResult.content"></span></b-card-text>
 			        </b-card>
@@ -315,7 +332,7 @@
 		
 
 <script>$(document).ready( function() {
-$('#nsd-site-map-tree').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; }; tree.search.search_callback = (results, node) => results.split(' ').includes(node.original['data-nsd-label-uuid']); return tree; }({"core":{"data":[{"a_attr":{"onclick":"window.location='https://architecture.models.nasdanika.org';"},"children":[{"children":[{"data-nsd-label-uuid":"4d21f087-afef-4f4f-95be-d36f9edf3f23","icon":"fas fa-search","id":"aa48b279-d747-478b-ad85-57e3d46d0e07","text":"Search","type":"leaf"},{"a_attr":{"onclick":"window.location='glossary.html';"},"data-nsd-label-uuid":"d2973190-b9a9-4778-9bc2-2b2453fcdfa5","icon":"fas fa-book","id":"7ce0c939-7d14-4044-8020-55bb8e3dc072","text":"Glossary","type":"leaf"}],"text":"Children"},{"children":[{"a_attr":{"onclick":"window.location='https://github.com/Nasdanika-Models/architecture';"},"data-nsd-label-uuid":"f544c8c4-1d4d-49f3-988d-fdad48b476f0","icon":"fab fa-github","id":"f36d65f7-5c44-433b-9c7e-a62b5bee4ef3","text":"Sources","type":"leaf"}],"text":"Navigation"}],"data-nsd-label-uuid":"a1f94561-8a82-4a5e-9926-cd1fe64f46d8","icon":"https://docs.nasdanika.org/images/nasdanika-logo.png","id":"21d108cf-8c2c-4a80-9868-660b00ee6ef5","text":"Nasdanika Architecture Model","type":"leaf"},{"a_attr":{"onclick":"window.location='index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-176/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/5XkNxeRv2VUHAX8nPhkU-1/index.html';"},"data-nsd-label-uuid":"3b2cece6-dd23-4f6c-992b-1ff9e21477ef","id":"a6047256-3df9-4935-b904-9c087d8e06a7","text":"Amazon VPC","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html';"},"data-nsd-label-uuid":"8792e5e1-b909-410a-b65b-5618833deafa","id":"57f5ae05-84f7-4574-93a2-b47d09540354","text":"Account Baseline","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"22b51196-bdce-4a2d-9cd7-3f877d97af11","id":"f35b10fe-9dc7-4871-ac73-44bb2e31ab75","text":"Shared Services Account","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-185/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html';"},"data-nsd-label-uuid":"d8322de3-4c4b-42ea-a3f7-3d937f08167d","id":"f7eac999-a417-4710-a844-d65f463c76d0","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html';"},"data-nsd-label-uuid":"39e40dc7-5f09-4a7b-aeb4-a7b18c5b528e","id":"63f22a49-952f-4571-9038-c081398b9c11","text":"Aggregate CloudTrail and Config Logs","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"9990c4c1-f55a-4f5f-a145-a18f162d341e","id":"121ba51c-75c1-4331-8e28-67bf6aa2c990","text":"Log Archive Account","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html';"},"data-nsd-label-uuid":"d36f40bd-294c-4e92-9ec8-d2b97d5b0090","id":"2dc807cd-a5c8-478e-b6da-cdd453b0a472","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html';"},"data-nsd-label-uuid":"5a4bec49-c264-42e4-9c56-5884510c9db2","icon":"fas fa-key","id":"56d50b82-c9c3-43db-a0cc-816eea8fd092","text":"Security Cross-Account Roles","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html';"},"data-nsd-label-uuid":"ba00c1bc-672c-4304-b821-fe5fb5e72c32","id":"41c76be1-255c-48ba-a6bc-330cedaeff1b","text":"Amazon GuardDuty","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html';"},"data-nsd-label-uuid":"c6a465b6-b544-411d-be71-c12912402cb9","id":"667bd1c3-d718-45ef-9bf4-ef96387abe22","text":"Amazon SNS","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"f0a46229-04c3-493d-afef-6399b42ac2eb","id":"89e3e454-dbc1-45e3-842c-98c515cec34b","text":"Security Account","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-177/index.html';"},"data-nsd-label-uuid":"1eeb0710-7f32-47d9-b3a8-852ebdf1dd19","icon":"https://img.icons8.com/material-two-tone/16/waterbucket.png","id":"e2c33ff8-a137-41dc-b436-4f80bf4accb2","text":"Amazon S3 Bucket","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-178/index.html';"},"data-nsd-label-uuid":"f3c6ddf4-8a5f-4d50-9721-970d66e3067f","id":"b1206b12-718b-4023-a2df-eebb407bc2ce","text":"AWS CodePipeline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-179/index.html';"},"data-nsd-label-uuid":"95c6e230-edd1-4805-bfa9-67c9210c5d41","id":"50b6ee4c-2ad6-4042-bfed-7d2b585016f3","text":"AWS Organizations","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-180/index.html';"},"data-nsd-label-uuid":"88dc982d-e84c-482b-bcda-d46a01fb21eb","id":"2b853216-61d2-4104-bc36-7381115da861","text":"AWS Single Sign-on","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-181/index.html';"},"data-nsd-label-uuid":"e90a3693-6c46-48e3-a31d-4d1596983873","id":"9d27d0f9-6e8d-49fe-9d23-beaad67d7693","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-182/index.html';"},"data-nsd-label-uuid":"08fd74e5-85dd-4659-b36c-cbe606994810","id":"fb56cc4e-8d5d-49df-ad68-7586269b119a","text":"AWS Service Catalog","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-183/index.html';"},"data-nsd-label-uuid":"3aad004e-76d4-47c2-af8e-5f596f2a8819","id":"2b45efc2-6dd8-40f0-8790-e50304785997","text":"AWS Parameter Store","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-184/index.html';"},"data-nsd-label-uuid":"26c96c70-31e6-45bb-a081-aa847ec88204","id":"64632ad7-cd60-45d5-8b59-103ec59df3eb","text":"Core OU","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"63650356-51fb-48b2-a089-9478b1bf145e","id":"bd33360e-273a-424d-8d15-b262a39df50d","text":"AWS Cloud","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"b16205bc-69db-4619-955d-43371f8798e6","id":"b318db3e-d4f4-4da0-be57-d12e0bd3caf3","text":"AWS","type":"leaf"}]},"search":{"show_only_matches":true},"plugins":["state","search"],"state":{"key":"nsd-site-map-tree"}}));
+$('#nsd-site-map-tree').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; }; tree.search.search_callback = (results, node) => results.split(' ').includes(node.original['data-nsd-label-uuid']); return tree; }({"core":{"data":[{"a_attr":{"onclick":"window.location='https://architecture.models.nasdanika.org';"},"children":[{"children":[{"data-nsd-label-uuid":"7c3685b0-10a6-46fb-9242-e1486129a73e","icon":"fas fa-search","id":"f6bd619b-5d81-43bc-80ad-d8cfa53ad100","text":"Search","type":"leaf"},{"a_attr":{"onclick":"window.location='glossary.html';"},"data-nsd-label-uuid":"4d82a9de-de24-4915-9d01-7c47db542769","icon":"fas fa-book","id":"2489ff83-e5ac-4368-aaf7-8659f048778d","text":"Glossary","type":"leaf"}],"text":"Children"},{"children":[{"a_attr":{"onclick":"window.location='https://github.com/Nasdanika-Models/architecture';"},"data-nsd-label-uuid":"490dcd58-73a0-48c7-b23b-124261b7add9","icon":"fab fa-github","id":"12d52598-bb50-452d-9ced-d979caffda87","text":"Sources","type":"leaf"}],"text":"Navigation"}],"data-nsd-label-uuid":"9a469735-ebf8-4afa-91e9-1e8903b9219b","icon":"https://docs.nasdanika.org/images/nasdanika-logo.png","id":"060b5b70-867e-4ce8-a0d8-e0ec5a033f2f","text":"Nasdanika Architecture Model","type":"leaf"},{"a_attr":{"onclick":"window.location='index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-176/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-188/index.html';"},"data-nsd-label-uuid":"8beaa849-318b-49b9-be0e-662a3d47992a","id":"13ba2d13-5092-4413-9d28-cc150e773500","text":"Actor","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html';"},"data-nsd-label-uuid":"e7d0f231-993e-4113-9291-5f571b2b9950","id":"75140558-687b-4797-9924-65bdb2a8056d","text":"Account Baseline","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"36204ee1-4e9d-4c19-a8fe-ce5fccff2564","id":"41b25723-0887-49c6-a234-4801da7f5bff","text":"Shared Services Account","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-185/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html';"},"data-nsd-label-uuid":"3366bcc1-60f1-47ab-9542-9c5e2763b692","id":"16a857b7-1c9b-47f2-83f7-2e19ee53a318","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html';"},"data-nsd-label-uuid":"8b5efd7d-bb8e-4b19-bfe9-72be93d93c20","id":"4368cb20-28a1-4ff3-b394-a091826ef47c","text":"Aggregate CloudTrail and Config Logs","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"990c423a-1e1f-4e27-8bbe-0074b9f50f20","id":"9616e1dd-dd9f-4dc3-9c2a-067eb1ff2467","text":"Log Archive Account","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html';"},"data-nsd-label-uuid":"aa4fd316-e4d8-4780-b610-afda9be811c9","id":"5ed267f5-0558-44e3-b9b6-eee3535549de","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html';"},"data-nsd-label-uuid":"479fea5d-5980-495c-86c3-b76874560a4f","icon":"fas fa-key","id":"5179ff64-a60e-4026-9205-aea1c5299361","text":"Security Cross-Account Roles","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html';"},"data-nsd-label-uuid":"22e50f2b-4fda-41ee-9d24-69c2a9e5d122","id":"95308307-7b2c-41e7-9704-6b1547821038","text":"Amazon GuardDuty","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html';"},"data-nsd-label-uuid":"2ae42dc0-a610-48ac-a8af-8c5d93cc9025","id":"f695ba04-0003-4163-8060-9b8bbd6dd233","text":"Amazon SNS","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"4a1ebb81-5e77-4945-b9de-2ac239e8cbe3","id":"2809c125-ad41-4fc0-8404-0889a0b13558","text":"Security Account","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-177/index.html';"},"data-nsd-label-uuid":"c85bb622-29fb-4ba1-bfa6-3e75b54cb9eb","icon":"https://img.icons8.com/material-two-tone/16/waterbucket.png","id":"8cb8e3c0-dca6-485a-a541-2fd599ec0776","text":"Amazon S3 Bucket","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-178/index.html';"},"data-nsd-label-uuid":"3dcb673f-28f0-40da-b868-529dd8fdb7e6","id":"9f363de9-d4a7-4eea-9412-ccff73909fed","text":"AWS CodePipeline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-179/index.html';"},"data-nsd-label-uuid":"8f822eb3-6656-47fe-8ec2-bd1861601297","id":"eab0e8cb-1b22-4eb5-9152-fbd9b798219d","text":"AWS Organizations","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-180/index.html';"},"data-nsd-label-uuid":"6c9bda27-ead6-4a1e-b99b-94db63193c11","id":"9d090970-77fd-4f00-996f-6a7d1d4db22b","text":"AWS Single Sign-on","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-181/index.html';"},"data-nsd-label-uuid":"c007b6cb-a5d2-4930-9254-8ea2ea79ba12","id":"cf2777ed-15ac-4810-884b-215f514f0395","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-182/index.html';"},"data-nsd-label-uuid":"7ec6c39b-c6b3-4780-a132-9e7fa8d479ed","id":"c19c23cb-9b49-4105-9874-0b69f43db1ec","text":"AWS Service Catalog","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-183/index.html';"},"data-nsd-label-uuid":"895e82bd-643f-4906-bdc8-61dd38a3e177","id":"8f8c6e57-be74-4902-8344-ccbdba7939d5","text":"AWS Parameter Store","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-184/index.html';"},"data-nsd-label-uuid":"30ddadf9-cef0-4e7d-b64c-2cfaa68f2ddc","id":"6fab81b0-6a0f-418c-b4ec-16daea0a1601","text":"Core OU","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"0a6c7740-7039-4240-ac4e-2b9bb0334986","id":"9cf11490-9e80-48b4-b135-9f19cb48a68c","text":"AWS Cloud","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"ba844307-a9f2-4396-a6ae-81d617e55524","id":"db42ad44-285b-4e8c-b467-e23186c6b760","text":"AWS","type":"leaf"}]},"search":{"show_only_matches":true},"plugins":["state","search"],"state":{"key":"nsd-site-map-tree"}}));
 });</script>
 				
 		</div>
@@ -330,7 +347,7 @@ $('#nsd-site-map-tree').jstree(function(tree) { tree.state.filter = function(sta
         <div class="col nsd-app-footer">
           <ul class="nav nsd-app-footer-navs">
             <li class="nav-item">
-              <a href="https://github.com/Nasdanika-Models/architecture" data-nsd-label-uuid="f544c8c4-1d4d-49f3-988d-fdad48b476f0" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+              <a href="https://github.com/Nasdanika-Models/architecture" data-nsd-label-uuid="490dcd58-73a0-48c7-b23b-124261b7add9" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
             </li>
           </ul>
         </div>

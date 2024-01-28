@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.nasdanika.models.architecture.demos</groupId>
-	<version>2023.12.1</version>
+	<version>2024.1.0</version>
 	<artifactId>internet-banking-systems</artifactId>
 	<packaging>jar</packaging>
 	<name>Internet Banking System</name>
@@ -55,13 +55,8 @@
 		<dependency>
 			<groupId>org.nasdanika.models.architecture</groupId>
 			<artifactId>processors</artifactId>
-			<version>2023.12.1</version>
+			<version>2024.1.0</version>
 		</dependency>		
-		<dependency>
-			<groupId>org.nasdanika</groupId>
-			<artifactId>plantuml-diagram-generator</artifactId>
-			<version>2023.12.1</version>
-		</dependency>
 		<dependency>
 		    <groupId>org.junit.jupiter</groupId>
 		    <artifactId>junit-jupiter-api</artifactId>
