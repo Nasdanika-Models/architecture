@@ -24,6 +24,8 @@ import org.nasdanika.graph.model.GraphElement;
 
 import org.nasdanika.models.architecture.*;
 
+import org.nasdanika.models.party.Party;
+import org.nasdanika.models.party.Person;
 import org.nasdanika.ncore.Documented;
 import org.nasdanika.ncore.DocumentedNamedElement;
 import org.nasdanika.ncore.DocumentedNamedStringIdentity;
@@ -121,6 +123,46 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ArchitecturePackage.PARTY_ACTOR: {
+				PartyActor partyActor = (PartyActor)theEObject;
+				T1 result = casePartyActor(partyActor);
+				if (result == null) result = caseActor(partyActor);
+				if (result == null) result = caseParty(partyActor);
+				if (result == null) result = caseArchitectureElement(partyActor);
+				if (result == null) result = caseDocumentedNamedStringIdentity(partyActor);
+				if (result == null) result = caseDocumentedNamedElement(partyActor);
+				if (result == null) result = casePeriod(partyActor);
+				if (result == null) result = caseStringIdentity(partyActor);
+				if (result == null) result = caseNamedElement(partyActor);
+				if (result == null) result = caseDocumented(partyActor);
+				if (result == null) result = caseModelElement(partyActor);
+				if (result == null) result = caseMarked(partyActor);
+				if (result == null) result = caseAdaptable(partyActor);
+				if (result == null) result = caseIMarked(partyActor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArchitecturePackage.PERSON_ACTOR: {
+				PersonActor personActor = (PersonActor)theEObject;
+				T1 result = casePersonActor(personActor);
+				if (result == null) result = casePartyActor(personActor);
+				if (result == null) result = casePerson(personActor);
+				if (result == null) result = caseActor(personActor);
+				if (result == null) result = caseParty(personActor);
+				if (result == null) result = caseArchitectureElement(personActor);
+				if (result == null) result = caseDocumentedNamedStringIdentity(personActor);
+				if (result == null) result = caseDocumentedNamedElement(personActor);
+				if (result == null) result = casePeriod(personActor);
+				if (result == null) result = caseStringIdentity(personActor);
+				if (result == null) result = caseNamedElement(personActor);
+				if (result == null) result = caseDocumented(personActor);
+				if (result == null) result = caseModelElement(personActor);
+				if (result == null) result = caseMarked(personActor);
+				if (result == null) result = caseAdaptable(personActor);
+				if (result == null) result = caseIMarked(personActor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ArchitecturePackage.ROLE: {
 				Role role = (Role)theEObject;
 				T1 result = caseRole(role);
@@ -169,6 +211,7 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 				T1 result = caseArchitectureDescription(architectureDescription);
 				if (result == null) result = caseDocumentedNamedGraph(architectureDescription);
 				if (result == null) result = caseArchitectureElement(architectureDescription);
+				if (result == null) result = caseUndergoer(architectureDescription);
 				if (result == null) result = caseGraph(architectureDescription);
 				if (result == null) result = caseDocumentedNamedElement(architectureDescription);
 				if (result == null) result = casePeriod(architectureDescription);
@@ -447,6 +490,36 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseActor(Actor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Party Actor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Party Actor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 casePartyActor(PartyActor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Person Actor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Person Actor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 casePersonActor(PersonActor object) {
 		return null;
 	}
 
@@ -822,6 +895,36 @@ public class ArchitectureSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseDocumentedNamedStringIdentity(DocumentedNamedStringIdentity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Party</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Party</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseParty(Party object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Person</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Person</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 casePerson(Person object) {
 		return null;
 	}
 

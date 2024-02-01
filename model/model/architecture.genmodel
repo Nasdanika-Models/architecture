@@ -4,7 +4,7 @@
     creationIcons="false" editorDirectory="" modelPluginID="org.nasdanika.models.architecture"
     modelName="Architecture" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" featureDelegation="Dynamic" complianceLevel="17.0"
-    suppressGenModelAnnotations="false" copyrightFields="false" usedGenPackages="../../org.nasdanika.graph.model/model/graph.genmodel#//model ../../org.nasdanika.ncore/model/ncore.genmodel#//ncore ../../org.nasdanika.drawio.model/model/drawio.genmodel#//model"
+    suppressGenModelAnnotations="false" copyrightFields="false" usedGenPackages="../../org.nasdanika.drawio.model/model/drawio.genmodel#//model ../../org.nasdanika.graph.model/model/graph.genmodel#//model ../../org.nasdanika.ncore/model/ncore.genmodel#//ncore ../../org.nasdanika.models.party/model/party.genmodel#//party"
     operationReflection="true" importOrganizing="true">
   <foreignModel>architecture.ecore</foreignModel>
   <genPackages prefix="Architecture" basePackage="org.nasdanika.models" disposableProviderFactory="true"
@@ -15,8 +15,12 @@
     <genClasses ecoreClass="architecture.ecore#//Actor">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference architecture.ecore#//Actor/roles"/>
     </genClasses>
+    <genClasses ecoreClass="architecture.ecore#//PartyActor"/>
+    <genClasses ecoreClass="architecture.ecore#//PersonActor"/>
     <genClasses ecoreClass="architecture.ecore#//Role">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference architecture.ecore#//Role/actors"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference architecture.ecore#//Role/extends"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference architecture.ecore#//Role/extensions"/>
     </genClasses>
     <genClasses image="false" ecoreClass="architecture.ecore#//Undergoer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference architecture.ecore#//Undergoer/roles"/>

@@ -390,6 +390,368 @@ public interface ArchitecturePackage extends EPackage {
 	int ACTOR_OPERATION_COUNT = ARCHITECTURE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.nasdanika.models.architecture.impl.PartyActorImpl <em>Party Actor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.architecture.impl.PartyActorImpl
+	 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getPartyActor()
+	 * @generated
+	 */
+	int PARTY_ACTOR = 2;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__MARKERS = ACTOR__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__URIS = ACTOR__URIS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__DESCRIPTION = ACTOR__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__UUID = ACTOR__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Label Prototype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__LABEL_PROTOTYPE = ACTOR__LABEL_PROTOTYPE;
+
+	/**
+	 * The feature id for the '<em><b>Representations</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__REPRESENTATIONS = ACTOR__REPRESENTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__ANNOTATIONS = ACTOR__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__NAME = ACTOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__DOCUMENTATION = ACTOR__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Context Help</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__CONTEXT_HELP = ACTOR__CONTEXT_HELP;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__START = ACTOR__START;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__END = ACTOR__END;
+
+	/**
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__DURATION = ACTOR__DURATION;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__ICON = ACTOR__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__ID = ACTOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__ROLES = ACTOR__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Contact Methods</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR__CONTACT_METHODS = ACTOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Party Actor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR_FEATURE_COUNT = ACTOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Party Actor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACTOR_OPERATION_COUNT = ACTOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.architecture.impl.PersonActorImpl <em>Person Actor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.architecture.impl.PersonActorImpl
+	 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getPersonActor()
+	 * @generated
+	 */
+	int PERSON_ACTOR = 3;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__MARKERS = PARTY_ACTOR__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__URIS = PARTY_ACTOR__URIS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__DESCRIPTION = PARTY_ACTOR__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__UUID = PARTY_ACTOR__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Label Prototype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__LABEL_PROTOTYPE = PARTY_ACTOR__LABEL_PROTOTYPE;
+
+	/**
+	 * The feature id for the '<em><b>Representations</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__REPRESENTATIONS = PARTY_ACTOR__REPRESENTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__ANNOTATIONS = PARTY_ACTOR__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__NAME = PARTY_ACTOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__DOCUMENTATION = PARTY_ACTOR__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Context Help</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__CONTEXT_HELP = PARTY_ACTOR__CONTEXT_HELP;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__START = PARTY_ACTOR__START;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__END = PARTY_ACTOR__END;
+
+	/**
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__DURATION = PARTY_ACTOR__DURATION;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__ICON = PARTY_ACTOR__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__ID = PARTY_ACTOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__ROLES = PARTY_ACTOR__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Contact Methods</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR__CONTACT_METHODS = PARTY_ACTOR__CONTACT_METHODS;
+
+	/**
+	 * The number of structural features of the '<em>Person Actor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR_FEATURE_COUNT = PARTY_ACTOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Person Actor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_ACTOR_OPERATION_COUNT = PARTY_ACTOR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.nasdanika.models.architecture.impl.RoleImpl <em>Role</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -397,7 +759,7 @@ public interface ArchitecturePackage extends EPackage {
 	 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getRole()
 	 * @generated
 	 */
-	int ROLE = 2;
+	int ROLE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
@@ -544,13 +906,31 @@ public interface ArchitecturePackage extends EPackage {
 	int ROLE__ACTORS = ARCHITECTURE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Extends</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__EXTENDS = ARCHITECTURE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Extensions</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__EXTENSIONS = ARCHITECTURE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = ARCHITECTURE_ELEMENT_FEATURE_COUNT + 2;
+	int ROLE_FEATURE_COUNT = ARCHITECTURE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Role</em>' class.
@@ -569,7 +949,7 @@ public interface ArchitecturePackage extends EPackage {
 	 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getUndergoer()
 	 * @generated
 	 */
-	int UNDERGOER = 3;
+	int UNDERGOER = 5;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
@@ -606,7 +986,7 @@ public interface ArchitecturePackage extends EPackage {
 	 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getArchitectureDescriptionElement()
 	 * @generated
 	 */
-	int ARCHITECTURE_DESCRIPTION_ELEMENT = 4;
+	int ARCHITECTURE_DESCRIPTION_ELEMENT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -787,7 +1167,7 @@ public interface ArchitecturePackage extends EPackage {
 	 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getArchitectureDescription()
 	 * @generated
 	 */
-	int ARCHITECTURE_DESCRIPTION = 5;
+	int ARCHITECTURE_DESCRIPTION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -925,13 +1305,22 @@ public interface ArchitecturePackage extends EPackage {
 	int ARCHITECTURE_DESCRIPTION__ICON = ModelPackage.DOCUMENTED_NAMED_GRAPH_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHITECTURE_DESCRIPTION__ROLES = ModelPackage.DOCUMENTED_NAMED_GRAPH_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Actors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHITECTURE_DESCRIPTION__ACTORS = ModelPackage.DOCUMENTED_NAMED_GRAPH_FEATURE_COUNT + 4;
+	int ARCHITECTURE_DESCRIPTION__ACTORS = ModelPackage.DOCUMENTED_NAMED_GRAPH_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Description</em>' class.
@@ -940,7 +1329,7 @@ public interface ArchitecturePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHITECTURE_DESCRIPTION_FEATURE_COUNT = ModelPackage.DOCUMENTED_NAMED_GRAPH_FEATURE_COUNT + 5;
+	int ARCHITECTURE_DESCRIPTION_FEATURE_COUNT = ModelPackage.DOCUMENTED_NAMED_GRAPH_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Description</em>' class.
@@ -959,7 +1348,7 @@ public interface ArchitecturePackage extends EPackage {
 	 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getDomain()
 	 * @generated
 	 */
-	int DOMAIN = 6;
+	int DOMAIN = 8;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1158,7 +1547,7 @@ public interface ArchitecturePackage extends EPackage {
 	 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getRelationshipTarget()
 	 * @generated
 	 */
-	int RELATIONSHIP_TARGET = 7;
+	int RELATIONSHIP_TARGET = 9;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1348,7 +1737,7 @@ public interface ArchitecturePackage extends EPackage {
 	 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getCompositeRelationshipTarget()
 	 * @generated
 	 */
-	int COMPOSITE_RELATIONSHIP_TARGET = 8;
+	int COMPOSITE_RELATIONSHIP_TARGET = 10;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1556,7 +1945,7 @@ public interface ArchitecturePackage extends EPackage {
 	 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getRelationship()
 	 * @generated
 	 */
-	int RELATIONSHIP = 9;
+	int RELATIONSHIP = 11;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1746,7 +2135,7 @@ public interface ArchitecturePackage extends EPackage {
 	 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getRelationshipSource()
 	 * @generated
 	 */
-	int RELATIONSHIP_SOURCE = 10;
+	int RELATIONSHIP_SOURCE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1936,7 +2325,7 @@ public interface ArchitecturePackage extends EPackage {
 	 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getCompositeRelationshipSource()
 	 * @generated
 	 */
-	int COMPOSITE_RELATIONSHIP_SOURCE = 11;
+	int COMPOSITE_RELATIONSHIP_SOURCE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2144,7 +2533,7 @@ public interface ArchitecturePackage extends EPackage {
 	 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getNode()
 	 * @generated
 	 */
-	int NODE = 12;
+	int NODE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2343,7 +2732,7 @@ public interface ArchitecturePackage extends EPackage {
 	 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getCompositeNode()
 	 * @generated
 	 */
-	int COMPOSITE_NODE = 13;
+	int COMPOSITE_NODE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2560,7 +2949,7 @@ public interface ArchitecturePackage extends EPackage {
 	 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getTunnel()
 	 * @generated
 	 */
-	int TUNNEL = 14;
+	int TUNNEL = 16;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2795,6 +3184,26 @@ public interface ArchitecturePackage extends EPackage {
 	EReference getActor_Roles();
 
 	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.architecture.PartyActor <em>Party Actor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Party Actor</em>'.
+	 * @see org.nasdanika.models.architecture.PartyActor
+	 * @generated
+	 */
+	EClass getPartyActor();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.architecture.PersonActor <em>Person Actor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Person Actor</em>'.
+	 * @see org.nasdanika.models.architecture.PersonActor
+	 * @generated
+	 */
+	EClass getPersonActor();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.architecture.Role <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2814,6 +3223,28 @@ public interface ArchitecturePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRole_Actors();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.models.architecture.Role#getExtends <em>Extends</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Extends</em>'.
+	 * @see org.nasdanika.models.architecture.Role#getExtends()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EReference getRole_Extends();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.models.architecture.Role#getExtensions <em>Extensions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Extensions</em>'.
+	 * @see org.nasdanika.models.architecture.Role#getExtensions()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EReference getRole_Extensions();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.architecture.Undergoer <em>Undergoer</em>}'.
@@ -3017,6 +3448,26 @@ public interface ArchitecturePackage extends EPackage {
 		EReference ACTOR__ROLES = eINSTANCE.getActor_Roles();
 
 		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.architecture.impl.PartyActorImpl <em>Party Actor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.architecture.impl.PartyActorImpl
+		 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getPartyActor()
+		 * @generated
+		 */
+		EClass PARTY_ACTOR = eINSTANCE.getPartyActor();
+
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.architecture.impl.PersonActorImpl <em>Person Actor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.architecture.impl.PersonActorImpl
+		 * @see org.nasdanika.models.architecture.impl.ArchitecturePackageImpl#getPersonActor()
+		 * @generated
+		 */
+		EClass PERSON_ACTOR = eINSTANCE.getPersonActor();
+
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.architecture.impl.RoleImpl <em>Role</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3033,6 +3484,22 @@ public interface ArchitecturePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROLE__ACTORS = eINSTANCE.getRole_Actors();
+
+		/**
+		 * The meta object literal for the '<em><b>Extends</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE__EXTENDS = eINSTANCE.getRole_Extends();
+
+		/**
+		 * The meta object literal for the '<em><b>Extensions</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE__EXTENSIONS = eINSTANCE.getRole_Extensions();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.architecture.Undergoer <em>Undergoer</em>}' class.

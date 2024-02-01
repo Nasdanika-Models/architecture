@@ -26,6 +26,8 @@ import org.nasdanika.graph.model.GraphElement;
 
 import org.nasdanika.models.architecture.*;
 
+import org.nasdanika.models.party.Party;
+import org.nasdanika.models.party.Person;
 import org.nasdanika.ncore.Documented;
 import org.nasdanika.ncore.DocumentedNamedElement;
 import org.nasdanika.ncore.DocumentedNamedStringIdentity;
@@ -99,6 +101,14 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseActor(Actor object) {
 				return createActorAdapter();
+			}
+			@Override
+			public Adapter casePartyActor(PartyActor object) {
+				return createPartyActorAdapter();
+			}
+			@Override
+			public Adapter casePersonActor(PersonActor object) {
+				return createPersonActorAdapter();
 			}
 			@Override
 			public Adapter caseRole(Role object) {
@@ -189,16 +199,24 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl {
 				return createStringIdentityAdapter();
 			}
 			@Override
+			public Adapter caseDocumentedNamedStringIdentity(DocumentedNamedStringIdentity object) {
+				return createDocumentedNamedStringIdentityAdapter();
+			}
+			@Override
+			public Adapter caseParty(Party object) {
+				return createPartyAdapter();
+			}
+			@Override
+			public Adapter casePerson(Person object) {
+				return createPersonAdapter();
+			}
+			@Override
 			public Adapter caseSemanticElement(SemanticElement object) {
 				return createSemanticElementAdapter();
 			}
 			@Override
 			public Adapter caseGraphElement(GraphElement object) {
 				return createGraphElementAdapter();
-			}
-			@Override
-			public Adapter caseDocumentedNamedStringIdentity(DocumentedNamedStringIdentity object) {
-				return createDocumentedNamedStringIdentityAdapter();
 			}
 			@Override
 			public Adapter caseDocumentedNamedGraphElement(DocumentedNamedGraphElement object) {
@@ -289,6 +307,34 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.PartyActor <em>Party Actor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.architecture.PartyActor
+	 * @generated
+	 */
+	public Adapter createPartyActorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.PersonActor <em>Person Actor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.architecture.PersonActor
+	 * @generated
+	 */
+	public Adapter createPersonActorAdapter() {
 		return null;
 	}
 
@@ -639,6 +685,34 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDocumentedNamedStringIdentityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.party.Party <em>Party</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.party.Party
+	 * @generated
+	 */
+	public Adapter createPartyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.party.Person <em>Person</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.party.Person
+	 * @generated
+	 */
+	public Adapter createPersonAdapter() {
 		return null;
 	}
 

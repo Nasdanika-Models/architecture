@@ -20,6 +20,8 @@ import org.nasdanika.ncore.StringIdentity;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.models.architecture.Role#getActors <em>Actors</em>}</li>
+ *   <li>{@link org.nasdanika.models.architecture.Role#getExtends <em>Extends</em>}</li>
+ *   <li>{@link org.nasdanika.models.architecture.Role#getExtensions <em>Extensions</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.models.architecture.ArchitecturePackage#getRole()
@@ -40,5 +42,39 @@ public interface Role extends ArchitectureElement, StringIdentity {
 	 * @generated
 	 */
 	EList<Actor> getActors();
+
+	/**
+	 * Returns the value of the '<em><b>Extends</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.models.architecture.Role}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.architecture.Role#getExtensions <em>Extensions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A role can be a specialization (extension) of one or more roles
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Extends</em>' reference list.
+	 * @see org.nasdanika.models.architecture.ArchitecturePackage#getRole_Extends()
+	 * @see org.nasdanika.models.architecture.Role#getExtensions
+	 * @model opposite="extensions"
+	 * @generated
+	 */
+	EList<Role> getExtends();
+
+	/**
+	 * Returns the value of the '<em><b>Extensions</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.models.architecture.Role}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.architecture.Role#getExtends <em>Extends</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Roles extending this role
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Extensions</em>' reference list.
+	 * @see org.nasdanika.models.architecture.ArchitecturePackage#getRole_Extensions()
+	 * @see org.nasdanika.models.architecture.Role#getExtends
+	 * @model opposite="extends"
+	 * @generated
+	 */
+	EList<Role> getExtensions();
 
 } // Role

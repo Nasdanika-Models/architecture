@@ -26,12 +26,26 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PartyActor" eSuperTypes="#//Actor ../../org.nasdanika.models.party/model/party.ecore#//Party"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PersonActor" eSuperTypes="#//PartyActor ../../org.nasdanika.models.party/model/party.ecore#//Person"/>
   <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//ArchitectureElement ../../org.nasdanika.ncore/model/ncore.ecore#//StringIdentity">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A role is played by an Actor performing activities on the containing Undergoer"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actors" upperBound="-1"
         eType="#//Actor" eOpposite="#//Actor/roles"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" upperBound="-1"
+        eType="#//Role" eOpposite="#//Role/extensions">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A role can be a specialization (extension) of one or more roles"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extensions" upperBound="-1"
+        eType="#//Role" eOpposite="#//Role/extends">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Roles extending this role"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Undergoer" abstract="true" interface="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -63,6 +77,7 @@
       <eTypeArguments eClassifier="#//ArchitectureDescriptionElement"/>
     </eGenericSuperTypes>
     <eGenericSuperTypes eClassifier="#//ArchitectureElement"/>
+    <eGenericSuperTypes eClassifier="#//Undergoer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Domain" eSuperTypes="#//ArchitectureDescriptionElement #//ArchitectureDescription">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

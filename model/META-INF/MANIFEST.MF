@@ -16,5 +16,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.nasdanika.models.togaf.core;visibility:=reexport,
  org.nasdanika.graph.model;visibility:=reexport,
  org.nasdanika.ncore;visibility:=reexport,
+ org.nasdanika.models.party;visibility:=reexport,
  org.nasdanika.drawio.model;visibility:=reexport
 Bundle-ActivationPolicy: lazy

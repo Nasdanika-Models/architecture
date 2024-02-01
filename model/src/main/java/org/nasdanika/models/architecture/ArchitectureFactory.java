@@ -40,6 +40,24 @@ public interface ArchitectureFactory extends EFactory {
 	Actor createActor();
 
 	/**
+	 * Returns a new object of class '<em>Party Actor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Party Actor</em>'.
+	 * @generated
+	 */
+	PartyActor createPartyActor();
+
+	/**
+	 * Returns a new object of class '<em>Person Actor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Person Actor</em>'.
+	 * @generated
+	 */
+	PersonActor createPersonActor();
+
+	/**
 	 * Returns a new object of class '<em>Role</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

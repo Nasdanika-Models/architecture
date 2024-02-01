@@ -23,6 +23,8 @@ import org.nasdanika.models.architecture.CompositeRelationshipSource;
 import org.nasdanika.models.architecture.CompositeRelationshipTarget;
 import org.nasdanika.models.architecture.Domain;
 import org.nasdanika.models.architecture.Node;
+import org.nasdanika.models.architecture.PartyActor;
+import org.nasdanika.models.architecture.PersonActor;
 import org.nasdanika.models.architecture.Relationship;
 import org.nasdanika.models.architecture.RelationshipSource;
 import org.nasdanika.models.architecture.RelationshipTarget;
@@ -30,6 +32,7 @@ import org.nasdanika.models.architecture.Role;
 import org.nasdanika.models.architecture.Tunnel;
 
 import org.nasdanika.models.architecture.Undergoer;
+import org.nasdanika.models.party.PartyPackage;
 import org.nasdanika.ncore.NcorePackage;
 
 /**
@@ -52,6 +55,20 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * @generated
 	 */
 	private EClass actorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass partyActorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass personActorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,9 +208,10 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		isInited = true;
 
 		// Initialize simple dependencies
+		org.nasdanika.drawio.model.ModelPackage.eINSTANCE.eClass();
 		ModelPackage.eINSTANCE.eClass();
 		NcorePackage.eINSTANCE.eClass();
-		org.nasdanika.drawio.model.ModelPackage.eINSTANCE.eClass();
+		PartyPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theArchitecturePackage.createPackageContents();
@@ -255,6 +273,26 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * @generated
 	 */
 	@Override
+	public EClass getPartyActor() {
+		return partyActorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getPersonActor() {
+		return personActorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getRole() {
 		return roleEClass;
 	}
@@ -267,6 +305,26 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	@Override
 	public EReference getRole_Actors() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRole_Extends() {
+		return (EReference)roleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRole_Extensions() {
+		return (EReference)roleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -444,8 +502,14 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		actorEClass = createEClass(ACTOR);
 		createEReference(actorEClass, ACTOR__ROLES);
 
+		partyActorEClass = createEClass(PARTY_ACTOR);
+
+		personActorEClass = createEClass(PERSON_ACTOR);
+
 		roleEClass = createEClass(ROLE);
 		createEReference(roleEClass, ROLE__ACTORS);
+		createEReference(roleEClass, ROLE__EXTENDS);
+		createEReference(roleEClass, ROLE__EXTENSIONS);
 
 		undergoerEClass = createEClass(UNDERGOER);
 		createEReference(undergoerEClass, UNDERGOER__ROLES);
@@ -499,7 +563,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 
 		// Obtain other dependent packages
 		NcorePackage theNcorePackage = (NcorePackage)EPackage.Registry.INSTANCE.getEPackage(NcorePackage.eNS_URI);
-		ModelPackage theModelPackage = (ModelPackage)EPackage.Registry.INSTANCE.getEPackage(ModelPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		ModelPackage theModelPackage_1 = (ModelPackage)EPackage.Registry.INSTANCE.getEPackage(ModelPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -510,28 +575,34 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		architectureElementEClass.getESuperTypes().add(theNcorePackage.getPeriod());
 		actorEClass.getESuperTypes().add(this.getArchitectureElement());
 		actorEClass.getESuperTypes().add(theNcorePackage.getStringIdentity());
+		partyActorEClass.getESuperTypes().add(this.getActor());
+		partyActorEClass.getESuperTypes().add(thePartyPackage.getParty());
+		personActorEClass.getESuperTypes().add(this.getPartyActor());
+		personActorEClass.getESuperTypes().add(thePartyPackage.getPerson());
 		roleEClass.getESuperTypes().add(this.getArchitectureElement());
 		roleEClass.getESuperTypes().add(theNcorePackage.getStringIdentity());
-		architectureDescriptionElementEClass.getESuperTypes().add(theModelPackage.getDocumentedNamedGraphElement());
+		architectureDescriptionElementEClass.getESuperTypes().add(theModelPackage_1.getDocumentedNamedGraphElement());
 		architectureDescriptionElementEClass.getESuperTypes().add(this.getArchitectureElement());
 		architectureDescriptionElementEClass.getESuperTypes().add(this.getUndergoer());
-		EGenericType g1 = createEGenericType(theModelPackage.getDocumentedNamedGraph());
+		EGenericType g1 = createEGenericType(theModelPackage_1.getDocumentedNamedGraph());
 		EGenericType g2 = createEGenericType(this.getArchitectureDescriptionElement());
 		g1.getETypeArguments().add(g2);
 		architectureDescriptionEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getArchitectureElement());
 		architectureDescriptionEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getUndergoer());
+		architectureDescriptionEClass.getEGenericSuperTypes().add(g1);
 		domainEClass.getESuperTypes().add(this.getArchitectureDescriptionElement());
 		domainEClass.getESuperTypes().add(this.getArchitectureDescription());
 		g1 = createEGenericType(this.getArchitectureDescriptionElement());
 		relationshipTargetEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theModelPackage.getDocumentedNamedConnectionTarget());
+		g1 = createEGenericType(theModelPackage_1.getDocumentedNamedConnectionTarget());
 		g2 = createEGenericType(this.getRelationship());
 		g1.getETypeArguments().add(g2);
 		relationshipTargetEClass.getEGenericSuperTypes().add(g1);
 		compositeRelationshipTargetEClass.getESuperTypes().add(this.getDomain());
 		compositeRelationshipTargetEClass.getESuperTypes().add(this.getRelationshipTarget());
-		g1 = createEGenericType(theModelPackage.getDocumentedNamedConnection());
+		g1 = createEGenericType(theModelPackage_1.getDocumentedNamedConnection());
 		g2 = createEGenericType(this.getRelationshipTarget());
 		g1.getETypeArguments().add(g2);
 		relationshipEClass.getEGenericSuperTypes().add(g1);
@@ -539,7 +610,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		relationshipEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getUndergoer());
 		relationshipEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theModelPackage.getDocumentedNamedConnectionSource());
+		g1 = createEGenericType(theModelPackage_1.getDocumentedNamedConnectionSource());
 		g2 = createEGenericType(this.getRelationship());
 		g1.getETypeArguments().add(g2);
 		relationshipSourceEClass.getEGenericSuperTypes().add(g1);
@@ -551,7 +622,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		nodeEClass.getESuperTypes().add(this.getRelationshipTarget());
 		compositeNodeEClass.getESuperTypes().add(this.getDomain());
 		compositeNodeEClass.getESuperTypes().add(this.getNode());
-		g1 = createEGenericType(theModelPackage.getDocumentedNamedTunnel());
+		g1 = createEGenericType(theModelPackage_1.getDocumentedNamedTunnel());
 		g2 = createEGenericType(this.getRelationshipTarget());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(this.getRelationship());
@@ -567,8 +638,14 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActor_Roles(), this.getRole(), this.getRole_Actors(), "roles", null, 0, -1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(partyActorEClass, PartyActor.class, "PartyActor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(personActorEClass, PersonActor.class, "PersonActor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRole_Actors(), this.getActor(), this.getActor_Roles(), "actors", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRole_Extends(), this.getRole(), this.getRole_Extensions(), "extends", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRole_Extensions(), this.getRole(), this.getRole_Extends(), "extensions", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(undergoerEClass, Undergoer.class, "Undergoer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUndergoer_Roles(), this.getRole(), null, "roles", null, 0, -1, Undergoer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -649,6 +726,18 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		   source,
 		   new String[] {
 			   "documentation", "A role is played by an Actor performing activities on the containing Undergoer"
+		   });
+		addAnnotation
+		  (getRole_Extends(),
+		   source,
+		   new String[] {
+			   "documentation", "A role can be a specialization (extension) of one or more roles"
+		   });
+		addAnnotation
+		  (getRole_Extensions(),
+		   source,
+		   new String[] {
+			   "documentation", "Roles extending this role"
 		   });
 		addAnnotation
 		  (undergoerEClass,

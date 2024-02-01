@@ -22,12 +22,14 @@ import org.nasdanika.common.MutableContext;
 import org.nasdanika.common.NullProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.graph.model.ModelPackage;
+import org.nasdanika.html.bootstrap.Theme;
 import org.nasdanika.html.model.app.Action;
 import org.nasdanika.html.model.app.gen.ActionSiteGenerator;
 import org.nasdanika.models.architecture.ArchitecturePackage;
 import org.nasdanika.models.architecture.processors.ecore.EcoreGenArchitectureProcessorsFactory;
 import org.nasdanika.models.ecore.graph.processors.EcoreActionGenerator;
 import org.nasdanika.models.ecore.graph.processors.EcoreNodeProcessorFactory;
+import org.nasdanika.models.party.PartyPackage;
 import org.nasdanika.ncore.NcorePackage;
 
 /**
@@ -65,6 +67,7 @@ public class TestArchitectureModelDocGen {
 		Map<EPackage, URI> packageURIMap = Map.ofEntries(
 				Map.entry(EcorePackage.eINSTANCE, URI.createURI("https://ecore.models.nasdanika.org/")),			
 				Map.entry(NcorePackage.eINSTANCE, URI.createURI("https://ncore.models.nasdanika.org/")),			
+				Map.entry(PartyPackage.eINSTANCE, URI.createURI("https://party.models.nasdanika.org/")),			
 				Map.entry(ModelPackage.eINSTANCE, URI.createURI("https://graph.models.nasdanika.org/"))
 			);
 			
@@ -78,9 +81,6 @@ public class TestArchitectureModelDocGen {
 		String rootActionResource = "actions.yml";
 		URI rootActionURI = URI.createFileURI(new File(rootActionResource).getAbsolutePath());//.appendFragment("/");
 		
-		String pageTemplateResource = "page-template.yml";
-		URI pageTemplateURI = URI.createFileURI(new File(pageTemplateResource).getAbsolutePath());//.appendFragment("/");
-		
 		String siteMapDomain = "https://architecture.models.nasdanika.org";		
 		ActionSiteGenerator actionSiteGenerator = new ActionSiteGenerator() {
 			
@@ -90,7 +90,13 @@ public class TestArchitectureModelDocGen {
 			
 		};		
 		
-		Map<String, Collection<String>> errors = actionSiteGenerator.generate(rootActionURI, pageTemplateURI, siteMapDomain, new File("../docs"), new File("target/doc-site-work-dir"), true);
+		Map<String, Collection<String>> errors = actionSiteGenerator.generate(
+				rootActionURI, 
+				Theme.Cerulean.pageTemplateCdnURI, 
+				siteMapDomain, 
+				new File("../docs"), 
+				new File("target/doc-site-work-dir"), 
+				true);
 				
 		int errorCount = 0;
 		for (Entry<String, Collection<String>> ee: errors.entrySet()) {
@@ -103,7 +109,7 @@ public class TestArchitectureModelDocGen {
 		
 		System.out.println("There are " + errorCount + " site errors");
 		
-		if (errorCount != 151) {
+		if (errorCount != 167) {
 			throw new ExecutionException("There are problems with pages: " + errorCount);
 		}		
 	}

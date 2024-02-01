@@ -20,6 +20,8 @@ import org.nasdanika.models.architecture.ArchitectureDescriptionElement;
 import org.nasdanika.models.architecture.ArchitectureElement;
 import org.nasdanika.models.architecture.ArchitecturePackage;
 
+import org.nasdanika.models.architecture.Role;
+import org.nasdanika.models.architecture.Undergoer;
 import org.nasdanika.ncore.NcorePackage;
 import org.nasdanika.ncore.Period;
 import org.nasdanika.ncore.Temporal;
@@ -36,6 +38,7 @@ import org.nasdanika.ncore.Temporal;
  *   <li>{@link org.nasdanika.models.architecture.impl.ArchitectureDescriptionImpl#getEnd <em>End</em>}</li>
  *   <li>{@link org.nasdanika.models.architecture.impl.ArchitectureDescriptionImpl#getDuration <em>Duration</em>}</li>
  *   <li>{@link org.nasdanika.models.architecture.impl.ArchitectureDescriptionImpl#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.nasdanika.models.architecture.impl.ArchitectureDescriptionImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link org.nasdanika.models.architecture.impl.ArchitectureDescriptionImpl#getActors <em>Actors</em>}</li>
  * </ul>
  *
@@ -188,6 +191,17 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
+	public EList<Role> getRoles() {
+		return (EList<Role>)eDynamicGet(ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ROLES, ArchitecturePackage.Literals.UNDERGOER__ROLES, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Actor> getActors() {
 		return (EList<Actor>)eDynamicGet(ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ACTORS, ArchitecturePackage.Literals.ARCHITECTURE_DESCRIPTION__ACTORS, true, true);
 	}
@@ -204,6 +218,8 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 				return basicSetStart(null, msgs);
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__END:
 				return basicSetEnd(null, msgs);
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ROLES:
+				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ACTORS:
 				return ((InternalEList<?>)getActors()).basicRemove(otherEnd, msgs);
 		}
@@ -226,6 +242,8 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 				return getDuration();
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ICON:
 				return getIcon();
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ROLES:
+				return getRoles();
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ACTORS:
 				return getActors();
 		}
@@ -252,6 +270,10 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 				return;
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ICON:
 				setIcon((String)newValue);
+				return;
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ROLES:
+				getRoles().clear();
+				getRoles().addAll((Collection<? extends Role>)newValue);
 				return;
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ACTORS:
 				getActors().clear();
@@ -281,6 +303,9 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ICON:
 				setIcon(ICON_EDEFAULT);
 				return;
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ROLES:
+				getRoles().clear();
+				return;
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ACTORS:
 				getActors().clear();
 				return;
@@ -304,6 +329,8 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 				return DURATION_EDEFAULT == null ? getDuration() != null : !DURATION_EDEFAULT.equals(getDuration());
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ICON:
 				return ICON_EDEFAULT == null ? getIcon() != null : !ICON_EDEFAULT.equals(getIcon());
+			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ROLES:
+				return !getRoles().isEmpty();
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ACTORS:
 				return !getActors().isEmpty();
 		}
@@ -331,6 +358,12 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 				default: return -1;
 			}
 		}
+		if (baseClass == Undergoer.class) {
+			switch (derivedFeatureID) {
+				case ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ROLES: return ArchitecturePackage.UNDERGOER__ROLES;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -352,6 +385,12 @@ public class ArchitectureDescriptionImpl extends DocumentedNamedGraphImpl<Archit
 		if (baseClass == ArchitectureElement.class) {
 			switch (baseFeatureID) {
 				case ArchitecturePackage.ARCHITECTURE_ELEMENT__ICON: return ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ICON;
+				default: return -1;
+			}
+		}
+		if (baseClass == Undergoer.class) {
+			switch (baseFeatureID) {
+				case ArchitecturePackage.UNDERGOER__ROLES: return ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ROLES;
 				default: return -1;
 			}
 		}

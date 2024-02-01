@@ -25,7 +25,7 @@ import org.nasdanika.graph.model.DocumentedNamedGraph;
  * @model
  * @generated
  */
-public interface ArchitectureDescription extends DocumentedNamedGraph<ArchitectureDescriptionElement>, ArchitectureElement {
+public interface ArchitectureDescription extends DocumentedNamedGraph<ArchitectureDescriptionElement>, ArchitectureElement, Undergoer {
 
 	/**
 	 * Returns the value of the '<em><b>Actors</b></em>' containment reference list.

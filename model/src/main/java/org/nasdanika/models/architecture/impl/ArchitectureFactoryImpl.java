@@ -58,6 +58,8 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
 		switch (eClass.getClassifierID()) {
 			case ArchitecturePackage.ARCHITECTURE_ELEMENT: return createArchitectureElement();
 			case ArchitecturePackage.ACTOR: return createActor();
+			case ArchitecturePackage.PARTY_ACTOR: return createPartyActor();
+			case ArchitecturePackage.PERSON_ACTOR: return createPersonActor();
 			case ArchitecturePackage.ROLE: return createRole();
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT: return createArchitectureDescriptionElement();
 			case ArchitecturePackage.ARCHITECTURE_DESCRIPTION: return createArchitectureDescription();
@@ -95,6 +97,28 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
 	public Actor createActor() {
 		ActorImpl actor = new ActorImpl();
 		return actor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PartyActor createPartyActor() {
+		PartyActorImpl partyActor = new PartyActorImpl();
+		return partyActor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PersonActor createPersonActor() {
+		PersonActorImpl personActor = new PersonActorImpl();
+		return personActor;
 	}
 
 	/**

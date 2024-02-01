@@ -6,5 +6,6 @@ module org.nasdanika.models.architecture {
 	requires transitive org.eclipse.emf.ecore;
 	requires transitive org.eclipse.emf.common;	
 	requires transitive org.nasdanika.graph.model;
+	requires transitive org.nasdanika.models.party;
 	
 }

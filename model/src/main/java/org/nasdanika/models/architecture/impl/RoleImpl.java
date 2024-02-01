@@ -30,6 +30,8 @@ import org.nasdanika.ncore.StringIdentity;
  * <ul>
  *   <li>{@link org.nasdanika.models.architecture.impl.RoleImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.nasdanika.models.architecture.impl.RoleImpl#getActors <em>Actors</em>}</li>
+ *   <li>{@link org.nasdanika.models.architecture.impl.RoleImpl#getExtends <em>Extends</em>}</li>
+ *   <li>{@link org.nasdanika.models.architecture.impl.RoleImpl#getExtensions <em>Extensions</em>}</li>
  * </ul>
  *
  * @generated
@@ -102,10 +104,36 @@ public class RoleImpl extends ArchitectureElementImpl implements Role {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
+	public EList<Role> getExtends() {
+		return (EList<Role>)eDynamicGet(ArchitecturePackage.ROLE__EXTENDS, ArchitecturePackage.Literals.ROLE__EXTENDS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Role> getExtensions() {
+		return (EList<Role>)eDynamicGet(ArchitecturePackage.ROLE__EXTENSIONS, ArchitecturePackage.Literals.ROLE__EXTENSIONS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ArchitecturePackage.ROLE__ACTORS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getActors()).basicAdd(otherEnd, msgs);
+			case ArchitecturePackage.ROLE__EXTENDS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtends()).basicAdd(otherEnd, msgs);
+			case ArchitecturePackage.ROLE__EXTENSIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtensions()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -120,6 +148,10 @@ public class RoleImpl extends ArchitectureElementImpl implements Role {
 		switch (featureID) {
 			case ArchitecturePackage.ROLE__ACTORS:
 				return ((InternalEList<?>)getActors()).basicRemove(otherEnd, msgs);
+			case ArchitecturePackage.ROLE__EXTENDS:
+				return ((InternalEList<?>)getExtends()).basicRemove(otherEnd, msgs);
+			case ArchitecturePackage.ROLE__EXTENSIONS:
+				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -136,6 +168,10 @@ public class RoleImpl extends ArchitectureElementImpl implements Role {
 				return getId();
 			case ArchitecturePackage.ROLE__ACTORS:
 				return getActors();
+			case ArchitecturePackage.ROLE__EXTENDS:
+				return getExtends();
+			case ArchitecturePackage.ROLE__EXTENSIONS:
+				return getExtensions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -156,6 +192,14 @@ public class RoleImpl extends ArchitectureElementImpl implements Role {
 				getActors().clear();
 				getActors().addAll((Collection<? extends Actor>)newValue);
 				return;
+			case ArchitecturePackage.ROLE__EXTENDS:
+				getExtends().clear();
+				getExtends().addAll((Collection<? extends Role>)newValue);
+				return;
+			case ArchitecturePackage.ROLE__EXTENSIONS:
+				getExtensions().clear();
+				getExtensions().addAll((Collection<? extends Role>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -174,6 +218,12 @@ public class RoleImpl extends ArchitectureElementImpl implements Role {
 			case ArchitecturePackage.ROLE__ACTORS:
 				getActors().clear();
 				return;
+			case ArchitecturePackage.ROLE__EXTENDS:
+				getExtends().clear();
+				return;
+			case ArchitecturePackage.ROLE__EXTENSIONS:
+				getExtensions().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -190,6 +240,10 @@ public class RoleImpl extends ArchitectureElementImpl implements Role {
 				return ID_EDEFAULT == null ? getId() != null : !ID_EDEFAULT.equals(getId());
 			case ArchitecturePackage.ROLE__ACTORS:
 				return !getActors().isEmpty();
+			case ArchitecturePackage.ROLE__EXTENDS:
+				return !getExtends().isEmpty();
+			case ArchitecturePackage.ROLE__EXTENSIONS:
+				return !getExtensions().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
