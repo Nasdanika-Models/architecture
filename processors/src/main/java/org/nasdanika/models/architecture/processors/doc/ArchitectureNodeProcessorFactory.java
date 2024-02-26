@@ -36,8 +36,8 @@ import org.nasdanika.ncore.util.NcoreUtil;
  */
 public class ArchitectureNodeProcessorFactory {
 			
-	private Context context;
-	private java.util.function.BiFunction<URI, ProgressMonitor, Action> prototypeProvider;
+	protected Context context;
+	protected java.util.function.BiFunction<URI, ProgressMonitor, Action> prototypeProvider;
 
 	protected java.util.function.Function<ProgressMonitor, Action> getPrototypeProvider(NodeProcessorConfig<WidgetFactory, WidgetFactory> config) {
 		return progressMonitor -> {
