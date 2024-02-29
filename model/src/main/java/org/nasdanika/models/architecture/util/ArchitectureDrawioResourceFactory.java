@@ -60,9 +60,18 @@ public class ArchitectureDrawioResourceFactory implements Resource.Factory {
 				return ArchitectureDrawioResourceFactory.this.getVariables(this, context);
 			};
 			
+			@Override
+			protected String getProperty(String name) {
+				return ArchitectureDrawioResourceFactory.this.getProperty(this, name);
+			}
+			
 		};
 	}
 	
+	protected String getProperty(ArchitectureDrawioResource architectureDrawioResource, String name) {
+		return null;
+	}
+
 	protected Function<Marker, org.nasdanika.ncore.Marker> getMarkerFactory() {
 		return null;
 	}

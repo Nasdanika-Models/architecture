@@ -59,6 +59,11 @@ public class ArchitectureDrawioResource extends ResourceImpl {
 				return ArchitectureDrawioResource.this.getURIConverter();
 			}
 			
+			@Override
+			protected String getProperty(String name) {
+				return ArchitectureDrawioResource.this.getProperty(name);
+			}
+			
 		};
 		
 		diagramResource.load(inputStream, options);
@@ -111,6 +116,11 @@ public class ArchitectureDrawioResource extends ResourceImpl {
 				return ArchitectureDrawioResource.this.getVariables(context);
 			}
 			
+			@Override
+			protected String getProperty(String name) {
+				return ArchitectureDrawioResource.this.getProperty(name);
+			}
+			
 		};
 		
 		Transformer<EObject,EObject> architectureFactory = new Transformer<>(architectureDrawioFactory);
@@ -127,6 +137,10 @@ public class ArchitectureDrawioResource extends ResourceImpl {
 		Map<EObject, EObject> architectureElements = architectureFactory.transform(diagramModelContents, false, getProgressMonitor());
 		
 		diagramResource.getContents().stream().map(architectureElements::get).forEach(getContents()::add);
+	}
+
+	protected String getProperty(String name) {
+		return null;
 	}
 
 	protected ProgressMonitor getProgressMonitor() {
