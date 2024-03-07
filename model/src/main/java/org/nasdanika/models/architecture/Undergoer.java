@@ -33,7 +33,7 @@ public interface Undergoer extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Actors in this role
+	 * Roles operating on this model element
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Roles</em>' containment reference list.
 	 * @see org.nasdanika.models.architecture.ArchitecturePackage#getUndergoer_Roles()

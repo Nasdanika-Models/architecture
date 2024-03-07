@@ -749,7 +749,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		  (getUndergoer_Roles(),
 		   source,
 		   new String[] {
-			   "documentation", "Actors in this role"
+			   "documentation", "Roles operating on this model element"
 		   });
 		addAnnotation
 		  (architectureDescriptionElementEClass,
