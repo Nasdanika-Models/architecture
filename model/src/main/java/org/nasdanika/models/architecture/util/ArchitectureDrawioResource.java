@@ -68,7 +68,7 @@ public class ArchitectureDrawioResource extends ResourceImpl {
 		
 		diagramResource.load(inputStream, options);
 		
-		ArchitectureDrawioFactory architectureDrawioFactory = new ArchitectureDrawioFactory() {
+		ArchitectureDrawioFactory architectureDrawioFactory = new ArchitectureDrawioFactory(getResourceSet()) {
 
 			@Override
 			protected EObject getByRefId(EObject eObj, String refId, int pass, Map<EObject, EObject> registry) {				

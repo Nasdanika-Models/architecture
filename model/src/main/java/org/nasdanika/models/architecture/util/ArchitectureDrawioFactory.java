@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.nasdanika.graph.model.util.GraphDrawioFactory;
 import org.nasdanika.models.architecture.ArchitecturePackage;
 
@@ -14,6 +15,11 @@ import org.nasdanika.models.architecture.ArchitecturePackage;
  * @param <E>
  */
 public abstract class ArchitectureDrawioFactory extends GraphDrawioFactory<EObject> {
+
+	public ArchitectureDrawioFactory(ResourceSet resourceSet) {
+		super(resourceSet);
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * Returns a map with graph and ncore entries.
