@@ -1,3 +1,6 @@
+import org.nasdanika.capability.CapabilityFactory;
+import org.nasdanika.models.architecture.util.ArchitectureEPackageResourceSetCapabilityFactory;
+
 module org.nasdanika.models.architecture {
 	exports org.nasdanika.models.architecture;
 	exports org.nasdanika.models.architecture.impl;
@@ -7,5 +10,7 @@ module org.nasdanika.models.architecture {
 	requires transitive org.eclipse.emf.common;	
 	requires transitive org.nasdanika.graph.model;
 	requires transitive org.nasdanika.models.party;
+	
+	provides CapabilityFactory with ArchitectureEPackageResourceSetCapabilityFactory; 
 	
 }
