@@ -17,11 +17,6 @@
 			<version>${project.version}</version>
 		</dependency>		
 		<dependency>
-			<groupId>org.nasdanika.models.ecore</groupId>
-			<artifactId>graph</artifactId>
-			<version>${models.ecore.version}</version>
-		</dependency>		
-		<dependency>
 			<groupId>org.nasdanika.models.graph</groupId>
 			<artifactId>processors</artifactId>
 			<version>2024.5.0</version>
