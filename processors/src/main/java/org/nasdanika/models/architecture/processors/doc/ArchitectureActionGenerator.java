@@ -16,14 +16,14 @@ import org.nasdanika.models.architecture.ArchitecturePackage;
 import org.nasdanika.models.echarts.graph.GraphPackage;
 import org.nasdanika.ncore.NcorePackage;
 
-public class ArchitectureActionGenerator extends ActionGenerator<ArchitectureNodeProcessorFactory> {
+public class ArchitectureActionGenerator extends ActionGenerator {
 
 	public ArchitectureActionGenerator(
 			Collection<? extends EObject> sources,
 			ArchitectureNodeProcessorFactory nodeProcessorFactory, 
 			Collection<? extends EObject> references,
 			Function<? super EObject, URI> uriResolver) {
-		super(sources, nodeProcessorFactory, references, uriResolver);
+		super(sources, references, uriResolver, nodeProcessorFactory);
 	}
 	
 	private static Map<EPackage, URI> REFERENCES = Map.ofEntries(
@@ -38,14 +38,14 @@ public class ArchitectureActionGenerator extends ActionGenerator<ArchitectureNod
 			ArchitectureNodeProcessorFactory nodeProcessorFactory) {
 		super(
 			Collections.singleton(source),
-			nodeProcessorFactory, 
 			REFERENCES.keySet(), 
 			eObj -> {
 				if (eObj == source) {
 					return baseURI;
 				}
 				return REFERENCES.get(eObj);
-			});
+			},
+			nodeProcessorFactory);
 	}
 		
 	public ArchitectureActionGenerator(EObject source, ArchitectureNodeProcessorFactory nodeProcessorFactory) {
