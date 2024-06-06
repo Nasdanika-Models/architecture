@@ -160,6 +160,7 @@
 	<modules>
 		<module>model</module>
 		<module>processors</module>
+		<module>cli</module>
 		<!--<module>generator</module>-->
 	</modules>
 	 <profiles>
