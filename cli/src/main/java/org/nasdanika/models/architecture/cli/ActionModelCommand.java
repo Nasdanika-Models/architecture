@@ -49,10 +49,10 @@ public class ActionModelCommand extends CommandBase {
 		
 	@Override
 	public Integer call() throws Exception {
-		try (ProgressMonitor progressMonitor = progressMonitorMixIn.createProgressMonitor(3)) {
+		try (ProgressMonitor progressMonitor = progressMonitorMixIn.createProgressMonitor(4)) {
 			EObject eObj = architectureModelMixIn.getEObject(model, progressMonitor.split("Loading architecture model", 1));
 			
-			Consumer<Diagnostic> diagnosticConsumer = d -> d.dump(System.out, 0);		
+			Consumer<Diagnostic> diagnosticConsumer = d -> d.dump(progressMonitor.split("Diagnostic", 1));		
 			Context context = contextMixIn.createContext(progressMonitor.split("Creating context", 1));
 			try (ProgressMonitor actionGeneratorProgressMonitor = progressMonitor.split("Generating action model", 1)) {
 				ActionGenerator actionGenerator = ActionGenerator.load(eObj, context, null, null, null, actionGeneratorProgressMonitor); 
