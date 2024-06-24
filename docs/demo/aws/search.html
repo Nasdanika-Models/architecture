@@ -70,270 +70,18 @@ window.nsdJsTreeSearchCallback = function(str, node) {
 			  }
 			}));
 </script>
-
-<script src="../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
 </head>
   <body>
     <div class="container-fluid nsd-app-container">
       <div class="row">
         <div class="col nsd-app-header">
-          <a href="https://architecture.models.nasdanika.org" data-nsd-label-uuid="9a469735-ebf8-4afa-91e9-1e8903b9219b" class="nsd-app-header-title">
+          <a href="https://architecture.models.nasdanika.org" data-nsd-label-uuid="971baf11-6f60-46d5-8256-29776d52efd9" class="nsd-app-header-title">
             <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Architecture Model</a>
           <ul class="nav nsd-app-header-navs">
-            <li class="nav-item"><span data-nsd-label-uuid="7c3685b0-10a6-46fb-9242-e1486129a73e" class="navbar-text"><span class="fas fa-search nsd-app-label-icon"></span>Search</span>
+            <li class="nav-item"><span data-nsd-label-uuid="2068d0d7-1201-4b79-9528-072c9f89ce23" class="navbar-text"><span class="fas fa-search nsd-app-label-icon"></span>Search</span>
             </li>
             <li class="nav-item">
-              <a href="glossary.html" data-nsd-label-uuid="4d82a9de-de24-4915-9d01-7c47db542769" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+              <a href="glossary.html" data-nsd-label-uuid="cbf62a4d-f570-4594-bfab-ab24ee5977c7" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
             </li>
           </ul>
         </div>
@@ -341,10 +89,10 @@ window.nsdJsTreeSearchCallback = function(str, node) {
       <div class="row">
         <div class="col nsd-app-navbar">
           <ul class="navbar navbar-light navbar-expand-lg">
-            <a href="index.html" data-nsd-label-uuid="ba844307-a9f2-4396-a6ae-81d617e55524" class="navbar-brand">AWS</a>
-            <button type="button" data-toggle="collapse" data-target="#nsd_75" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            <a href="index.html" data-nsd-label-uuid="efcf7e24-1d40-4e52-a16a-e8b465f10190" class="navbar-brand">AWS</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_cz" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_75" class="collapse navbar-collapse"></div>
+            <div id="nsd_cz" class="collapse navbar-collapse"></div>
           </ul>
         </div>
       </div>
@@ -355,8 +103,8 @@ window.nsdJsTreeSearchCallback = function(str, node) {
               <a href="references/elements/UEzPUAAOIrF-is8g5C7q-176/index.html">Shared Services Account</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-188/index.html" data-nsd-label-uuid="8beaa849-318b-49b9-be0e-662a3d47992a" class="list-group-item list-group-action">Actor</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html" data-nsd-label-uuid="e7d0f231-993e-4113-9291-5f571b2b9950" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-188/index.html" data-nsd-label-uuid="8cc6dc9b-7bb2-47e9-9ac0-b1941f7cdea3" class="list-group-item list-group-action">Actor</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html" data-nsd-label-uuid="a6bda1b7-6674-4428-8f37-a396a4e54d0d" class="list-group-item list-group-action">Account Baseline</a>
             </div>
           </div>
           <div class="card">
@@ -364,8 +112,8 @@ window.nsdJsTreeSearchCallback = function(str, node) {
               <a href="references/elements/UEzPUAAOIrF-is8g5C7q-185/index.html">Log Archive Account</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html" data-nsd-label-uuid="3366bcc1-60f1-47ab-9542-9c5e2763b692" class="list-group-item list-group-action">Account Baseline</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html" data-nsd-label-uuid="8b5efd7d-bb8e-4b19-bfe9-72be93d93c20" class="list-group-item list-group-action">Aggregate CloudTrail and Config Logs</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html" data-nsd-label-uuid="5f3ed722-547d-4367-9c5c-486d562819d5" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html" data-nsd-label-uuid="b3b9fb9f-59a7-4c7c-a3ce-f81c89e66d1e" class="list-group-item list-group-action">Aggregate CloudTrail and Config Logs</a>
             </div>
           </div>
           <div class="card">
@@ -373,10 +121,10 @@ window.nsdJsTreeSearchCallback = function(str, node) {
               <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/index.html">Security Account</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html" data-nsd-label-uuid="aa4fd316-e4d8-4780-b610-afda9be811c9" class="list-group-item list-group-action">Account Baseline</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html" data-nsd-label-uuid="479fea5d-5980-495c-86c3-b76874560a4f" class="list-group-item list-group-action"><span class="fas fa-key nsd-app-label-icon"></span>Security Cross-Account Roles</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html" data-nsd-label-uuid="22e50f2b-4fda-41ee-9d24-69c2a9e5d122" class="list-group-item list-group-action">Amazon GuardDuty</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html" data-nsd-label-uuid="2ae42dc0-a610-48ac-a8af-8c5d93cc9025" class="list-group-item list-group-action">Amazon SNS</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html" data-nsd-label-uuid="8ea20d19-df61-4528-9636-e8f72923cecf" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html" data-nsd-label-uuid="a33b54cc-7d8b-4292-94d6-a41e3cb20f40" class="list-group-item list-group-action"><span class="fas fa-key nsd-app-label-icon"></span>Security Cross-Account Roles</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html" data-nsd-label-uuid="b60ba614-38f7-4b04-993e-10cd74c777bc" class="list-group-item list-group-action">Amazon GuardDuty</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html" data-nsd-label-uuid="74b7a760-9197-48fc-a481-3867972e9ad5" class="list-group-item list-group-action">Amazon SNS</a>
             </div>
           </div>
           <div class="card">
@@ -384,23 +132,23 @@ window.nsdJsTreeSearchCallback = function(str, node) {
               <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/index.html">AWS Cloud</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-177/index.html" data-nsd-label-uuid="c85bb622-29fb-4ba1-bfa6-3e75b54cb9eb" class="list-group-item list-group-action">
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-177/index.html" data-nsd-label-uuid="5e1a569e-8414-484b-ad0f-c27ab3d76dd3" class="list-group-item list-group-action">
                 <img src="https://img.icons8.com/material-two-tone/16/waterbucket.png" class="nsd-app-label-icon">Amazon S3 Bucket</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-178/index.html" data-nsd-label-uuid="3dcb673f-28f0-40da-b868-529dd8fdb7e6" class="list-group-item list-group-action">AWS CodePipeline</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-179/index.html" data-nsd-label-uuid="8f822eb3-6656-47fe-8ec2-bd1861601297" class="list-group-item list-group-action">AWS Organizations</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-180/index.html" data-nsd-label-uuid="6c9bda27-ead6-4a1e-b99b-94db63193c11" class="list-group-item list-group-action">AWS Single Sign-on</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-181/index.html" data-nsd-label-uuid="c007b6cb-a5d2-4930-9254-8ea2ea79ba12" class="list-group-item list-group-action">Account Baseline</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-182/index.html" data-nsd-label-uuid="7ec6c39b-c6b3-4780-a132-9e7fa8d479ed" class="list-group-item list-group-action">AWS Service Catalog</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-183/index.html" data-nsd-label-uuid="895e82bd-643f-4906-bdc8-61dd38a3e177" class="list-group-item list-group-action">AWS Parameter Store</a>
-              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-184/index.html" data-nsd-label-uuid="30ddadf9-cef0-4e7d-b64c-2cfaa68f2ddc" class="list-group-item list-group-action">Core OU</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-178/index.html" data-nsd-label-uuid="8ced39fa-e2f6-4735-a74c-1e89a113f1ca" class="list-group-item list-group-action">AWS CodePipeline</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-179/index.html" data-nsd-label-uuid="2fd27e15-1ded-4c20-854e-654b280b83da" class="list-group-item list-group-action">AWS Organizations</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-180/index.html" data-nsd-label-uuid="71effc16-23a5-4498-93da-47f136ba3ee7" class="list-group-item list-group-action">AWS Single Sign-on</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-181/index.html" data-nsd-label-uuid="45ba7883-87ef-4de8-a107-186e871c3ef3" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-182/index.html" data-nsd-label-uuid="9be89f06-90af-47c8-a6a1-9d7442e45a3f" class="list-group-item list-group-action">AWS Service Catalog</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-183/index.html" data-nsd-label-uuid="c9f6fada-7089-44c7-b4a6-bc63705cf87d" class="list-group-item list-group-action">AWS Parameter Store</a>
+              <a href="references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-184/index.html" data-nsd-label-uuid="0e7f16cd-e649-4762-9afa-fd496afd6285" class="list-group-item list-group-action">Core OU</a>
             </div>
           </div>
         </div>
-        <div data-nsd-label-uuid="7c3685b0-10a6-46fb-9242-e1486129a73e" data-nsd-action-uris="uuid:7c3685b0-10a6-46fb-9242-e1486129a73e" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="2068d0d7-1201-4b79-9528-072c9f89ce23" data-nsd-action-uris="uuid:2068d0d7-1201-4b79-9528-072c9f89ce23" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-title-and-items-row">
               <div class="col-auto">
-                <h1><span data-nsd-label-uuid="7c3685b0-10a6-46fb-9242-e1486129a73e" class="nsd-app-content-panel-title"><span class="fas fa-search nsd-app-label-icon"></span>Search</span>
+                <h1><span data-nsd-label-uuid="2068d0d7-1201-4b79-9528-072c9f89ce23" class="nsd-app-content-panel-title"><span class="fas fa-search nsd-app-label-icon"></span>Search</span>
                 </h1>
               </div>
             </div>
@@ -584,7 +332,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
 		
 
 <script>$(document).ready( function() {
-$('#nsd-site-map-tree').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; }; tree.search.search_callback = (results, node) => results.split(' ').includes(node.original['data-nsd-label-uuid']); return tree; }({"core":{"data":[{"a_attr":{"onclick":"window.location='https://architecture.models.nasdanika.org';"},"children":[{"children":[{"data-nsd-label-uuid":"7c3685b0-10a6-46fb-9242-e1486129a73e","icon":"fas fa-search","id":"f6bd619b-5d81-43bc-80ad-d8cfa53ad100","text":"Search","type":"leaf"},{"a_attr":{"onclick":"window.location='glossary.html';"},"data-nsd-label-uuid":"4d82a9de-de24-4915-9d01-7c47db542769","icon":"fas fa-book","id":"2489ff83-e5ac-4368-aaf7-8659f048778d","text":"Glossary","type":"leaf"}],"text":"Children"},{"children":[{"a_attr":{"onclick":"window.location='https://github.com/Nasdanika-Models/architecture';"},"data-nsd-label-uuid":"490dcd58-73a0-48c7-b23b-124261b7add9","icon":"fab fa-github","id":"12d52598-bb50-452d-9ced-d979caffda87","text":"Sources","type":"leaf"}],"text":"Navigation"}],"data-nsd-label-uuid":"9a469735-ebf8-4afa-91e9-1e8903b9219b","icon":"https://docs.nasdanika.org/images/nasdanika-logo.png","id":"060b5b70-867e-4ce8-a0d8-e0ec5a033f2f","text":"Nasdanika Architecture Model","type":"leaf"},{"a_attr":{"onclick":"window.location='index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-176/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-188/index.html';"},"data-nsd-label-uuid":"8beaa849-318b-49b9-be0e-662a3d47992a","id":"13ba2d13-5092-4413-9d28-cc150e773500","text":"Actor","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html';"},"data-nsd-label-uuid":"e7d0f231-993e-4113-9291-5f571b2b9950","id":"75140558-687b-4797-9924-65bdb2a8056d","text":"Account Baseline","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"36204ee1-4e9d-4c19-a8fe-ce5fccff2564","id":"41b25723-0887-49c6-a234-4801da7f5bff","text":"Shared Services Account","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-185/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html';"},"data-nsd-label-uuid":"3366bcc1-60f1-47ab-9542-9c5e2763b692","id":"16a857b7-1c9b-47f2-83f7-2e19ee53a318","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html';"},"data-nsd-label-uuid":"8b5efd7d-bb8e-4b19-bfe9-72be93d93c20","id":"4368cb20-28a1-4ff3-b394-a091826ef47c","text":"Aggregate CloudTrail and Config Logs","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"990c423a-1e1f-4e27-8bbe-0074b9f50f20","id":"9616e1dd-dd9f-4dc3-9c2a-067eb1ff2467","text":"Log Archive Account","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html';"},"data-nsd-label-uuid":"aa4fd316-e4d8-4780-b610-afda9be811c9","id":"5ed267f5-0558-44e3-b9b6-eee3535549de","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html';"},"data-nsd-label-uuid":"479fea5d-5980-495c-86c3-b76874560a4f","icon":"fas fa-key","id":"5179ff64-a60e-4026-9205-aea1c5299361","text":"Security Cross-Account Roles","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html';"},"data-nsd-label-uuid":"22e50f2b-4fda-41ee-9d24-69c2a9e5d122","id":"95308307-7b2c-41e7-9704-6b1547821038","text":"Amazon GuardDuty","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html';"},"data-nsd-label-uuid":"2ae42dc0-a610-48ac-a8af-8c5d93cc9025","id":"f695ba04-0003-4163-8060-9b8bbd6dd233","text":"Amazon SNS","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"4a1ebb81-5e77-4945-b9de-2ac239e8cbe3","id":"2809c125-ad41-4fc0-8404-0889a0b13558","text":"Security Account","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-177/index.html';"},"data-nsd-label-uuid":"c85bb622-29fb-4ba1-bfa6-3e75b54cb9eb","icon":"https://img.icons8.com/material-two-tone/16/waterbucket.png","id":"8cb8e3c0-dca6-485a-a541-2fd599ec0776","text":"Amazon S3 Bucket","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-178/index.html';"},"data-nsd-label-uuid":"3dcb673f-28f0-40da-b868-529dd8fdb7e6","id":"9f363de9-d4a7-4eea-9412-ccff73909fed","text":"AWS CodePipeline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-179/index.html';"},"data-nsd-label-uuid":"8f822eb3-6656-47fe-8ec2-bd1861601297","id":"eab0e8cb-1b22-4eb5-9152-fbd9b798219d","text":"AWS Organizations","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-180/index.html';"},"data-nsd-label-uuid":"6c9bda27-ead6-4a1e-b99b-94db63193c11","id":"9d090970-77fd-4f00-996f-6a7d1d4db22b","text":"AWS Single Sign-on","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-181/index.html';"},"data-nsd-label-uuid":"c007b6cb-a5d2-4930-9254-8ea2ea79ba12","id":"cf2777ed-15ac-4810-884b-215f514f0395","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-182/index.html';"},"data-nsd-label-uuid":"7ec6c39b-c6b3-4780-a132-9e7fa8d479ed","id":"c19c23cb-9b49-4105-9874-0b69f43db1ec","text":"AWS Service Catalog","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-183/index.html';"},"data-nsd-label-uuid":"895e82bd-643f-4906-bdc8-61dd38a3e177","id":"8f8c6e57-be74-4902-8344-ccbdba7939d5","text":"AWS Parameter Store","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-184/index.html';"},"data-nsd-label-uuid":"30ddadf9-cef0-4e7d-b64c-2cfaa68f2ddc","id":"6fab81b0-6a0f-418c-b4ec-16daea0a1601","text":"Core OU","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"0a6c7740-7039-4240-ac4e-2b9bb0334986","id":"9cf11490-9e80-48b4-b135-9f19cb48a68c","text":"AWS Cloud","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"ba844307-a9f2-4396-a6ae-81d617e55524","id":"db42ad44-285b-4e8c-b467-e23186c6b760","text":"AWS","type":"leaf"}]},"search":{"show_only_matches":true},"plugins":["state","search"],"state":{"key":"nsd-site-map-tree"}}));
+$('#nsd-site-map-tree').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; }; tree.search.search_callback = (results, node) => results.split(' ').includes(node.original['data-nsd-label-uuid']); return tree; }({"core":{"data":[{"a_attr":{"onclick":"window.location='https://architecture.models.nasdanika.org';"},"children":[{"children":[{"data-nsd-label-uuid":"2068d0d7-1201-4b79-9528-072c9f89ce23","icon":"fas fa-search","id":"5deb8147-2a16-4b29-b99d-4358d7ed2147","text":"Search","type":"leaf"},{"a_attr":{"onclick":"window.location='glossary.html';"},"data-nsd-label-uuid":"cbf62a4d-f570-4594-bfab-ab24ee5977c7","icon":"fas fa-book","id":"fac8dcc1-6a3c-46b7-8d30-91d7dbfe6a7e","text":"Glossary","type":"leaf"}],"text":"Children"},{"children":[{"a_attr":{"onclick":"window.location='https://github.com/Nasdanika-Models/architecture';"},"data-nsd-label-uuid":"a72f0f6d-47be-4345-8be2-5bccf1fa27ae","icon":"fab fa-github","id":"0afd3be0-803d-4ad4-94e5-d3420b3b8e66","text":"Sources","type":"leaf"}],"text":"Navigation"}],"data-nsd-label-uuid":"971baf11-6f60-46d5-8256-29776d52efd9","icon":"https://docs.nasdanika.org/images/nasdanika-logo.png","id":"c550bd87-b2ad-457e-b5a7-454c24811a7d","text":"Nasdanika Architecture Model","type":"leaf"},{"a_attr":{"onclick":"window.location='index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-176/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-188/index.html';"},"data-nsd-label-uuid":"8cc6dc9b-7bb2-47e9-9ac0-b1941f7cdea3","id":"d8621f65-0db3-48f5-894e-916ed056f687","text":"Actor","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html';"},"data-nsd-label-uuid":"a6bda1b7-6674-4428-8f37-a396a4e54d0d","id":"28a0ea07-fe1c-496b-9d15-5ed38dc6bd76","text":"Account Baseline","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"7467414d-b0cb-46c9-9e16-91b71c8f240b","id":"93e29711-a915-41e9-87a9-9e3c2ed19288","text":"Shared Services Account","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-185/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html';"},"data-nsd-label-uuid":"5f3ed722-547d-4367-9c5c-486d562819d5","id":"65965aba-ee80-4eaf-9cbf-de2321c4bf6c","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html';"},"data-nsd-label-uuid":"b3b9fb9f-59a7-4c7c-a3ce-f81c89e66d1e","id":"d719833a-1172-4b73-9bcd-ad20c235c17e","text":"Aggregate CloudTrail and Config Logs","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"edcd77e6-9fa1-42b6-9fbc-ebd3705a1db8","id":"f539596c-2364-4f73-8808-6bf12ef27dc1","text":"Log Archive Account","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html';"},"data-nsd-label-uuid":"8ea20d19-df61-4528-9636-e8f72923cecf","id":"89879018-34de-40a1-b4cd-4ddfb469ff44","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html';"},"data-nsd-label-uuid":"a33b54cc-7d8b-4292-94d6-a41e3cb20f40","icon":"fas fa-key","id":"c3d0c7c2-c2c1-4ecb-b2fc-6f1ca831fc44","text":"Security Cross-Account Roles","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html';"},"data-nsd-label-uuid":"b60ba614-38f7-4b04-993e-10cd74c777bc","id":"cb12b029-bbce-4dbb-8dc5-5de8f474e1bc","text":"Amazon GuardDuty","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html';"},"data-nsd-label-uuid":"74b7a760-9197-48fc-a481-3867972e9ad5","id":"1ae1d3f2-9dd6-4d96-b159-f77e834a0e31","text":"Amazon SNS","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"066900a6-403a-48bf-bce7-1aef44a6b26e","id":"18bab5e1-59ff-42ff-b9bf-fcae2af0a907","text":"Security Account","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-177/index.html';"},"data-nsd-label-uuid":"5e1a569e-8414-484b-ad0f-c27ab3d76dd3","icon":"https://img.icons8.com/material-two-tone/16/waterbucket.png","id":"bae901ea-0291-4ea1-ba97-921a3ec69bfd","text":"Amazon S3 Bucket","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-178/index.html';"},"data-nsd-label-uuid":"8ced39fa-e2f6-4735-a74c-1e89a113f1ca","id":"dcf8ed6a-ec45-44ef-a6f7-ba7529318a98","text":"AWS CodePipeline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-179/index.html';"},"data-nsd-label-uuid":"2fd27e15-1ded-4c20-854e-654b280b83da","id":"07be7ca9-fd03-43aa-99d9-32fe8c6032c3","text":"AWS Organizations","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-180/index.html';"},"data-nsd-label-uuid":"71effc16-23a5-4498-93da-47f136ba3ee7","id":"c8af6165-58b4-4207-b471-1e1194872290","text":"AWS Single Sign-on","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-181/index.html';"},"data-nsd-label-uuid":"45ba7883-87ef-4de8-a107-186e871c3ef3","id":"18fcf7aa-6af2-4cb2-b3b2-fa77ec1af87b","text":"Account Baseline","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-182/index.html';"},"data-nsd-label-uuid":"9be89f06-90af-47c8-a6a1-9d7442e45a3f","id":"82026bdb-ee4a-4099-965d-5041a6c956a1","text":"AWS Service Catalog","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-183/index.html';"},"data-nsd-label-uuid":"c9f6fada-7089-44c7-b4a6-bc63705cf87d","id":"813d08a7-0b9f-4bfa-9a63-bab4f40e8463","text":"AWS Parameter Store","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-184/index.html';"},"data-nsd-label-uuid":"0e7f16cd-e649-4762-9afa-fd496afd6285","id":"c2f4b1bb-57a2-4dc1-80e9-727124e28a79","text":"Core OU","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"16c8c2dd-11d1-4c3f-9bbf-952171c799e6","id":"6d6e7081-6b9e-472d-b316-b6cf3e5361ec","text":"AWS Cloud","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"efcf7e24-1d40-4e52-a16a-e8b465f10190","id":"f5d23450-e0c0-418d-a131-0f1c3a5cfd1b","text":"AWS","type":"leaf"}]},"search":{"show_only_matches":true},"plugins":["state","search"],"state":{"key":"nsd-site-map-tree"}}));
 });</script>
 				
 		</div>
@@ -599,7 +347,7 @@ $('#nsd-site-map-tree').jstree(function(tree) { tree.state.filter = function(sta
         <div class="col nsd-app-footer">
           <ul class="nav nsd-app-footer-navs">
             <li class="nav-item">
-              <a href="https://github.com/Nasdanika-Models/architecture" data-nsd-label-uuid="490dcd58-73a0-48c7-b23b-124261b7add9" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+              <a href="https://github.com/Nasdanika-Models/architecture" data-nsd-label-uuid="a72f0f6d-47be-4345-8be2-5bccf1fa27ae" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
             </li>
           </ul>
         </div>

@@ -1,6 +1,6 @@
 [
     {
-        "identifiers": ["uuid:9a469735-ebf8-4afa-91e9-1e8903b9219b"],
+        "identifiers": ["uuid:971baf11-6f60-46d5-8256-29776d52efd9"],
         "name": "Nasdanika Architecture Model",
         "icon": "https://docs.nasdanika.org/images/nasdanika-logo.png",
         "location": "https://architecture.models.nasdanika.org",
@@ -12,9 +12,9 @@
     {
         "container": {
             "reference": "children",
-            "identifiers": ["uuid:9a469735-ebf8-4afa-91e9-1e8903b9219b"]
+            "identifiers": ["uuid:971baf11-6f60-46d5-8256-29776d52efd9"]
         },
-        "identifiers": ["uuid:7c3685b0-10a6-46fb-9242-e1486129a73e"],
+        "identifiers": ["uuid:2068d0d7-1201-4b79-9528-072c9f89ce23"],
         "name": "Search",
         "icon": "fas fa-search",
         "location": "search.html",
@@ -26,9 +26,9 @@
     {
         "container": {
             "reference": "children",
-            "identifiers": ["uuid:9a469735-ebf8-4afa-91e9-1e8903b9219b"]
+            "identifiers": ["uuid:971baf11-6f60-46d5-8256-29776d52efd9"]
         },
-        "identifiers": ["uuid:4d82a9de-de24-4915-9d01-7c47db542769"],
+        "identifiers": ["uuid:cbf62a4d-f570-4594-bfab-ab24ee5977c7"],
         "name": "Glossary",
         "icon": "fas fa-book",
         "location": "glossary.html",
@@ -40,9 +40,9 @@
     {
         "container": {
             "reference": "navigation",
-            "identifiers": ["uuid:9a469735-ebf8-4afa-91e9-1e8903b9219b"]
+            "identifiers": ["uuid:971baf11-6f60-46d5-8256-29776d52efd9"]
         },
-        "identifiers": ["uuid:490dcd58-73a0-48c7-b23b-124261b7add9"],
+        "identifiers": ["uuid:a72f0f6d-47be-4345-8be2-5bccf1fa27ae"],
         "name": "Sources",
         "icon": "fab fa-github",
         "location": "https://github.com/Nasdanika-Models/architecture",
@@ -52,7 +52,7 @@
         }
     },
     {
-        "identifiers": ["uuid:af69aad3-e260-4acf-a157-7dd720ad2950"],
+        "identifiers": ["uuid:c935fbba-dab7-4f7a-8ad9-b4981add3873"],
         "name": "AWS",
         "location": "index.html",
         "type": {
@@ -63,10 +63,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:af69aad3-e260-4acf-a157-7dd720ad2950"],
+            "identifiers": ["uuid:c935fbba-dab7-4f7a-8ad9-b4981add3873"],
             "name": "AWS"
         },
-        "identifiers": ["uuid:6e991a8b-04ee-4382-a4b7-a9007ccf5597"],
+        "identifiers": ["uuid:86e84d3f-8475-4323-b969-32aece489af9"],
         "name": "Shared Services Account",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-176/index.html",
         "type": {
@@ -77,10 +77,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:6e991a8b-04ee-4382-a4b7-a9007ccf5597"],
+            "identifiers": ["uuid:86e84d3f-8475-4323-b969-32aece489af9"],
             "name": "Shared Services Account"
         },
-        "identifiers": ["uuid:38f418b8-c376-4b7a-8a88-f0fd50d8d155"],
+        "identifiers": ["uuid:942a8cb7-75bd-40d5-826b-ce1b4a0a5039"],
         "name": "Actor",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-188/index.html",
         "type": {
@@ -91,10 +91,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:6e991a8b-04ee-4382-a4b7-a9007ccf5597"],
+            "identifiers": ["uuid:86e84d3f-8475-4323-b969-32aece489af9"],
             "name": "Shared Services Account"
         },
-        "identifiers": ["uuid:cf4ac3e1-307c-47b4-9a76-cbdeeb3e4f54"],
+        "identifiers": ["uuid:19076f93-7110-4c78-bdc9-3a58db871903"],
         "name": "Account Baseline",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html",
         "type": {
@@ -105,10 +105,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:af69aad3-e260-4acf-a157-7dd720ad2950"],
+            "identifiers": ["uuid:c935fbba-dab7-4f7a-8ad9-b4981add3873"],
             "name": "AWS"
         },
-        "identifiers": ["uuid:5be5747d-23af-4fc2-9c0b-1582ca7c0529"],
+        "identifiers": ["uuid:4ec8f707-a8d7-4957-9e07-e054315ed7e4"],
         "name": "Log Archive Account",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-185/index.html",
         "type": {
@@ -119,10 +119,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:5be5747d-23af-4fc2-9c0b-1582ca7c0529"],
+            "identifiers": ["uuid:4ec8f707-a8d7-4957-9e07-e054315ed7e4"],
             "name": "Log Archive Account"
         },
-        "identifiers": ["uuid:44fbd265-c959-43e1-b651-65a7253335f2"],
+        "identifiers": ["uuid:36f0366e-4857-4474-ba85-ff451df27a2e"],
         "name": "Account Baseline",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html",
         "type": {
@@ -133,10 +133,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:5be5747d-23af-4fc2-9c0b-1582ca7c0529"],
+            "identifiers": ["uuid:4ec8f707-a8d7-4957-9e07-e054315ed7e4"],
             "name": "Log Archive Account"
         },
-        "identifiers": ["uuid:07bd7bd0-ddad-4a28-8e68-546655c47201"],
+        "identifiers": ["uuid:49dc39b4-c687-46db-ac27-bc80de5d3680"],
         "name": "Aggregate CloudTrail and Config Logs",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html",
         "type": {
@@ -147,10 +147,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:af69aad3-e260-4acf-a157-7dd720ad2950"],
+            "identifiers": ["uuid:c935fbba-dab7-4f7a-8ad9-b4981add3873"],
             "name": "AWS"
         },
-        "identifiers": ["uuid:c8826e38-bb6e-402c-8d22-fcb5028fa1d5"],
+        "identifiers": ["uuid:67ee40d3-f871-4b4e-8e27-7ba8a0a12a13"],
         "name": "Security Account",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-186/index.html",
         "type": {
@@ -161,10 +161,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:c8826e38-bb6e-402c-8d22-fcb5028fa1d5"],
+            "identifiers": ["uuid:67ee40d3-f871-4b4e-8e27-7ba8a0a12a13"],
             "name": "Security Account"
         },
-        "identifiers": ["uuid:1be511ec-c4ed-478b-9eed-879c3297aae6"],
+        "identifiers": ["uuid:252b4aab-2100-4a6c-b9d3-e89a8cf536be"],
         "name": "Account Baseline",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html",
         "type": {
@@ -175,10 +175,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:c8826e38-bb6e-402c-8d22-fcb5028fa1d5"],
+            "identifiers": ["uuid:67ee40d3-f871-4b4e-8e27-7ba8a0a12a13"],
             "name": "Security Account"
         },
-        "identifiers": ["uuid:24c7254c-0418-4446-858d-81ad07f16d20"],
+        "identifiers": ["uuid:d5996a18-e070-44d6-80ea-82ebbc2838d5"],
         "name": "Security Cross-Account Roles",
         "icon": "fas fa-key",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html",
@@ -190,10 +190,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:c8826e38-bb6e-402c-8d22-fcb5028fa1d5"],
+            "identifiers": ["uuid:67ee40d3-f871-4b4e-8e27-7ba8a0a12a13"],
             "name": "Security Account"
         },
-        "identifiers": ["uuid:218909da-244d-4c0a-b4c2-ffdf6899ceab"],
+        "identifiers": ["uuid:54da10f4-467f-44f0-9c55-f561fa9c86d6"],
         "name": "Amazon GuardDuty",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html",
         "type": {
@@ -204,10 +204,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:c8826e38-bb6e-402c-8d22-fcb5028fa1d5"],
+            "identifiers": ["uuid:67ee40d3-f871-4b4e-8e27-7ba8a0a12a13"],
             "name": "Security Account"
         },
-        "identifiers": ["uuid:3eb1f6b9-05fc-4098-bfcf-b701e3ff86fb"],
+        "identifiers": ["uuid:054dfb7c-2d2a-4743-a5c7-6eb9ba230951"],
         "name": "Amazon SNS",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html",
         "type": {
@@ -218,10 +218,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:af69aad3-e260-4acf-a157-7dd720ad2950"],
+            "identifiers": ["uuid:c935fbba-dab7-4f7a-8ad9-b4981add3873"],
             "name": "AWS"
         },
-        "identifiers": ["uuid:30a5e082-eddb-47c4-974a-d7a86d69c214"],
+        "identifiers": ["uuid:5845577d-5b83-495a-894b-26f657c61703"],
         "name": "AWS Cloud",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-175/index.html",
         "type": {
@@ -232,10 +232,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:30a5e082-eddb-47c4-974a-d7a86d69c214"],
+            "identifiers": ["uuid:5845577d-5b83-495a-894b-26f657c61703"],
             "name": "AWS Cloud"
         },
-        "identifiers": ["uuid:0da5784d-52a2-4dbd-bd86-776753952ae6"],
+        "identifiers": ["uuid:3882a2df-72a1-4e47-bc57-6e4b3229bcf4"],
         "name": "Amazon S3 Bucket",
         "icon": "https://img.icons8.com/material-two-tone/16/waterbucket.png",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-177/index.html",
@@ -247,10 +247,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:30a5e082-eddb-47c4-974a-d7a86d69c214"],
+            "identifiers": ["uuid:5845577d-5b83-495a-894b-26f657c61703"],
             "name": "AWS Cloud"
         },
-        "identifiers": ["uuid:a5aeac54-7b9f-4735-a231-7e3a2516ee9c"],
+        "identifiers": ["uuid:846eb380-03e7-4acb-9020-8859b03462d9"],
         "name": "AWS CodePipeline",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-178/index.html",
         "type": {
@@ -261,10 +261,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:30a5e082-eddb-47c4-974a-d7a86d69c214"],
+            "identifiers": ["uuid:5845577d-5b83-495a-894b-26f657c61703"],
             "name": "AWS Cloud"
         },
-        "identifiers": ["uuid:e5c47e4b-dbae-45be-a9ba-01b30e34e453"],
+        "identifiers": ["uuid:438d1e6a-e7ed-4c4b-9ff5-69a3681cb5dc"],
         "name": "AWS Organizations",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-179/index.html",
         "type": {
@@ -275,10 +275,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:30a5e082-eddb-47c4-974a-d7a86d69c214"],
+            "identifiers": ["uuid:5845577d-5b83-495a-894b-26f657c61703"],
             "name": "AWS Cloud"
         },
-        "identifiers": ["uuid:59594f41-8ba0-454f-b871-b77f6babfab1"],
+        "identifiers": ["uuid:f648117a-261a-464d-8cc5-24c3050d40c9"],
         "name": "AWS Single Sign-on",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-180/index.html",
         "type": {
@@ -289,10 +289,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:30a5e082-eddb-47c4-974a-d7a86d69c214"],
+            "identifiers": ["uuid:5845577d-5b83-495a-894b-26f657c61703"],
             "name": "AWS Cloud"
         },
-        "identifiers": ["uuid:bb70b629-b1c4-4592-94c9-afda3e59ab2d"],
+        "identifiers": ["uuid:07937185-5f1e-4537-a2c1-d21e4be4b5ac"],
         "name": "Account Baseline",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-181/index.html",
         "type": {
@@ -303,10 +303,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:30a5e082-eddb-47c4-974a-d7a86d69c214"],
+            "identifiers": ["uuid:5845577d-5b83-495a-894b-26f657c61703"],
             "name": "AWS Cloud"
         },
-        "identifiers": ["uuid:95762f46-b095-4b78-b9a6-db9a48a0ad6e"],
+        "identifiers": ["uuid:f25b3703-e4cc-4b96-9cb3-103243b16b34"],
         "name": "AWS Service Catalog",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-182/index.html",
         "type": {
@@ -317,10 +317,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:30a5e082-eddb-47c4-974a-d7a86d69c214"],
+            "identifiers": ["uuid:5845577d-5b83-495a-894b-26f657c61703"],
             "name": "AWS Cloud"
         },
-        "identifiers": ["uuid:c0d3983f-766c-4fff-9f84-2d1e8f4b81c6"],
+        "identifiers": ["uuid:d2d74fad-92c8-464f-8ce7-d7f5540c8e29"],
         "name": "AWS Parameter Store",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-183/index.html",
         "type": {
@@ -331,10 +331,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:30a5e082-eddb-47c4-974a-d7a86d69c214"],
+            "identifiers": ["uuid:5845577d-5b83-495a-894b-26f657c61703"],
             "name": "AWS Cloud"
         },
-        "identifiers": ["uuid:3749f839-d753-4a8a-a7bb-40110d8265a2"],
+        "identifiers": ["uuid:60b861d4-ce46-442a-aee3-6ed6a48eb7ee"],
         "name": "Core OU",
         "location": "references/elements/UEzPUAAOIrF-is8g5C7q-175/references/elements/UEzPUAAOIrF-is8g5C7q-184/index.html",
         "type": {

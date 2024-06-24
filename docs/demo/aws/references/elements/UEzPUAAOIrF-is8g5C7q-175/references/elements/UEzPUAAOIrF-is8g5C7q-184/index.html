@@ -106,271 +106,19 @@ window.nsdJsTreeSearchCallback = function(str, node) {
 			  }
 			}));
 </script>
-
-<script src="../../../../../../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../../../../../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../../../../../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../../../../../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../../../../../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../../../../../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../../../../../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
 </head>
   <body>
     <div class="container-fluid nsd-app-container">
       <div class="row">
         <div class="col nsd-app-header">
-          <a href="https://architecture.models.nasdanika.org" data-nsd-label-uuid="9a469735-ebf8-4afa-91e9-1e8903b9219b" class="nsd-app-header-title">
+          <a href="https://architecture.models.nasdanika.org" data-nsd-label-uuid="971baf11-6f60-46d5-8256-29776d52efd9" class="nsd-app-header-title">
             <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Architecture Model</a>
           <ul class="nav nsd-app-header-navs">
             <li class="nav-item">
-              <a href="../../../../../../search.html" data-nsd-label-uuid="7c3685b0-10a6-46fb-9242-e1486129a73e" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+              <a href="../../../../../../search.html" data-nsd-label-uuid="2068d0d7-1201-4b79-9528-072c9f89ce23" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
             </li>
             <li class="nav-item">
-              <a href="../../../../../../glossary.html" data-nsd-label-uuid="4d82a9de-de24-4915-9d01-7c47db542769" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+              <a href="../../../../../../glossary.html" data-nsd-label-uuid="cbf62a4d-f570-4594-bfab-ab24ee5977c7" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
             </li>
           </ul>
         </div>
@@ -378,10 +126,10 @@ window.nsdJsTreeSearchCallback = function(str, node) {
       <div class="row">
         <div class="col nsd-app-navbar">
           <ul class="navbar navbar-light navbar-expand-lg">
-            <a href="../../../../../../index.html" data-nsd-label-uuid="ba844307-a9f2-4396-a6ae-81d617e55524" class="navbar-brand">AWS</a>
-            <button type="button" data-toggle="collapse" data-target="#nsd_48" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            <a href="../../../../../../index.html" data-nsd-label-uuid="efcf7e24-1d40-4e52-a16a-e8b465f10190" class="navbar-brand">AWS</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_8w" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_48" class="collapse navbar-collapse"></div>
+            <div id="nsd_8w" class="collapse navbar-collapse"></div>
           </ul>
         </div>
       </div>
@@ -392,8 +140,8 @@ window.nsdJsTreeSearchCallback = function(str, node) {
               <a href="../../../../UEzPUAAOIrF-is8g5C7q-176/index.html">Shared Services Account</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-188/index.html" data-nsd-label-uuid="8beaa849-318b-49b9-be0e-662a3d47992a" class="list-group-item list-group-action">Actor</a>
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html" data-nsd-label-uuid="e7d0f231-993e-4113-9291-5f571b2b9950" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-188/index.html" data-nsd-label-uuid="8cc6dc9b-7bb2-47e9-9ac0-b1941f7cdea3" class="list-group-item list-group-action">Actor</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-176/references/elements/UEzPUAAOIrF-is8g5C7q-187/index.html" data-nsd-label-uuid="a6bda1b7-6674-4428-8f37-a396a4e54d0d" class="list-group-item list-group-action">Account Baseline</a>
             </div>
           </div>
           <div class="card">
@@ -401,8 +149,8 @@ window.nsdJsTreeSearchCallback = function(str, node) {
               <a href="../../../../UEzPUAAOIrF-is8g5C7q-185/index.html">Log Archive Account</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html" data-nsd-label-uuid="3366bcc1-60f1-47ab-9542-9c5e2763b692" class="list-group-item list-group-action">Account Baseline</a>
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html" data-nsd-label-uuid="8b5efd7d-bb8e-4b19-bfe9-72be93d93c20" class="list-group-item list-group-action">Aggregate CloudTrail and Config Logs</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-189/index.html" data-nsd-label-uuid="5f3ed722-547d-4367-9c5c-486d562819d5" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-185/references/elements/UEzPUAAOIrF-is8g5C7q-190/index.html" data-nsd-label-uuid="b3b9fb9f-59a7-4c7c-a3ce-f81c89e66d1e" class="list-group-item list-group-action">Aggregate CloudTrail and Config Logs</a>
             </div>
           </div>
           <div class="card">
@@ -410,10 +158,10 @@ window.nsdJsTreeSearchCallback = function(str, node) {
               <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/index.html">Security Account</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html" data-nsd-label-uuid="aa4fd316-e4d8-4780-b610-afda9be811c9" class="list-group-item list-group-action">Account Baseline</a>
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html" data-nsd-label-uuid="479fea5d-5980-495c-86c3-b76874560a4f" class="list-group-item list-group-action"><span class="fas fa-key nsd-app-label-icon"></span>Security Cross-Account Roles</a>
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html" data-nsd-label-uuid="22e50f2b-4fda-41ee-9d24-69c2a9e5d122" class="list-group-item list-group-action">Amazon GuardDuty</a>
-              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html" data-nsd-label-uuid="2ae42dc0-a610-48ac-a8af-8c5d93cc9025" class="list-group-item list-group-action">Amazon SNS</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-191/index.html" data-nsd-label-uuid="8ea20d19-df61-4528-9636-e8f72923cecf" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-192/index.html" data-nsd-label-uuid="a33b54cc-7d8b-4292-94d6-a41e3cb20f40" class="list-group-item list-group-action"><span class="fas fa-key nsd-app-label-icon"></span>Security Cross-Account Roles</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-193/index.html" data-nsd-label-uuid="b60ba614-38f7-4b04-993e-10cd74c777bc" class="list-group-item list-group-action">Amazon GuardDuty</a>
+              <a href="../../../../UEzPUAAOIrF-is8g5C7q-186/references/elements/UEzPUAAOIrF-is8g5C7q-194/index.html" data-nsd-label-uuid="74b7a760-9197-48fc-a481-3867972e9ad5" class="list-group-item list-group-action">Amazon SNS</a>
             </div>
           </div>
           <div class="card">
@@ -421,27 +169,27 @@ window.nsdJsTreeSearchCallback = function(str, node) {
               <a href="../../../index.html">AWS Cloud</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="../UEzPUAAOIrF-is8g5C7q-177/index.html" data-nsd-label-uuid="c85bb622-29fb-4ba1-bfa6-3e75b54cb9eb" class="list-group-item list-group-action">
+              <a href="../UEzPUAAOIrF-is8g5C7q-177/index.html" data-nsd-label-uuid="5e1a569e-8414-484b-ad0f-c27ab3d76dd3" class="list-group-item list-group-action">
                 <img src="https://img.icons8.com/material-two-tone/16/waterbucket.png" class="nsd-app-label-icon">Amazon S3 Bucket</a>
-              <a href="../UEzPUAAOIrF-is8g5C7q-178/index.html" data-nsd-label-uuid="3dcb673f-28f0-40da-b868-529dd8fdb7e6" class="list-group-item list-group-action">AWS CodePipeline</a>
-              <a href="../UEzPUAAOIrF-is8g5C7q-179/index.html" data-nsd-label-uuid="8f822eb3-6656-47fe-8ec2-bd1861601297" class="list-group-item list-group-action">AWS Organizations</a>
-              <a href="../UEzPUAAOIrF-is8g5C7q-180/index.html" data-nsd-label-uuid="6c9bda27-ead6-4a1e-b99b-94db63193c11" class="list-group-item list-group-action">AWS Single Sign-on</a>
-              <a href="../UEzPUAAOIrF-is8g5C7q-181/index.html" data-nsd-label-uuid="c007b6cb-a5d2-4930-9254-8ea2ea79ba12" class="list-group-item list-group-action">Account Baseline</a>
-              <a href="../UEzPUAAOIrF-is8g5C7q-182/index.html" data-nsd-label-uuid="7ec6c39b-c6b3-4780-a132-9e7fa8d479ed" class="list-group-item list-group-action">AWS Service Catalog</a>
-              <a href="../UEzPUAAOIrF-is8g5C7q-183/index.html" data-nsd-label-uuid="895e82bd-643f-4906-bdc8-61dd38a3e177" class="list-group-item list-group-action">AWS Parameter Store</a><span data-nsd-label-uuid="30ddadf9-cef0-4e7d-b64c-2cfaa68f2ddc" class="active list-group-item list-group-action">Core OU</span>
+              <a href="../UEzPUAAOIrF-is8g5C7q-178/index.html" data-nsd-label-uuid="8ced39fa-e2f6-4735-a74c-1e89a113f1ca" class="list-group-item list-group-action">AWS CodePipeline</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-179/index.html" data-nsd-label-uuid="2fd27e15-1ded-4c20-854e-654b280b83da" class="list-group-item list-group-action">AWS Organizations</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-180/index.html" data-nsd-label-uuid="71effc16-23a5-4498-93da-47f136ba3ee7" class="list-group-item list-group-action">AWS Single Sign-on</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-181/index.html" data-nsd-label-uuid="45ba7883-87ef-4de8-a107-186e871c3ef3" class="list-group-item list-group-action">Account Baseline</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-182/index.html" data-nsd-label-uuid="9be89f06-90af-47c8-a6a1-9d7442e45a3f" class="list-group-item list-group-action">AWS Service Catalog</a>
+              <a href="../UEzPUAAOIrF-is8g5C7q-183/index.html" data-nsd-label-uuid="c9f6fada-7089-44c7-b4a6-bc63705cf87d" class="list-group-item list-group-action">AWS Parameter Store</a><span data-nsd-label-uuid="0e7f16cd-e649-4762-9afa-fd496afd6285" class="active list-group-item list-group-action">Core OU</span>
             </div>
           </div>
         </div>
-        <div data-nsd-label-uuid="30ddadf9-cef0-4e7d-b64c-2cfaa68f2ddc" data-nsd-action-uris="uuid:30ddadf9-cef0-4e7d-b64c-2cfaa68f2ddc" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="0e7f16cd-e649-4762-9afa-fd496afd6285" data-nsd-action-uris="uuid:0e7f16cd-e649-4762-9afa-fd496afd6285" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-breadcrumb-row">
               <div class="col">
                 <nav aria-label="breadcrumb" class="nsd-app-content-panel-breadcrumb">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                      <a href="../../../index.html" data-nsd-label-uuid="0a6c7740-7039-4240-ac4e-2b9bb0334986">AWS Cloud</a>
+                      <a href="../../../index.html" data-nsd-label-uuid="16c8c2dd-11d1-4c3f-9bbf-952171c799e6">AWS Cloud</a>
                     </li>
-                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="30ddadf9-cef0-4e7d-b64c-2cfaa68f2ddc">Core OU</span>
+                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="0e7f16cd-e649-4762-9afa-fd496afd6285">Core OU</span>
                     </li>
                   </ol>
                 </nav>
@@ -449,7 +197,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
             </div>
             <div class="row nsd-app-content-panel-title-and-items-row">
               <div class="col-auto">
-                <h1><span data-nsd-label-uuid="30ddadf9-cef0-4e7d-b64c-2cfaa68f2ddc" class="nsd-app-content-panel-title">Core OU</span>
+                <h1><span data-nsd-label-uuid="0e7f16cd-e649-4762-9afa-fd496afd6285" class="nsd-app-content-panel-title">Core OU</span>
                 </h1>
               </div>
             </div>
@@ -457,7 +205,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
               <div class="col">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col"><div class="markdown-body"><p></p><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;<mxfile pages=\&quot;1\&quot; type=\&quot;device\&quot;><diagram id=\&quot;7d0a6642-97a0-4e4a-94f5-1bb1883fcb7f\&quot; name=\&quot;Core OU\&quot;>dVTbcpswEP0aHvFwMUZ9xI7dZKZNPfW4yauM1qBaICpEjPP1XYGwIYkfYKSz5+wue8EJV0X7XdEq/ykZCCfwqFLyXDvhgxMEPj4IpbIsIdUTjLX2uvAWFrn0CCFRDxylYBNNpvhnYMffwYKeRRvOYJpBQXXeA5ZT0QwmDAM8As/yIU3fG1F3KRWf+S+cDW5JZNl1Tpk8T2JpKYXm1TijcO2EKyWl7k9FuwJhijd8X6/c3LFeU1BQ6i8E8vDXlPsmiF5Pzy38fgv+7B+TV1Ju89PetV4EPWDfOlqSaqksystTD85m6PfDa79+3+6T5NeT2ri8Jlm0iv+5foyN3Cg4AqaVYgOCDQgoMMX6roQQNPGSQTvLdSFsCVHWZdLFZzJtjJNZBnqLRV9enmkBToDKOHnZ4dsJvhljN4DrPuLy8sR6yv24RjcELGipeeo2zVCxkBznPjkQNw3jhTs/xNQllBD36B1Z5DHC/Ci6NvLaoHFHbHlrfRkmB0ejMsemEH2lw+UbKIxLxQ/ThK2sueayRMpBai2LESERPDMGLStEu1qFDz4eZaOxV7C6rpiHYB/aaKH9OHW4riAL0OpiltUOZXaFjDAf7cHCDvH5Nuuhhazr+bB3dn/n02HEg63PcLXjOVxva9BRRz+TcP0f<\/diagram><\/mxfile>&quot;,&quot;resize&quot;:true}"></div>
+                    <div class="col"><div class="markdown-body"><p></p><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;<mxfile pages=\&quot;1\&quot; type=\&quot;device\&quot;><diagram id=\&quot;59f335e3-d8c7-4ba1-b3a0-a06eba7546dc\&quot; name=\&quot;Core OU\&quot;>dVRNc5swEP01HPFgMDY+YmI3mWlTTz1uchVoA6oFcoWIcX59V0hgSOoDjPT2vd1lP3CCpGy/SXIufggK3PE9IqW41E7w4Pj+HB+EMlFVkKkJRlt7XXpLi1wNEkWhAd4EpxNNLtlX4MA+wIKeRRtGYZpBSVRhAMs5kxwmDA08AsuLPs25N6IeMsK/8l8Y7d1GoWXXBaHiMomlhOCKnccZBVsnSKQQypzKNgGui9d/n1Hu7liHFCRU6j8Ckf7R5b4JwtfTcwu/3v3fx8f4Nar2xenoWi+cpNi3jhZnSkiLsupkwNkM/X56Hbcf+2Mc/3ySO5fVUR4mq7/ufIWN3El4A0wrwwb4O+BQYor1XUkUoYlVFNpZoUpuS4iyLpMuPhVZo53MclB7LPrm+kxKcHxUruKXA74df62N3QBuTcTN9Ykayv24WtcHLEmlWOY2TV+x9cInUZau3FWYUnfh0dCN/GXqZjBPF8QjoResh0YODRp3xJa3Vtd+cnA0zvrYlNxUOti8g8S4hH/XTdiLmikmKqSkQilRjggxZ7k2KHFGtKtV8DDHo2gU9gqSYcU8BE1orYX289ThuoIoQcmrXlY7lPkAaWEx2oOlHeLLbdYDC1nXi37v7P4upsOIB1uf/mrHs7/e1qCjjn4mwfYf<\/diagram><\/mxfile>&quot;,&quot;resize&quot;:true}"></div>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jgraph/drawio@v22.1.11/src/main/webapp/js/viewer.min.js"></script>
 <p></p>
 </div></div>
@@ -472,7 +220,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
         <div class="col nsd-app-footer">
           <ul class="nav nsd-app-footer-navs">
             <li class="nav-item">
-              <a href="https://github.com/Nasdanika-Models/architecture" data-nsd-label-uuid="490dcd58-73a0-48c7-b23b-124261b7add9" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+              <a href="https://github.com/Nasdanika-Models/architecture" data-nsd-label-uuid="a72f0f6d-47be-4345-8be2-5bccf1fa27ae" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
             </li>
           </ul>
         </div>
