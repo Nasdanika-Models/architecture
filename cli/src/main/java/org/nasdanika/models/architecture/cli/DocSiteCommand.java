@@ -80,7 +80,14 @@ public class DocSiteCommand extends AbstractSiteCommand {
 				rootAction.setText(rootActionText);
 				rootAction.setLocation(rootActionLocation);
 				
-				ActionGenerator actionGenerator = ActionGenerator.load(eObj, context, null, null, null, actionGeneratorProgressMonitor); 
+				ActionGenerator actionGenerator = ActionGenerator.load(
+						eObj, 
+						context, 
+						null, 
+						null, 
+						null,
+						diagnosticConsumer, 
+						actionGeneratorProgressMonitor); 
 				Map<EObject, Collection<Label>> labelMap = actionGenerator.generateActionModel(diagnosticConsumer, progressMonitor);
 				labelMap
 					.values()
