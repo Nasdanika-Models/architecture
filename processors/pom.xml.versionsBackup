@@ -3,23 +3,24 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.nasdanika.models.architecture</groupId>
-		<version>2024.7.0</version>
+		<version>2024.6.0</version>
 		<artifactId>parent</artifactId>
 		<relativePath>..</relativePath>
 	</parent>
-	<artifactId>cli</artifactId>
+	<artifactId>processors</artifactId>
 	<packaging>jar</packaging>
-	<name>CLI commands</name>
+	<name>Node processors</name>
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>processors</artifactId>
+			<artifactId>model</artifactId>
 			<version>${project.version}</version>
-		</dependency>
+		</dependency>		
 		<dependency>
-			<groupId>org.nasdanika.html</groupId>
-			<artifactId>app-model-gen-cli</artifactId>
-			<version>2024.7.0</version>
-		</dependency>
+			<groupId>org.nasdanika.models.graph</groupId>
+			<artifactId>processors</artifactId>
+			<version>2024.6.0</version>
+		</dependency>		
 	</dependencies>
 </project>
+
