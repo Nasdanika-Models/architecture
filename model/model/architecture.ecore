@@ -142,4 +142,13 @@
     </eGenericSuperTypes>
     <eGenericSuperTypes eClassifier="#//Relationship"/>
   </eClassifiers>
+  <eSubpackages name="c4" nsURI="ecore://nasdanika.org/models/architecture/c4" nsPrefix="org.nasdanika.models.architecture.c4">
+    <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="#//Domain"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Person" eSuperTypes="#//Node"/>
+    <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//CompositeNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//CompositeNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//CompositeNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Code" eSuperTypes="#//CompositeNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Relationship" eSuperTypes="#//Relationship"/>
+  </eSubpackages>
 </ecore:EPackage>

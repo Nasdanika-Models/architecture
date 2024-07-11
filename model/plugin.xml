@@ -14,4 +14,12 @@
             genModel="model/architecture.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated architecture -->
+      <package
+            uri="ecore://nasdanika.org/models/architecture/c4"
+            class="org.nasdanika.models.architecture.c4.C4Package"
+            genModel="model/architecture.genmodel"/>
+   </extension>
+
 </plugin>

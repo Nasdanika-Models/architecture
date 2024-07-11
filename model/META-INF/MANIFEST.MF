@@ -9,6 +9,9 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.nasdanika.models.architecture,
+ org.nasdanika.models.architecture.c4,
+ org.nasdanika.models.architecture.c4.impl,
+ org.nasdanika.models.architecture.c4.util,
  org.nasdanika.models.architecture.impl,
  org.nasdanika.models.architecture.util
 Require-Bundle: org.eclipse.core.runtime,

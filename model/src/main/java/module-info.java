@@ -1,4 +1,5 @@
 import org.nasdanika.capability.CapabilityFactory;
+import org.nasdanika.models.architecture.c4.util.C4EPackageResourceSetCapabilityFactory;
 import org.nasdanika.models.architecture.util.ArchitectureEPackageResourceSetCapabilityFactory;
 
 module org.nasdanika.models.architecture {
@@ -11,6 +12,8 @@ module org.nasdanika.models.architecture {
 	requires transitive org.nasdanika.graph.model;
 	requires transitive org.nasdanika.models.party;
 	
-	provides CapabilityFactory with ArchitectureEPackageResourceSetCapabilityFactory; 
+	provides CapabilityFactory with 
+		ArchitectureEPackageResourceSetCapabilityFactory,
+		C4EPackageResourceSetCapabilityFactory; 
 	
 }

@@ -38,5 +38,14 @@
     <genClasses ecoreClass="architecture.ecore#//Node"/>
     <genClasses ecoreClass="architecture.ecore#//CompositeNode"/>
     <genClasses ecoreClass="architecture.ecore#//Tunnel"/>
+    <nestedGenPackages prefix="C4" disposableProviderFactory="true" ecorePackage="architecture.ecore#//c4">
+      <genClasses ecoreClass="architecture.ecore#//c4/Context"/>
+      <genClasses ecoreClass="architecture.ecore#//c4/Person"/>
+      <genClasses ecoreClass="architecture.ecore#//c4/System"/>
+      <genClasses ecoreClass="architecture.ecore#//c4/Container"/>
+      <genClasses ecoreClass="architecture.ecore#//c4/Component"/>
+      <genClasses ecoreClass="architecture.ecore#//c4/Code"/>
+      <genClasses ecoreClass="architecture.ecore#//c4/Relationship"/>
+    </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

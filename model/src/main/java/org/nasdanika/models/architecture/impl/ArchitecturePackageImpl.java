@@ -32,6 +32,8 @@ import org.nasdanika.models.architecture.Role;
 import org.nasdanika.models.architecture.Tunnel;
 
 import org.nasdanika.models.architecture.Undergoer;
+import org.nasdanika.models.architecture.c4.C4Package;
+import org.nasdanika.models.architecture.c4.impl.C4PackageImpl;
 import org.nasdanika.models.party.PartyPackage;
 import org.nasdanika.ncore.NcorePackage;
 
@@ -213,11 +215,17 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		NcorePackage.eINSTANCE.eClass();
 		PartyPackage.eINSTANCE.eClass();
 
+		// Obtain or create and register interdependencies
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(C4Package.eNS_URI);
+		C4PackageImpl theC4Package = (C4PackageImpl)(registeredPackage instanceof C4PackageImpl ? registeredPackage : C4Package.eINSTANCE);
+
 		// Create package meta-data objects
 		theArchitecturePackage.createPackageContents();
+		theC4Package.createPackageContents();
 
 		// Initialize created meta-data
 		theArchitecturePackage.initializePackageContents();
+		theC4Package.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theArchitecturePackage.freeze();
@@ -562,9 +570,13 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		C4Package theC4Package = (C4Package)EPackage.Registry.INSTANCE.getEPackage(C4Package.eNS_URI);
 		NcorePackage theNcorePackage = (NcorePackage)EPackage.Registry.INSTANCE.getEPackage(NcorePackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		ModelPackage theModelPackage_1 = (ModelPackage)EPackage.Registry.INSTANCE.getEPackage(ModelPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theC4Package);
 
 		// Create type parameters
 
