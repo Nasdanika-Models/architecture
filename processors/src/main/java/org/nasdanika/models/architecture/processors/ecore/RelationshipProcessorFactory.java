@@ -23,9 +23,11 @@ public class RelationshipProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "Relationship between relationship source and relationship target",
 			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
+					Relationship between relationship source and relationship target. 
+					Relationships are contained by their source and uniquiely identified in the source by a string id. 
+					This allows to implement relationship inheritance behaviors such as overriding (replacing), adding, or removing. 
 					"""
 //			icon = "..."
 	)

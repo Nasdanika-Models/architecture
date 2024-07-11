@@ -704,136 +704,16 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	protected void createGenModelAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/GenModel";
 		addAnnotation
-		  (this,
-		   source,
-		   new String[] {
-			   "documentation", "Classes for documenting (software) architectures"
-		   });
-		addAnnotation
-		  (architectureElementEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Base class for elements of architecture"
-		   });
-		addAnnotation
-		  (getArchitectureElement_Icon(),
-		   source,
-		   new String[] {
-			   "documentation", "Architecture element icon. Treated as URL if contains ``/`` or as a CSS class otherwise. E.g. ``fas fa-wrench`` would be treated as a CSS class. If this attribute is blank then the type icon is used. For example, a generic server icon defined at the Server type can be overridden by an icon defined at a server instance (e.g. Web Server)."
-		   });
-		addAnnotation
-		  (actorEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Actors play roles/have responsibilies on model elements implementing Undergoer "
-		   });
-		addAnnotation
-		  (getActor_Roles(),
-		   source,
-		   new String[] {
-			   "documentation", "Roles played by this actor"
-		   });
-		addAnnotation
 		  (roleEClass,
 		   source,
 		   new String[] {
-			   "documentation", "A role is played by an Actor performing activities on the containing Undergoer"
-		   });
-		addAnnotation
-		  (getRole_Extends(),
-		   source,
-		   new String[] {
-			   "documentation", "A role can be a specialization (extension) of one or more roles"
-		   });
-		addAnnotation
-		  (getRole_Extensions(),
-		   source,
-		   new String[] {
-			   "documentation", "Roles extending this role"
-		   });
-		addAnnotation
-		  (undergoerEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Something operated on by actors in roles. A container of roles referencing actors. For example, a Server is patched by the \"Unix Support\" role and Joe Doe plays this role."
-		   });
-		addAnnotation
-		  (getUndergoer_Roles(),
-		   source,
-		   new String[] {
-			   "documentation", "Roles operating on this model element"
-		   });
-		addAnnotation
-		  (architectureDescriptionElementEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Base class for elements of architecture descriptions"
-		   });
-		addAnnotation
-		  (architectureDescriptionEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Architecture description contains architecture elements and reference elements such as stakeholders. Architecture description elements are keyed by string identifiers which allows to implement architecture inheritance similar to inheritance in object-oriented languages such as Java or layering in Docker images - a new architecture may be derived from an existing architecture by applying a layer of deltas. This is also similar to a commit tree in Git."
+			   "documentation", ""
 		   });
 		addAnnotation
 		  (getArchitectureDescription_Actors(),
 		   source,
 		   new String[] {
 			   "documentation", "Actors operating on the elements of this architecture description"
-		   });
-		addAnnotation
-		  (domainEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Domains allow to organize architecture descriptions into a hierarchy"
-		   });
-		addAnnotation
-		  (relationshipTargetEClass,
-		   source,
-		   new String[] {
-			   "documentation", "An architecture description which can have incoming relationships"
-		   });
-		addAnnotation
-		  (compositeRelationshipTargetEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Relationship target which is also a domain, i.e. it may contain other architecture description elements"
-		   });
-		addAnnotation
-		  (relationshipEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Relationship between two architecture description elements. Relationships are contained by their source and uniquiely identified in the source by a string id. This allows to implement relationship inheritance behaviors such as overriding (replacing), adding, or removing."
-		   });
-		addAnnotation
-		  (relationshipSourceEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Source of relationships uniquely identified by string ids. It provides support for architecture inheritance/layering - replacing (overriding), adding, or removing relationships"
-		   });
-		addAnnotation
-		  (compositeRelationshipSourceEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Relationship source which is also a domain. I.e. it may contain other architecture description elements."
-		   });
-		addAnnotation
-		  (nodeEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Node is both relationship source and target. I.e. it may have both incoming and outgoing relationships."
-		   });
-		addAnnotation
-		  (compositeNodeEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Node which is also a domain. I.e. it may contain other architecture description elements."
-		   });
-		addAnnotation
-		  (tunnelEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Tunnel is a relationship which logically groups other relationships. For example, two composite nodes may have a tunnel relationship which groups relationships between their child elements. A real life example is a VPN tunnel between two networks."
 		   });
 	}
 

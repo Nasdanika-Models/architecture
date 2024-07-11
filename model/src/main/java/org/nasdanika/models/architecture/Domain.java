@@ -7,10 +7,6 @@ package org.nasdanika.models.architecture;
  * A representation of the model object '<em><b>Domain</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * Domains allow to organize architecture descriptions into a hierarchy
- * <!-- end-model-doc -->
- *
  *
  * @see org.nasdanika.models.architecture.ArchitecturePackage#getDomain()
  * @model

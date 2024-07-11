@@ -9,10 +9,6 @@ import org.nasdanika.graph.model.DocumentedNamedConnectionTarget;
  * A representation of the model object '<em><b>Relationship Target</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * An architecture description which can have incoming relationships
- * <!-- end-model-doc -->
- *
  *
  * @see org.nasdanika.models.architecture.ArchitecturePackage#getRelationshipTarget()
  * @model

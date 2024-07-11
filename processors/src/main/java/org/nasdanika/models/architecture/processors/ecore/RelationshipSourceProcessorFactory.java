@@ -23,9 +23,10 @@ public class RelationshipSourceProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "Source of relationships uniquely identified by string ids",
 			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
+					Source of relationships uniquely identified by string ids. 
+					It provides support for architecture inheritance/layering - replacing (overriding), adding, or removing relationships 
 					"""
 //			icon = "..."
 	)

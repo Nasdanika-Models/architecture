@@ -23,9 +23,6 @@ import org.nasdanika.ncore.NcorePackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * <!-- begin-model-doc -->
- * Classes for documenting (software) architectures
- * <!-- end-model-doc -->
  * @see org.nasdanika.models.architecture.ArchitectureFactory
  * @model kind="package"
  * @generated

@@ -25,9 +25,9 @@ public class RoleProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "A role is played by an Actor performing activities on the containing Undergoer",
 			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
+					A role is played by an [Actor](../Actor/index.html) performing activities on the containing [Undergoer](../Undergoer/index.html). 
 					"""
 //			icon = "..."
 	)
@@ -53,9 +53,9 @@ public class RoleProcessorFactory {
 			nsURI = ArchitecturePackage.eNS_URI,
 			classID = ArchitecturePackage.ROLE,
 			featureID = ArchitecturePackage.ROLE__ACTORS,
-			description = "Connections in this tunnel",
+			description = "Actors in this role",
 			documentation = """
-					Connections in this tunnel
+					[Actors](../../../../Actor/index.html) in this role
 					"""
 	)
 	public EAttributeNodeProcessor createActorsProcessor(
@@ -80,9 +80,9 @@ public class RoleProcessorFactory {
 			nsURI = ArchitecturePackage.eNS_URI,
 			classID = ArchitecturePackage.ROLE,
 			featureID = ArchitecturePackage.ROLE__EXTENDS,
-			description = "Connections in this tunnel",
+			description = "A role can be a specialization (extension) of one or more roles",
 			documentation = """
-					Connections in this tunnel
+					A role can be a specialization (extension) of one or more roles
 					"""
 	)
 	public EAttributeNodeProcessor createExtendsProcessor(
@@ -107,9 +107,9 @@ public class RoleProcessorFactory {
 			nsURI = ArchitecturePackage.eNS_URI,
 			classID = ArchitecturePackage.ROLE,
 			featureID = ArchitecturePackage.ROLE__EXTENSIONS,
-			description = "Connections in this tunnel",
+			description = "Roles extending this role",
 			documentation = """
-					Connections in this tunnel
+					Roles extending this role
 					"""
 	)
 	public EAttributeNodeProcessor createExtensionsProcessor(
@@ -130,4 +130,4 @@ public class RoleProcessorFactory {
 		};
 	}	
 
-} // Role
+} 

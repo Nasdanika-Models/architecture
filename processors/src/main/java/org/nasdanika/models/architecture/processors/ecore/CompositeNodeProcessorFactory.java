@@ -23,9 +23,9 @@ public class CompositeNodeProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "Node which is also a domain",
 			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
+					Node which is also a domain. I.e. it may contain other architecture description elements. 
 					"""
 //			icon = "..."
 	)

@@ -23,9 +23,9 @@ public class ArchitectureDescriptionElementProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "Base class for elements of architecture descriptions",
 			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
+					Base class for elements of architecture descriptions 
 					"""
 //			icon = "..."
 	)

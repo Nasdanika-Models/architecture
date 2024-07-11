@@ -12,7 +12,7 @@ import org.nasdanika.ncore.StringIdentity;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A role is played by an Actor performing activities on the containing Undergoer
+ * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -49,9 +49,6 @@ public interface Role extends ArchitectureElement, StringIdentity {
 	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.architecture.Role#getExtensions <em>Extensions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * A role can be a specialization (extension) of one or more roles
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Extends</em>' reference list.
 	 * @see org.nasdanika.models.architecture.ArchitecturePackage#getRole_Extends()
 	 * @see org.nasdanika.models.architecture.Role#getExtensions
@@ -66,9 +63,6 @@ public interface Role extends ArchitectureElement, StringIdentity {
 	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.architecture.Role#getExtends <em>Extends</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Roles extending this role
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Extensions</em>' reference list.
 	 * @see org.nasdanika.models.architecture.ArchitecturePackage#getRole_Extensions()
 	 * @see org.nasdanika.models.architecture.Role#getExtends

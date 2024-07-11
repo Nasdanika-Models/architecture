@@ -23,9 +23,10 @@ public class NodeProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "Node is both relationship source and target",
 			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
+					Node is both relationship source and target. 
+					I.e. it may have both incoming and outgoing relationships. 
 					"""
 //			icon = "..."
 	)

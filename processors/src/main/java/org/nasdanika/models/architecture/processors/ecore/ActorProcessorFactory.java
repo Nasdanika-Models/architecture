@@ -25,9 +25,9 @@ public class ActorProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "Actors play roles/have responsibilies on model elements implementing Undergoer",
 			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
+					Actors play [roles](../Role/index.html)/have responsibilies on model elements implementing [Undergoer](../Undergoer/index.html)  
 					"""
 //			icon = "..."
 	)
@@ -53,9 +53,9 @@ public class ActorProcessorFactory {
 			nsURI = ArchitecturePackage.eNS_URI,
 			classID = ArchitecturePackage.ACTOR,
 			featureID = ArchitecturePackage.ACTOR__ROLES,
-			description = "Connections in this tunnel",
+			description = "Roles played by this actor",
 			documentation = """
-					Connections in this tunnel
+					[Roles](../../../../Role/index.html) played by this actor
 					"""
 	)
 	public EAttributeNodeProcessor createRolesProcessor(

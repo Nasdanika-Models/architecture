@@ -25,9 +25,11 @@ public class UndergoerProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			 label = "Undergoer",
-			description = "A graph element which is also a graph",
+			description = "Something operated on by actors in roles",
 			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
+					Something operated on by actors in roles. 
+					A container of roles referencing actors. 
+					For example, a Server is patched by the "Unix Support" role and Joe Doe plays this role. 
 					"""
 //			icon = "..."
 	)
@@ -53,9 +55,9 @@ public class UndergoerProcessorFactory {
 			nsURI = ArchitecturePackage.eNS_URI,
 			classID = ArchitecturePackage.UNDERGOER,
 			featureID = ArchitecturePackage.UNDERGOER__ROLES,
-			description = "Connections in this tunnel",
+			description = "Roles operating on this undergoer",
 			documentation = """
-					Connections in this tunnel
+					[Roles](../../../../Role/index.html) operating on this undergoer
 					"""
 	)
 	public EAttributeNodeProcessor createRolesProcessor(

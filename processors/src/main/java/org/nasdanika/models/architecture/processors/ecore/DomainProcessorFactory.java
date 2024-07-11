@@ -23,9 +23,9 @@ public class DomainProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "Domains allow to organize architecture description elements into a hierarchy",
 			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
+					Domains allow to organize architecture description elements into a hierarchy 
 					"""
 //			icon = "..."
 	)

@@ -25,9 +25,11 @@ public class ArchitectureDescriptionProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "Architecture description contains architecture elements and reference elements such as stakeholders",
 			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
+					Architecture description contains architecture elements and reference elements such as stakeholders. 
+					Architecture description elements are keyed by string identifiers which allows to implement architecture inheritance similar to inheritance in object-oriented languages such as Java or layering in Docker images - a new architecture may be derived from an existing architecture by applying a layer of deltas. 
+					This is also similar to a commit tree in Git. 
 					"""
 //			icon = "..."
 	)
@@ -53,9 +55,9 @@ public class ArchitectureDescriptionProcessorFactory {
 			nsURI = ArchitecturePackage.eNS_URI,
 			classID = ArchitecturePackage.ARCHITECTURE_DESCRIPTION,
 			featureID = ArchitecturePackage.ARCHITECTURE_DESCRIPTION__ACTORS,
-			description = "Connections in this tunnel",
+			description = "Actors operating on the elements of this description",
 			documentation = """
-					Connections in this tunnel
+					[Actors](../../../../Actor/index.html) operating on the elements of this description
 					"""
 	)
 	public EAttributeNodeProcessor createActorsProcessor(

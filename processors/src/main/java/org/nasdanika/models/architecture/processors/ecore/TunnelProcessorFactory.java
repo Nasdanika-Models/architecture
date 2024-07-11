@@ -23,9 +23,11 @@ public class TunnelProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "Tunnel is a relationship which logically groups other relationships",
 			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
+					Tunnel is a relationship which logically groups other relationships. 
+					For example, two composite nodes may have a tunnel relationship which groups relationships between their child elements. 
+					A real life example is a VPN tunnel between two networks. 
 					"""
 //			icon = "..."
 	)

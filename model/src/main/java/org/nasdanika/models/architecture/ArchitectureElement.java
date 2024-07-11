@@ -10,10 +10,6 @@ import org.nasdanika.ncore.Period;
  * A representation of the model object '<em><b>Element</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * Base class for elements of architecture
- * <!-- end-model-doc -->
- *
  * <p>
  * The following features are supported:
  * </p>
@@ -31,9 +27,6 @@ public interface ArchitectureElement extends DocumentedNamedElement, Period {
 	 * Returns the value of the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Architecture element icon. Treated as URL if contains ``/`` or as a CSS class otherwise. E.g. ``fas fa-wrench`` would be treated as a CSS class. If this attribute is blank then the type icon is used. For example, a generic server icon defined at the Server type can be overridden by an icon defined at a server instance (e.g. Web Server).
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Icon</em>' attribute.
 	 * @see #setIcon(String)
 	 * @see org.nasdanika.models.architecture.ArchitecturePackage#getArchitectureElement_Icon()

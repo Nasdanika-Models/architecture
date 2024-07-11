@@ -48,8 +48,8 @@ public class C4EcoreGenProcessorsFactory {
 	}
 	
 	@EPackageNodeProcessorFactory(
-			label = "Graph Model",
-			description = "Base classes for graph-like models",
+			label = "C4",
+			description = "Classes for mapping C4 Model visualizations",
 			actionPrototype = """
             app-action:
               content:

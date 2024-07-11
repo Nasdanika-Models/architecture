@@ -23,9 +23,9 @@ public class RelationshipTargetProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "An architecture description element which can have incoming relationships",
 			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
+					An architecture description element which can have incoming relationships. 
 					"""
 //			icon = "..."
 	)

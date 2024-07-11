@@ -25,9 +25,9 @@ public class ArchitectureElementProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "Base class for elements of architecture",
 			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
+					Base class for elements of architecture. 
 					"""
 //			icon = "..."
 	)
@@ -53,9 +53,13 @@ public class ArchitectureElementProcessorFactory {
 			nsURI = ArchitecturePackage.eNS_URI,
 			classID = ArchitecturePackage.ARCHITECTURE_ELEMENT,
 			featureID = ArchitecturePackage.ARCHITECTURE_ELEMENT__ICON,
-			description = "Connections in this tunnel",
+			description = "Architecture element icon",
 			documentation = """
-					Connections in this tunnel
+					Architecture element icon. 
+					Treated as URL if contains ``/`` or as a CSS class otherwise. 
+					E.g. ``fas fa-wrench`` would be treated as a CSS class. 
+					If this attribute is blank then the type icon is used. 
+					For example, a generic server icon defined at the Server type can be overridden by an icon defined at a server instance (e.g. Web Server).
 					"""
 	)
 	public EAttributeNodeProcessor createIconProcessor(

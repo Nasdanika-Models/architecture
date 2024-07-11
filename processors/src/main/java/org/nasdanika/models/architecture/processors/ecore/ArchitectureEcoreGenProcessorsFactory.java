@@ -92,8 +92,8 @@ public class ArchitectureEcoreGenProcessorsFactory {
 	}
 	
 	@EPackageNodeProcessorFactory(
-			label = "Graph Model",
-			description = "Base classes for graph-like models",
+			label = "Architecture Model",
+			description = "Classes for modeling software architectures",
 			actionPrototype = """
             app-action:
               content:
