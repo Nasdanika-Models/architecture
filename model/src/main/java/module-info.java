@@ -7,6 +7,10 @@ module org.nasdanika.models.architecture {
 	exports org.nasdanika.models.architecture.impl;
 	exports org.nasdanika.models.architecture.util;
 	
+	exports org.nasdanika.models.architecture.c4;
+	exports org.nasdanika.models.architecture.c4.impl;
+	exports org.nasdanika.models.architecture.c4.util;
+	
 	requires transitive org.eclipse.emf.ecore;
 	requires transitive org.eclipse.emf.common;	
 	requires transitive org.nasdanika.graph.model;

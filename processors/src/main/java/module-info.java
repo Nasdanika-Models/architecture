@@ -9,6 +9,9 @@ module org.nasdanika.models.architecture.processors {
 	exports org.nasdanika.models.architecture.processors.ecore;
 	opens org.nasdanika.models.architecture.processors.ecore; // For loading resources
 	
+	exports org.nasdanika.models.architecture.processors.ecore.c4;
+	opens org.nasdanika.models.architecture.processors.ecore.c4; // For loading resources
+	
 	exports org.nasdanika.models.architecture.processors.doc;
 	opens org.nasdanika.models.architecture.processors.doc; // For loading resources
 

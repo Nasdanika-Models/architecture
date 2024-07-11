@@ -26,7 +26,8 @@ import org.nasdanika.html.bootstrap.Theme;
 import org.nasdanika.html.model.app.Action;
 import org.nasdanika.html.model.app.gen.ActionSiteGenerator;
 import org.nasdanika.models.architecture.ArchitecturePackage;
-import org.nasdanika.models.architecture.processors.ecore.EcoreGenArchitectureProcessorsFactory;
+import org.nasdanika.models.architecture.processors.ecore.ArchitectureEcoreGenProcessorsFactory;
+import org.nasdanika.models.architecture.processors.ecore.c4.C4EcoreGenProcessorsFactory;
 import org.nasdanika.models.ecore.graph.processors.EcoreActionGenerator;
 import org.nasdanika.models.ecore.graph.processors.EcoreNodeProcessorFactory;
 import org.nasdanika.models.party.PartyPackage;
@@ -45,7 +46,8 @@ public class TestArchitectureModelDocGen {
 		MutableContext context = Context.EMPTY_CONTEXT.fork();
 		Consumer<Diagnostic> diagnosticConsumer = d -> d.dump(System.out, 0);
 		List<Function<URI,Action>> actionProviders = new ArrayList<>();		
-		EcoreGenArchitectureProcessorsFactory ecoreGenArchitectureProcessorFactory = new EcoreGenArchitectureProcessorsFactory(context);		
+		ArchitectureEcoreGenProcessorsFactory architectureEcoreGenProcessorFactory = new ArchitectureEcoreGenProcessorsFactory(context);		
+		C4EcoreGenProcessorsFactory c4EcoreGenProcessorFactory = new C4EcoreGenProcessorsFactory(context);		
 		EcoreNodeProcessorFactory ecoreNodeProcessorFactory = new EcoreNodeProcessorFactory(
 				context, 
 				(uri, pm) -> {
@@ -58,7 +60,8 @@ public class TestArchitectureModelDocGen {
 					return null;
 				},
 				diagnosticConsumer,
-				ecoreGenArchitectureProcessorFactory);
+				architectureEcoreGenProcessorFactory,
+				c4EcoreGenProcessorFactory);
 		
 		File actionModelsDir = new File("target\\action-models\\");
 		actionModelsDir.mkdirs();
