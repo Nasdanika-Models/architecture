@@ -24,7 +24,7 @@ public class ArchitectureDescriptionProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Architecture Description",
 			description = "Architecture description contains architecture elements and reference elements such as stakeholders",
 			documentation = """
 					Architecture description contains architecture elements and reference elements such as stakeholders. 

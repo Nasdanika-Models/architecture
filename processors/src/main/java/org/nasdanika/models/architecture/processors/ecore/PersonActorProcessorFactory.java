@@ -22,10 +22,10 @@ public class PersonActorProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
-			description = "A graph element which is also a graph",
+			label = "Person Actor",
+			description = "An actor who is a person",
 			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
+					A [person](https://party.models.nasdanika.org/references/eClassifiers/Person/index.html) actor. 
 					"""
 //			icon = "..."
 	)

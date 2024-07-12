@@ -22,7 +22,7 @@ public class CompositeNodeProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Composite Node",
 			description = "Node which is also a domain",
 			documentation = """
 					Node which is also a domain. I.e. it may contain other architecture description elements. 

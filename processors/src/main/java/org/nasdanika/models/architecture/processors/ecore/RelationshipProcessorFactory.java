@@ -25,7 +25,7 @@ public class RelationshipProcessorFactory {
 			// label = "...",
 			description = "Relationship between relationship source and relationship target",
 			documentation = """
-					Relationship between relationship source and relationship target. 
+					Relationship between [relationship source](../RelationshipSource/index.html) and [relationship target](../RelationshipTarget/index.html). 
 					Relationships are contained by their source and uniquiely identified in the source by a string id. 
 					This allows to implement relationship inheritance behaviors such as overriding (replacing), adding, or removing. 
 					"""

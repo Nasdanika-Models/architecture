@@ -25,7 +25,7 @@ public class TunnelProcessorFactory {
 			// label = "...",
 			description = "Tunnel is a relationship which logically groups other relationships",
 			documentation = """
-					Tunnel is a relationship which logically groups other relationships. 
+					Tunnel is a [relationship](../Relationship/index.html) which logically groups (aggregates) other relationships. 
 					For example, two composite nodes may have a tunnel relationship which groups relationships between their child elements. 
 					A real life example is a VPN tunnel between two networks. 
 					"""

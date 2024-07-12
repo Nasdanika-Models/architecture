@@ -22,7 +22,7 @@ public class ArchitectureDescriptionElementProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Architecture Description Element",
 			description = "Base class for elements of architecture descriptions",
 			documentation = """
 					Base class for elements of architecture descriptions 

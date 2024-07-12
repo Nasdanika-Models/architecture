@@ -36,6 +36,9 @@ public class C4EcoreGenProcessorsFactory {
 	@Factory
 	public final SystemProcessorFactory systemProcessorFactory;
 	
+	@Factory
+	public final RelationshipProcessorFactory relationshipProcessorFactory;
+	
 	public C4EcoreGenProcessorsFactory(Context context) {
 		this.context = context;
 		
@@ -45,6 +48,7 @@ public class C4EcoreGenProcessorsFactory {
 		contextProcessorFactory = new ContextProcessorFactory(context);
 		personProcessorFactory = new PersonProcessorFactory(context);
 		systemProcessorFactory = new SystemProcessorFactory(context);
+		relationshipProcessorFactory = new RelationshipProcessorFactory(context);
 	}
 	
 	@EPackageNodeProcessorFactory(

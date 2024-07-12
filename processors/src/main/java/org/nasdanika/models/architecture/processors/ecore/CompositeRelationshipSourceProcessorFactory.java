@@ -22,7 +22,7 @@ public class CompositeRelationshipSourceProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Composite Relationship Source",
 			description = "Relationship source which is also a domain",
 			documentation = """
 					Relationship source which is also a domain. I.e. it may contain other architecture description elements. 

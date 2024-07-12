@@ -22,7 +22,7 @@ public class CompositeRelationshipTargetProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Composite Relationship Target",
 			description = "Relationship target which is also a domain",
 			documentation = """
 					Relationship target which is also a domain, i.e. it may contain other architecture description elements 

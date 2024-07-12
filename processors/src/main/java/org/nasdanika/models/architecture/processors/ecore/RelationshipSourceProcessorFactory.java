@@ -22,7 +22,7 @@ public class RelationshipSourceProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Relationship Source",
 			description = "Source of relationships uniquely identified by string ids",
 			documentation = """
 					Source of relationships uniquely identified by string ids. 

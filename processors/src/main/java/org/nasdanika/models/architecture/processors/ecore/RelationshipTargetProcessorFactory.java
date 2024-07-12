@@ -22,7 +22,7 @@ public class RelationshipTargetProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Relationship Target",
 			description = "An architecture description element which can have incoming relationships",
 			documentation = """
 					An architecture description element which can have incoming relationships. 

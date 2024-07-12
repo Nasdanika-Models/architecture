@@ -24,7 +24,7 @@ public class ArchitectureElementProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Architecture Element",
 			description = "Base class for elements of architecture",
 			documentation = """
 					Base class for elements of architecture. 
