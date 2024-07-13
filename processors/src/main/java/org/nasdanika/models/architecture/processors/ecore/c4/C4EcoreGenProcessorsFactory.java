@@ -58,7 +58,8 @@ public class C4EcoreGenProcessorsFactory {
             app-action:
               content:
                 content-markdown:
-                  source:
+                 style: true
+                 source:
                     content-resource:
                       location: c4.md
 			"""

@@ -26,10 +26,16 @@ public class ComponentProcessorFactory {
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
 			description = "A graph element which is also a graph",
-			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
-					"""
-//			icon = "..."
+			actionPrototype = """
+	            app-action:
+	              content:
+	                content-markdown:
+	                  style: true
+	                  source:
+	                    content-resource:
+	                      location: component.md
+				""",
+			icon = "https://img.icons8.com/office/40/puzzle.png"
 	)
 	public EClassNodeProcessor createEClassNodeProcessor(
 			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 

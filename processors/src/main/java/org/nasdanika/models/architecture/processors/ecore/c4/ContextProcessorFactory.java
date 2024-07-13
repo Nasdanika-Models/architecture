@@ -26,9 +26,15 @@ public class ContextProcessorFactory {
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
 			description = "A graph element which is also a graph",
-			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
-					"""
+			actionPrototype = """
+	            app-action:
+	              content:
+	                content-markdown:
+	                  style: true
+	                  source:
+	                    content-resource:
+	                      location: context.md
+				"""
 //			icon = "..."
 	)
 	public EClassNodeProcessor createEClassNodeProcessor(

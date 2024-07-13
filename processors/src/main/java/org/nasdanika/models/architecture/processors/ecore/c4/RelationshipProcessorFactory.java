@@ -26,10 +26,16 @@ public class RelationshipProcessorFactory {
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
 			description = "A graph element which is also a graph",
-			documentation = """
-					A graph element which is also a graph, i.e. it may contain other graph elements. 
-					"""
-//			icon = "..."
+			actionPrototype = """
+	            app-action:
+	              content:
+	                content-markdown:
+	                  style: true
+	                  source:
+	                    content-resource:
+	                      location: relationship.md
+				""",
+			icon = "fas fa-long-arrow-alt-right"
 	)
 	public EClassNodeProcessor createEClassNodeProcessor(
 			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
