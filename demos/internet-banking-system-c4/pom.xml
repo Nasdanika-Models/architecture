@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.nasdanika.models.architecture.demos</groupId>
 	<version>2024.7.0</version>
-	<artifactId>internet-banking-system</artifactId>
+	<artifactId>internet-banking-system-c4</artifactId>
 	<packaging>jar</packaging>
 	<name>Internet Banking System</name>
 	<description>Demonstrates loading of an architecture model from a Drawio diagram using feature mapping and generation of documentation web site</description>
