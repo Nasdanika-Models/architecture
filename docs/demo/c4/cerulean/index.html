@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="EN">
+  <head>
+    <title>C4 Model Demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css">
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/dark-head.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/jstree.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/components/table.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/components/table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9BRJVLK8CC');
+</script>    
+
+<script src="search-documents.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
+
+<script>
+// Script for full-text search of JsTree
+
+window.nsdJsTreeSearchCallback = function(str, node) { 
+    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
+    if (sf.search(node.text).isMatch) {
+		return true;
+	} 
+    let searchResult = this.search(str); 
+    for (const sr in searchResult) {
+        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
+            return true;
+        } 
+    } 
+    return false; 
+}.bind(lunr(function () {
+			  this.ref('id');
+			  this.field('title');
+			  this.field('content');
+
+			  for (const key in searchDocuments) {
+				  let doc = searchDocuments[key];
+				this.add({
+					id: doc['action-uuid'],
+					title: doc.title,
+					path: doc.path,
+					content: doc.content
+				});  
+			  }
+			}));
+</script>
+</head>
+  <body>
+    <div class="container-fluid nsd-app-container">
+      <div class="row">
+        <div class="col nsd-app-header">
+          <a href="https://architecture.models.nasdanika.org/" data-nsd-label-uuid="8c939bc2-c3fd-4035-9256-1ca708bb936a" class="nsd-app-header-title">
+            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Architecture Models</a>
+          <ul class="nav nsd-app-header-navs">
+            <li class="nav-item">
+              <a href="search.html" data-nsd-label-uuid="980339fe-9971-4f1e-adbb-a285d1faa350" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+            </li>
+            <li class="nav-item">
+              <a href="glossary.html" data-nsd-label-uuid="f602b465-a34a-4b06-93c1-0ede6efd5303" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-navbar">
+          <ul class="navbar navbar-light navbar-expand-lg"><span data-nsd-label-uuid="7f56305d-9f98-44cb-80d4-5a654ea75650" class="navbar-brand">C4 Model Demo</span>
+            <button type="button" data-toggle="collapse" data-target="#nsd_16" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="nsd_16" class="collapse navbar-collapse"></div>
+          </ul>
+        </div>
+      </div>
+      <div class="row nsd-app-content-row">
+        <div class="col nsd-app-navigation-panel">
+          <div class="card">
+            <div class="card-header">
+              <a href="references/elements/system/index.html">System</a>
+            </div>
+            <div class="list-group list-group-flush">
+              <a href="references/elements/system/references/elements/4BLB2KC_QdkMkebAWiO9-2/index.html" data-nsd-label-uuid="c190cd5a-2aef-4de5-8287-3205d27fb1f7" class="list-group-item list-group-action">Container</a>
+            </div>
+          </div>
+          <div class="list-group list-group-flush">
+            <a href="references/elements/user/index.html" data-nsd-label-uuid="b2ce7f26-4191-4a7b-8fda-8081bf7e19b1" class="list-group-item list-group-action">User</a>
+          </div>
+        </div>
+        <div data-nsd-label-uuid="7f56305d-9f98-44cb-80d4-5a654ea75650" data-nsd-action-uris="uuid:7f56305d-9f98-44cb-80d4-5a654ea75650" class="col nsd-app-content-panel">
+          <div class="container-fluid">
+            <div class="row nsd-app-content-panel-content-row">
+              <div class="col">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col"><div class="markdown-body"><p>TODO</p>
+<p></p><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;<mxfile pages=\&quot;2\&quot; type=\&quot;device\&quot;><diagram id=\&quot;e127e1cc-53d9-42a0-8bd6-9574ecc435e2\&quot; name=\&quot;System Context Diagram\&quot;>rVdbj5s6EP41PBJxD3lsLttKbdXVibY9r8YewF3AyJhN0l9/bGzuSc9WqkQkPB6Px/N935hY/qG8fuSozr8yAoXlOYhzdmks/2h5nit/0oRZVQEWMxu56mEQer6x3IzDzgu0JWUFmS3KOF0bzvQXGKNjrC0lME+hRCLXBuNTowxmHsrwCWiWmzxjbztOnDEq1u4/KOmjum600xNNjgi7zPYSjBWC1tOM/JPlHzhjQr+x5KcqkCwCwzaHVHviYFMSUwpAouVgl6g2c6wSiFbALf+D5UWW58vT+3tL7ek0UKSd3VlN6QcKKKESzb3F06fuyqYCeb/1w6ysEUeC6XScAiWKDJMV6hA9eKYs2qmzjDW1TWraLngLpqxQokpQbLdtHyaMkRP5Cdg43oEdpFFoxxEJ7BB7TpS4O8fBsVlcA9ZrKlSCTvEgSeb0pD1CyQxWtxqG6h9kkeEqBsDK6wEK6f+kh/LFADebdRYklZUZDqSPbta/NMC/TZBv1cGRoKzSzmcmk5VglQkQAmTlNNaXVgqHSD0l4q+SgJUebWYgjK/h/h8ouihNTmsFBq1erVDuGkv6gUwYSwXJ87UiY7TKDlrCyl9af3wqv7q39Pvp5XP274u3//6xfbZlPZ9oReC6yUUpy7Cbg97Kw65wfxmNav/ONtt/IKr3pAPMtnhADJAEcCMP28hBnh2A69mxR7CdIOxEGKU4Cr07aD8Db1RVF2DP8DOQNuLW94PmFQRWXUDVFSmmKdeUXiVg/r6WxRPAT29abUdX2oYOoVYQ1OTKsxt0pzJOgrNXOLBCSepYsUput+8q98waajiCQQWXE2/AZQlQ8WXhkDAhWDlx+FDQTE0IVqt0zWiIk9Ki6PeUXHEcN46POuWuUOU1U71+g37JZrQZIVXh4brsb/JmAElhwW/qXjDtLxtMamE+6bih6QuXsa0Gpgeb0Pa2b/HmrvB24VRQ8sWg1g8nEls12gdya26NgPKBbiKjMsLRhbKZU2Bt9xxqDk0fVrG2d3wiFMnaldb2eC/ew17ZZ7MQznlq/l/p9EHeI54gDgJASWATEu7sIEpiO06jrb2LHJSixEPxzrkjnjGhPxEPZ21FOvorzl9yKuBcI6xmL1xddVNJ/EWqBWuqxc6caqEbbcIZ2aQcfk829k6iSVLKVqNAVrJDnduFykRkTXNFwSm6q5u/YS3H5hK7254HJkFFtJtAPAMxJ9ajHr4g2vya+KNO/bcukgdEjRKckhCHtk+iSHb5JLGRR2LbTcIgJnEcO+m9Lr880JyuQFafhWv+GgDmt9qE1SrI2QwZFznLWIWK02jdj7xXOI0+X5jqyx3bf4IQN/Nti1rB5loYro1+8IyE5JIimPzmceJBLgb6RS95r2Z4V6w3WMvtWV1sk3W6KMY60VEYOwsZBduZjNahdMrrUFtvqchFqE6Rw5neIVJF0uEbXK8e/8r4p/8A<\/diagram><diagram id=\&quot;57d3a3ea-ed8b-4ddd-a6e5-9f5fcdc7c7d7\&quot; name=\&quot;System Context Diagram\&quot;>rVdbj5s6EP41PBJxD3lsLttKbdXVibY9r8YewF3AyJhN0l9/bGzuSc9WqkQkPB6Px/N935hY/qG8fuSozr8yAoXlOYhzdmks/2h5nit/0oRZVQEWMxu56mEQer6x3IzDzgu0JWUFmS3KOF0bzvQXGKNjrC0lME+hRCLXBuNTowxmHsrwCWiWmzxjbztOnDEq1u4/KOmjum600xNNjgi7zPYSjBWC1tOM/JPlHzhjQr+x5KcqkCwCwzaHVHviYFMSUwpAouVgl6g2c6wSiFbALf+D5UWW58vT+3tL7ek0UKSd3VlN6QcKKKESzb3F06fuyqYCeb/1w6ysEUeC6XScAiWKDJMV6hA9eKYs2qmzjDW1TWraLngLpqxQokpQbLdtHyaMkRP5Cdg43oEdpFFoxxEJ7BB7TpS4O8fBsVlcA9ZrKlSCTvEgSeb0pD1CyQxWtxqG6h9kkeEqBsDK6wEK6f+kh/LFADebdRYklZUZDqSPbta/NMC/TZBv1cGRoKzSzmcmk5VglQkQAmTlNNaXVgqHSD0l4q+SgJUebWYgjK/h/h8ouihNTmsFBq1erVDuGkv6gUwYSwXJ87UiY7TKDlrCyl9af3wqv7q39Pvp5XP274u3//6xfbZlPZ9oReC6yUUpy7Cbg97Kw65wfxmNav/ONtt/IKr3pAPMtnhADJAEcCMP28hBnh2A69mxR7CdIOxEGKU4Cr07aD8Db1RVF2DP8DOQNuLW94PmFQRWXUDVFSmmKdeUXiVg/r6WxRPAT29abUdX2oYOoVYQ1OTKsxt0pzJOgrNXOLBCSepYsUput+8q98waajiCQQWXE2/AZQlQ8WXhkDAhWDlx+FDQTE0IVqt0zWiIk9Ki6PeUXHEcN46POuWuUOU1U71+g37JZrQZIVXh4brsb/JmAElhwW/qXjDtLxtMamE+6bih6QuXsa0Gpgeb0Pa2b/HmrvB24VRQ8sWg1g8nEls12gdya26NgPKBbiKjMsLRhbKZU2Bt9xxqDk0fVrG2d3wiFMnaldb2eC/ew17ZZ7MQznlq/l/p9EHeI54gDgJASWATEu7sIEpiO06jrb2LHJSixEPxzrkjnjGhPxEPZ21FOvorzl9yKuBcI6xmL1xddVNJ/EWqBWuqxc6caqEbbcIZ2aQcfk829k6iSVLKVqNAVrJDnduFykRkTXNFwSm6q5u/YS3H5hK7254HJkFFtJtAPAMxJ9ajHr4g2vya+KNO/bcukgdEjRKckhCHtk+iSHb5JLGRR2LbTcIgJnEcO+m9Lr880JyuQFafhWv+GgDmt9qE1SrI2QwZFznLWIWK02jdj7xXOI0+X5jqyx3bf4IQN/Nti1rB5loYro1+8IyE5JIimPzmceJBLgb6RS95r2Z4V6w3WMvtWV1sk3W6KMY60VEYOwsZBduZjNahdMrrUFtvqchFqE6Rw5neIVJF0uEbXK8e/8r4p/8A<\/diagram><\/mxfile>&quot;,&quot;resize&quot;:true}"></div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jgraph/drawio@v22.1.11/src/main/webapp/js/viewer.min.js"></script>
+<p></p>
+</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-footer">
+          <ul class="nav nsd-app-footer-navs">
+            <li class="nav-item">
+              <a href="https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system" data-nsd-label-uuid="67b36db6-0455-4401-bf05-e39f1a239011" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+            </li>
+            <li class="nav-item"><span class="navbar-text">&nbsp;•&nbsp;</span>
+            </li>
+            <li class="nav-item">
+              <a href="https://icons8.com/" title="Icons from ICONS8" class="nav-link">
+                <img src="https://img.icons8.com/fluency/16/icons8-new-logo.png" class="nsd-app-label-icon">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

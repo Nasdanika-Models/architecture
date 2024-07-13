@@ -1,0 +1,225 @@
+[
+    {
+        "identifiers": ["uuid:8c939bc2-c3fd-4035-9256-1ca708bb936a"],
+        "name": "Nasdanika Architecture Models",
+        "icon": "https://docs.nasdanika.org/images/nasdanika-logo.png",
+        "location": "https://architecture.models.nasdanika.org/",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "children",
+            "identifiers": ["uuid:8c939bc2-c3fd-4035-9256-1ca708bb936a"]
+        },
+        "identifiers": ["uuid:980339fe-9971-4f1e-adbb-a285d1faa350"],
+        "name": "Search",
+        "icon": "fas fa-search",
+        "location": "search.html",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "children",
+            "identifiers": ["uuid:8c939bc2-c3fd-4035-9256-1ca708bb936a"]
+        },
+        "identifiers": ["uuid:f602b465-a34a-4b06-93c1-0ede6efd5303"],
+        "name": "Glossary",
+        "icon": "fas fa-book",
+        "location": "glossary.html",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "navigation",
+            "identifiers": ["uuid:8c939bc2-c3fd-4035-9256-1ca708bb936a"]
+        },
+        "identifiers": ["uuid:67b36db6-0455-4401-bf05-e39f1a239011"],
+        "name": "Sources",
+        "icon": "fab fa-github",
+        "location": "https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "navigation",
+            "identifiers": ["uuid:8c939bc2-c3fd-4035-9256-1ca708bb936a"]
+        },
+        "identifiers": ["uuid:884f0db8-f5d1-4f74-a25f-cb3bb4a99ddd"],
+        "icon": "https://img.icons8.com/fluency/16/icons8-new-logo.png",
+        "description": "Icons from ICONS8",
+        "location": "https://icons8.com/",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "identifiers": ["uuid:58a063be-c89e-4f65-86d4-5c206b1900c8"],
+        "name": "C4 Model Demo",
+        "location": "index.html",
+        "type": {
+            "name": "Context",
+            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:58a063be-c89e-4f65-86d4-5c206b1900c8"],
+            "name": "C4 Model Demo"
+        },
+        "identifiers": ["uuid:4844eab4-dd59-46b8-8f67-960afab2a890"],
+        "name": "System",
+        "location": "references/elements/system/index.html",
+        "type": {
+            "name": "System",
+            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:4844eab4-dd59-46b8-8f67-960afab2a890"],
+            "name": "System"
+        },
+        "identifiers": ["uuid:c76fda7a-ccb0-499b-a786-c0c4cde88c2e"],
+        "name": "Container",
+        "location": "references/elements/system/references/elements/4BLB2KC_QdkMkebAWiO9-2/index.html",
+        "type": {
+            "name": "Container",
+            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:c190cd5a-2aef-4de5-8287-3205d27fb1f7"]
+        },
+        "identifiers": ["uuid:24712f86-0f46-4f41-86f2-6af424336bca"],
+        "icon": "far fa-question-circle",
+        "description": "A graph element which is also a graph",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:991cbdb1-ee1b-47ec-b5c2-c482dda2fc6f"]
+        },
+        "identifiers": ["uuid:c0eaf2c4-5a07-4f78-91f3-5596d1d31e47"],
+        "icon": "far fa-question-circle",
+        "description": "A graph element which is also a graph",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:58a063be-c89e-4f65-86d4-5c206b1900c8"],
+            "name": "C4 Model Demo"
+        },
+        "identifiers": ["uuid:ec20162c-a0a2-4e12-82dc-bac06cafc652"],
+        "name": "User",
+        "location": "references/elements/user/index.html",
+        "type": {
+            "name": "Person",
+            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:b2ce7f26-4191-4a7b-8fda-8081bf7e19b1"]
+        },
+        "identifiers": ["uuid:bc022769-fdde-489e-8817-90d22d5b00df"],
+        "icon": "far fa-question-circle",
+        "description": "A graph element which is also a graph",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "outgoingConnections",
+            "identifiers": ["uuid:ec20162c-a0a2-4e12-82dc-bac06cafc652"],
+            "name": "User"
+        },
+        "identifiers": ["uuid:7c636929-eaae-4381-80d6-2072c9a77382"],
+        "name": "HTTPS",
+        "location": "references/elements/user/references/outgoingConnections/https/index.html",
+        "type": {
+            "name": "Relationship",
+            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:c8c5fefe-ff82-4e22-8677-f07684e4b5c7"]
+        },
+        "identifiers": ["uuid:e011083d-5cbc-4ddb-a29d-b6b0beef5581"],
+        "icon": "far fa-question-circle",
+        "description": "A graph element which is also a graph",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "outgoingConnections",
+            "identifiers": ["uuid:ec20162c-a0a2-4e12-82dc-bac06cafc652"],
+            "name": "User"
+        },
+        "identifiers": ["uuid:6bcfd5c5-3d66-4ebb-a2d8-1b548d8880f2"],
+        "name": "Relationship",
+        "location": "references/elements/user/references/outgoingConnections/WHmM1yfVEUKgXU2BVGuP-4/index.html",
+        "type": {
+            "name": "Relationship",
+            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:9ba80568-d5e3-42b0-aab7-78b5f77baa30"]
+        },
+        "identifiers": ["uuid:4f82d109-14d8-49b3-bb0a-716809284132"],
+        "icon": "far fa-question-circle",
+        "description": "A graph element which is also a graph",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:7f56305d-9f98-44cb-80d4-5a654ea75650"]
+        },
+        "identifiers": ["uuid:35cf40a3-73bd-4f55-9dcc-f9968947a765"],
+        "icon": "far fa-question-circle",
+        "description": "A graph element which is also a graph",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    }
+]
