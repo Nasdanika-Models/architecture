@@ -25,7 +25,7 @@ public class ComponentProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "A grouping of related functionality encapsulated behind a well-defined interface",
 			actionPrototype = """
 	            app-action:
 	              content:

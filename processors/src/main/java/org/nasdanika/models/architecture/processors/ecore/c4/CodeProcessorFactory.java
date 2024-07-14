@@ -25,7 +25,7 @@ public class CodeProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "Code elements (e.g. classes, interfaces, objects, functions, database tables, etc) within a component",
 			actionPrototype = """
 	            app-action:
 	              content:

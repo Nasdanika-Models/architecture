@@ -25,7 +25,7 @@ public class ContextProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "A grouping of architecture elements",
 			actionPrototype = """
 	            app-action:
 	              content:

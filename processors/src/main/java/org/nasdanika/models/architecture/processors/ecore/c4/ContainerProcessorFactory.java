@@ -25,7 +25,7 @@ public class ContainerProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "Represents an application or a data store",
 			actionPrototype = """
 	            app-action:
 	              content:

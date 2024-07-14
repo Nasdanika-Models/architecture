@@ -1,7 +1,7 @@
 This site was generated as explained below:
 
-* A [Drawio](https://www.drawio.com/) diagram of an Internet Banking System was created based on images and descriptions from [The C4 model for visualising software architecture](https://c4model.com/). Descriptions of elements and diagrams were copied verbatim. The diagram uses free icons from [Icons8](https://icons8.com/) to provide visual distinction between architecture elements. 
-* The diagram was [mapped](https://github.com/Nasdanika-Models/family#mapping) the [Architecture model](https://architecture.models.nasdanika.org/) using properties of the diagram elements.
+* A [Drawio](https://www.drawio.com/) diagram of an Internet Banking System was created based on images and descriptions from [The C4 model for visualising software architecture](https://c4model.com/). Descriptions of elements and diagrams were copied verbatim under the terms of [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). The diagram uses free icons from [Icons8](https://icons8.com/) to provide visual distinction between architecture elements. 
+* The diagram was mapped to the [Architecture model](https://architecture.models.nasdanika.org/) using properties of the diagram elements as explained in the [Beyond Diagrams](https://leanpub.com/beyond-diagrams) book.
 * Then the architecture model was transformed to the [HTML Application model](https://html-app.models.nasdanika.org/index.html) and a static web site was generated from that model. For the majority of elements icons were generated from the diagram images of the respective elements.
 * The web site is deployed by [GitHub Pages](https://pages.github.com/).
 
@@ -43,7 +43,7 @@ with the ``type`` property set to ``ArchitectureDescription``
 This documentation was generated from [internet-banking-system-architecture.md](https://github.com/Nasdanika-Models/architecture/blob/main/demos/internet-banking-system/internet-banking-system-architecture.md) markdown file with the image above embedded using ``png-resource`` fenced block
 and the diagram embedded using ``drawio`` fenced block with ``representations/drawio/diagram`` expansion token.
 
-Diagram semantic elements were mapped to the root semantic element (``ArchitectureDescription``) using the following [``feature-map``](https://github.com/Nasdanika-Models/family#feature-map):
+Diagram semantic elements were mapped to the root semantic element (``ArchitectureDescription``) using the following ``feature-map``:
 
 ```yaml
 container:
@@ -53,7 +53,7 @@ container:
       comparator: label
 ```
 
-The above mapping means that use the semantic element of this diagram element (root) and add semantic elements of its descendants at path length ``2`` to the ``elements`` reference ordering by [``label``](https://github.com/Nasdanika-Models/family#label).
+The above mapping means that use the semantic element of this diagram element (root) and add semantic elements of its descendants at path length ``2`` to the ``elements`` reference ordering by ``label``.
 Path length is set to 2 because the diagram elements are contained by the background [layer](https://drawio.models.nasdanika.org/references/eClassifiers/Layer/index.html), which is in turn contained by the root.
 
 ``page-element`` set to ``true`` specifies that the root semantic element shall also be the [page](https://drawio.models.nasdanika.org/references/eClassifiers/Page/index.html)'s semantic elements. 
@@ -68,7 +68,7 @@ name: Internet Banking System Architecture
 ### Surroundings -> Node
 
 "Personal Banking Customer", "E-mail System", and "Mainframe Banking System" diagram elements are mapped to [Node](https://architecture.models.nasdanika.org/references/eClassifiers/Node/index.html).
-They have [``semantic-id``](https://github.com/Nasdanika-Models/family#semantic-id) property to demonstrate its usage. 
+They have ``semantic-id`` property to demonstrate its usage. 
 Another way to provide meaningful ID's and URL's is to edit element ID's - this approach is used on lower-level diagrams.
 
 The "Personal Banking Customer" element does not have an image associated with it and therefore uses an explicit icon ``spec``:

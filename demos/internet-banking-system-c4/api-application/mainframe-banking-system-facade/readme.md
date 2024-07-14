@@ -13,7 +13,7 @@ The package container maps to the same semantic element as on the API Applicatio
 * The "Mainframe Banking System Facade" element on the API Application Component diagram links to this diagram page.
 * The package element on this diagram has ``page-element`` property set to ``true``.   
 
-Semantic elements of the child elements of the "API Application" element are mapped to the ``elements`` reference with ordering by [``label``](https://github.com/Nasdanika-Models/family#label) comparator:
+Semantic elements of the child elements of the "API Application" element are mapped to the ``elements`` reference with ordering by ``label`` comparator:
 
 ```yaml
 container:
@@ -23,11 +23,11 @@ container:
       comparator: label
 ```          
 
-All code elements within the package are mapped to [Node](https://architecture.models.nasdanika.org/references/eClassifiers/Node/index.html)s.
+All code elements within the package are mapped to [c4.Code](https://architecture.models.nasdanika.org/references/eSubpackages/c4/references/eClassifiers/Code/index.html).
 
 ## Representation element filtering
 
-Fill color of ``MainframeBankingSystemFacadeImpl`` is set during the generation with the following [code](https://github.com/Nasdanika-Models/architecture/blob/main/demos/internet-banking-system/src/test/java/org/nasdanika/models/architecture/demos/ibs/tests/TestInternetBankingSystemSiteGen.java#L38):
+Fill color of ``MainframeBankingSystemFacadeImpl`` is set during the generation with the following [code](https://github.com/Nasdanika-Models/architecture/blob/main/demos/internet-banking-system-c4/src/test/java/org/nasdanika/models/architecture/demos/ibs/c4/tests/TestInternetBankingSystemC4SiteGen.java#L44):
 
 ```java
 @Override

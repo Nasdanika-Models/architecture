@@ -25,7 +25,7 @@ public class SystemProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "The highest level of abstraction describing something that delivers value to its users",
 			actionPrototype = """
 	            app-action:
 	              content:

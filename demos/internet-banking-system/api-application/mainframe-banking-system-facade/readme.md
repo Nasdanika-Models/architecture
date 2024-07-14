@@ -13,7 +13,7 @@ The package container maps to the same semantic element as on the API Applicatio
 * The "Mainframe Banking System Facade" element on the API Application Component diagram links to this diagram page.
 * The package element on this diagram has ``page-element`` property set to ``true``.   
 
-Semantic elements of the child elements of the "API Application" element are mapped to the ``elements`` reference with ordering by [``label``](https://github.com/Nasdanika-Models/family#label) comparator:
+Semantic elements of the child elements of the "API Application" element are mapped to the ``elements`` reference with ordering by ``label`` comparator:
 
 ```yaml
 container:

@@ -25,7 +25,7 @@ public class PersonProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "A graph element which is also a graph",
+			description = "Represents human users of a software system",
 			actionPrototype = """
 	            app-action:
 	              content:
