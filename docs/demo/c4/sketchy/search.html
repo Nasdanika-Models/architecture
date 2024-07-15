@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="EN">
+  <head>
+    <title>Search</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sketchy/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css">
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/dark-head.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/jstree.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/components/table.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/components/table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9BRJVLK8CC');
+</script>    
+  
+
+
+<script src="../../../search-documents.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
+
+<script>
+// Script for full-text search of JsTree
+
+window.nsdJsTreeSearchCallback = function(str, node) { 
+    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
+    if (sf.search(node.text).isMatch) {
+		return true;
+	} 
+    let searchResult = this.search(str); 
+    for (const sr in searchResult) {
+        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
+            return true;
+        } 
+    } 
+    return false; 
+}.bind(lunr(function () {
+			  this.ref('id');
+			  this.field('title');
+			  this.field('content');
+
+			  for (const key in searchDocuments) {
+				  let doc = searchDocuments[key];
+				this.add({
+					id: doc['action-uuid'],
+					title: doc.title,
+					path: doc.path,
+					content: doc.content
+				});  
+			  }
+			}));
+</script>
+</head>
+  <body>
+    <div class="container nsd-app-container">
+      <div class="row">
+        <div class="col nsd-app-header">
+          <a href="https://architecture.models.nasdanika.org/" data-nsd-label-uuid="a81b5fb6-95d3-4274-ab21-4952cb704ec4" class="nsd-app-header-title">
+            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Architecture Models</a>
+          <ul class="nav nsd-app-header-navs">
+            <li class="nav-item"><span data-nsd-label-uuid="e21e01cf-2eb0-4810-bed6-d70aef7aa621" class="navbar-text"><span class="fas fa-search nsd-app-label-icon"></span>Search</span>
+            </li>
+            <li class="nav-item">
+              <a href="glossary.html" data-nsd-label-uuid="e4ac350c-f27d-46bd-9711-6314b7e3b75d" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-navbar">
+          <ul class="navbar navbar-light navbar-expand-lg">
+            <a href="index.html" data-nsd-label-uuid="47c84543-9483-4a7c-9b39-7ed1832dabca" class="navbar-brand">C4 Template</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_27" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="nsd_27" class="collapse navbar-collapse"></div>
+          </ul>
+        </div>
+      </div>
+      <div class="row nsd-app-content-row">
+        <div class="col nsd-app-navigation-panel">
+          <div class="list-group list-group-flush">
+            <a href="references/elements/user/index.html" data-nsd-label-uuid="89073a2e-7578-48b5-adce-12fadd116884" class="list-group-item list-group-action">Person</a>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a href="references/elements/9Xhv3QX139gfRowG86oh-1/index.html">System</a>
+            </div>
+            <div class="list-group list-group-flush">
+              <a href="references/elements/9Xhv3QX139gfRowG86oh-1/references/elements/Q9qKH9tl9N2e6UXnhQ6L-3/index.html" data-nsd-label-uuid="ad4b747e-8012-4d54-a7dc-9654bc117efd" class="list-group-item list-group-action">Container</a>
+            </div>
+          </div>
+        </div>
+        <div data-nsd-label-uuid="e21e01cf-2eb0-4810-bed6-d70aef7aa621" data-nsd-action-uris="uuid:e21e01cf-2eb0-4810-bed6-d70aef7aa621" class="col nsd-app-content-panel">
+          <div class="container-fluid">
+            <div class="row nsd-app-content-panel-title-and-items-row">
+              <div class="col-auto">
+                <h1><span data-nsd-label-uuid="e21e01cf-2eb0-4810-bed6-d70aef7aa621" class="nsd-app-content-panel-title"><span class="fas fa-search nsd-app-label-icon"></span>Search</span>
+                </h1>
+              </div>
+            </div>
+            <div class="row nsd-app-content-panel-content-row">
+              <div class="col">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col">		<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>     
+		<script src="search-documents.js"></script>     
+     	<div id="search-app" class="container-fluid">
+     		<div class="row">
+     			<div class="col">
+					<b-form-group label="Filter" label-for="filter-input" label-cols-sm="3" label-align-sm="right" label-size="sm" class="mb-0" description="You can use wildcards, e.g. 'foo*' or 'f*o'; title or content fields, e.g. 'title:foo* bar'; boosts, e.g. 'foo^10 bar'; fuzzy matches, e.g. 'foo~1'; and term presence, e.g. '+foo bar -baz'">
+			          <b-input-group size="sm">
+			            <b-form-input id="filter-input" v-model="filter" type="search" placeholder="Type to Search" debounce="700"></b-form-input>
+			
+			            <b-input-group-append>
+			              <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
+			            </b-input-group-append>
+			          </b-input-group>
+			        </b-form-group>		
+     			</div>     		
+     		</div>
+	        
+	        <div class="row flex-nowrap">
+	        	<div class="col-auto border-right border-secondary pb-1">
+	        		<div id="nsd-site-map-tree">
+	        		</div>
+	        	</div>
+	        	<div class="col">
+			        <b-card v-for="searchResult in searchResults" :header-html="searchResult.title" :footer="searchResult.path" class="my-1">
+			        	
+			        	<b-card-text><span v-html="searchResult.content"></span></b-card-text>
+			        </b-card>
+	        	</div>
+	        </div>	        
+     	</div>
+     
+		<script>		      
+			new Vue({
+				  el: '#search-app',
+				  data: {
+			        	filter: null,
+				      searchIndex : lunr(function () {
+						  this.ref('url');
+						  this.field('title');
+						  this.field('content');
+						  this.metadataWhitelist = ['position'];
+	
+						  for (const key in searchDocuments) {
+							  let doc = searchDocuments[key];
+							this.add({
+								url: key,
+								title: doc.title,
+								path: doc.path,
+								content: doc.content
+							});  
+						  }
+						})
+				  },				  
+				  computed: {
+					searchResults: function() {
+						if (this.filter) {
+							let searchResult = this.searchIndex.search(this.filter);
+							let actionUuids = searchResult.map(match => searchDocuments[match.ref]['action-uuid']).join(" ");
+							setTimeout(() => {
+								let treeSearchCallback = $('#nsd-site-map-tree').jstree(true).search;
+								if (treeSearchCallback) {
+									$('#nsd-site-map-tree').jstree(true).search(actionUuids);								
+								}
+							});
+							
+							return searchResult.map(function(e) {
+								let doc = searchDocuments[e.ref];
+								let titleMatches = [];
+								let contentMatches = [];
+								let matchMetaData = e.matchData.metadata;
+								for (const term in matchMetaData) {
+									if (matchMetaData[term]['title']) {
+										let positions = matchMetaData[term]['title'].position;
+										for (const match in positions) {
+											titleMatches.push(positions[match]);
+										}										
+									}
+									if (matchMetaData[term]['content']) {
+										let positions = matchMetaData[term]['content'].position;
+										for (const match in positions) {
+											contentMatches.push(positions[match]);
+										}										
+									}
+								}
+								
+								// Title highlighting
+								titleMatches.sort(function (a, b) { return a[0] - b[0] });
+								let titleElements = [];
+								let idx = 0;
+								for (const matchIdx in titleMatches) {
+									let match = titleMatches[matchIdx];
+									if (match[0] > idx) {
+										titleElements.push(doc.title.substring(idx, match[0]));
+									}
+									idx =  match[0] + match[1];
+									titleElements.push(`<span class='nsd-mark'>${doc.title.substring(match[0], idx)}</span>`);
+								}
+								if (idx < doc.title.length - 1) {
+									titleElements.push(doc.title.substring(idx, doc.title.length));
+								}
+								
+								// Content ellipsing and highlighting
+								contentMatches.sort(function (a, b) { return a[0] - b[0] });
+								let contentElements = [];
+								let snippetLength = 10;
+								idx = 0;
+								for (const matchIdx in contentMatches) {
+									let match = contentMatches[matchIdx];
+									if (match[0] > idx) {
+										let words = doc.content.substring(idx, match[0]).split(' ');
+										let snippetedWords = [];
+										if (idx == 0) {
+											if (words.length <= snippetLength) {
+												snippetedWords = words;
+											} else {
+												snippetedWords.push("&hellip;");
+												words.slice(words.length - snippetLength, words.length).forEach(e => snippetedWords.push(e));
+											}
+										} else {
+											if (words.length <= snippetLength * 2) {
+												snippetedWords = words;
+											} else {
+												words.slice(0, snippetLength).forEach(e => snippetedWords.push(e));
+												snippetedWords.push("&hellip;");
+												words.slice(words.length - snippetLength, words.length).forEach(e => snippetedWords.push(e));
+											}
+											
+										}
+										contentElements.push(snippetedWords.join(' '));
+									}
+									idx =  match[0] + match[1];
+									contentElements.push(`<span class='nsd-mark'>${doc.content.substring(match[0], idx)}</span>`);
+								}
+								if (idx < doc.content.length - 1) {
+									let words = doc.content.substring(idx, doc.content.length).split(' ');
+									if (idx == 0) {
+										if (words.length < snippetLength * 2) {
+											contentElements.push(doc.content);
+										} else {
+											let snippetedWords = [];
+											words.slice(0, snippetLength * 2).forEach(e => snippetedWords.push(e));
+											snippetedWords.push("&hellip;");
+											contentElements.push(snippetedWords.join(' '));
+										}
+									} else {
+										let snippetedWords = [];
+										if (words.length <= snippetLength) {
+											snippetedWords = words;
+										} else {
+											words.slice(0, snippetLength).forEach(e => snippetedWords.push(e));
+											snippetedWords.push("&hellip;");
+										}
+										contentElements.push(snippetedWords.join(' '));
+									}
+								}
+								return {
+									title: `<h5><a href="${e.ref}">${titleElements.join('')}</a></h5>`,
+									path: doc.path,
+									content: contentElements.join('')
+								};									
+							});
+						} 
+						setTimeout(() => {
+							let treeSearchCallback = $('#nsd-site-map-tree').jstree(true).search;
+							if (treeSearchCallback) {
+								$('#nsd-site-map-tree').jstree(true).search('');								
+							}
+						});
+						return [];
+					}  
+				  }
+			});   			
+		</script>
+		
+
+<script>$(document).ready( function() {
+$('#nsd-site-map-tree').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; }; tree.search.search_callback = (results, node) => results.split(' ').includes(node.original['data-nsd-label-uuid']); return tree; }({"core":{"data":[{"a_attr":{"onclick":"window.location='https://architecture.models.nasdanika.org/';"},"children":[{"children":[{"data-nsd-label-uuid":"e21e01cf-2eb0-4810-bed6-d70aef7aa621","icon":"fas fa-search","id":"61dbecc6-a1ed-4570-9bfa-238717d0cfcd","text":"Search","type":"leaf"},{"a_attr":{"onclick":"window.location='glossary.html';"},"data-nsd-label-uuid":"e4ac350c-f27d-46bd-9711-6314b7e3b75d","icon":"fas fa-book","id":"51bc1f5e-65ce-4648-8f05-122d02228362","text":"Glossary","type":"leaf"}],"text":"Children"},{"children":[{"a_attr":{"onclick":"window.location='https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system';"},"data-nsd-label-uuid":"f527050a-a985-424a-b2e7-8a3fc8fa3d9e","icon":"fab fa-github","id":"2a22f674-2bab-4dab-82df-e9e05371dacd","text":"Sources","type":"leaf"},{"a_attr":{"onclick":"window.location='https://icons8.com/';"},"data-nsd-label-uuid":"1acc0da9-309b-4ed2-861e-6c54d049f30e","icon":"https://img.icons8.com/fluency/16/icons8-new-logo.png","id":"f19d4e9a-ef63-43bd-9e4c-efc1250af9cb","text":"(blank)","type":"leaf"}],"text":"Navigation"}],"data-nsd-label-uuid":"a81b5fb6-95d3-4274-ab21-4952cb704ec4","icon":"https://docs.nasdanika.org/images/nasdanika-logo.png","id":"c6438e36-3952-46e8-b780-478bb82ab75e","text":"Nasdanika Architecture Models","type":"leaf"},{"a_attr":{"onclick":"window.location='index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/user/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/user/references/outgoingConnections/https/index.html';"},"data-nsd-label-uuid":"b0045635-184f-4063-b0ae-819e35eb4bae","id":"40ef53e1-1939-4480-8063-b67f0276a9b8","text":"HTTPS","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/user/references/outgoingConnections/9Xhv3QX139gfRowG86oh-3/index.html';"},"data-nsd-label-uuid":"404e9ace-eba3-4450-a598-6d839c7cccfc","id":"92442b3f-f8cf-4c6c-a116-6a5dac7c3b64","text":"Relationship","type":"leaf"}],"text":"Outgoing connections"}],"data-nsd-label-uuid":"89073a2e-7578-48b5-adce-12fadd116884","id":"9590c5c6-db57-4f58-af82-bb73158e6eba","text":"Person","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/9Xhv3QX139gfRowG86oh-1/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/9Xhv3QX139gfRowG86oh-1/references/elements/Q9qKH9tl9N2e6UXnhQ6L-3/index.html';"},"data-nsd-label-uuid":"ad4b747e-8012-4d54-a7dc-9654bc117efd","id":"1d1bae50-03d1-49cd-b6df-6e15d97b0eec","text":"Container","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"29225d13-ae6c-493f-ae63-1340d34d557a","id":"210c31a7-f6df-4754-b101-9875acbea6ef","text":"System","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"47c84543-9483-4a7c-9b39-7ed1832dabca","id":"08faada6-966c-4527-ae43-b0c4b60e66a6","text":"C4 Template","type":"leaf"},{"children":[{"data-nsd-label-uuid":"59b96401-94ad-4c5e-b44e-626f7351919c","icon":"far fa-question-circle","id":"85015970-6077-4ed3-bd51-ee72190f2b5b","text":"(blank)","type":"leaf"}],"text":"Decorator"},{"children":[{"data-nsd-label-uuid":"22bb1777-d670-4807-9a38-aed904d3c814","icon":"far fa-question-circle","id":"b5f3d3a6-cf89-4380-b626-d38c03312410","text":"(blank)","type":"leaf"}],"text":"Decorator"},{"children":[{"data-nsd-label-uuid":"7416ad40-dfec-4744-9bbf-e085563c3b9e","icon":"far fa-question-circle","id":"84b6e122-7c2d-4693-8412-cc2fcbb70e4f","text":"(blank)","type":"leaf"}],"text":"Decorator"},{"children":[{"data-nsd-label-uuid":"3c6ffe7b-641c-4759-977f-e6dae93b05e4","icon":"far fa-question-circle","id":"ff7cadf9-9fe2-4278-b9d4-61423933cd8b","text":"(blank)","type":"leaf"}],"text":"Decorator"},{"children":[{"data-nsd-label-uuid":"9a5f239d-eaea-4ec3-afac-9370b21bc233","icon":"far fa-question-circle","id":"69d59847-281e-4c0b-8511-1c59ea8efd2d","text":"(blank)","type":"leaf"}],"text":"Decorator"},{"children":[{"data-nsd-label-uuid":"3059c882-6c2c-433c-8481-e43cd936d4a9","icon":"far fa-question-circle","id":"31b4a9dc-0fc4-4821-b4e0-fd170d10f787","text":"(blank)","type":"leaf"}],"text":"Decorator"}]},"search":{"show_only_matches":true},"plugins":["state","search"],"state":{"key":"nsd-site-map-tree"}}));
+});</script>
+				
+		</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-footer">
+          <ul class="nav nsd-app-footer-navs">
+            <li class="nav-item">
+              <a href="https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system" data-nsd-label-uuid="f527050a-a985-424a-b2e7-8a3fc8fa3d9e" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+            </li>
+            <li class="nav-item"><span class="navbar-text">&nbsp;•&nbsp;</span>
+            </li>
+            <li class="nav-item">
+              <a href="https://icons8.com/" title="Icons from ICONS8" class="nav-link">
+                <img src="https://img.icons8.com/fluency/16/icons8-new-logo.png" class="nsd-app-label-icon">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

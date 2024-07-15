@@ -1,0 +1,225 @@
+[
+    {
+        "identifiers": ["uuid:a81b5fb6-95d3-4274-ab21-4952cb704ec4"],
+        "name": "Nasdanika Architecture Models",
+        "icon": "https://docs.nasdanika.org/images/nasdanika-logo.png",
+        "location": "https://architecture.models.nasdanika.org/",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "children",
+            "identifiers": ["uuid:a81b5fb6-95d3-4274-ab21-4952cb704ec4"]
+        },
+        "identifiers": ["uuid:e21e01cf-2eb0-4810-bed6-d70aef7aa621"],
+        "name": "Search",
+        "icon": "fas fa-search",
+        "location": "search.html",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "children",
+            "identifiers": ["uuid:a81b5fb6-95d3-4274-ab21-4952cb704ec4"]
+        },
+        "identifiers": ["uuid:e4ac350c-f27d-46bd-9711-6314b7e3b75d"],
+        "name": "Glossary",
+        "icon": "fas fa-book",
+        "location": "glossary.html",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "navigation",
+            "identifiers": ["uuid:a81b5fb6-95d3-4274-ab21-4952cb704ec4"]
+        },
+        "identifiers": ["uuid:f527050a-a985-424a-b2e7-8a3fc8fa3d9e"],
+        "name": "Sources",
+        "icon": "fab fa-github",
+        "location": "https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "navigation",
+            "identifiers": ["uuid:a81b5fb6-95d3-4274-ab21-4952cb704ec4"]
+        },
+        "identifiers": ["uuid:1acc0da9-309b-4ed2-861e-6c54d049f30e"],
+        "icon": "https://img.icons8.com/fluency/16/icons8-new-logo.png",
+        "description": "Icons from ICONS8",
+        "location": "https://icons8.com/",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "identifiers": ["uuid:d49b3a24-b383-4235-a486-97301f15560a"],
+        "name": "C4 Template",
+        "location": "index.html",
+        "type": {
+            "name": "Context",
+            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:d49b3a24-b383-4235-a486-97301f15560a"],
+            "name": "C4 Template"
+        },
+        "identifiers": ["uuid:e062578d-0d08-4dbb-9bb9-8288b950e074"],
+        "name": "Person",
+        "location": "references/elements/user/index.html",
+        "type": {
+            "name": "Person",
+            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:89073a2e-7578-48b5-adce-12fadd116884"]
+        },
+        "identifiers": ["uuid:59b96401-94ad-4c5e-b44e-626f7351919c"],
+        "icon": "far fa-question-circle",
+        "description": "Represents human users of a software system",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "outgoingConnections",
+            "identifiers": ["uuid:e062578d-0d08-4dbb-9bb9-8288b950e074"],
+            "name": "Person"
+        },
+        "identifiers": ["uuid:405182a4-8f3b-475e-99c7-c1d5a7888f85"],
+        "name": "HTTPS",
+        "location": "references/elements/user/references/outgoingConnections/https/index.html",
+        "type": {
+            "name": "Relationship",
+            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:b0045635-184f-4063-b0ae-819e35eb4bae"]
+        },
+        "identifiers": ["uuid:22bb1777-d670-4807-9a38-aed904d3c814"],
+        "icon": "far fa-question-circle",
+        "description": "Connects architecture elements",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "outgoingConnections",
+            "identifiers": ["uuid:e062578d-0d08-4dbb-9bb9-8288b950e074"],
+            "name": "Person"
+        },
+        "identifiers": ["uuid:236440c1-c548-4225-bba0-30b770237ebf"],
+        "name": "Relationship",
+        "location": "references/elements/user/references/outgoingConnections/9Xhv3QX139gfRowG86oh-3/index.html",
+        "type": {
+            "name": "Relationship",
+            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:404e9ace-eba3-4450-a598-6d839c7cccfc"]
+        },
+        "identifiers": ["uuid:7416ad40-dfec-4744-9bbf-e085563c3b9e"],
+        "icon": "far fa-question-circle",
+        "description": "Connects architecture elements",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:d49b3a24-b383-4235-a486-97301f15560a"],
+            "name": "C4 Template"
+        },
+        "identifiers": ["uuid:0105ff77-e679-48fd-b6d9-3be7b7fdcd27"],
+        "name": "System",
+        "location": "references/elements/9Xhv3QX139gfRowG86oh-1/index.html",
+        "type": {
+            "name": "System",
+            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:0105ff77-e679-48fd-b6d9-3be7b7fdcd27"],
+            "name": "System"
+        },
+        "identifiers": ["uuid:07a34b37-3416-4002-981a-af7e9a595d1f"],
+        "name": "Container",
+        "location": "references/elements/9Xhv3QX139gfRowG86oh-1/references/elements/Q9qKH9tl9N2e6UXnhQ6L-3/index.html",
+        "type": {
+            "name": "Container",
+            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:ad4b747e-8012-4d54-a7dc-9654bc117efd"]
+        },
+        "identifiers": ["uuid:3c6ffe7b-641c-4759-977f-e6dae93b05e4"],
+        "icon": "far fa-question-circle",
+        "description": "Represents an application or a data store",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:29225d13-ae6c-493f-ae63-1340d34d557a"]
+        },
+        "identifiers": ["uuid:9a5f239d-eaea-4ec3-afac-9370b21bc233"],
+        "icon": "far fa-question-circle",
+        "description": "The highest level of abstraction describing something that delivers value to its users",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:47c84543-9483-4a7c-9b39-7ed1832dabca"]
+        },
+        "identifiers": ["uuid:3059c882-6c2c-433c-8481-e43cd936d4a9"],
+        "icon": "far fa-question-circle",
+        "description": "A grouping of architecture elements",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    }
+]

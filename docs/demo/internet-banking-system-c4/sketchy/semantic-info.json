@@ -1,6 +1,6 @@
 [
     {
-        "identifiers": ["uuid:04852ac6-a637-482f-9f84-fb6465dc6594"],
+        "identifiers": ["uuid:148e2c42-ab75-4109-9c21-412508d513a6"],
         "name": "Nasdanika Architecture Models",
         "icon": "https://docs.nasdanika.org/images/nasdanika-logo.png",
         "location": "https://architecture.models.nasdanika.org/",
@@ -12,9 +12,9 @@
     {
         "container": {
             "reference": "children",
-            "identifiers": ["uuid:04852ac6-a637-482f-9f84-fb6465dc6594"]
+            "identifiers": ["uuid:148e2c42-ab75-4109-9c21-412508d513a6"]
         },
-        "identifiers": ["uuid:198f2051-366b-430e-b8c7-18dc2039cc1b"],
+        "identifiers": ["uuid:27d36fb6-1932-43fd-a182-153d2c2d9292"],
         "name": "Search",
         "icon": "fas fa-search",
         "location": "search.html",
@@ -26,9 +26,9 @@
     {
         "container": {
             "reference": "children",
-            "identifiers": ["uuid:04852ac6-a637-482f-9f84-fb6465dc6594"]
+            "identifiers": ["uuid:148e2c42-ab75-4109-9c21-412508d513a6"]
         },
-        "identifiers": ["uuid:9e7228ea-b3bb-4128-b52a-9233acf916aa"],
+        "identifiers": ["uuid:e16c1b8e-747f-46ea-9a18-a227a0385812"],
         "name": "Glossary",
         "icon": "fas fa-book",
         "location": "glossary.html",
@@ -40,12 +40,12 @@
     {
         "container": {
             "reference": "navigation",
-            "identifiers": ["uuid:04852ac6-a637-482f-9f84-fb6465dc6594"]
+            "identifiers": ["uuid:148e2c42-ab75-4109-9c21-412508d513a6"]
         },
-        "identifiers": ["uuid:47d654b0-8ec7-41b0-b82e-c759eb90ab7e"],
+        "identifiers": ["uuid:13d16840-18fc-40b0-8a0d-efa13efc8c2a"],
         "name": "Sources",
         "icon": "fab fa-github",
-        "location": "https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system",
+        "location": "https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system-c4",
         "type": {
             "name": "Action",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -54,9 +54,9 @@
     {
         "container": {
             "reference": "navigation",
-            "identifiers": ["uuid:04852ac6-a637-482f-9f84-fb6465dc6594"]
+            "identifiers": ["uuid:148e2c42-ab75-4109-9c21-412508d513a6"]
         },
-        "identifiers": ["uuid:0f364998-9f28-4d01-ac67-713a9dafab68"],
+        "identifiers": ["uuid:eb285c7e-78ee-4114-8b5f-37e70f31db2d"],
         "icon": "https://img.icons8.com/fluency/16/icons8-new-logo.png",
         "description": "Icons from ICONS8",
         "location": "https://icons8.com/",
@@ -66,7 +66,7 @@
         }
     },
     {
-        "identifiers": ["uuid:f312de14-9bbc-4db7-ad8f-4aac94e38bb7"],
+        "identifiers": ["uuid:608b0e8d-bd21-45b2-b4d9-bc9e1d83488a"],
         "name": "Internet Banking System Architecture",
         "location": "index.html",
         "type": {
@@ -77,10 +77,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:f312de14-9bbc-4db7-ad8f-4aac94e38bb7"],
+            "identifiers": ["uuid:608b0e8d-bd21-45b2-b4d9-bc9e1d83488a"],
             "name": "Internet Banking System Architecture"
         },
-        "identifiers": ["uuid:a98e56ad-784f-4d4d-aacc-871274bcd8fb"],
+        "identifiers": ["uuid:0768463b-4298-4735-9183-bd25c01ded36"],
         "name": "E-mail System",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACm0lEQVR4XrWUzU/TcBzGMV40Xrx69GC8evOqf4EHY+LBRA6e3HjLFDhgHMqbG+3KGGwKW3kZqCBswGRjY27IQBYYCALjZdIxjGgFmTMCYxuPXQ1VOlzMEp/kkzT99fnk+22aZmX9Q+TZ9AnVbfqCKr/1jPgsbZCFY0ppw1lSYrhC5hhKSJnxeU1l/7xG54lpO2dB3TdNiTspIQs6TpK5TSRV2vNGo3ZH6o1TeGwLonE8jCeLCdT7E6iZjYGY3kN11QAj7qeElNDXtVYGuoUEaufiIGdiUExGUTG+i3IRRJUtpiftwZYae7C91iHQprYHqbzWIl5I5NDZlX2hlPJRqGuHMPJhD/MbCaxFcIiGByZXxkKnJ4gujRU22gkjYeGFjX8T9jExTG/Eed5+iUPhOyy0uBk42oaw/2ML2N6ChXalFyZF4skO4N4hBtt/y3Y3WbzQOjIXatVObLOf4OSkOxuf0a1zwM9EUoXyXgZFY995JlhuZW7VJHr/jnC/mENX5+InW51ZQlf9APzBX7IUYaEpgLzRMI+XjQrXYjQaJ7/mlMOL4IQP5mYPQuH9zIWUyo4erRWbgVkkvr4Hw0l7jaPphcPrUfSHdgTujn0Tzqoe2dBnngQzPsELk1j09vRC2VgYcl9E4M8JCbULnrUonumH8e7VKFZ9PnTV9acXpiMpTH7Yc2wcI54VDLuX4fWGDgu5P8vNItNySvkoFNV2mK0LcAwu8bIDXruWUVf8tJsXKnLpcxWlvey9Bi+KOxcgc3xMER1QVvZynchtvixGKaUvqfLp07wwmY5rHcepPP15Qtp0lZDScoWszVT+0BIopdyJkqZJFJoDKHCzKC+zrAilTKK803JKKTFcrJYYbpFSmiKkzTfEz/z3/AR25aUIkNGbZwAAAABJRU5ErkJggg==",
         "description": "The internal Microsoft Exchange e-mail system.",
@@ -93,11 +93,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:f53549e6-7ad0-48f7-9502-fcd752c7b316"]
+            "identifiers": ["uuid:e09f8b7d-157f-4024-aafe-64c30387cb33"]
         },
-        "identifiers": ["uuid:bd0d984f-d862-447e-a935-0aa997a2245b"],
+        "identifiers": ["uuid:184bb993-157c-43fb-a907-e566382b7dbb"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "The highest level of abstraction describing something that delivers value to its users",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -106,10 +106,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:f312de14-9bbc-4db7-ad8f-4aac94e38bb7"],
+            "identifiers": ["uuid:608b0e8d-bd21-45b2-b4d9-bc9e1d83488a"],
             "name": "Internet Banking System Architecture"
         },
-        "identifiers": ["uuid:7c1bd846-0303-4056-b31e-588d021aa2dd"],
+        "identifiers": ["uuid:b7ab1740-b44c-4893-a426-e3ef261fd44c"],
         "name": "Internet Banking System",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAADIklEQVR4Xp1TXUiTYRRe0UWX0UU3pfv8wYptn1Jb5t9+nDl1rr5vY6sm6nRJ+RdNzXRlLnQOjTZTMjWcZZTOrJxmMEmRpIKSSroJDJIuiqiw6OfS03c++cY2lUYHHt6fc97nPe95zsvj/YftEOi3EiRdiMB5qD98k8s38eO1br6IdiZV9gAC50S8rh99oeH/tGix0S2tG4fUmltAexaAHloAecMdyO6cBYK5KDTeb/gMvkCrCAV5qCFR3ji5lN40CZnOqadZHY+HNX0vWdJIEeVa9/mEiDIZTNVga+0GZ/egHyMPZ5b7BsfZebbeAgRh2kzS9YuYadLJHsBzoVysocNSbwe1oRJy9BXQ1tEL1iYn2C91QXu3mx21+TUMoTyYUEAXBhFFibTSCKFOjIQydQlQeVXswbWwR1YA0jqvN715GpJPDax+ciRJKUna9ltidn7dW+C4YrHaoaK2Feqbu2Bk4hG4B8dgyOuDUd8MO+aX2iCj5QkkHu8D6ZkxQPWDMkMyVfs8GB58hvQmL5hKrXDC0sii6mwLYAmqmEtqzjnYUc68IKl8gG0bvkj7kdhFEX7CCOFBsTDXuqRyzYPe+4klXEuUQKAoCUZ7wkqTa21+wmiBJhI7PjbZNKdyvQat5wOknr7xLBxRuISCCFGAfSW9oLgwDVmX34C65+17IkFH7c8oWiyrsk3kHq6cl+Yc+6XRF4CCyUp5tJaFMNn4bl1Cad0YS4ZIqxlZ4PFsG1d8dFGkiD5PkNQrT2c0iIsuQkp1PygdE0DdX9rCETJ1vImi+gkDM5SYr2Khkxj0pshU34YdUXC3lYCpa9vB0xHDQqIyArHXcJu57DqfpAaO6NKWBYnqUZYwWqAPquGBtucQl2KeiyHpbcx+FvriUovLFbZ7P1AsbKmoxLxMHsAGf4bMt4zareVzax42s1Bj/Y4qY5ZK+yyQVOPP2ORi30552Qul3fcH1ceWkphdXzDef3gtC+xDJMVMuZoicM3uM36MY2orC+VYZdxPwUzx+VxNccQ19in6/cUPxwL/MgqF6uOIa2z+sDJbyzihOOA6NGY9+wuOHABfG6FDvAAAAABJRU5ErkJggg==",
         "description": "Allows customers to view\ninformation about their bank accounts, and make payments.",
@@ -122,10 +122,39 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:7c1bd846-0303-4056-b31e-588d021aa2dd"],
+            "identifiers": ["uuid:b7ab1740-b44c-4893-a426-e3ef261fd44c"],
             "name": "Internet Banking System"
         },
-        "identifiers": ["uuid:b5966819-5b73-423f-8fbb-aa1fec123838"],
+        "identifiers": ["uuid:919260ba-9b1a-4377-a86a-2ef952c70752"],
+        "name": "Mobile App",
+        "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACIUlEQVR4Xp2VbU/aUBTH/QD7DPsq29fZdNmLvdy7uUQTxzKW6BhhYDZx4JCHWUIZj1JtGYigmwZWB7boeNicOhLQgv7XVttYFsJlJ/nnNDfpL+ece+45Y2N9Zhq335t74j16PR3AIFmmAt0Xj5y+2fuzt/r/N5j54dvb1mdUzxMqQJPNHMKim4N1hlK/tfNFFwvTxPzjfobBnj+w33n11Is3L2kimcYdjn6GwWYmHHc93i3Ed48HiiudoCi0wMqeCOgPFbF+IGGrLqle0ccIr/pcvQvxFMg3ethu9siBXxvnkNpnyNUk0OlDWKcpBGN7KP/q6rDqH5ADlWjyMoxKVvB+IQPPh01w3D6cNkaHjRShlqrblQNbPIHHzqiRpTIHOixf/w9gmNlHcGkDC+ZPWN2sy/W71GHiqClrF5DI/oDPvYFYaAdL79Io/ZTQaF2MVkMNxu4coSDXctl+VTunNYVa6xKHsoiBdKSktwYd5REP78JliSNZaMJjS6kgTUTAVII3tAYd42GZ9CNCfcFeraPDCg3CS1mhi4bWUOBJOcrmdd00mFJnImA0+g3segX5agdxTkQ6LUA4vsBntoxy81w9oxJlrAlnZEAmySMsp5kV2shkq+DYCoTfPaylviMnthFcrWBFfjWM0CEDBvzb6sMvii2UbijDn/4zKIYClfE1N+lV5x6JhgIHDVjL9aR2+7KjDVjFrlbA8pAV4JcGrYC/dG4o+VvzBoAAAAAASUVORK5CYII=",
+        "description": "Provides a limited subset of the\nInternet banking functionality to\ncustomers via their mobile device.",
+        "location": "references/elements/internet-banking-system/references/elements/sIzGq_m-9j909wU1YzR0-2/index.html",
+        "type": {
+            "name": "Container",
+            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:49576d31-869b-4654-874e-ad86e1e78005"]
+        },
+        "identifiers": ["uuid:656de56d-4bf6-4ccf-b4fb-709e14e6aa9d"],
+        "icon": "far fa-question-circle",
+        "description": "Represents an application or a data store",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:b7ab1740-b44c-4893-a426-e3ef261fd44c"],
+            "name": "Internet Banking System"
+        },
+        "identifiers": ["uuid:b938dca8-5ef9-4d1f-ad32-10cf7f07a87a"],
         "name": "Web Application",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABlUlEQVR4Xq2VvUtCURjG/UeisK2olpYKGkyCMmrQ0KElGoKGhtociiBycXELaow+lupSkoZI2BBYooL5gaYSKhF2tQJFEd7OcyQrhDh6PfBcnvO+z/u75947XNXknKlLqzNIWp0+rEwGCSwVzKlkpze5QHKbwiwYYAEYQWFrx0r3Pj/ZHS6yWG1UqVSplQUGWByYTKWb7tqKSqXyD1BjXHCOLy6REk1vb9Jq2FMHDgTOl7tDZ6RU6rujOnBiZj6g9p40BVpVA4gLNr+bttcoPZaLdCynSRN3UYh5CB419JARBjo/cvzLYdCYum18SXjUsJARBm7kgnTNBnCKsZiTD0PwqKGHjDBw9umG1jM+MrET9YUvaC3zwAWPGnrICAM7/sj29ywfCpYKpE96GkB41LCQEQb2s0cbZe9rMHJJPWw/EnNwwaOGHjLCwAM5RcValdyfLzSVcFOhVuGCRw09ZISBHX+HK89e2s8nyJz103D0ivbycS54czbAe8j8Azz802xHYHwDpaFdC/WyghKBAZaq07+AL5CaS5//jfj3AAAAAElFTkSuQmCC",
         "description": "Delivers the static content and the\nInternet banking single page\napplication.",
@@ -138,11 +167,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:ed624295-4cf9-4e03-ab74-cc4b69dd57f6"]
+            "identifiers": ["uuid:0c5fa0fd-5554-4cf4-b684-f296daf11451"]
         },
-        "identifiers": ["uuid:4bb42bfe-ae2a-40ca-b6fa-55f39375c9c8"],
+        "identifiers": ["uuid:fdb65efc-76da-4f7c-bd27-ea79a8640585"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "Represents an application or a data store",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -151,10 +180,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:7c1bd846-0303-4056-b31e-588d021aa2dd"],
+            "identifiers": ["uuid:b7ab1740-b44c-4893-a426-e3ef261fd44c"],
             "name": "Internet Banking System"
         },
-        "identifiers": ["uuid:4254c79b-1a12-4b3d-bed6-0f67d9624d77"],
+        "identifiers": ["uuid:a000e9e1-683f-4d4f-bbcf-65332d10eae0"],
         "name": "Single-Page Application",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABH0lEQVR4Xr3VsUqCYRTG8TcMGrMtiGpocHEQIqG5aA6CVl1cbMjBCNyEJpcuoaEr6AJqCpqiLW9A6zZ8/nrOxxvyQvK9eOAXp9PDg6ZoCCHsy4t8l0QHXfPlVnZLooOuMLZDW0ZSlWdp8scVhg66isIjOZGKnMtOEf3f/Cl8kPuS6BgH+5G9kIcbz7Ycmvips/udTDxL/0OfmvzIl/mVY8PudzJkfZKFl/IU/f4YFu8AsPuQIeuzvsIL+ZCWeZVrw+53MmR9koW8D+/C4tFgIFuG3e99y/okC5k9aZiD6M7udzLxJAvrMpU3M5FTw+53MmR9koXZX5TshWfyKT3zLleG3e9kyPokCzekI0PTlU1zE93JkPUpCrN/wGb9CpgBqrmJzPLMsekAAAAASUVORK5CYII=",
         "description": "Provides all of the Internet banking\nfunctionality to customers via their\nweb browser.",
@@ -167,11 +196,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:6e23e8ba-d742-49b2-8229-32df7cdc9304"]
+            "identifiers": ["uuid:1f1e5b71-37d4-49f3-890a-80607dcbd7cd"]
         },
-        "identifiers": ["uuid:1d8f2a55-52c7-4912-8e4d-6e1b8cd1d529"],
+        "identifiers": ["uuid:d7f2600d-62c8-4fb8-a43a-4c1bcd1fdfc5"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "Represents an application or a data store",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -180,68 +209,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:7c1bd846-0303-4056-b31e-588d021aa2dd"],
+            "identifiers": ["uuid:b7ab1740-b44c-4893-a426-e3ef261fd44c"],
             "name": "Internet Banking System"
         },
-        "identifiers": ["uuid:d0e41568-d2fe-46b2-982a-df35a89a9b1e"],
-        "name": "Mobile App",
-        "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACIUlEQVR4Xp2VbU/aUBTH/QD7DPsq29fZdNmLvdy7uUQTxzKW6BhhYDZx4JCHWUIZj1JtGYigmwZWB7boeNicOhLQgv7XVttYFsJlJ/nnNDfpL+ece+45Y2N9Zhq335t74j16PR3AIFmmAt0Xj5y+2fuzt/r/N5j54dvb1mdUzxMqQJPNHMKim4N1hlK/tfNFFwvTxPzjfobBnj+w33n11Is3L2kimcYdjn6GwWYmHHc93i3Ed48HiiudoCi0wMqeCOgPFbF+IGGrLqle0ccIr/pcvQvxFMg3ethu9siBXxvnkNpnyNUk0OlDWKcpBGN7KP/q6rDqH5ADlWjyMoxKVvB+IQPPh01w3D6cNkaHjRShlqrblQNbPIHHzqiRpTIHOixf/w9gmNlHcGkDC+ZPWN2sy/W71GHiqClrF5DI/oDPvYFYaAdL79Io/ZTQaF2MVkMNxu4coSDXctl+VTunNYVa6xKHsoiBdKSktwYd5REP78JliSNZaMJjS6kgTUTAVII3tAYd42GZ9CNCfcFeraPDCg3CS1mhi4bWUOBJOcrmdd00mFJnImA0+g3segX5agdxTkQ6LUA4vsBntoxy81w9oxJlrAlnZEAmySMsp5kV2shkq+DYCoTfPaylviMnthFcrWBFfjWM0CEDBvzb6sMvii2UbijDn/4zKIYClfE1N+lV5x6JhgIHDVjL9aR2+7KjDVjFrlbA8pAV4JcGrYC/dG4o+VvzBoAAAAAASUVORK5CYII=",
-        "description": "Provides a limited subset of the\nInternet banking functionality to\ncustomers via their mobile device.",
-        "location": "references/elements/internet-banking-system/references/elements/mobile-application/index.html",
-        "type": {
-            "name": "Container",
-            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
-        }
-    },
-    {
-        "container": {
-            "reference": "decorator",
-            "identifiers": ["uuid:23f0285b-1a5a-42cc-941f-52c38596e995"]
-        },
-        "identifiers": ["uuid:f95b839b-e4bf-4cbc-96e1-27b3ecbd5945"],
-        "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
-        "type": {
-            "name": "Link",
-            "ns-uri": "ecore://nasdanika.org/html/app"
-        }
-    },
-    {
-        "container": {
-            "reference": "elements",
-            "identifiers": ["uuid:7c1bd846-0303-4056-b31e-588d021aa2dd"],
-            "name": "Internet Banking System"
-        },
-        "identifiers": ["uuid:5dae9f1e-0232-470a-b6c4-608aa6900561"],
-        "name": "Database",
-        "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAUCAYAAABroNZJAAAD4ElEQVR4Xo3U20+aZxwHcLLsZmmyZc0u9mfsYhfbVXexxW22IVgVwUMHWsVDUUQOIoeXF1+El5PIQUQOIocgRdSioq2gdVVrRDpju+qWblm6bO1Nk110W5Mt372SlFSXJv3ePFffT578nl8eFouJxWI5N+6PV0USadlEKD455gsVJqcSpalY6kE4mnyUyiwdpOZulCbCsUW7yz/u9Ab7M9ncp9vbj9856bMSqUx/cvbGM+uYDwqtEX0KAgMqA9SkCWaHB77gNBKpOcwvrmBlbR2FzS2s3CogMBXDqGfy6dHRz72scHTmhVimgbBLClHfIMQybRkZIkago6ygaCcsznGM+cJMMYH4TAazC0tYXs1jNX8b3x3+8IxFmuwPdMM0ZCo9BoZIpmjDEElDO2yF3jQKyuoC7fTB7gnCG4giEEliOjmPhWXmVt+WcPfe8S5LT9nScpUObaIecOp4KB3ch1JDgtNwBfUtHeAJunH1mgISJQkt5YDNHUIglkE6W8Da5j52S8cRls5gJl9FdnaLUBMUvmLX4+LlRnB4Qlzp6EOvXMcgdtg8p5Gd0pGCpdJRDa8it/Ib0FP0myP7Dy+xJBLi/KDG8PdLJDOfhZF2vBFy8/be82Lx0XsspXLkfatz/EWjoAPsOj4isSQsDvfrEWYmNk8YEoUO1+eWnx88eXKuvCsM8hthtKOuWwuuygM+OVU+u0eCkNBMwR5HqymOmsFxfN2pRxWvg3k9G7b37v9UBk5CUNaCUq3HoN4MKeWFkPSjVhsGWxcFm4jjonoKNaoJCLUeqG1BRGYWkcvfxXbx4WIF0ZFmj1QxhGZBOzR6Cl5/GHyBCE1tYrSI+tEl1UBFWkDZvHD7Y0jMMttb2MXW3vfmCqIhTfyXiFSuQigSRzWHW5nJNyIJ+pktHra44QnEy0iOQbZ3DzkVxO4NXdAaTGWkvasXkXgKl2p4r0fSOVxfuIn9gx8/qSAyGfGh3R34t1msRkNbL2LJNNi1/P8hJO2GzuZHr4ZG4c7+P8Xi8QcV5DOCeHvQYH8qpqfBp+fAd+TQ5cpCNTEPMpSFOrQCkXcF1foU2h1zCOf2sb5z+BjAWxXkJEqNMX+1Xwd2jwHm5CZqLVnUOvOod22A61pHs2sNA8EC7MkCUst3GOQgeQo4SY9k6OOO7r4/OdwmBKMzuCwU48uma6hulaNZQqKPGIXRGUQgmsH80sZf61v3PjprlNMi7PycXcv73e0LgNskRHUNvzyTVuavkWmMMI/64Z9O/5paWP3ibPdUqqrqztNOj7yuUbDOIL+wuYI/hJ3SI2awC8NWr2hsLPbu2c5/5b/23Os+l1QAAAAASUVORK5CYII=",
-        "description": "Stores user registration information,\nhashed authentication credentials,\naccess logs, etc.",
-        "location": "references/elements/internet-banking-system/references/elements/database/index.html",
-        "type": {
-            "name": "Container",
-            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
-        }
-    },
-    {
-        "container": {
-            "reference": "decorator",
-            "identifiers": ["uuid:73c12dc2-a4c3-465c-a417-ac512bda6295"]
-        },
-        "identifiers": ["uuid:55b3ab60-d5d6-46cb-b0bb-9ad76b84dfb8"],
-        "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
-        "type": {
-            "name": "Link",
-            "ns-uri": "ecore://nasdanika.org/html/app"
-        }
-    },
-    {
-        "container": {
-            "reference": "elements",
-            "identifiers": ["uuid:7c1bd846-0303-4056-b31e-588d021aa2dd"],
-            "name": "Internet Banking System"
-        },
-        "identifiers": ["uuid:e41e7038-fa76-43d5-b4ad-b56a3a1d4feb"],
+        "identifiers": ["uuid:f0b0dcd6-0026-49b2-b34c-b2b9061f40e5"],
         "name": "API Application",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACQElEQVR4Xq1VTU8TYRDeoxd+QON/IwY9GJWEi3AzejEBXSoQAw0uu00ptbFWabvbbQv9hNIi0JKiCDESoQFMeyH+gPF9pu7abpYihkkm++47M0/n49mpJF0hk/f9t+VhbRCKs9N+bZkZDcUTiT2CTomz095Xnt5Rb8nD6pB3xOcZH1IGXj5cuKd5U7+K22cExRl346PKgHck4IEvYpw4LDBMPw6mlqN1UmXzQpkw2on4HpmZA0pnv7Ga6QNKxBsEmyonL+A7PRZMuYLi1+BgZYMSzcwhheaLDATls7iDzfJDDGKdeBJKQGaWY65ywtlVGz/tYCiAYbPeEYNYJ56EnqEUyzFfaVK5fk71wzYVN5u0UvhO2fIx21bXftBq6YjPyoTeQk+deBKajZ5ZgPPPY7RSPKLSzhn5p9IUelPCUCgea1DQlxeZJTutET1FrA0EboEOmGDh02mn3I0Tmn0SocjSJr/7X6X5mRFZvlVKpOufKRre4jvEIBYYzFP5gTbY3WTox0iNlt/XOKNuwKS5T2GtbAMieyhnKjBAfldAAL0LVGjuWZTy1SYDQhdnc9xHC3Bd9Hitdt4L6Cy5sHVKCy8M0o0vFFbXKfZh187Q0r4lO4diJPcpEqyyc27jmBZfZ8VQMj2AS74C6NLJTAxl8pF21wayBKMHbTjLP8OBomQoerX9tcXPXtoYbVfauBJbkLg7M4D9M7Fv/NNzXw6NS5aD3rpyOUD+rq+AB33pv758/dfXZQI6/PeCdZPr/gX8Bs8CPfM3Ky9ZAAAAAElFTkSuQmCC",
         "description": "Provides Internet banking\nfunctionality via a JSP/HTTPS API.",
@@ -254,10 +225,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:e41e7038-fa76-43d5-b4ad-b56a3a1d4feb"],
+            "identifiers": ["uuid:f0b0dcd6-0026-49b2-b34c-b2b9061f40e5"],
             "name": "API Application"
         },
-        "identifiers": ["uuid:76531840-cd56-49ee-84dc-7b9db38ff611"],
+        "identifiers": ["uuid:3038d1a6-ca32-4346-9985-5092ab10e0a1"],
         "name": "Sign In Controller",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAA5ElEQVR4XuXTPw8BQRAF8PkA/iWiI6HQilKIGBqFmoagkGjUGomGQqUSvq737iYbYnF70XnJLzc7l5vs5u5E/jZZOME+JT7LGS49WMEWdrZmnTQDiZ9xUZhCGzpQs7qU0FjiGS5ccGA5pZl4Bj41AqPmfSMwat43AtOC7mNDTWiGcICj1S5qQsIBC6iapfWiqPFlBAXPlTurSvxRE2vuNIoaXyZQ9Fw5MAN1w5q9KGpCwuPNH9Y8fqIjf8pa4j+Lb5i1SxPO8vrTf8NdKVygIj+Img00nu6kjEJffjgwB1e4QZ6NO6+OLZK0qsOwAAAAAElFTkSuQmCC",
         "description": "Allows users to sign in to the\nInternet Banking System.",
@@ -270,11 +241,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:72de82c1-b182-437e-91b6-1c3afce74aab"]
+            "identifiers": ["uuid:3f0ceb88-0b48-4840-a650-6ce0122d3f58"]
         },
-        "identifiers": ["uuid:ee8e05c0-e6fe-42a7-84a8-7d0e1de43406"],
+        "identifiers": ["uuid:f2f8be89-618a-4dbf-bd55-302ff6706371"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "A grouping of related functionality encapsulated behind a well-defined interface",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -283,10 +254,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:e41e7038-fa76-43d5-b4ad-b56a3a1d4feb"],
+            "identifiers": ["uuid:f0b0dcd6-0026-49b2-b34c-b2b9061f40e5"],
             "name": "API Application"
         },
-        "identifiers": ["uuid:d0cc9455-10da-4403-97e2-3617193b61b5"],
+        "identifiers": ["uuid:3836a98d-cca1-43df-9932-e874ed877168"],
         "name": "Reset Password Controller",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACMUlEQVR4Xp2U24uOURTGH+fDhUQjhzAOoXGh5DSlfA4XLpyScimK4caNC6XkjlDTCLkaOV05RDJTbjRyCjcOJfkblH/B8/vW2l97vhlN46lf7Xfv/e53rb2e9Upja4HZmDD+L803F81n88xcM33mqflkLmkch58w781BM9lMN6sSxpPMPvPBHM93ZufaCF0xN81Us928MG/MnYTxQK6x55Z5bn6b3WrTKXNdEcEN88B01htSS81D05vPDcVeMmhpoXlnpigiPFMvtmmC+WXuVXOvFe+2RKp7zE5zv16w1ihSf2W2KQ5cZvrNS7NVcefDROUmmkGzxMwy3xR3RnpbFClxJbz83cwxKxR3+0SVFpnHZoYZyrnl5m7ZMIpId2X1TDBEzxnarPDYLkUaqENtX7W6zbkcU2kiRAcUGf5UmF9rzVdFRDtyEyr3whyG5nmeIhoMX3TbdCmqvqmab/qqFvfVyPFhxWGI4lHEIipMqmSEW5qaa/4o/MdFI/xGUaaVTdZMRYeUtqOApI93P5ZNaJ3C9dgGizwy680xRZU5lNairw/lOwiL8c5ec7mab7bN+Rxz2T/M6XymXzH9W0XqRZifJsDQrLfSRUfNBXNEET7RUiRSQtioM8eLFbbhsNKmJ3OtpbPmi6JibOCrpML9DCnsBIwxPxZjD4W7qlFElfga6lFYZH/OsbZa0YKMsQ2VJs0Rkf1LVJGfKJXDgxgfsAYmpgDD7mw84u+9QdEFYx7yF/GLZUv25e/pAAAAAElFTkSuQmCC",
         "description": "Allows users to reset their\npasswords with a single use URL.",
@@ -299,11 +270,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:3f25b570-03ef-46ab-93ca-cf5c9ac59c38"]
+            "identifiers": ["uuid:2c273e2d-e36e-48c9-939f-0b64d45c47dd"]
         },
-        "identifiers": ["uuid:d5ad498f-9ca1-416c-bde1-8e6989a0ea2b"],
+        "identifiers": ["uuid:cc3b4b08-033f-439f-9322-b03a984e4300"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "A grouping of related functionality encapsulated behind a well-defined interface",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -312,10 +283,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:e41e7038-fa76-43d5-b4ad-b56a3a1d4feb"],
+            "identifiers": ["uuid:f0b0dcd6-0026-49b2-b34c-b2b9061f40e5"],
             "name": "API Application"
         },
-        "identifiers": ["uuid:b9d9606e-5194-4273-82b6-abf9dc79f8a5"],
+        "identifiers": ["uuid:15379c1c-79f8-4700-84df-2a20e8430388"],
         "name": "Accounts Summary Controller",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAnElEQVR4XmNgGPSgomtuz8TFW/9TA4PMAhu44eCV/9TANDKwe07bmt3H/4PwlgOn/u8+ehYrJkYNyCyggbMbHr7+9B+EP3z98R8XIEYNyCy4gccv3wErvvvoGYbNIECMGhQDCdlOjBqCLgSxYQCXmoF1IbFhiNVAQrYTowarC5EBLhfiUkMfF6KHDzYX4lJDOxcSk0+JUQM2cNADAPKoTnGDsSz/AAAAAElFTkSuQmCC",
         "description": "Provides customers wiht a summary\nof their bank accounts.",
@@ -328,11 +299,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:213c9215-a669-4190-a5e9-883884323f48"]
+            "identifiers": ["uuid:4d23e257-86a8-47c9-9543-0bb1f1897485"]
         },
-        "identifiers": ["uuid:4870b697-24b5-4141-af29-696c957c4c65"],
+        "identifiers": ["uuid:0ff5a74d-d3e2-48c6-b763-5ddb5e2923c9"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "A grouping of related functionality encapsulated behind a well-defined interface",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -341,10 +312,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:e41e7038-fa76-43d5-b4ad-b56a3a1d4feb"],
+            "identifiers": ["uuid:f0b0dcd6-0026-49b2-b34c-b2b9061f40e5"],
             "name": "API Application"
         },
-        "identifiers": ["uuid:76a74f47-9e93-4657-a619-ca616c7db9e0"],
+        "identifiers": ["uuid:2e820cd2-5ee8-40b6-9ce6-8bf02cfdfce5"],
         "name": "Security Component",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACvUlEQVR4Xo2U70tTURjHF0SQb/oDetGLIOhtFBRBRPfe+QOvIjnNfKFRUIEhi1LvObs6jVk6W43t7m6rpZiw/JEOt11NKUvth1qBLyKNwKJEpKIcSC/Sns5ZeufuXbYvfDlw7vf58Jxz7jkGwz/kMB/aLtUwWZLAOT2InSV+70GM2ytwOT4rn6HNp5TPcmy3jNkKD+IUAlj2WYzQd9MEU53niM9DyFkEPtEI5NtPD2YHJMRVugVmj5ZjkAT20loX0G7LhYeBMpiJmGFpsgGWX9uSvDTVALPRi/CIZO7aeAqnJt2zlxNAxA31u4ph/jHSAf7nhScYwq4TQBkqkND7RlrLdeF0PXKnnACZ3gQQc7cHvaW6YLoekEuB7L1fBcqIrbvvKNQF03XP9eMgI0ZUgRLmSgL12bpgug5Ys0HCTHECaGH30tNaHBd14VSeG7PD1AMnzD9rhsUxMX7SSb8PGAxbyOSX6d4LuuJUtns7IA9FobvTDx+Gq4Fs1yJlqEAq8i92RKUSXTF17GUjLDxvgm+TV8Hf1gpFteE48NSVEAT8dhhtP9ORi8M7k4HYyNNb8P1FvQ54L3gLCnAEygiAgrQutIS+knGVx8pBFWi1Ht0qI+7TRPCsDljnCmohMR5FJ8i4oplP3BYqejfpaf+YSO4y9qoRTGvLpLAcHN1F8/k4XJCAKYNJMKouq2kbOZx39C5ru8zHfwtpZ+t53hrOWAfygjKykaXKjY1HCHT1LXkc1mGfnzaDSVQ7XKGdUVg+Uq5tWO6sqXp4h5YXF3n3BH9tJswNVcWB5pbujfu0iZUuLUuVR2Bv+MVMeNNfCaMRN1Q09UBNS1sKSPQ3AQXJOMOj8D4tJ0mSwFSR5f9S5JPxF2W8/fSKrcXhIMUf12DTeYJyWFu3qbyY20+gY9StYtYBOkdAMgXyKFKtzf8BuGNBRexfor0AAAAASUVORK5CYII=",
         "description": "Provides functionality related to\nsigning in, changing passwords, etc.",
@@ -357,11 +328,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:8a2958ea-900d-481f-85d0-00ddc68008f7"]
+            "identifiers": ["uuid:f2bb3386-68df-4846-a5ab-291902d59243"]
         },
-        "identifiers": ["uuid:925d056f-13d7-4368-9034-df643d8f2a3c"],
+        "identifiers": ["uuid:d4d7e8c9-5483-415c-a903-1c72b0b9e31e"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "A grouping of related functionality encapsulated behind a well-defined interface",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -370,10 +341,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:e41e7038-fa76-43d5-b4ad-b56a3a1d4feb"],
+            "identifiers": ["uuid:f0b0dcd6-0026-49b2-b34c-b2b9061f40e5"],
             "name": "API Application"
         },
-        "identifiers": ["uuid:9ed6d591-21ac-4dc3-9302-85e78f642acf"],
+        "identifiers": ["uuid:e045db9f-785a-4267-bc61-7608da8d27f5"],
         "name": "E-mail Component",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAvUlEQVR4XmNgGHlg1Yx9dSf23vtPDQwyi2HTkhN1d65++k8NDDKLYcOiY1QzEGQWw6pZB+qO7rz9/9zRJxgKiMUgvUd23vq/evbBeriXL518ARa8eOI5hgZcGKTn6K7bYBrEB3sZPQzPH3v6H+Tiq2dfYxgAwyA5kEHnjz5FEcdqIAyfPvgQ7OIbF97BxW5efPf/2O47YDl09QQNhOGT++7/P77nLhif3H8fQ55kA0nBowZSjsEGUr1wGHkAAHgfzdXGR+ZAAAAAAElFTkSuQmCC",
         "description": "Sends e-mails to users.",
@@ -386,11 +357,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:25e6ae8a-8d01-4093-be5f-3e1a45e43376"]
+            "identifiers": ["uuid:e72faa54-b267-4cd5-985f-01334f7ba3f1"]
         },
-        "identifiers": ["uuid:2bba2ec4-a62a-4c35-a9cb-5d3a0981be0e"],
+        "identifiers": ["uuid:fab20e85-2db1-4bba-aeb1-af4a740efe16"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "A grouping of related functionality encapsulated behind a well-defined interface",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -399,10 +370,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:e41e7038-fa76-43d5-b4ad-b56a3a1d4feb"],
+            "identifiers": ["uuid:f0b0dcd6-0026-49b2-b34c-b2b9061f40e5"],
             "name": "API Application"
         },
-        "identifiers": ["uuid:ced81f62-780b-4d39-82df-42510138c46c"],
+        "identifiers": ["uuid:fb7da33c-1505-445a-a998-bc262ac41f3c"],
         "name": "com.bigankplc.internetbanking.component.mainframe",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACqklEQVR4Xr2Ty0+TQRTFP0XrRgk7wZUGKPKKkErCQ5KCgFKkhRIoYiN9EKAIkYVAwkKKMfIIPlBQNICFJgRrCYLGKBJYGTfCWiT+A/4Nkp8zEJRvUFjpSW7m9pxz78ydb6pp/x2VRJy6znEZmp+Dqrwv4lqI1DQOnG7AbmwgGO8jEOejN7aRvliRGxuZTKynTHq2vHsg3ctYSh2Pz9SxmlqH21TPYdWTXIlBeLwZPr5W9ENmMyHVswmzi6isWoZkLtaJvcaTG3m72XjxHhpug7mJo6pHkyMUOFktrGHyvJN+Vd1GcTFHLjpJKK7l241ONi65+CJrVZ9mdWAvrcZVKT6CqtntxJRVcUvEQLWXT1d8YHFgNJs5JGq8pQ5sao1WXU6w/g93drmcHkcFIbFRgohop4Ow5yof5UmlLjhDtZ1JXZE8lcfGcx0p4LXS5y7FJrSwx8oxyTnFaUWuuxK3lYBustYLxDRb6Nnh0VqKiWyx8ErwM9cs2MQabhdNW0tIbLLQpXh7BRf9i+gUDduK9A07CqhqL8QqGwstLH7bOsQquJdtO4sFBNer4+Rx/fn6kW/mU9ptplbmftG0K49wdx42fx53dvo29TxlZIn+XIJPTb8/yr0SlgZr+H43G9dALmVCn+0/p59Cwp+MQdaqvPYwE/twJq6Q2OlRDieGc1h7UsSH+9mUPMimYti8+/FK71AWnsEsylVNQzzO0VzWh3xsjGWzPpyhvycV4yYGRjMIjJ9lRdaqujabRtRUEwQXYMrDD7/297/esnjQ02lbdz6dzkgoeffpNzGfxcyCB+ZMrL1Owv15x51uQxQb3qTgnU9hRawjc6k8Uz06vI0jUo6wkEj5YgLBJSOBpXj6ZCwamZDcuyRs0iO9av2+CGlELJ8kWobMVf2f4yd8e3ogbU/QgQAAAABJRU5ErkJggg==",
         "description": "A facade onto the mainframe\nbanking system.",
@@ -415,10 +386,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:ced81f62-780b-4d39-82df-42510138c46c"],
+            "identifiers": ["uuid:fb7da33c-1505-445a-a998-bc262ac41f3c"],
             "name": "com.bigankplc.internetbanking.component.mainframe"
         },
-        "identifiers": ["uuid:816f15c9-a6b0-4231-8db9-68f099d54006"],
+        "identifiers": ["uuid:6f3592ee-8300-47c6-848f-bdba5ce268d9"],
         "name": "AbstractRequest",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABVElEQVR4XtWRzUrDQBSF+yi+gSMWrVLtvIB7t2Ir/kRNJdIUo0QkiAgWDKFCKNbutGlUKO40WwU3gmmDiuJTmK6uXptuZiCZhRsPfDAD3zmLmVTqX6amEV2UU50MsX0uNW0YXHMG2vZsLOjZGqFsnwuKny/nEPaeYhEetLeI0CB6QoMnZQIfgQNfof9L2ItgzuhVVYFBSx2Bu7YBj/dnfR4iBvcI9EyRwePSKLiNItxcGbGgZ6ppyva5HG2m4T244N6MBb2KIjB4sDEGb93kQfT2lQxl+1wMeRxeO63ET0FvTxYY3F3LgNuswK3nxIKeLjK4LU1A1dqBesOKBT1NEhgsL09C4De5N2NBT5WylO1zURaz0PUdboAFvR8o2+dSXJiCzvNl4qegJ4sMrhemoW6X4Lp12MeNGNwj0JPzlLJ9Lqv5nLcyn/OW5uJBTy5Qwvb/NN9eckvLtBJ6KAAAAABJRU5ErkJggg==",
         "location": "references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/7WUxxUmOBlSPoxcwmfUW-28/index.html",
@@ -430,11 +401,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:cab0d177-a787-4ad2-bb74-7d28e222772c"]
+            "identifiers": ["uuid:1661e502-bdf9-44f1-a6a7-58b0518aaca4"]
         },
-        "identifiers": ["uuid:1455ffaa-9128-486e-951c-fd163b124f75"],
+        "identifiers": ["uuid:b62b93fb-f977-44e3-88b5-46fd12e6e298"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "Code elements (e.g. classes, interfaces, objects, functions, database tables, etc) within a component",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -443,10 +414,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:ced81f62-780b-4d39-82df-42510138c46c"],
+            "identifiers": ["uuid:fb7da33c-1505-445a-a998-bc262ac41f3c"],
             "name": "com.bigankplc.internetbanking.component.mainframe"
         },
-        "identifiers": ["uuid:31610910-4cbc-4e8a-8171-45b2b063eab2"],
+        "identifiers": ["uuid:6aaddbd5-5942-4af6-8c63-804d8d71f5de"],
         "name": "AbstractResponse",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABVElEQVR4XtWRzUrDQBSF+yi+gSMWrVLtvIB7t2Ir/kRNJdIUo0QkiAgWDKFCKNbutGlUKO40WwU3gmmDiuJTmK6uXptuZiCZhRsPfDAD3zmLmVTqX6amEV2UU50MsX0uNW0YXHMG2vZsLOjZGqFsnwuKny/nEPaeYhEetLeI0CB6QoMnZQIfgQNfof9L2ItgzuhVVYFBSx2Bu7YBj/dnfR4iBvcI9EyRwePSKLiNItxcGbGgZ6ppyva5HG2m4T244N6MBb2KIjB4sDEGb93kQfT2lQxl+1wMeRxeO63ET0FvTxYY3F3LgNuswK3nxIKeLjK4LU1A1dqBesOKBT1NEhgsL09C4De5N2NBT5WylO1zURaz0PUdboAFvR8o2+dSXJiCzvNl4qegJ4sMrhemoW6X4Lp12MeNGNwj0JPzlLJ9Lqv5nLcyn/OW5uJBTy5Qwvb/NN9eckvLtBJ6KAAAAABJRU5ErkJggg==",
         "location": "references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/7WUxxUmOBlSPoxcwmfUW-30/index.html",
@@ -458,11 +429,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:e53515ad-f6bd-4e06-b485-a92c9f137883"]
+            "identifiers": ["uuid:9f9dd298-c970-4025-b6c3-ed584029dcde"]
         },
-        "identifiers": ["uuid:da989832-90b5-47cc-91ed-1f65ae98026c"],
+        "identifiers": ["uuid:ef8336fd-929c-400c-9779-e6a0bca87ea0"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "Code elements (e.g. classes, interfaces, objects, functions, database tables, etc) within a component",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -471,10 +442,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:ced81f62-780b-4d39-82df-42510138c46c"],
+            "identifiers": ["uuid:fb7da33c-1505-445a-a998-bc262ac41f3c"],
             "name": "com.bigankplc.internetbanking.component.mainframe"
         },
-        "identifiers": ["uuid:71962c29-9e2e-4369-84ba-8adaf591d10a"],
+        "identifiers": ["uuid:74cf441f-f3b8-4a59-97cd-433c5c85143f"],
         "name": "BankingSystemConnection",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABVElEQVR4XtWRzUrDQBSF+yi+gSMWrVLtvIB7t2Ir/kRNJdIUo0QkiAgWDKFCKNbutGlUKO40WwU3gmmDiuJTmK6uXptuZiCZhRsPfDAD3zmLmVTqX6amEV2UU50MsX0uNW0YXHMG2vZsLOjZGqFsnwuKny/nEPaeYhEetLeI0CB6QoMnZQIfgQNfof9L2ItgzuhVVYFBSx2Bu7YBj/dnfR4iBvcI9EyRwePSKLiNItxcGbGgZ6ppyva5HG2m4T244N6MBb2KIjB4sDEGb93kQfT2lQxl+1wMeRxeO63ET0FvTxYY3F3LgNuswK3nxIKeLjK4LU1A1dqBesOKBT1NEhgsL09C4De5N2NBT5WylO1zURaz0PUdboAFvR8o2+dSXJiCzvNl4qegJ4sMrhemoW6X4Lp12MeNGNwj0JPzlLJ9Lqv5nLcyn/OW5uJBTy5Qwvb/NN9eckvLtBJ6KAAAAABJRU5ErkJggg==",
         "location": "references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/7WUxxUmOBlSPoxcwmfUW-20/index.html",
@@ -486,11 +457,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:26849146-d8e1-4817-9bff-2c95b9b6cc38"]
+            "identifiers": ["uuid:ec9efc18-8c45-42f4-bcc9-d6b25619ec6c"]
         },
-        "identifiers": ["uuid:083ce0ee-e3c5-4aee-a48e-1c649e169302"],
+        "identifiers": ["uuid:c87ec50c-38d5-44af-9ff4-b9fbf3a15426"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "Code elements (e.g. classes, interfaces, objects, functions, database tables, etc) within a component",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -499,10 +470,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:ced81f62-780b-4d39-82df-42510138c46c"],
+            "identifiers": ["uuid:fb7da33c-1505-445a-a998-bc262ac41f3c"],
             "name": "com.bigankplc.internetbanking.component.mainframe"
         },
-        "identifiers": ["uuid:a54c2fcf-3f1f-4ebf-a513-6e9c4a052fd0"],
+        "identifiers": ["uuid:540653c5-025d-486d-a1aa-8f2f81c06b01"],
         "name": "GetBalanceRequest",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABVElEQVR4XtWRzUrDQBSF+yi+gSMWrVLtvIB7t2Ir/kRNJdIUo0QkiAgWDKFCKNbutGlUKO40WwU3gmmDiuJTmK6uXptuZiCZhRsPfDAD3zmLmVTqX6amEV2UU50MsX0uNW0YXHMG2vZsLOjZGqFsnwuKny/nEPaeYhEetLeI0CB6QoMnZQIfgQNfof9L2ItgzuhVVYFBSx2Bu7YBj/dnfR4iBvcI9EyRwePSKLiNItxcGbGgZ6ppyva5HG2m4T244N6MBb2KIjB4sDEGb93kQfT2lQxl+1wMeRxeO63ET0FvTxYY3F3LgNuswK3nxIKeLjK4LU1A1dqBesOKBT1NEhgsL09C4De5N2NBT5WylO1zURaz0PUdboAFvR8o2+dSXJiCzvNl4qegJ4sMrhemoW6X4Lp12MeNGNwj0JPzlLJ9Lqv5nLcyn/OW5uJBTy5Qwvb/NN9eckvLtBJ6KAAAAABJRU5ErkJggg==",
         "location": "references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/7WUxxUmOBlSPoxcwmfUW-26/index.html",
@@ -514,11 +485,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:7da864f8-b216-4014-9373-9c351981b12e"]
+            "identifiers": ["uuid:00bfcdce-7e42-4981-87c4-e92926ac9862"]
         },
-        "identifiers": ["uuid:3a62e9b3-9d2b-4f5a-ab5c-c06efc4a059e"],
+        "identifiers": ["uuid:e5bd322a-f631-49a3-aa09-d270b4addeae"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "Code elements (e.g. classes, interfaces, objects, functions, database tables, etc) within a component",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -527,10 +498,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:ced81f62-780b-4d39-82df-42510138c46c"],
+            "identifiers": ["uuid:fb7da33c-1505-445a-a998-bc262ac41f3c"],
             "name": "com.bigankplc.internetbanking.component.mainframe"
         },
-        "identifiers": ["uuid:f00126f6-1918-475b-a769-c65fe4fc11d9"],
+        "identifiers": ["uuid:2757af38-285a-42ac-b456-5805eab2d3b2"],
         "name": "GetBalanceResponse",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABVElEQVR4XtWRzUrDQBSF+yi+gSMWrVLtvIB7t2Ir/kRNJdIUo0QkiAgWDKFCKNbutGlUKO40WwU3gmmDiuJTmK6uXptuZiCZhRsPfDAD3zmLmVTqX6amEV2UU50MsX0uNW0YXHMG2vZsLOjZGqFsnwuKny/nEPaeYhEetLeI0CB6QoMnZQIfgQNfof9L2ItgzuhVVYFBSx2Bu7YBj/dnfR4iBvcI9EyRwePSKLiNItxcGbGgZ6ppyva5HG2m4T244N6MBb2KIjB4sDEGb93kQfT2lQxl+1wMeRxeO63ET0FvTxYY3F3LgNuswK3nxIKeLjK4LU1A1dqBesOKBT1NEhgsL09C4De5N2NBT5WylO1zURaz0PUdboAFvR8o2+dSXJiCzvNl4qegJ4sMrhemoW6X4Lp12MeNGNwj0JPzlLJ9Lqv5nLcyn/OW5uJBTy5Qwvb/NN9eckvLtBJ6KAAAAABJRU5ErkJggg==",
         "location": "references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/7WUxxUmOBlSPoxcwmfUW-24/index.html",
@@ -542,11 +513,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:10e49d83-0896-46c3-8e8c-a2d481c9304f"]
+            "identifiers": ["uuid:94e9b60e-705e-452f-8062-69ce08d378ad"]
         },
-        "identifiers": ["uuid:12e9b493-3990-4ad5-945c-12957d6614e7"],
+        "identifiers": ["uuid:178d1654-f03f-4b3b-833a-2822471fb6ff"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "Code elements (e.g. classes, interfaces, objects, functions, database tables, etc) within a component",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -555,10 +526,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:ced81f62-780b-4d39-82df-42510138c46c"],
+            "identifiers": ["uuid:fb7da33c-1505-445a-a998-bc262ac41f3c"],
             "name": "com.bigankplc.internetbanking.component.mainframe"
         },
-        "identifiers": ["uuid:ea77aada-d199-416d-800b-80eb2eb9b980"],
+        "identifiers": ["uuid:f66493b5-6e32-46fb-882a-7267556531bc"],
         "name": "MainframeBankingSystemException",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABVElEQVR4XtWRzUrDQBSF+yi+gSMWrVLtvIB7t2Ir/kRNJdIUo0QkiAgWDKFCKNbutGlUKO40WwU3gmmDiuJTmK6uXptuZiCZhRsPfDAD3zmLmVTqX6amEV2UU50MsX0uNW0YXHMG2vZsLOjZGqFsnwuKny/nEPaeYhEetLeI0CB6QoMnZQIfgQNfof9L2ItgzuhVVYFBSx2Bu7YBj/dnfR4iBvcI9EyRwePSKLiNItxcGbGgZ6ppyva5HG2m4T244N6MBb2KIjB4sDEGb93kQfT2lQxl+1wMeRxeO63ET0FvTxYY3F3LgNuswK3nxIKeLjK4LU1A1dqBesOKBT1NEhgsL09C4De5N2NBT5WylO1zURaz0PUdboAFvR8o2+dSXJiCzvNl4qegJ4sMrhemoW6X4Lp12MeNGNwj0JPzlLJ9Lqv5nLcyn/OW5uJBTy5Qwvb/NN9eckvLtBJ6KAAAAABJRU5ErkJggg==",
         "location": "references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/7WUxxUmOBlSPoxcwmfUW-22/index.html",
@@ -570,11 +541,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:524d37cb-052a-45e8-ab62-3cbf90cffa7c"]
+            "identifiers": ["uuid:6d8b6041-988e-4071-9203-3777c9324c65"]
         },
-        "identifiers": ["uuid:e4426e88-4e5b-4eba-8377-d359aa881318"],
+        "identifiers": ["uuid:9644fb8c-9d82-45a2-83d6-d44fd1364fb0"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "Code elements (e.g. classes, interfaces, objects, functions, database tables, etc) within a component",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -583,10 +554,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:ced81f62-780b-4d39-82df-42510138c46c"],
+            "identifiers": ["uuid:fb7da33c-1505-445a-a998-bc262ac41f3c"],
             "name": "com.bigankplc.internetbanking.component.mainframe"
         },
-        "identifiers": ["uuid:bcfeab24-a404-4755-ac80-b9f6de85fdcf"],
+        "identifiers": ["uuid:4c56cf1f-d48f-4ee9-8133-7bc3788680b3"],
         "name": "MainframeBankingSystemFacade",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABNElEQVR4XtWPzy4DURSH+yjewBUNJaX3BaytRSv+DC6ZxjSGjDQNkqGpppQaXSnTWlj4M1Ohwgv0jQ5ne25y5yxs/JJv950vOanUv1zgCo9L2xMj9F5b4I7CnT8H3dq8EfRarpD0XhuK32/3MBwOjbCDrV3BCqLHCjZLAr76yUH0LhxGsOGMweNtGaKnGyPo1TnBs51x6FwpeOhUjKBXd9KS3ms7LabhMw61FynoVW1G8Hh7Aj7irhagoHdoZyS911ZRk/AeJQfRKytG8GAjA+1rH8JeaAQ9jxPcs6agerIP582GEfRcixEsrU5D/7WnvUhBz7Gykt5rs5ezEL8kB9H7RdJ7bVtLMxA9JwfRU5zgZmEWan4RgssjI+ipvJT0Xtt6PjdYW8wNVhbMoKcKUtD7P90PtnAru04M1gsAAAAASUVORK5CYII=",
         "location": "references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/7WUxxUmOBlSPoxcwmfUW-5/index.html",
@@ -598,11 +569,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:7ec42863-5648-48ad-ae34-e08044904899"]
+            "identifiers": ["uuid:e2f654c5-bab6-4d25-aa08-68263655d223"]
         },
-        "identifiers": ["uuid:a97edd9f-ca35-41ce-93e9-26366c65ddc6"],
+        "identifiers": ["uuid:d31e10b3-8f99-4bac-bc50-6a8e39c21a15"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "Code elements (e.g. classes, interfaces, objects, functions, database tables, etc) within a component",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -611,10 +582,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:ced81f62-780b-4d39-82df-42510138c46c"],
+            "identifiers": ["uuid:fb7da33c-1505-445a-a998-bc262ac41f3c"],
             "name": "com.bigankplc.internetbanking.component.mainframe"
         },
-        "identifiers": ["uuid:3b5d5cfa-1770-4970-bc58-3a747f9d314e"],
+        "identifiers": ["uuid:5a2d9fbf-ef2e-403d-96f3-e11b900dd06a"],
         "name": "MainframeBankingSystemFacadeImpl",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABVElEQVR4XtWRzUrDQBSF+yi+gSMWrVLtvIB7t2Ir/kRNJdIUo0QkiAgWDKFCKNbutGlUKO40WwU3gmmDiuJTmK6uXptuZiCZhRsPfDAD3zmLmVTqX6amEV2UU50MsX0uNW0YXHMG2vZsLOjZGqFsnwuKny/nEPaeYhEetLeI0CB6QoMnZQIfgQNfof9L2ItgzuhVVYFBSx2Bu7YBj/dnfR4iBvcI9EyRwePSKLiNItxcGbGgZ6ppyva5HG2m4T244N6MBb2KIjB4sDEGb93kQfT2lQxl+1wMeRxeO63ET0FvTxYY3F3LgNuswK3nxIKeLjK4LU1A1dqBesOKBT1NEhgsL09C4De5N2NBT5WylO1zURaz0PUdboAFvR8o2+dSXJiCzvNl4qegJ4sMrhemoW6X4Lp12MeNGNwj0JPzlLJ9Lqv5nLcyn/OW5uJBTy5Qwvb/NN9eckvLtBJ6KAAAAABJRU5ErkJggg==",
         "location": "references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/MainframeBankingSystemFacadeImpl/index.html",
@@ -626,11 +597,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:ab300e68-9599-4e27-8ad2-63f04ba5721a"]
+            "identifiers": ["uuid:7e83258d-7514-4b60-a0ad-c942a4c4de50"]
         },
-        "identifiers": ["uuid:7194b18c-1e9c-4d59-8fce-358e0a7adcd0"],
+        "identifiers": ["uuid:a883f518-3e78-4061-ae9f-a7c0ee6d1920"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "Code elements (e.g. classes, interfaces, objects, functions, database tables, etc) within a component",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -639,11 +610,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:5184b1f8-2aa4-4962-81e6-0f6be8800f5b"]
+            "identifiers": ["uuid:b9149a45-2efb-4bb4-95aa-dd8ddf25c125"]
         },
-        "identifiers": ["uuid:dbe15fa8-afe3-4d77-a5f7-b27c2efd64ea"],
+        "identifiers": ["uuid:03035ab4-5e87-438f-b913-3c5cdd90ea0d"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "A grouping of related functionality encapsulated behind a well-defined interface",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -652,51 +623,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:409be2c3-5d7f-4588-bc46-3c3f9e4a11e1"]
+            "identifiers": ["uuid:a732993a-6ccd-48a7-8132-53452f7aaeb3"]
         },
-        "identifiers": ["uuid:93468e82-cb9b-466e-aff1-0b568bac6c1c"],
+        "identifiers": ["uuid:f3e7eb41-6270-4188-8e0b-ea51899bb275"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
-        "type": {
-            "name": "Link",
-            "ns-uri": "ecore://nasdanika.org/html/app"
-        }
-    },
-    {
-        "container": {
-            "reference": "decorator",
-            "identifiers": ["uuid:f356a16b-7f23-4ad4-be40-7b4d6ce72bb4"]
-        },
-        "identifiers": ["uuid:818ce32e-7b18-4172-b374-407ac927e286"],
-        "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
-        "type": {
-            "name": "Link",
-            "ns-uri": "ecore://nasdanika.org/html/app"
-        }
-    },
-    {
-        "container": {
-            "reference": "outgoingConnections",
-            "identifiers": ["uuid:7c1bd846-0303-4056-b31e-588d021aa2dd"],
-            "name": "Internet Banking System"
-        },
-        "identifiers": ["uuid:1ed7fd59-f0e5-4deb-98e9-3a192ec16f06"],
-        "name": "Sends e-mail using",
-        "location": "references/elements/internet-banking-system/references/outgoingConnections/1e7nVNDuG98w-bPDKReN-11/index.html",
-        "type": {
-            "name": "Relationship",
-            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
-        }
-    },
-    {
-        "container": {
-            "reference": "decorator",
-            "identifiers": ["uuid:dad19cc5-a2cf-4238-8d87-20785b53d4d3"]
-        },
-        "identifiers": ["uuid:aaeca852-66c9-434a-8616-1eb3d998580e"],
-        "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "Represents an application or a data store",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -705,10 +636,79 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:f312de14-9bbc-4db7-ad8f-4aac94e38bb7"],
+            "identifiers": ["uuid:b7ab1740-b44c-4893-a426-e3ef261fd44c"],
+            "name": "Internet Banking System"
+        },
+        "identifiers": ["uuid:4a87050d-83cd-4160-a457-d8f4e7ee624d"],
+        "name": "Database",
+        "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAUCAYAAABroNZJAAAD4ElEQVR4Xo3U20+aZxwHcLLsZmmyZc0u9mfsYhfbVXexxW22IVgVwUMHWsVDUUQOIoeXF1+El5PIQUQOIocgRdSioq2gdVVrRDpju+qWblm6bO1Nk110W5Mt372SlFSXJv3ePFffT578nl8eFouJxWI5N+6PV0USadlEKD455gsVJqcSpalY6kE4mnyUyiwdpOZulCbCsUW7yz/u9Ab7M9ncp9vbj9856bMSqUx/cvbGM+uYDwqtEX0KAgMqA9SkCWaHB77gNBKpOcwvrmBlbR2FzS2s3CogMBXDqGfy6dHRz72scHTmhVimgbBLClHfIMQybRkZIkago6ygaCcsznGM+cJMMYH4TAazC0tYXs1jNX8b3x3+8IxFmuwPdMM0ZCo9BoZIpmjDEElDO2yF3jQKyuoC7fTB7gnCG4giEEliOjmPhWXmVt+WcPfe8S5LT9nScpUObaIecOp4KB3ch1JDgtNwBfUtHeAJunH1mgISJQkt5YDNHUIglkE6W8Da5j52S8cRls5gJl9FdnaLUBMUvmLX4+LlRnB4Qlzp6EOvXMcgdtg8p5Gd0pGCpdJRDa8it/Ib0FP0myP7Dy+xJBLi/KDG8PdLJDOfhZF2vBFy8/be82Lx0XsspXLkfatz/EWjoAPsOj4isSQsDvfrEWYmNk8YEoUO1+eWnx88eXKuvCsM8hthtKOuWwuuygM+OVU+u0eCkNBMwR5HqymOmsFxfN2pRxWvg3k9G7b37v9UBk5CUNaCUq3HoN4MKeWFkPSjVhsGWxcFm4jjonoKNaoJCLUeqG1BRGYWkcvfxXbx4WIF0ZFmj1QxhGZBOzR6Cl5/GHyBCE1tYrSI+tEl1UBFWkDZvHD7Y0jMMttb2MXW3vfmCqIhTfyXiFSuQigSRzWHW5nJNyIJ+pktHra44QnEy0iOQbZ3DzkVxO4NXdAaTGWkvasXkXgKl2p4r0fSOVxfuIn9gx8/qSAyGfGh3R34t1msRkNbL2LJNNi1/P8hJO2GzuZHr4ZG4c7+P8Xi8QcV5DOCeHvQYH8qpqfBp+fAd+TQ5cpCNTEPMpSFOrQCkXcF1foU2h1zCOf2sb5z+BjAWxXkJEqNMX+1Xwd2jwHm5CZqLVnUOvOod22A61pHs2sNA8EC7MkCUst3GOQgeQo4SY9k6OOO7r4/OdwmBKMzuCwU48uma6hulaNZQqKPGIXRGUQgmsH80sZf61v3PjprlNMi7PycXcv73e0LgNskRHUNvzyTVuavkWmMMI/64Z9O/5paWP3ibPdUqqrqztNOj7yuUbDOIL+wuYI/hJ3SI2awC8NWr2hsLPbu2c5/5b/23Os+l1QAAAAASUVORK5CYII=",
+        "description": "Stores user registration information,\nhashed authentication credentials,\naccess logs, etc.",
+        "location": "references/elements/internet-banking-system/references/elements/GtTa-R8eM8jf3LrMbg5p-3/index.html",
+        "type": {
+            "name": "Container",
+            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:de9b9b61-fb54-4de6-9617-d878afacd960"]
+        },
+        "identifiers": ["uuid:e9ef074a-375e-44a2-b2ef-ba8092072815"],
+        "icon": "far fa-question-circle",
+        "description": "Represents an application or a data store",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:bfa3ac19-b4f2-421d-9ce1-e0af4e1e0a60"]
+        },
+        "identifiers": ["uuid:9f56a903-cc62-4660-b659-26cd35971f81"],
+        "icon": "far fa-question-circle",
+        "description": "The highest level of abstraction describing something that delivers value to its users",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "outgoingConnections",
+            "identifiers": ["uuid:b7ab1740-b44c-4893-a426-e3ef261fd44c"],
+            "name": "Internet Banking System"
+        },
+        "identifiers": ["uuid:58e9956e-9c7d-465b-a56e-a51eae19e3ec"],
+        "name": "Sends e-mail using",
+        "location": "references/elements/internet-banking-system/references/outgoingConnections/send-email-using/index.html",
+        "type": {
+            "name": "Relationship",
+            "ns-uri": "ecore://nasdanika.org/models/architecture/c4"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:04049793-5759-4eb6-82e9-3df63896e137"]
+        },
+        "identifiers": ["uuid:e8ca22ed-bbcc-499c-a7c3-870f642f2d4f"],
+        "icon": "far fa-question-circle",
+        "description": "Connects architecture elements",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:608b0e8d-bd21-45b2-b4d9-bc9e1d83488a"],
             "name": "Internet Banking System Architecture"
         },
-        "identifiers": ["uuid:c3d0495d-20a1-4695-a4c1-2278d3b6ee22"],
+        "identifiers": ["uuid:75ff5e2d-e540-456d-a239-cb354f05bf84"],
         "name": "Mainframe Banking System",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABSElEQVR4Xu2UzU7CQBSF+0qF/lAXJgKh2FJNWwMIrRq6YMFOTdy6dKNbVyYad8RobHg3luM9IzRwmZYH0Em+tOGc++Um06Bp/2d99KPwtdaO5yqQ8X5xnGgSOmF2yzG6w6UTZUKFzBQzcGmtZJY/Pb8JTuP4nAbVION9AJd22J/mV9f3gmN5I9pmogQZ7wO4tE46y1/ePwSnQUMGtlSAjPcBXOUb0qB9eqkEGe/v3dDuDoTejJQg4/1iQ7q1nN8i0FtxIai1zySFlDLeX1EurLsDUe/0pcCKpxK84zfDHe709wrxeVi9VEoeAl8i5X4iM95XCps3j1tCPE1/LHw3Eh5heuOtjM/sCDep2KIq+xVaQSqs4ELYJ6tPg54VQzLb7GIWDik8CLM7+li/TcLqJZ/A8EZfdKsLYl7CAp11H7NwwMX/K/7A+QEiEgjtcF++ZAAAAABJRU5ErkJggg==",
         "description": "Stores all of the core banking\ninformation about customers,\naccounts, transactions, etc.",
@@ -721,11 +721,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:eb400905-3c98-4f34-8109-59a9e9221557"]
+            "identifiers": ["uuid:9d659d24-cf3a-4d4e-a18f-0865fac2e515"]
         },
-        "identifiers": ["uuid:03a2b0d2-a731-4b51-9e6a-bab89a00f5c4"],
+        "identifiers": ["uuid:a760aadf-f0ec-489e-9b42-df001dde674a"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "The highest level of abstraction describing something that delivers value to its users",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -734,10 +734,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:f312de14-9bbc-4db7-ad8f-4aac94e38bb7"],
+            "identifiers": ["uuid:608b0e8d-bd21-45b2-b4d9-bc9e1d83488a"],
             "name": "Internet Banking System Architecture"
         },
-        "identifiers": ["uuid:9d0cc68c-82cd-44bc-bac1-12aa6cb12f5d"],
+        "identifiers": ["uuid:05c1b155-a28c-475b-ac41-4d2db2134e1e"],
         "name": "Personal Banking Customer",
         "icon": "https://img.icons8.com/officel/16/user.png",
         "description": "A customer of the bank, with personal bank accounts.",
@@ -750,11 +750,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:c5924e58-4fb2-479e-977e-cc48e8eaebf5"]
+            "identifiers": ["uuid:0276fcdc-487e-4ff7-9f77-4c1f9b59465e"]
         },
-        "identifiers": ["uuid:43be284c-9f3a-4c03-bf8e-371b61f3b36b"],
+        "identifiers": ["uuid:004652ff-cff9-49c8-9e22-ebca37cc1f62"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "Represents human users of a software system",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"
@@ -763,11 +763,11 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:0a31f83b-7e91-4fd9-ad1f-bb2660d58ed3"]
+            "identifiers": ["uuid:cd7b3f75-eb74-4803-9ca4-efd8431eab4d"]
         },
-        "identifiers": ["uuid:89eeecbc-82d8-4dc8-a36e-ad20ccc2a4e7"],
+        "identifiers": ["uuid:3d422808-c5ff-4e00-bab5-073851cc9bd1"],
         "icon": "far fa-question-circle",
-        "description": "A graph element which is also a graph",
+        "description": "A grouping of architecture elements",
         "type": {
             "name": "Link",
             "ns-uri": "ecore://nasdanika.org/html/app"

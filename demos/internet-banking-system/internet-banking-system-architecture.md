@@ -86,4 +86,8 @@ It is linked to the "Container Diagram" page. As such, its semantic element is m
 
 ## Generation
 
-This site was generated with [85 lines of Java code](https://github.com/Nasdanika-Models/architecture/blob/main/demos/internet-banking-system/src/test/java/org/nasdanika/models/architecture/demos/ibs/tests/TestInternetBankingSystemSiteGen.java#L33) in a JUnit test.
+This site was generated with a [JUnit test](https://github.com/Nasdanika-Models/architecture/blob/main/demos/internet-banking-system/src/test/java/org/nasdanika/models/architecture/demos/ibs/tests/TestInternetBankingSystemSiteGen.java#L33).
+
+Another way to generate documentation site is to use [Nasdanika CLI](https://docs.nasdanika.org/nsd-cli/index.html) [app/model/site](https://docs.nasdanika.org/nsd-cli/nsd/app/model/site/index.html) command
+or [app/model/action](https://docs.nasdanika.org/nsd-cli/nsd/app/model/action/index.html) command and then [app/site](https://docs.nasdanika.org/nsd-cli/nsd/app/site/index.html) command.
+

@@ -38,7 +38,7 @@ public class TestC4SiteGen {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("drawio", new ArchitectureDrawioResourceFactory(uri -> resourceSet.getEObject(uri, true)));
 				
-		File diagramFile = new File("c4-in-browser.drawio").getCanonicalFile();
+		File diagramFile = new File("c4.drawio").getCanonicalFile();
 		Resource ibsResource = resourceSet.getResource(URI.createFileURI(diagramFile.getAbsolutePath()), true);
 		
 		// Generating an action model
