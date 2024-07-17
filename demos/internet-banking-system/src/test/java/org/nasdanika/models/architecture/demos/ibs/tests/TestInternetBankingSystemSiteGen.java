@@ -20,8 +20,8 @@ import org.nasdanika.common.MutableContext;
 import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.drawio.Node;
+import org.nasdanika.graph.processor.ProcessorConfig;
 import org.nasdanika.html.model.app.gen.ActionSiteGenerator;
-import org.nasdanika.html.model.app.graph.emf.ActionGenerator;
 import org.nasdanika.html.model.app.graph.emf.EObjectReflectiveProcessorFactoryProvider;
 import org.nasdanika.models.architecture.processors.doc.ArchitectureActionGenerator;
 import org.nasdanika.models.architecture.processors.doc.ArchitectureNodeProcessorFactory;
@@ -80,7 +80,7 @@ public class TestInternetBankingSystemSiteGen {
 				return new EObjectReflectiveProcessorFactoryProvider(reflectiveFactory) {
 					
 					@Override
-					protected boolean isCompactPath() {
+					protected boolean isCompactPath(ProcessorConfig config) {
 						return true;
 						
 					}					
