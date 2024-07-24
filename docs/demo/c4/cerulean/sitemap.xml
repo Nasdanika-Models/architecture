@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" >
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/c4/cerulean//glossary.html</loc>
-    <lastmod>2024-07-14T22:51:05.330-04:00</lastmod>
+    <lastmod>2024-07-23T17:59:39.534-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/c4/cerulean//index.html</loc>
-    <lastmod>2024-07-14T22:51:05.238-04:00</lastmod>
+    <lastmod>2024-07-23T17:59:39.510-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/c4/cerulean//references/elements/9Xhv3QX139gfRowG86oh-1/index.html</loc>
-    <lastmod>2024-07-14T22:51:05.295-04:00</lastmod>
+    <lastmod>2024-07-23T17:59:39.522-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/c4/cerulean//references/elements/9Xhv3QX139gfRowG86oh-1/references/elements/Q9qKH9tl9N2e6UXnhQ6L-3/index.html</loc>
-    <lastmod>2024-07-14T22:51:05.305-04:00</lastmod>
+    <lastmod>2024-07-23T17:59:39.526-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demos/c4/cerulean//references/elements/Q9qKH9tl9N2e6UXnhQ6L-2/index.html</loc>
-    <lastmod>2024-07-14T22:51:05.280-04:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demos/c4/cerulean//references/elements/user/index.html</loc>
+    <lastmod>2024-07-23T17:59:39.514-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demos/c4/cerulean//references/elements/Q9qKH9tl9N2e6UXnhQ6L-2/references/outgoingConnections/9Xhv3QX139gfRowG86oh-3/index.html</loc>
-    <lastmod>2024-07-14T22:51:05.291-04:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demos/c4/cerulean//references/elements/user/references/outgoingConnections/9Xhv3QX139gfRowG86oh-3/index.html</loc>
+    <lastmod>2024-07-23T17:59:39.519-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demos/c4/cerulean//references/elements/Q9qKH9tl9N2e6UXnhQ6L-2/references/outgoingConnections/https/index.html</loc>
-    <lastmod>2024-07-14T22:51:05.287-04:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demos/c4/cerulean//references/elements/user/references/outgoingConnections/https/index.html</loc>
+    <lastmod>2024-07-23T17:59:39.520-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/c4/cerulean//search.html</loc>
-    <lastmod>2024-07-14T22:51:05.315-04:00</lastmod>
+    <lastmod>2024-07-23T17:59:39.528-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

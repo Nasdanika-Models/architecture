@@ -1,6 +1,6 @@
 [
     {
-        "identifiers": ["uuid:a81b5fb6-95d3-4274-ab21-4952cb704ec4"],
+        "identifiers": ["uuid:e0d73076-c9f4-4b36-9b0a-847f74588981"],
         "name": "Nasdanika Architecture Models",
         "icon": "https://docs.nasdanika.org/images/nasdanika-logo.png",
         "location": "https://architecture.models.nasdanika.org/",
@@ -12,9 +12,9 @@
     {
         "container": {
             "reference": "children",
-            "identifiers": ["uuid:a81b5fb6-95d3-4274-ab21-4952cb704ec4"]
+            "identifiers": ["uuid:e0d73076-c9f4-4b36-9b0a-847f74588981"]
         },
-        "identifiers": ["uuid:e21e01cf-2eb0-4810-bed6-d70aef7aa621"],
+        "identifiers": ["uuid:5299cfdc-3597-47d2-b846-6f68c188867c"],
         "name": "Search",
         "icon": "fas fa-search",
         "location": "search.html",
@@ -26,9 +26,9 @@
     {
         "container": {
             "reference": "children",
-            "identifiers": ["uuid:a81b5fb6-95d3-4274-ab21-4952cb704ec4"]
+            "identifiers": ["uuid:e0d73076-c9f4-4b36-9b0a-847f74588981"]
         },
-        "identifiers": ["uuid:e4ac350c-f27d-46bd-9711-6314b7e3b75d"],
+        "identifiers": ["uuid:dc5809d0-4eb7-419f-bd16-a81ec4228547"],
         "name": "Glossary",
         "icon": "fas fa-book",
         "location": "glossary.html",
@@ -40,9 +40,9 @@
     {
         "container": {
             "reference": "navigation",
-            "identifiers": ["uuid:a81b5fb6-95d3-4274-ab21-4952cb704ec4"]
+            "identifiers": ["uuid:e0d73076-c9f4-4b36-9b0a-847f74588981"]
         },
-        "identifiers": ["uuid:f527050a-a985-424a-b2e7-8a3fc8fa3d9e"],
+        "identifiers": ["uuid:7f417e46-45a0-4414-bcb3-65fd0553f29e"],
         "name": "Sources",
         "icon": "fab fa-github",
         "location": "https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system",
@@ -54,9 +54,9 @@
     {
         "container": {
             "reference": "navigation",
-            "identifiers": ["uuid:a81b5fb6-95d3-4274-ab21-4952cb704ec4"]
+            "identifiers": ["uuid:e0d73076-c9f4-4b36-9b0a-847f74588981"]
         },
-        "identifiers": ["uuid:1acc0da9-309b-4ed2-861e-6c54d049f30e"],
+        "identifiers": ["uuid:15196413-4ca9-4f14-96d1-a2aafa4e0d0b"],
         "icon": "https://img.icons8.com/fluency/16/icons8-new-logo.png",
         "description": "Icons from ICONS8",
         "location": "https://icons8.com/",
@@ -66,7 +66,7 @@
         }
     },
     {
-        "identifiers": ["uuid:d49b3a24-b383-4235-a486-97301f15560a"],
+        "identifiers": ["uuid:a2657ae6-f82c-45a3-a260-36c64b591c6f"],
         "name": "C4 Template",
         "location": "index.html",
         "type": {
@@ -77,10 +77,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:d49b3a24-b383-4235-a486-97301f15560a"],
+            "identifiers": ["uuid:a2657ae6-f82c-45a3-a260-36c64b591c6f"],
             "name": "C4 Template"
         },
-        "identifiers": ["uuid:e062578d-0d08-4dbb-9bb9-8288b950e074"],
+        "identifiers": ["uuid:e1cbb089-8abc-47cf-a5d3-84550b01bfef"],
         "name": "Person",
         "location": "references/elements/user/index.html",
         "type": {
@@ -91,9 +91,9 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:89073a2e-7578-48b5-adce-12fadd116884"]
+            "identifiers": ["uuid:8cfd3287-408b-4961-ac40-2b7fff78cfa7"]
         },
-        "identifiers": ["uuid:59b96401-94ad-4c5e-b44e-626f7351919c"],
+        "identifiers": ["uuid:4820a42f-d80a-4ac6-89cc-461ec5f6e347"],
         "icon": "far fa-question-circle",
         "description": "Represents human users of a software system",
         "type": {
@@ -104,10 +104,10 @@
     {
         "container": {
             "reference": "outgoingConnections",
-            "identifiers": ["uuid:e062578d-0d08-4dbb-9bb9-8288b950e074"],
+            "identifiers": ["uuid:e1cbb089-8abc-47cf-a5d3-84550b01bfef"],
             "name": "Person"
         },
-        "identifiers": ["uuid:405182a4-8f3b-475e-99c7-c1d5a7888f85"],
+        "identifiers": ["uuid:c06bdc24-27ad-4902-946a-73ad00a6a5d9"],
         "name": "HTTPS",
         "location": "references/elements/user/references/outgoingConnections/https/index.html",
         "type": {
@@ -118,9 +118,9 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:b0045635-184f-4063-b0ae-819e35eb4bae"]
+            "identifiers": ["uuid:c4ac705e-50b8-45a8-b052-26abff8d9434"]
         },
-        "identifiers": ["uuid:22bb1777-d670-4807-9a38-aed904d3c814"],
+        "identifiers": ["uuid:9ac9d813-11f1-4499-9ecb-cd7b13bd9380"],
         "icon": "far fa-question-circle",
         "description": "Connects architecture elements",
         "type": {
@@ -131,10 +131,10 @@
     {
         "container": {
             "reference": "outgoingConnections",
-            "identifiers": ["uuid:e062578d-0d08-4dbb-9bb9-8288b950e074"],
+            "identifiers": ["uuid:e1cbb089-8abc-47cf-a5d3-84550b01bfef"],
             "name": "Person"
         },
-        "identifiers": ["uuid:236440c1-c548-4225-bba0-30b770237ebf"],
+        "identifiers": ["uuid:bfc1f052-9136-4ade-9aec-ed517c1e8a66"],
         "name": "Relationship",
         "location": "references/elements/user/references/outgoingConnections/9Xhv3QX139gfRowG86oh-3/index.html",
         "type": {
@@ -145,9 +145,9 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:404e9ace-eba3-4450-a598-6d839c7cccfc"]
+            "identifiers": ["uuid:454b69cd-e0ea-49c0-9c11-87f07e498a2d"]
         },
-        "identifiers": ["uuid:7416ad40-dfec-4744-9bbf-e085563c3b9e"],
+        "identifiers": ["uuid:f9b323d4-cfb7-42e8-aea1-97585dcc81de"],
         "icon": "far fa-question-circle",
         "description": "Connects architecture elements",
         "type": {
@@ -158,10 +158,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:d49b3a24-b383-4235-a486-97301f15560a"],
+            "identifiers": ["uuid:a2657ae6-f82c-45a3-a260-36c64b591c6f"],
             "name": "C4 Template"
         },
-        "identifiers": ["uuid:0105ff77-e679-48fd-b6d9-3be7b7fdcd27"],
+        "identifiers": ["uuid:0b9d32aa-3b0d-4d6d-bc0e-eed48c7175a1"],
         "name": "System",
         "location": "references/elements/9Xhv3QX139gfRowG86oh-1/index.html",
         "type": {
@@ -172,10 +172,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:0105ff77-e679-48fd-b6d9-3be7b7fdcd27"],
+            "identifiers": ["uuid:0b9d32aa-3b0d-4d6d-bc0e-eed48c7175a1"],
             "name": "System"
         },
-        "identifiers": ["uuid:07a34b37-3416-4002-981a-af7e9a595d1f"],
+        "identifiers": ["uuid:d2e31176-b3d7-4598-a0b0-d2f9f56fd856"],
         "name": "Container",
         "location": "references/elements/9Xhv3QX139gfRowG86oh-1/references/elements/Q9qKH9tl9N2e6UXnhQ6L-3/index.html",
         "type": {
@@ -186,9 +186,9 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:ad4b747e-8012-4d54-a7dc-9654bc117efd"]
+            "identifiers": ["uuid:5765945b-bc61-4b8a-88fe-f2ad43a6e336"]
         },
-        "identifiers": ["uuid:3c6ffe7b-641c-4759-977f-e6dae93b05e4"],
+        "identifiers": ["uuid:0e1f493f-af94-428b-bf75-bd24ac7d45a8"],
         "icon": "far fa-question-circle",
         "description": "Represents an application or a data store",
         "type": {
@@ -199,9 +199,9 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:29225d13-ae6c-493f-ae63-1340d34d557a"]
+            "identifiers": ["uuid:8543ecc1-15ab-49c0-bbe0-47bf8b53efb6"]
         },
-        "identifiers": ["uuid:9a5f239d-eaea-4ec3-afac-9370b21bc233"],
+        "identifiers": ["uuid:d8696111-717c-4821-b614-d08f560d0980"],
         "icon": "far fa-question-circle",
         "description": "The highest level of abstraction describing something that delivers value to its users",
         "type": {
@@ -212,9 +212,9 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:47c84543-9483-4a7c-9b39-7ed1832dabca"]
+            "identifiers": ["uuid:6e1c7523-904b-4c0d-a8d4-c406e062c19f"]
         },
-        "identifiers": ["uuid:3059c882-6c2c-433c-8481-e43cd936d4a9"],
+        "identifiers": ["uuid:601ec784-8dc1-40fb-844a-363d3714c8a0"],
         "icon": "far fa-question-circle",
         "description": "A grouping of architecture elements",
         "type": {

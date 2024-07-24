@@ -72,91 +72,19 @@ window.nsdJsTreeSearchCallback = function(str, node) {
 			  }
 			}));
 </script>
-
-<script src="../../../../../../../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../../../../../../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
 </head>
   <body>
     <div class="container nsd-app-container">
       <div class="row">
         <div class="col nsd-app-header">
-          <a href="https://architecture.models.nasdanika.org/" data-nsd-label-uuid="a81b5fb6-95d3-4274-ab21-4952cb704ec4" class="nsd-app-header-title">
+          <a href="https://architecture.models.nasdanika.org/" data-nsd-label-uuid="e0d73076-c9f4-4b36-9b0a-847f74588981" class="nsd-app-header-title">
             <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Architecture Models</a>
           <ul class="nav nsd-app-header-navs">
             <li class="nav-item">
-              <a href="../../../../../../search.html" data-nsd-label-uuid="e21e01cf-2eb0-4810-bed6-d70aef7aa621" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+              <a href="../../../../../../search.html" data-nsd-label-uuid="5299cfdc-3597-47d2-b846-6f68c188867c" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
             </li>
             <li class="nav-item">
-              <a href="../../../../../../glossary.html" data-nsd-label-uuid="e4ac350c-f27d-46bd-9711-6314b7e3b75d" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+              <a href="../../../../../../glossary.html" data-nsd-label-uuid="dc5809d0-4eb7-419f-bd16-a81ec4228547" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
             </li>
           </ul>
         </div>
@@ -164,37 +92,37 @@ window.nsdJsTreeSearchCallback = function(str, node) {
       <div class="row">
         <div class="col nsd-app-navbar">
           <ul class="navbar navbar-light navbar-expand-lg">
-            <a href="../../../../../../index.html" data-nsd-label-uuid="47c84543-9483-4a7c-9b39-7ed1832dabca" class="navbar-brand">C4 Template</a>
-            <button type="button" data-toggle="collapse" data-target="#nsd_23" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            <a href="../../../../../../index.html" data-nsd-label-uuid="6e1c7523-904b-4c0d-a8d4-c406e062c19f" class="navbar-brand">C4 Template</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_1z" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_23" class="collapse navbar-collapse"></div>
+            <div id="nsd_1z" class="collapse navbar-collapse"></div>
           </ul>
         </div>
       </div>
       <div class="row nsd-app-content-row">
         <div class="col nsd-app-navigation-panel">
           <div class="list-group list-group-flush">
-            <a href="../../../index.html" data-nsd-label-uuid="89073a2e-7578-48b5-adce-12fadd116884" class="list-group-item list-group-action active">Person</a>
+            <a href="../../../index.html" data-nsd-label-uuid="8cfd3287-408b-4961-ac40-2b7fff78cfa7" class="list-group-item list-group-action active">Person</a>
           </div>
           <div class="card">
             <div class="card-header">
               <a href="../../../../9Xhv3QX139gfRowG86oh-1/index.html">System</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="../../../../9Xhv3QX139gfRowG86oh-1/references/elements/Q9qKH9tl9N2e6UXnhQ6L-3/index.html" data-nsd-label-uuid="ad4b747e-8012-4d54-a7dc-9654bc117efd" class="list-group-item list-group-action">Container</a>
+              <a href="../../../../9Xhv3QX139gfRowG86oh-1/references/elements/Q9qKH9tl9N2e6UXnhQ6L-3/index.html" data-nsd-label-uuid="5765945b-bc61-4b8a-88fe-f2ad43a6e336" class="list-group-item list-group-action">Container</a>
             </div>
           </div>
         </div>
-        <div data-nsd-label-uuid="b0045635-184f-4063-b0ae-819e35eb4bae" data-nsd-action-uris="uuid:b0045635-184f-4063-b0ae-819e35eb4bae" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="c4ac705e-50b8-45a8-b052-26abff8d9434" data-nsd-action-uris="uuid:c4ac705e-50b8-45a8-b052-26abff8d9434" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-breadcrumb-row">
               <div class="col">
                 <nav aria-label="breadcrumb" class="nsd-app-content-panel-breadcrumb">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                      <a href="../../../index.html" data-nsd-label-uuid="89073a2e-7578-48b5-adce-12fadd116884">Person</a>
+                      <a href="../../../index.html" data-nsd-label-uuid="8cfd3287-408b-4961-ac40-2b7fff78cfa7">Person</a>
                     </li>
-                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="b0045635-184f-4063-b0ae-819e35eb4bae">HTTPS</span>
+                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="c4ac705e-50b8-45a8-b052-26abff8d9434">HTTPS</span>
                     </li>
                   </ol>
                 </nav>
@@ -202,7 +130,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
             </div>
             <div class="row nsd-app-content-panel-title-and-items-row">
               <div class="col-auto">
-                <h1><span data-nsd-label-uuid="b0045635-184f-4063-b0ae-819e35eb4bae" class="nsd-app-content-panel-title">HTTPS<a href="https://architecture.models.nasdanika.org/references/eSubpackages/c4/references/eClassifiers/Relationship/index.html" title="Connects architecture elements" style="vertical-align:super;font-size:x-small;margin-left:0.2em"><span class="far fa-question-circle nsd-app-label-icon"></span></a></span>
+                <h1><span data-nsd-label-uuid="c4ac705e-50b8-45a8-b052-26abff8d9434" class="nsd-app-content-panel-title">HTTPS<a href="https://architecture.models.nasdanika.org/references/eSubpackages/c4/references/eClassifiers/Relationship/index.html" title="Connects architecture elements" style="vertical-align:super;font-size:x-small;margin-left:0.2em"><span class="far fa-question-circle nsd-app-label-icon"></span></a></span>
                 </h1>
               </div>
             </div>
@@ -223,7 +151,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
         <div class="col nsd-app-footer">
           <ul class="nav nsd-app-footer-navs">
             <li class="nav-item">
-              <a href="https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system" data-nsd-label-uuid="f527050a-a985-424a-b2e7-8a3fc8fa3d9e" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+              <a href="https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system" data-nsd-label-uuid="7f417e46-45a0-4414-bcb3-65fd0553f29e" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
             </li>
             <li class="nav-item"><span class="navbar-text">&nbsp;•&nbsp;</span>
             </li>

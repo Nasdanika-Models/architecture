@@ -2,132 +2,132 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" >
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/glossary.html</loc>
-    <lastmod>2024-07-14T22:52:05.186-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.379-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.062-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.271-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.074-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.282-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/api-application/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.102-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.298-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/api-application/references/elements/accounts-summary-controller/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.120-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.313-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/api-application/references/elements/email-component/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.129-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.319-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.132-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.323-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/7WUxxUmOBlSPoxcwmfUW-20/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.147-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.337-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/7WUxxUmOBlSPoxcwmfUW-22/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.159-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.348-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/7WUxxUmOBlSPoxcwmfUW-24/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.156-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.344-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/7WUxxUmOBlSPoxcwmfUW-26/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.151-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.340-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/7WUxxUmOBlSPoxcwmfUW-28/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.141-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.329-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/7WUxxUmOBlSPoxcwmfUW-30/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.143-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.333-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/7WUxxUmOBlSPoxcwmfUW-5/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.163-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.353-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/api-application/references/elements/mainframe-banking-system-facade/references/elements/MainframeBankingSystemFacadeImpl/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.167-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.358-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/api-application/references/elements/reset-password-controller/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.115-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.307-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/api-application/references/elements/security-component/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.126-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.316-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/api-application/references/elements/sign-in-controller/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.111-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.303-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/GtTa-R8eM8jf3LrMbg5p-3/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.171-04:00</lastmod>
+    <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/database/index.html</loc>
+    <lastmod>2024-07-23T18:01:12.365-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/mobile-application/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.080-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.361-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/single-page-application/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.093-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.289-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/internet-banking-system/references/elements/web-application/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.088-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.287-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/mainframe-banking-system/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.174-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.368-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/microsoft-exchange/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.067-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.275-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/references/elements/personal-banking-customer/index.html</loc>
-    <lastmod>2024-07-14T22:52:05.177-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.371-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://architecture.models.nasdanika.org/demos/internet-banking-system/search.html</loc>
-    <lastmod>2024-07-14T22:52:05.182-04:00</lastmod>
+    <lastmod>2024-07-23T18:01:12.375-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

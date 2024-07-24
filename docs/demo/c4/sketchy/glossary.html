@@ -72,90 +72,18 @@ window.nsdJsTreeSearchCallback = function(str, node) {
 			  }
 			}));
 </script>
-
-<script src="../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
 </head>
   <body>
     <div class="container nsd-app-container">
       <div class="row">
         <div class="col nsd-app-header">
-          <a href="https://architecture.models.nasdanika.org/" data-nsd-label-uuid="a81b5fb6-95d3-4274-ab21-4952cb704ec4" class="nsd-app-header-title">
+          <a href="https://architecture.models.nasdanika.org/" data-nsd-label-uuid="e0d73076-c9f4-4b36-9b0a-847f74588981" class="nsd-app-header-title">
             <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Architecture Models</a>
           <ul class="nav nsd-app-header-navs">
             <li class="nav-item">
-              <a href="search.html" data-nsd-label-uuid="e21e01cf-2eb0-4810-bed6-d70aef7aa621" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+              <a href="search.html" data-nsd-label-uuid="5299cfdc-3597-47d2-b846-6f68c188867c" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
             </li>
-            <li class="nav-item"><span data-nsd-label-uuid="e4ac350c-f27d-46bd-9711-6314b7e3b75d" class="navbar-text"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</span>
+            <li class="nav-item"><span data-nsd-label-uuid="dc5809d0-4eb7-419f-bd16-a81ec4228547" class="navbar-text"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</span>
             </li>
           </ul>
         </div>
@@ -163,32 +91,32 @@ window.nsdJsTreeSearchCallback = function(str, node) {
       <div class="row">
         <div class="col nsd-app-navbar">
           <ul class="navbar navbar-light navbar-expand-lg">
-            <a href="index.html" data-nsd-label-uuid="47c84543-9483-4a7c-9b39-7ed1832dabca" class="navbar-brand">C4 Template</a>
-            <button type="button" data-toggle="collapse" data-target="#nsd_2f" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            <a href="index.html" data-nsd-label-uuid="6e1c7523-904b-4c0d-a8d4-c406e062c19f" class="navbar-brand">C4 Template</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_2b" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_2f" class="collapse navbar-collapse"></div>
+            <div id="nsd_2b" class="collapse navbar-collapse"></div>
           </ul>
         </div>
       </div>
       <div class="row nsd-app-content-row">
         <div class="col nsd-app-navigation-panel">
           <div class="list-group list-group-flush">
-            <a href="references/elements/user/index.html" data-nsd-label-uuid="89073a2e-7578-48b5-adce-12fadd116884" class="list-group-item list-group-action">Person</a>
+            <a href="references/elements/user/index.html" data-nsd-label-uuid="8cfd3287-408b-4961-ac40-2b7fff78cfa7" class="list-group-item list-group-action">Person</a>
           </div>
           <div class="card">
             <div class="card-header">
               <a href="references/elements/9Xhv3QX139gfRowG86oh-1/index.html">System</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="references/elements/9Xhv3QX139gfRowG86oh-1/references/elements/Q9qKH9tl9N2e6UXnhQ6L-3/index.html" data-nsd-label-uuid="ad4b747e-8012-4d54-a7dc-9654bc117efd" class="list-group-item list-group-action">Container</a>
+              <a href="references/elements/9Xhv3QX139gfRowG86oh-1/references/elements/Q9qKH9tl9N2e6UXnhQ6L-3/index.html" data-nsd-label-uuid="5765945b-bc61-4b8a-88fe-f2ad43a6e336" class="list-group-item list-group-action">Container</a>
             </div>
           </div>
         </div>
-        <div data-nsd-label-uuid="e4ac350c-f27d-46bd-9711-6314b7e3b75d" data-nsd-action-uris="uuid:e4ac350c-f27d-46bd-9711-6314b7e3b75d" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="dc5809d0-4eb7-419f-bd16-a81ec4228547" data-nsd-action-uris="uuid:dc5809d0-4eb7-419f-bd16-a81ec4228547" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-title-and-items-row">
               <div class="col-auto">
-                <h1><span data-nsd-label-uuid="e4ac350c-f27d-46bd-9711-6314b7e3b75d" class="nsd-app-content-panel-title"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</span>
+                <h1><span data-nsd-label-uuid="dc5809d0-4eb7-419f-bd16-a81ec4228547" class="nsd-app-content-panel-title"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</span>
                 </h1>
               </div>
             </div>
@@ -248,7 +176,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
 				  el: '#semantic-info-app',
 				  data: {
 			        	filter: null,
-			        	semanticInfo: [{"identifiers":["uuid:a81b5fb6-95d3-4274-ab21-4952cb704ec4"],"name":"Nasdanika Architecture Models","icon":"https://docs.nasdanika.org/images/nasdanika-logo.png","location":"https://architecture.models.nasdanika.org/","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"children","identifiers":["uuid:a81b5fb6-95d3-4274-ab21-4952cb704ec4"]},"identifiers":["uuid:e21e01cf-2eb0-4810-bed6-d70aef7aa621"],"name":"Search","icon":"fas fa-search","location":"search.html","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"children","identifiers":["uuid:a81b5fb6-95d3-4274-ab21-4952cb704ec4"]},"identifiers":["uuid:e4ac350c-f27d-46bd-9711-6314b7e3b75d"],"name":"Glossary","icon":"fas fa-book","location":"glossary.html","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"navigation","identifiers":["uuid:a81b5fb6-95d3-4274-ab21-4952cb704ec4"]},"identifiers":["uuid:f527050a-a985-424a-b2e7-8a3fc8fa3d9e"],"name":"Sources","icon":"fab fa-github","location":"https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"navigation","identifiers":["uuid:a81b5fb6-95d3-4274-ab21-4952cb704ec4"]},"identifiers":["uuid:1acc0da9-309b-4ed2-861e-6c54d049f30e"],"icon":"https://img.icons8.com/fluency/16/icons8-new-logo.png","description":"Icons from ICONS8","location":"https://icons8.com/","type":{"name":"Link","ns-uri":"ecore://nasdanika.org/html/app"}},{"identifiers":["uuid:d49b3a24-b383-4235-a486-97301f15560a"],"name":"C4 Template","location":"index.html","type":{"name":"Context","ns-uri":"ecore://nasdanika.org/models/architecture/c4"}},{"container":{"reference":"elements","identifiers":["uuid:d49b3a24-b383-4235-a486-97301f15560a"],"name":"C4 Template"},"identifiers":["uuid:e062578d-0d08-4dbb-9bb9-8288b950e074"],"name":"Person","location":"references/elements/user/index.html","type":{"name":"Person","ns-uri":"ecore://nasdanika.org/models/architecture/c4"}},{"container":{"reference":"decorator","identifiers":["uuid:89073a2e-7578-48b5-adce-12fadd116884"]},"identifiers":["uuid:59b96401-94ad-4c5e-b44e-626f7351919c"],"icon":"far fa-question-circle","description":"Represents human users of a software system","type":{"name":"Link","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"outgoingConnections","identifiers":["uuid:e062578d-0d08-4dbb-9bb9-8288b950e074"],"name":"Person"},"identifiers":["uuid:405182a4-8f3b-475e-99c7-c1d5a7888f85"],"name":"HTTPS","location":"references/elements/user/references/outgoingConnections/https/index.html","type":{"name":"Relationship","ns-uri":"ecore://nasdanika.org/models/architecture/c4"}},{"container":{"reference":"decorator","identifiers":["uuid:b0045635-184f-4063-b0ae-819e35eb4bae"]},"identifiers":["uuid:22bb1777-d670-4807-9a38-aed904d3c814"],"icon":"far fa-question-circle","description":"Connects architecture elements","type":{"name":"Link","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"outgoingConnections","identifiers":["uuid:e062578d-0d08-4dbb-9bb9-8288b950e074"],"name":"Person"},"identifiers":["uuid:236440c1-c548-4225-bba0-30b770237ebf"],"name":"Relationship","location":"references/elements/user/references/outgoingConnections/9Xhv3QX139gfRowG86oh-3/index.html","type":{"name":"Relationship","ns-uri":"ecore://nasdanika.org/models/architecture/c4"}},{"container":{"reference":"decorator","identifiers":["uuid:404e9ace-eba3-4450-a598-6d839c7cccfc"]},"identifiers":["uuid:7416ad40-dfec-4744-9bbf-e085563c3b9e"],"icon":"far fa-question-circle","description":"Connects architecture elements","type":{"name":"Link","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"elements","identifiers":["uuid:d49b3a24-b383-4235-a486-97301f15560a"],"name":"C4 Template"},"identifiers":["uuid:0105ff77-e679-48fd-b6d9-3be7b7fdcd27"],"name":"System","location":"references/elements/9Xhv3QX139gfRowG86oh-1/index.html","type":{"name":"System","ns-uri":"ecore://nasdanika.org/models/architecture/c4"}},{"container":{"reference":"elements","identifiers":["uuid:0105ff77-e679-48fd-b6d9-3be7b7fdcd27"],"name":"System"},"identifiers":["uuid:07a34b37-3416-4002-981a-af7e9a595d1f"],"name":"Container","location":"references/elements/9Xhv3QX139gfRowG86oh-1/references/elements/Q9qKH9tl9N2e6UXnhQ6L-3/index.html","type":{"name":"Container","ns-uri":"ecore://nasdanika.org/models/architecture/c4"}},{"container":{"reference":"decorator","identifiers":["uuid:ad4b747e-8012-4d54-a7dc-9654bc117efd"]},"identifiers":["uuid:3c6ffe7b-641c-4759-977f-e6dae93b05e4"],"icon":"far fa-question-circle","description":"Represents an application or a data store","type":{"name":"Link","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"decorator","identifiers":["uuid:29225d13-ae6c-493f-ae63-1340d34d557a"]},"identifiers":["uuid:9a5f239d-eaea-4ec3-afac-9370b21bc233"],"icon":"far fa-question-circle","description":"The highest level of abstraction describing something that delivers value to its users","type":{"name":"Link","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"decorator","identifiers":["uuid:47c84543-9483-4a7c-9b39-7ed1832dabca"]},"identifiers":["uuid:3059c882-6c2c-433c-8481-e43cd936d4a9"],"icon":"far fa-question-circle","description":"A grouping of architecture elements","type":{"name":"Link","ns-uri":"ecore://nasdanika.org/html/app"}}],
+			        	semanticInfo: [{"identifiers":["uuid:e0d73076-c9f4-4b36-9b0a-847f74588981"],"name":"Nasdanika Architecture Models","icon":"https://docs.nasdanika.org/images/nasdanika-logo.png","location":"https://architecture.models.nasdanika.org/","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"children","identifiers":["uuid:e0d73076-c9f4-4b36-9b0a-847f74588981"]},"identifiers":["uuid:5299cfdc-3597-47d2-b846-6f68c188867c"],"name":"Search","icon":"fas fa-search","location":"search.html","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"children","identifiers":["uuid:e0d73076-c9f4-4b36-9b0a-847f74588981"]},"identifiers":["uuid:dc5809d0-4eb7-419f-bd16-a81ec4228547"],"name":"Glossary","icon":"fas fa-book","location":"glossary.html","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"navigation","identifiers":["uuid:e0d73076-c9f4-4b36-9b0a-847f74588981"]},"identifiers":["uuid:7f417e46-45a0-4414-bcb3-65fd0553f29e"],"name":"Sources","icon":"fab fa-github","location":"https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"navigation","identifiers":["uuid:e0d73076-c9f4-4b36-9b0a-847f74588981"]},"identifiers":["uuid:15196413-4ca9-4f14-96d1-a2aafa4e0d0b"],"icon":"https://img.icons8.com/fluency/16/icons8-new-logo.png","description":"Icons from ICONS8","location":"https://icons8.com/","type":{"name":"Link","ns-uri":"ecore://nasdanika.org/html/app"}},{"identifiers":["uuid:a2657ae6-f82c-45a3-a260-36c64b591c6f"],"name":"C4 Template","location":"index.html","type":{"name":"Context","ns-uri":"ecore://nasdanika.org/models/architecture/c4"}},{"container":{"reference":"elements","identifiers":["uuid:a2657ae6-f82c-45a3-a260-36c64b591c6f"],"name":"C4 Template"},"identifiers":["uuid:e1cbb089-8abc-47cf-a5d3-84550b01bfef"],"name":"Person","location":"references/elements/user/index.html","type":{"name":"Person","ns-uri":"ecore://nasdanika.org/models/architecture/c4"}},{"container":{"reference":"decorator","identifiers":["uuid:8cfd3287-408b-4961-ac40-2b7fff78cfa7"]},"identifiers":["uuid:4820a42f-d80a-4ac6-89cc-461ec5f6e347"],"icon":"far fa-question-circle","description":"Represents human users of a software system","type":{"name":"Link","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"outgoingConnections","identifiers":["uuid:e1cbb089-8abc-47cf-a5d3-84550b01bfef"],"name":"Person"},"identifiers":["uuid:c06bdc24-27ad-4902-946a-73ad00a6a5d9"],"name":"HTTPS","location":"references/elements/user/references/outgoingConnections/https/index.html","type":{"name":"Relationship","ns-uri":"ecore://nasdanika.org/models/architecture/c4"}},{"container":{"reference":"decorator","identifiers":["uuid:c4ac705e-50b8-45a8-b052-26abff8d9434"]},"identifiers":["uuid:9ac9d813-11f1-4499-9ecb-cd7b13bd9380"],"icon":"far fa-question-circle","description":"Connects architecture elements","type":{"name":"Link","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"outgoingConnections","identifiers":["uuid:e1cbb089-8abc-47cf-a5d3-84550b01bfef"],"name":"Person"},"identifiers":["uuid:bfc1f052-9136-4ade-9aec-ed517c1e8a66"],"name":"Relationship","location":"references/elements/user/references/outgoingConnections/9Xhv3QX139gfRowG86oh-3/index.html","type":{"name":"Relationship","ns-uri":"ecore://nasdanika.org/models/architecture/c4"}},{"container":{"reference":"decorator","identifiers":["uuid:454b69cd-e0ea-49c0-9c11-87f07e498a2d"]},"identifiers":["uuid:f9b323d4-cfb7-42e8-aea1-97585dcc81de"],"icon":"far fa-question-circle","description":"Connects architecture elements","type":{"name":"Link","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"elements","identifiers":["uuid:a2657ae6-f82c-45a3-a260-36c64b591c6f"],"name":"C4 Template"},"identifiers":["uuid:0b9d32aa-3b0d-4d6d-bc0e-eed48c7175a1"],"name":"System","location":"references/elements/9Xhv3QX139gfRowG86oh-1/index.html","type":{"name":"System","ns-uri":"ecore://nasdanika.org/models/architecture/c4"}},{"container":{"reference":"elements","identifiers":["uuid:0b9d32aa-3b0d-4d6d-bc0e-eed48c7175a1"],"name":"System"},"identifiers":["uuid:d2e31176-b3d7-4598-a0b0-d2f9f56fd856"],"name":"Container","location":"references/elements/9Xhv3QX139gfRowG86oh-1/references/elements/Q9qKH9tl9N2e6UXnhQ6L-3/index.html","type":{"name":"Container","ns-uri":"ecore://nasdanika.org/models/architecture/c4"}},{"container":{"reference":"decorator","identifiers":["uuid:5765945b-bc61-4b8a-88fe-f2ad43a6e336"]},"identifiers":["uuid:0e1f493f-af94-428b-bf75-bd24ac7d45a8"],"icon":"far fa-question-circle","description":"Represents an application or a data store","type":{"name":"Link","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"decorator","identifiers":["uuid:8543ecc1-15ab-49c0-bbe0-47bf8b53efb6"]},"identifiers":["uuid:d8696111-717c-4821-b614-d08f560d0980"],"icon":"far fa-question-circle","description":"The highest level of abstraction describing something that delivers value to its users","type":{"name":"Link","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"decorator","identifiers":["uuid:6e1c7523-904b-4c0d-a8d4-c406e062c19f"]},"identifiers":["uuid:601ec784-8dc1-40fb-844a-363d3714c8a0"],"icon":"far fa-question-circle","description":"A grouping of architecture elements","type":{"name":"Link","ns-uri":"ecore://nasdanika.org/html/app"}}],
 			        	identifierField: false,
 			        	hideUUID: true
 				  },				  
@@ -360,7 +288,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
         <div class="col nsd-app-footer">
           <ul class="nav nsd-app-footer-navs">
             <li class="nav-item">
-              <a href="https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system" data-nsd-label-uuid="f527050a-a985-424a-b2e7-8a3fc8fa3d9e" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+              <a href="https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system" data-nsd-label-uuid="7f417e46-45a0-4414-bcb3-65fd0553f29e" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
             </li>
             <li class="nav-item"><span class="navbar-text">&nbsp;•&nbsp;</span>
             </li>

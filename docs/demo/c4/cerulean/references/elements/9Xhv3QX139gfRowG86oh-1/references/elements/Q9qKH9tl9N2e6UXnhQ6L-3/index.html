@@ -70,91 +70,19 @@ window.nsdJsTreeSearchCallback = function(str, node) {
 			  }
 			}));
 </script>
-
-<script src="../../../../../../../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../../../../../../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
 </head>
   <body>
     <div class="container-fluid nsd-app-container">
       <div class="row">
         <div class="col nsd-app-header">
-          <a href="https://architecture.models.nasdanika.org/" data-nsd-label-uuid="c08a4dc1-d657-4b38-a9b8-3f4f1ad07197" class="nsd-app-header-title">
+          <a href="https://architecture.models.nasdanika.org/" data-nsd-label-uuid="1c361279-4227-4793-8e83-5a78e0ce92ed" class="nsd-app-header-title">
             <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Architecture Models</a>
           <ul class="nav nsd-app-header-navs">
             <li class="nav-item">
-              <a href="../../../../../../search.html" data-nsd-label-uuid="0c8a9fb9-9592-4a91-acd2-ba69cddf24fb" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+              <a href="../../../../../../search.html" data-nsd-label-uuid="ec6c5263-c09d-4033-b0bc-87173a5fbec6" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
             </li>
             <li class="nav-item">
-              <a href="../../../../../../glossary.html" data-nsd-label-uuid="e656dff4-450a-4ebd-ba5c-329fd28e6289" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+              <a href="../../../../../../glossary.html" data-nsd-label-uuid="c10cec56-6104-4c18-a68c-0dff9b90713c" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
             </li>
           </ul>
         </div>
@@ -162,36 +90,36 @@ window.nsdJsTreeSearchCallback = function(str, node) {
       <div class="row">
         <div class="col nsd-app-navbar">
           <ul class="navbar navbar-light navbar-expand-lg">
-            <a href="../../../../../../index.html" data-nsd-label-uuid="7c6a30ef-415c-4414-99cb-a85556e68c16" class="navbar-brand">C4 Template</a>
-            <button type="button" data-toggle="collapse" data-target="#nsd_i" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            <a href="../../../../../../index.html" data-nsd-label-uuid="03a76961-b35e-4e9f-ab44-cd59701434b9" class="navbar-brand">C4 Template</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_u" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_i" class="collapse navbar-collapse"></div>
+            <div id="nsd_u" class="collapse navbar-collapse"></div>
           </ul>
         </div>
       </div>
       <div class="row nsd-app-content-row">
         <div class="col nsd-app-navigation-panel">
           <div class="list-group list-group-flush">
-            <a href="../../../../Q9qKH9tl9N2e6UXnhQ6L-2/index.html" data-nsd-label-uuid="4dd1c70c-d651-431f-8911-34c10d6a0b52" class="list-group-item list-group-action">Person</a>
+            <a href="../../../../user/index.html" data-nsd-label-uuid="c140c6e8-cc87-4e0e-b7c7-c3098d7a74de" class="list-group-item list-group-action">Person</a>
           </div>
           <div class="card">
             <div class="card-header">
               <a href="../../../index.html">System</a>
             </div>
-            <div class="list-group list-group-flush"><span data-nsd-label-uuid="7318a4d9-aced-436a-aecd-45abb915289b" class="active list-group-item list-group-action">Container</span>
+            <div class="list-group list-group-flush"><span data-nsd-label-uuid="69a816cd-2e9b-469f-9d5c-c98efb2151de" class="active list-group-item list-group-action">Container</span>
             </div>
           </div>
         </div>
-        <div data-nsd-label-uuid="7318a4d9-aced-436a-aecd-45abb915289b" data-nsd-action-uris="uuid:7318a4d9-aced-436a-aecd-45abb915289b" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="69a816cd-2e9b-469f-9d5c-c98efb2151de" data-nsd-action-uris="uuid:69a816cd-2e9b-469f-9d5c-c98efb2151de" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-breadcrumb-row">
               <div class="col">
                 <nav aria-label="breadcrumb" class="nsd-app-content-panel-breadcrumb">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                      <a href="../../../index.html" data-nsd-label-uuid="b2b76adb-bdf6-4285-bf02-35acbe2b2165">System</a>
+                      <a href="../../../index.html" data-nsd-label-uuid="e9677a24-90b9-49c5-b064-6ecc594809f9">System</a>
                     </li>
-                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="7318a4d9-aced-436a-aecd-45abb915289b">Container</span>
+                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="69a816cd-2e9b-469f-9d5c-c98efb2151de">Container</span>
                     </li>
                   </ol>
                 </nav>
@@ -199,7 +127,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
             </div>
             <div class="row nsd-app-content-panel-title-and-items-row">
               <div class="col-auto">
-                <h1><span data-nsd-label-uuid="7318a4d9-aced-436a-aecd-45abb915289b" class="nsd-app-content-panel-title">Container<a href="https://architecture.models.nasdanika.org/references/eSubpackages/c4/references/eClassifiers/Container/index.html" title="Represents an application or a data store" style="vertical-align:super;font-size:x-small;margin-left:0.2em"><span class="far fa-question-circle nsd-app-label-icon"></span></a></span>
+                <h1><span data-nsd-label-uuid="69a816cd-2e9b-469f-9d5c-c98efb2151de" class="nsd-app-content-panel-title">Container<a href="https://architecture.models.nasdanika.org/references/eSubpackages/c4/references/eClassifiers/Container/index.html" title="Represents an application or a data store" style="vertical-align:super;font-size:x-small;margin-left:0.2em"><span class="far fa-question-circle nsd-app-label-icon"></span></a></span>
                 </h1>
               </div>
             </div>
@@ -207,7 +135,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
               <div class="col">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col"><div class="markdown-body"><p></p><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;<mxfile pages=\&quot;1\&quot; type=\&quot;device\&quot;><diagram id=\&quot;7971560b-028a-4d73-91df-b8ce5d89376e\&quot; name=\&quot;Error\&quot;>jZLNToQwEMefpkcMS2FdjoqrJy/uE5R2gMbCkFIEfHrL0iLsxsRDk+lv+p/OF6FZPb5p1lbvKECRKGRa49AR+kKi6GCPRRybBrjZsQKV2IFSy3twkd/gYOhoLwXsw9fMVAtwb1pWwu7FDC6cqT3tKiZw2CkNojKy3canZ0IzjWgWqx4zUHOdPttF+fqHd01AQ2P+I8iTRwFpyoOcJXEQFwkN0rjgATvkEeTH6EgFvY/pKzKTr7GQSmWoUF+vtDhx4JzQ585o/ISNJz8lceLK/2Kqd/oPaDV09gNmJDbW19gOzGPrG5vpkzWFZoNEJwRtYLztmt0MwBqMnua9cE0tVzQLK5Bl5Yqg4YPLY5DCj5SGK/XxVzDdANdTa7i2+uvv+K6+zb7S8w8=<\/diagram><\/mxfile>&quot;,&quot;resize&quot;:true}"></div>
+                    <div class="col"><div class="markdown-body"><p></p><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;<mxfile pages=\&quot;1\&quot; type=\&quot;device\&quot;><diagram id=\&quot;733ab8ae-d4d8-4e29-bded-5cc420cb5ba9\&quot; name=\&quot;Error\&quot;>jZLNboMwDMefhiMTYGjpcWPdTrusT5AmBqIGjEIYsKdfaAODVpN2iOT8nL/jLw+yanjXrCk/SKDyooBpTX3rwasXRaE9FnGqa+Rmw3JSYgMKLR/BSX6jg4GjnRS4DV8xU96Ae9OwAjcvJnDiTG1pWzJB/UZpiJSRzTo+HD3INJG5WdWQoZrqnLO9Kd/+8C4JaKzNfwSQ5IcIgtBHHoAfp1HoM5HvfbE7sBjOUbjD/WPMuSIzzjXmUqmMFOnrFfKUI+cevLRG0wVXnnOaxIkr/4upzuk/sdHY2g+YkVRbX207MI2tq22mz9YUmvWSnBC1weG+a3YzkCo0epz2wjW1WNAkLFEWpSsCgieXRy/FPFIIFjrHX8B4B1xPreHaOl9/x3f1rfYVjj8=<\/diagram><\/mxfile>&quot;,&quot;resize&quot;:true}"></div>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jgraph/drawio@v22.1.11/src/main/webapp/js/viewer.min.js"></script>
 <p></p>
 <p>TODO</p>
@@ -223,7 +151,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
         <div class="col nsd-app-footer">
           <ul class="nav nsd-app-footer-navs">
             <li class="nav-item">
-              <a href="https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system" data-nsd-label-uuid="78a6222a-2bd9-4d58-abca-2b45bf178dbb" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+              <a href="https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system" data-nsd-label-uuid="f1605c5a-baaa-40b0-aa22-1cffee9b131b" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
             </li>
             <li class="nav-item"><span class="navbar-text">&nbsp;•&nbsp;</span>
             </li>

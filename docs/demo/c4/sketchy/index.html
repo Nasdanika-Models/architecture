@@ -72,125 +72,53 @@ window.nsdJsTreeSearchCallback = function(str, node) {
 			  }
 			}));
 </script>
-
-<script src="../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
-
-<script src="../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['action-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
 </head>
   <body>
     <div class="container nsd-app-container">
       <div class="row">
         <div class="col nsd-app-header">
-          <a href="https://architecture.models.nasdanika.org/" data-nsd-label-uuid="a81b5fb6-95d3-4274-ab21-4952cb704ec4" class="nsd-app-header-title">
+          <a href="https://architecture.models.nasdanika.org/" data-nsd-label-uuid="e0d73076-c9f4-4b36-9b0a-847f74588981" class="nsd-app-header-title">
             <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Architecture Models</a>
           <ul class="nav nsd-app-header-navs">
             <li class="nav-item">
-              <a href="search.html" data-nsd-label-uuid="e21e01cf-2eb0-4810-bed6-d70aef7aa621" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+              <a href="search.html" data-nsd-label-uuid="5299cfdc-3597-47d2-b846-6f68c188867c" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
             </li>
             <li class="nav-item">
-              <a href="glossary.html" data-nsd-label-uuid="e4ac350c-f27d-46bd-9711-6314b7e3b75d" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+              <a href="glossary.html" data-nsd-label-uuid="dc5809d0-4eb7-419f-bd16-a81ec4228547" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
             </li>
           </ul>
         </div>
       </div>
       <div class="row">
         <div class="col nsd-app-navbar">
-          <ul class="navbar navbar-light navbar-expand-lg"><span data-nsd-label-uuid="47c84543-9483-4a7c-9b39-7ed1832dabca" class="navbar-brand">C4 Template</span>
-            <button type="button" data-toggle="collapse" data-target="#nsd_2b" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+          <ul class="navbar navbar-light navbar-expand-lg"><span data-nsd-label-uuid="6e1c7523-904b-4c0d-a8d4-c406e062c19f" class="navbar-brand">C4 Template</span>
+            <button type="button" data-toggle="collapse" data-target="#nsd_27" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_2b" class="collapse navbar-collapse"></div>
+            <div id="nsd_27" class="collapse navbar-collapse"></div>
           </ul>
         </div>
       </div>
       <div class="row nsd-app-content-row">
         <div class="col nsd-app-navigation-panel">
           <div class="list-group list-group-flush">
-            <a href="references/elements/user/index.html" data-nsd-label-uuid="89073a2e-7578-48b5-adce-12fadd116884" class="list-group-item list-group-action">Person</a>
+            <a href="references/elements/user/index.html" data-nsd-label-uuid="8cfd3287-408b-4961-ac40-2b7fff78cfa7" class="list-group-item list-group-action">Person</a>
           </div>
           <div class="card">
             <div class="card-header">
               <a href="references/elements/9Xhv3QX139gfRowG86oh-1/index.html">System</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="references/elements/9Xhv3QX139gfRowG86oh-1/references/elements/Q9qKH9tl9N2e6UXnhQ6L-3/index.html" data-nsd-label-uuid="ad4b747e-8012-4d54-a7dc-9654bc117efd" class="list-group-item list-group-action">Container</a>
+              <a href="references/elements/9Xhv3QX139gfRowG86oh-1/references/elements/Q9qKH9tl9N2e6UXnhQ6L-3/index.html" data-nsd-label-uuid="5765945b-bc61-4b8a-88fe-f2ad43a6e336" class="list-group-item list-group-action">Container</a>
             </div>
           </div>
         </div>
-        <div data-nsd-label-uuid="47c84543-9483-4a7c-9b39-7ed1832dabca" data-nsd-action-uris="uuid:47c84543-9483-4a7c-9b39-7ed1832dabca" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="6e1c7523-904b-4c0d-a8d4-c406e062c19f" data-nsd-action-uris="uuid:6e1c7523-904b-4c0d-a8d4-c406e062c19f" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-content-row">
               <div class="col">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col"><div class="markdown-body"><p></p><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;<mxfile pages=\&quot;2\&quot; type=\&quot;device\&quot;><diagram id=\&quot;171b8b35-400a-4536-aef8-9194bbd3cb1e\&quot; name=\&quot;System Context Diagram\&quot;>rVfbcpw4EP0aHnEJxPUxM7azD9mKN87W5lWgBhQDooTwzOTrV0LiZibOpCpV2IVa3U1fzmlpHHxszh8F6aq/OYXa8RERgp96B987vu+pPyXKedtCLjcyerbLAPtWcrGSFCVGUvCaboxKwfaCZ/YDrBBZ6cAobENoiKyMwOp0pISNhhb8BaysbJyJHy8bzzmp9+r/MTp59bwoNRt9RSg/bb4lOa8l69YR4QcHHwXn0rzx7LsukCoCz10BhdHMg7uG2lIAkYMAtyGd3eOtJKwF4eAPjh85PlbZ44Ojv4l6qItRjnZb5oEaGmhlf814/XRj2bQj/129nDcdEURyEw6qSabBsLLQSUzNs2UxSqNkqalrQzNyKQawZYWGtJLl7jBMbmiQZpj4gZvhBLuBj0OXBEnkpjFGXuGFYYSINe4gNzYtacCEeAzUv6/QdDWR9hvy0sFc+aMqMJzl3KzmfIRa5fRolurFNm2zi94AVFVlTsak/bjv+KATJpLxdqrGUrgImYcKcmJ8U9LAiQ8COgH9ZN4r95PiI2WkFKRx4vtr/jae5tevn+8/b3uVfqte8T/fPJyWxRd++phEvHK9XQOfL72ExopZ+2KkCsmg8s9BBzZjzn/8mdNH1lI431WyqX/adeShsCji2IUoTt0gKaibRTR1cQZxFhc0pxNxN+1cAtz2a90gm1YvLxPZBR9URPrLnqrOqWISnjuS692T0FQ8jLGabWP9CkLh5i3V1ZAE3oAUFz0i7SQoZ5E2rFbDJ7AUOS0TJrEi6zrAdm2nZhCEa3ipF5viNbT+24P4/A4A9zAYlMWu6U8gemVyY9ONi1taDCjywzihLqIocQOaZW6aZamb+EmSpSECFAdXWryE8zst7l9A5rrGGv9ETwqtWrCzbvuh40yNAfHwaqbl2Od5wmsLSvpqBAjagqGXgr/Akdd6JN63vFWfO4y1e+I9s6XOQTtXGxo0TJ0xn94oZFxK3qwUPtSs1BuSa/ARu5r9FKyup28qTiPkJcm9CXksVHMu9Vl9R36ow+RuaeofAW24B20Qb0Dr70CL3gftCqi/nJoLaHeHZc8Hkdu5zwdZqqaWR3MpMVNzHoDQUqMmiShB3jAL8Y4WX6A207hi3W+SY7N9NdLrsxPfRiwfR6rkuefmYaCIpVrmZhlBLkZZHCMfx5AVV4j1NqEtvYDublJ7vtkGbEfJioXaybNdciErXvKW1A+L9LCMYt2nRecT11QYOfcdpLzY6yAZJN8ycmbqtHgiUrFGo0fdN9Wdc5rgtvW/OP5uZYgYi/cKe3I96dmysjNFstL1qA+2rAnRhjV7RyaBvaMwid5zNNJvzueGY0QDdr7CGuvllwB++B8=<\/diagram><diagram id=\&quot;f4a4c8da-2894-4ae9-933f-cca8cf51568e\&quot; name=\&quot;System Context Diagram\&quot;>rVfbcpw4EP0aHnEJxPUxM7azD9mKN87W5lWgBhQDooTwzOTrV0LiZibOpCpV2IVa3U1fzmlpHHxszh8F6aq/OYXa8RERgp96B987vu+pPyXKedtCLjcyerbLAPtWcrGSFCVGUvCaboxKwfaCZ/YDrBBZ6cAobENoiKyMwOp0pISNhhb8BaysbJyJHy8bzzmp9+r/MTp59bwoNRt9RSg/bb4lOa8l69YR4QcHHwXn0rzx7LsukCoCz10BhdHMg7uG2lIAkYMAtyGd3eOtJKwF4eAPjh85PlbZ44Ojv4l6qItRjnZb5oEaGmhlf814/XRj2bQj/129nDcdEURyEw6qSabBsLLQSUzNs2UxSqNkqalrQzNyKQawZYWGtJLl7jBMbmiQZpj4gZvhBLuBj0OXBEnkpjFGXuGFYYSINe4gNzYtacCEeAzUv6/QdDWR9hvy0sFc+aMqMJzl3KzmfIRa5fRolurFNm2zi94AVFVlTsak/bjv+KATJpLxdqrGUrgImYcKcmJ8U9LAiQ8COgH9ZN4r95PiI2WkFKRx4vtr/jae5tevn+8/b3uVfqte8T/fPJyWxRd++phEvHK9XQOfL72ExopZ+2KkCsmg8s9BBzZjzn/8mdNH1lI431WyqX/adeShsCji2IUoTt0gKaibRTR1cQZxFhc0pxNxN+1cAtz2a90gm1YvLxPZBR9URPrLnqrOqWISnjuS692T0FQ8jLGabWP9CkLh5i3V1ZAE3oAUFz0i7SQoZ5E2rFbDJ7AUOS0TJrEi6zrAdm2nZhCEa3ipF5viNbT+24P4/A4A9zAYlMWu6U8gemVyY9ONi1taDCjywzihLqIocQOaZW6aZamb+EmSpSECFAdXWryE8zst7l9A5rrGGv9ETwqtWrCzbvuh40yNAfHwaqbl2Od5wmsLSvpqBAjagqGXgr/Akdd6JN63vFWfO4y1e+I9s6XOQTtXGxo0TJ0xn94oZFxK3qwUPtSs1BuSa/ARu5r9FKyup28qTiPkJcm9CXksVHMu9Vl9R36ow+RuaeofAW24B20Qb0Dr70CL3gftCqi/nJoLaHeHZc8Hkdu5zwdZqqaWR3MpMVNzHoDQUqMmiShB3jAL8Y4WX6A207hi3W+SY7N9NdLrsxPfRiwfR6rkuefmYaCIpVrmZhlBLkZZHCMfx5AVV4j1NqEtvYDublJ7vtkGbEfJioXaybNdciErXvKW1A+L9LCMYt2nRecT11QYOfcdpLzY6yAZJN8ycmbqtHgiUrFGo0fdN9Wdc5rgtvW/OP5uZYgYi/cKe3I96dmysjNFstL1qA+2rAnRhjV7RyaBvaMwid5zNNJvzueGY0QDdr7CGuvllwB++B8=<\/diagram><\/mxfile>&quot;,&quot;resize&quot;:true}"></div>
+                    <div class="col"><div class="markdown-body"><p></p><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;<mxfile pages=\&quot;2\&quot; type=\&quot;device\&quot;><diagram id=\&quot;55d8eb3c-f7e6-4e02-8c74-4568fbf36c66\&quot; name=\&quot;System Context Diagram\&quot;>rVdbc5s6EP41PJIRV+PH2o7bh3aSU/fM6auQFlADiBEitvvrj4TELbipO9MZkkGr3WUv37eSnWBfXT4K3BRfOIXS8REWgp9bJzg4vu+pPyUivK6ByIWMXuwyDHwruVrJFiVGkvGSLoxywdaCE/sJVoistGMUliFUWBZGYHUanMNCQws+AcsLG2fib6aNE8HlWv0/RgevnhdvzUZbYMrPi29JzkvJmnlEwaMT7AXn0rzx9IcukCoCJ66AzGiS8KGithSAZSfArXBj93gtMatBOMEHx48dP1DZBztHfxO1UGa9HK22zAMlVFDL9pbx/Gn6smlH/rt6hFcNFlhyEw4qcarBMLPQSQzNs2UxSr1kqqlrQzNyKTqwZYUK15IRt+sGN9iPow2G2M0Sn7hhhANXiZAbxCQO02jrkTizxg0QY1PjCkyI+1D9+wZVU2JpvyGvDYyV36sCw0WOzaoueyhVTkezVC+2aYtd9AagqipjMibt47rjnU4YS8broRpT4WJkHirwmfFFSUNnsxPQCGgH81a5HxSPlOFc4MrZHG75W3gaX789HZ6Wvdp+L16Df757wTbPvvLzxyTmheutGni6thIqK2b1i5EqJIPKn4AObMScf/yV0yOrKVweClmVv+w6Src08DF2gxRRN6QxdVOCFG6AhgnZeJsIezfaOQW47Ne8QdauldeB7IJ3KiL9ZU9V51wwCacGE717FpqKuz5Ws22sX0Eo3LyluhqSwCuQ4qpHpJ0E+SjShsVs+ISWIudpwiRWZF2HgV3bqRmG0Rxe6sWmeAut/7Ygnt4B4BoGnbJYNf0ZRKtM7my6cXFPi8EjaYqSrZvgVBF7QzIXRzRwkzCKUIq8NIPsRouncP6kxe0LSKJrrPGP9aTQqhm76LbvGs7UGBCPr2Za9n0eJ7y2oLgteoCgJRhaKfgL7HmpR+Kh5rX63K6v3TNvmS01Ae1cbWjQMHXGfH6jkHIpeTVT+FCyXG9IrsGH7Wr0k7GyHL6pOI2QlyQHE3JfqOqS67P6Af9Uh8nD1NS/AtpoDdpwswCtvwIteh+0M6D+dmpOoF0dli3vBLFzn3cyV03N9+ZSYqbmOAChpkZNYpGDvGMWBitafIXSTOOCNX9IjsX2zUhvz87gPmKlGfEyFPnu1gtiN8QU3C0G4gKNvA3xIMFxfINYbxNa0gvo6ia15pttwHKUzFionZzskgtZ8JzXuHycpLtpFOs+TTqfuaZCz7kfIOXVXgdxJ/mSkSNTh8Uzloo1Gj3qvqnunMMEt63/zfF3L0NEX7xXWJPrWc+WmZ0pkpXOR324ZE2EFqxZOzIJrB1FSfyeo55+Yz53HCMasOMV1lhPvwSCx/8B<\/diagram><diagram id=\&quot;7d8b35da-02e5-4763-82d4-b680b7387f6d\&quot; name=\&quot;System Context Diagram\&quot;>rVdbc5s6EP41PJIRV+PH2o7bh3aSU/fM6auQFlADiBEitvvrj4TELbipO9MZkkGr3WUv37eSnWBfXT4K3BRfOIXS8REWgp9bJzg4vu+pPyUivK6ByIWMXuwyDHwruVrJFiVGkvGSLoxywdaCE/sJVoistGMUliFUWBZGYHUanMNCQws+AcsLG2fib6aNE8HlWv0/RgevnhdvzUZbYMrPi29JzkvJmnlEwaMT7AXn0rzx9IcukCoCJ66AzGiS8KGithSAZSfArXBj93gtMatBOMEHx48dP1DZBztHfxO1UGa9HK22zAMlVFDL9pbx/Gn6smlH/rt6hFcNFlhyEw4qcarBMLPQSQzNs2UxSr1kqqlrQzNyKTqwZYUK15IRt+sGN9iPow2G2M0Sn7hhhANXiZAbxCQO02jrkTizxg0QY1PjCkyI+1D9+wZVU2JpvyGvDYyV36sCw0WOzaoueyhVTkezVC+2aYtd9AagqipjMibt47rjnU4YS8broRpT4WJkHirwmfFFSUNnsxPQCGgH81a5HxSPlOFc4MrZHG75W3gaX789HZ6Wvdp+L16Df757wTbPvvLzxyTmheutGni6thIqK2b1i5EqJIPKn4AObMScf/yV0yOrKVweClmVv+w6Src08DF2gxRRN6QxdVOCFG6AhgnZeJsIezfaOQW47Ne8QdauldeB7IJ3KiL9ZU9V51wwCacGE717FpqKuz5Ws22sX0Eo3LyluhqSwCuQ4qpHpJ0E+SjShsVs+ISWIudpwiRWZF2HgV3bqRmG0Rxe6sWmeAut/7Ygnt4B4BoGnbJYNf0ZRKtM7my6cXFPi8EjaYqSrZvgVBF7QzIXRzRwkzCKUIq8NIPsRouncP6kxe0LSKJrrPGP9aTQqhm76LbvGs7UGBCPr2Za9n0eJ7y2oLgteoCgJRhaKfgL7HmpR+Kh5rX63K6v3TNvmS01Ae1cbWjQMHXGfH6jkHIpeTVT+FCyXG9IrsGH7Wr0k7GyHL6pOI2QlyQHE3JfqOqS67P6Af9Uh8nD1NS/AtpoDdpwswCtvwIteh+0M6D+dmpOoF0dli3vBLFzn3cyV03N9+ZSYqbmOAChpkZNYpGDvGMWBitafIXSTOOCNX9IjsX2zUhvz87gPmKlGfEyFPnu1gtiN8QU3C0G4gKNvA3xIMFxfINYbxNa0gvo6ia15pttwHKUzFionZzskgtZ8JzXuHycpLtpFOs+TTqfuaZCz7kfIOXVXgdxJ/mSkSNTh8Uzloo1Gj3qvqnunMMEt63/zfF3L0NEX7xXWJPrWc+WmZ0pkpXOR324ZE2EFqxZOzIJrB1FSfyeo55+Yz53HCMasOMV1lhPvwSCx/8B<\/diagram><\/mxfile>&quot;,&quot;resize&quot;:true}"></div>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jgraph/drawio@v22.1.11/src/main/webapp/js/viewer.min.js"></script>
 <p></p>
 <p>This is a basic demo of mapping of a <a href="https://www.drawio.com/">Drawio</a> diagrams to the <a href="https://architecture.models.nasdanika.org/references/eSubpackages/c4/index.html">C4</a> model classes as explained in the <a href="https://leanpub.com/beyond-diagrams">Beyond Diagrams</a> book.</p>
@@ -207,7 +135,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
         <div class="col nsd-app-footer">
           <ul class="nav nsd-app-footer-navs">
             <li class="nav-item">
-              <a href="https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system" data-nsd-label-uuid="f527050a-a985-424a-b2e7-8a3fc8fa3d9e" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+              <a href="https://github.com/Nasdanika-Models/architecture/tree/main/demos/internet-banking-system" data-nsd-label-uuid="7f417e46-45a0-4414-bcb3-65fd0553f29e" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
             </li>
             <li class="nav-item"><span class="navbar-text">&nbsp;•&nbsp;</span>
             </li>
