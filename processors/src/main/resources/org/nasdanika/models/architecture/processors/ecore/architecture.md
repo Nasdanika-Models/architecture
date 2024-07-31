@@ -41,6 +41,7 @@ Relationship source, target and Node have ``Composite`` flavors which are also d
 
 ## See Also
 
+* [Architecture As Code](https://medium.com/nasdanika/architecture-as-code-7c0eadfc0b2b)
 * [Graph Model](https://graph.models.nasdanika.org/)
 * [Graph](https://docs.nasdanika.org/core/graph/index.html)
 * [Drawio](https://docs.nasdanika.org/core/drawio/index.html)
