@@ -3,8 +3,9 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.nasdanika.models.architecture/src/main/java"
     creationIcons="false" editorDirectory="" modelPluginID="org.nasdanika.models.architecture"
     modelName="Architecture" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.emf.importer.ecore" featureDelegation="Dynamic" complianceLevel="17.0"
-    suppressGenModelAnnotations="false" copyrightFields="false" usedGenPackages="../../org.nasdanika.drawio.model/model/drawio.genmodel#//model ../../org.nasdanika.graph.model/model/graph.genmodel#//model ../../org.nasdanika.ncore/model/ncore.genmodel#//ncore ../../org.nasdanika.models.party/model/party.genmodel#//party"
+    importerID="org.eclipse.emf.importer.ecore" bundleManifest="false" featureDelegation="Dynamic"
+    complianceLevel="17.0" suppressGenModelAnnotations="false" copyrightFields="false"
+    usedGenPackages="../../org.nasdanika.drawio.model/model/drawio.genmodel#//model ../../org.nasdanika.graph.model/model/graph.genmodel#//model ../../org.nasdanika.ncore/model/ncore.genmodel#//ncore ../../org.nasdanika.models.party/model/party.genmodel#//party"
     operationReflection="true" importOrganizing="true">
   <foreignModel>architecture.ecore</foreignModel>
   <genPackages prefix="Architecture" basePackage="org.nasdanika.models" disposableProviderFactory="true"
