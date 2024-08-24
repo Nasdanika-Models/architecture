@@ -20,7 +20,7 @@ import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.drawio.Node;
 import org.nasdanika.html.bootstrap.Theme;
-import org.nasdanika.html.model.app.gen.ActionSiteGenerator;
+import org.nasdanika.html.model.app.gen.AppSiteGenerator;
 import org.nasdanika.models.architecture.util.ArchitectureDrawioResourceFactory;
 import org.nasdanika.models.ecore.graph.processors.EcoreActionGenerator;
 
@@ -96,7 +96,7 @@ public class TestInternetBankingSystemC4SiteGen {
 		URI pageTemplateURI = URI.createFileURI(new File(pageTemplateResource).getAbsolutePath());//.appendFragment("/");
 		
 		String siteMapDomain = "https://architecture.models.nasdanika.org/demos/internet-banking-system-c4/" + theme.name().toLowerCase() + "/";		
-		ActionSiteGenerator actionSiteGenerator = new ActionSiteGenerator() {
+		AppSiteGenerator actionSiteGenerator = new AppSiteGenerator() {
 			
 			protected boolean isDeleteOutputPath(String path) {
 				return !"CNAME".equals(path);				
