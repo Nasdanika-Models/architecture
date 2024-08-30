@@ -20,7 +20,7 @@ import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.html.bootstrap.Theme;
 import org.nasdanika.html.model.app.gen.AppSiteGenerator;
 import org.nasdanika.models.architecture.util.ArchitectureDrawioResourceFactory;
-import org.nasdanika.models.ecore.graph.processors.EcoreActionGenerator;
+import org.nasdanika.models.ecore.graph.processors.EcoreHtmlAppGenerator;
 
 public class TestC4SiteGen {
 
@@ -52,7 +52,7 @@ public class TestC4SiteGen {
 								
 		File output = new File(actionModelsDir, "c4.xmi");
 		
-		EcoreActionGenerator actionGenerator = EcoreActionGenerator.loadEcoreActionGenerator(
+		EcoreHtmlAppGenerator htmlAppGenerator = EcoreHtmlAppGenerator.loadEcoreHtmlAppGenerator(
 				ibsResource.getContents().get(0), 
 				context,
 				null, // java.util.function.BiFunction<URI, ProgressMonitor, Action> prototypeProvider,			
@@ -61,7 +61,7 @@ public class TestC4SiteGen {
 				diagnosticConsumer,
 				progressMonitor);
 		
-		actionGenerator.generateActionModel(
+		htmlAppGenerator.generateHtmlAppModel(
 				diagnosticConsumer, 
 				output,
 				progressMonitor);

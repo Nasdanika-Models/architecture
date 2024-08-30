@@ -28,7 +28,7 @@ import org.nasdanika.html.model.app.gen.AppSiteGenerator;
 import org.nasdanika.models.architecture.ArchitecturePackage;
 import org.nasdanika.models.architecture.processors.ecore.ArchitectureEcoreGenProcessorsFactory;
 import org.nasdanika.models.architecture.processors.ecore.c4.C4EcoreGenProcessorsFactory;
-import org.nasdanika.models.ecore.graph.processors.EcoreActionGenerator;
+import org.nasdanika.models.ecore.graph.processors.EcoreHtmlAppGenerator;
 import org.nasdanika.models.ecore.graph.processors.EcoreNodeProcessorFactory;
 import org.nasdanika.models.party.PartyPackage;
 import org.nasdanika.ncore.NcorePackage;
@@ -74,12 +74,12 @@ public class TestArchitectureModelDocGen {
 				Map.entry(ModelPackage.eINSTANCE, URI.createURI("https://graph.models.nasdanika.org/"))
 			);
 			
-		EcoreActionGenerator eCoreActionGenerator = new EcoreActionGenerator(
+		EcoreHtmlAppGenerator eCoreHtmlAppGenerator = new EcoreHtmlAppGenerator(
 				ArchitecturePackage.eINSTANCE, 
 				packageURIMap, 
 				ecoreNodeProcessorFactory);
 		
-		eCoreActionGenerator.generateActionModel(diagnosticConsumer, output, progressMonitor);
+		eCoreHtmlAppGenerator.generateHtmlAppModel(diagnosticConsumer, output, progressMonitor);
 				
 		String rootActionResource = "actions.yml";
 		URI rootActionURI = URI.createFileURI(new File(rootActionResource).getAbsolutePath());//.appendFragment("/");

@@ -23,10 +23,10 @@ import org.nasdanika.drawio.Node;
 import org.nasdanika.graph.processor.ProcessorConfig;
 import org.nasdanika.html.model.app.gen.AppSiteGenerator;
 import org.nasdanika.html.model.app.graph.emf.EObjectReflectiveProcessorFactoryProvider;
-import org.nasdanika.models.architecture.processors.doc.ArchitectureActionGenerator;
+import org.nasdanika.models.architecture.processors.doc.ArchitectureHtmlAppGenerator;
 import org.nasdanika.models.architecture.processors.doc.ArchitectureNodeProcessorFactory;
 import org.nasdanika.models.architecture.util.ArchitectureDrawioResourceFactory;
-import org.nasdanika.models.ecore.graph.processors.EcoreActionGenerator;
+import org.nasdanika.models.ecore.graph.processors.EcoreHtmlAppGenerator;
 
 public class TestInternetBankingSystemSiteGen {
 	
@@ -70,7 +70,7 @@ public class TestInternetBankingSystemSiteGen {
 								
 		File output = new File(actionModelsDir, "ibs.xmi");
 				
-		ArchitectureActionGenerator actionGenerator = new ArchitectureActionGenerator(
+		ArchitectureHtmlAppGenerator htmlAppGenerator = new ArchitectureHtmlAppGenerator(
 				ibsResource.getContents().get(0),
 				new ArchitectureNodeProcessorFactory(context, null)) {
 			
@@ -90,7 +90,7 @@ public class TestInternetBankingSystemSiteGen {
 			
 		};
 		
-		actionGenerator.generateActionModel(
+		htmlAppGenerator.generateHtmlAppModel(
 				diagnosticConsumer, 
 				output,
 				progressMonitor);
@@ -179,7 +179,7 @@ public class TestInternetBankingSystemSiteGen {
 								
 		File output = new File(actionModelsDir, "ibs.xmi");
 		
-		EcoreActionGenerator actionGenerator = EcoreActionGenerator.loadEcoreActionGenerator(
+		EcoreHtmlAppGenerator htmlAppGenerator = EcoreHtmlAppGenerator.loadEcoreHtmlAppGenerator(
 				ibsResource.getContents().get(0), 
 				context,
 				null, // java.util.function.BiFunction<URI, ProgressMonitor, Action> prototypeProvider,			
@@ -188,7 +188,7 @@ public class TestInternetBankingSystemSiteGen {
 				diagnosticConsumer,
 				progressMonitor);
 		
-		actionGenerator.generateActionModel(
+		htmlAppGenerator.generateHtmlAppModel(
 				diagnosticConsumer, 
 				output,
 				progressMonitor);
@@ -232,7 +232,6 @@ public class TestInternetBankingSystemSiteGen {
 			throw new ExecutionException("There are problems with pages: " + errorCount);
 		}		
 		
-	}
-	
+	}	
 	
 }

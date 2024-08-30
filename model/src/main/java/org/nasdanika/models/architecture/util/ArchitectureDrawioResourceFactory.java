@@ -15,6 +15,7 @@ import org.nasdanika.common.NullProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.drawio.model.ModelFactory;
 import org.nasdanika.drawio.model.util.AbstractDrawioFactory;
+import org.nasdanika.emf.SpecLoadingDrawioFactory;
 import org.nasdanika.persistence.Marker;
 import org.springframework.expression.EvaluationContext;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
@@ -22,8 +23,9 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 /**
  * Uses {@link FamilyDrawioFactory} to load family model from a Drawio diagram. 
  * @author Pavel
- *
+ * @deprecated Use {@link SpecLoadingDrawioFactory}
  */
+@Deprecated
 public class ArchitectureDrawioResourceFactory implements Resource.Factory {
 	
 	protected Function<URI,EObject> uriResolver;

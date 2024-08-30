@@ -22,7 +22,7 @@ import org.nasdanika.drawio.Node;
 import org.nasdanika.html.bootstrap.Theme;
 import org.nasdanika.html.model.app.gen.AppSiteGenerator;
 import org.nasdanika.models.architecture.util.ArchitectureDrawioResourceFactory;
-import org.nasdanika.models.ecore.graph.processors.EcoreActionGenerator;
+import org.nasdanika.models.ecore.graph.processors.EcoreHtmlAppGenerator;
 
 public class TestInternetBankingSystemC4SiteGen {
 
@@ -74,7 +74,7 @@ public class TestInternetBankingSystemC4SiteGen {
 								
 		File output = new File(actionModelsDir, "ibs.xmi");
 		
-		EcoreActionGenerator actionGenerator = EcoreActionGenerator.loadEcoreActionGenerator(
+		EcoreHtmlAppGenerator htmlAppGenerator = EcoreHtmlAppGenerator.loadEcoreHtmlAppGenerator(
 				ibsResource.getContents().get(0), 
 				context,
 				null, // java.util.function.BiFunction<URI, ProgressMonitor, Action> prototypeProvider,			
@@ -83,7 +83,7 @@ public class TestInternetBankingSystemC4SiteGen {
 				diagnosticConsumer,
 				progressMonitor);
 		
-		actionGenerator.generateActionModel(
+		htmlAppGenerator.generateHtmlAppModel(
 				diagnosticConsumer, 
 				output,
 				progressMonitor);
