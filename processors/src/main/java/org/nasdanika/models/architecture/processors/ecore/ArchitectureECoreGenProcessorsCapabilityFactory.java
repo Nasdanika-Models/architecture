@@ -20,7 +20,7 @@ public class ArchitectureECoreGenProcessorsCapabilityFactory implements Capabili
 	@Override
 	public CompletionStage<Iterable<CapabilityProvider<Object>>> create(
 			TargetRequirement requirement,
-			BiFunction<Object, ProgressMonitor, CompletionStage<Iterable<CapabilityProvider<Object>>>> resolver,
+			Loader loader,
 			ProgressMonitor progressMonitor) {
 		
 		return CompletableFuture.completedStage(

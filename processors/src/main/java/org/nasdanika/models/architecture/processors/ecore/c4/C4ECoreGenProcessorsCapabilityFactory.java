@@ -7,6 +7,7 @@ import java.util.function.BiFunction;
 
 import org.nasdanika.capability.CapabilityFactory;
 import org.nasdanika.capability.CapabilityProvider;
+import org.nasdanika.capability.CapabilityFactory.Loader;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.models.ecore.graph.processors.EcoreNodeProcessorFactoryCapabilityFactory.TargetRequirement;
 
@@ -20,7 +21,7 @@ public class C4ECoreGenProcessorsCapabilityFactory implements CapabilityFactory<
 	@Override
 	public CompletionStage<Iterable<CapabilityProvider<Object>>> create(
 			TargetRequirement requirement,
-			BiFunction<Object, ProgressMonitor, CompletionStage<Iterable<CapabilityProvider<Object>>>> resolver,
+			Loader loader,
 			ProgressMonitor progressMonitor) {
 		
 		return CompletableFuture.completedStage(

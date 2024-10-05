@@ -75,7 +75,7 @@ public class TestInternetBankingSystemC4SiteGen {
 		File output = new File(actionModelsDir, "ibs.xmi");
 		
 		EcoreHtmlAppGenerator htmlAppGenerator = EcoreHtmlAppGenerator.loadEcoreHtmlAppGenerator(
-				ibsResource.getContents().get(0), 
+				ibsResource.getContents(), 
 				context,
 				null, // java.util.function.BiFunction<URI, ProgressMonitor, Action> prototypeProvider,			
 				null, // Predicate<Object> factoryPredicate,

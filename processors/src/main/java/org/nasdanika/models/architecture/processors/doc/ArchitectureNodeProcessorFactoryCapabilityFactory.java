@@ -22,7 +22,7 @@ public class ArchitectureNodeProcessorFactoryCapabilityFactory implements Capabi
 	@Override
 	public CompletionStage<Iterable<CapabilityProvider<Object>>> create(
 			NodeProcessorFactoryRequirement requirement,
-			BiFunction<Object, ProgressMonitor, CompletionStage<Iterable<CapabilityProvider<Object>>>> resolver,
+			Loader loader,
 			ProgressMonitor progressMonitor) {
 
 		ArchitectureNodeProcessorFactory factory = new ArchitectureNodeProcessorFactory(requirement.context(), requirement.prototypeProvider());
