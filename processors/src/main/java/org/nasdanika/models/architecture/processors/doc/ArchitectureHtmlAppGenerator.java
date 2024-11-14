@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.nasdanika.common.Context;
-import org.nasdanika.html.model.app.graph.emf.HtmlAppGenerator;
+import org.nasdanika.models.app.graph.emf.HtmlAppGenerator;
 import org.nasdanika.models.architecture.ArchitecturePackage;
 import org.nasdanika.models.echarts.graph.GraphPackage;
 import org.nasdanika.ncore.NcorePackage;

@@ -1,1 +1,0 @@
-Internet Banking System mapped to the architecture classes.

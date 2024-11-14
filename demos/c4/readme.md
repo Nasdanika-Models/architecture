@@ -1,1 +1,0 @@
-Demo of a [Drawio](https://www.drawio.com/) diagram mapped to the [C4 package](https://architecture.models.nasdanika.org/references/eSubpackages/c4/index.html) classes.

@@ -30,7 +30,7 @@ import org.nasdanika.common.ExecutionException;
 import org.nasdanika.common.MutableContext;
 import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
-import org.nasdanika.html.model.app.gen.AppSiteGenerator;
+import org.nasdanika.models.app.gen.AppSiteGenerator;
 import org.nasdanika.models.architecture.processors.doc.ArchitectureHtmlAppGenerator;
 import org.nasdanika.models.architecture.processors.doc.ArchitectureNodeProcessorFactory;
 import org.nasdanika.models.architecture.util.ArchitectureDrawioResourceFactory;
