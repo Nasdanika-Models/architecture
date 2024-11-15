@@ -12,7 +12,6 @@ import java.util.function.Consumer;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.icepear.echarts.charts.graph.GraphEdgeLineStyle;
 import org.icepear.echarts.charts.graph.GraphEmphasis;
 import org.icepear.echarts.charts.graph.GraphSeries;
@@ -24,6 +23,10 @@ import org.jgrapht.alg.drawing.model.MapLayoutModel2D;
 import org.jgrapht.alg.drawing.model.Point2D;
 import org.jgrapht.graph.DefaultUndirectedGraph;
 import org.junit.jupiter.api.Test;
+import org.nasdanika.capability.CapabilityLoader;
+import org.nasdanika.capability.ServiceCapabilityFactory;
+import org.nasdanika.capability.ServiceCapabilityFactory.Requirement;
+import org.nasdanika.capability.emf.ResourceSetRequirement;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.Diagnostic;
 import org.nasdanika.common.ExecutionException;
@@ -33,7 +36,6 @@ import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.models.app.gen.AppSiteGenerator;
 import org.nasdanika.models.architecture.processors.doc.ArchitectureHtmlAppGenerator;
 import org.nasdanika.models.architecture.processors.doc.ArchitectureNodeProcessorFactory;
-import org.nasdanika.models.architecture.util.ArchitectureDrawioResourceFactory;
 import org.nasdanika.models.echarts.graph.Graph;
 import org.nasdanika.models.echarts.graph.GraphFactory;
 import org.nasdanika.models.echarts.graph.Item;
@@ -43,13 +45,15 @@ public class TestArchitecture {
 		
 	@Test
 	public void testGenerateAWSSite() throws Exception {
-		ResourceSet resourceSet = new ResourceSetImpl();
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("drawio", new ArchitectureDrawioResourceFactory(uri -> resourceSet.getEObject(uri, true)));
+		CapabilityLoader capabilityLoader = new CapabilityLoader();
+		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
+		Requirement<ResourceSetRequirement, ResourceSet> requirement = ServiceCapabilityFactory.createRequirement(ResourceSet.class);		
+		ResourceSet resourceSet = capabilityLoader.loadOne(requirement, progressMonitor);
+		
 		File awsDiagramFile = new File("aws.drawio").getCanonicalFile();
 		Resource awsResource = resourceSet.getResource(URI.createFileURI(awsDiagramFile.getAbsolutePath()), true);
 		
 		// Generating an action model
-		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
 		MutableContext context = Context.EMPTY_CONTEXT.fork();
 		
 		Consumer<Diagnostic> diagnosticConsumer = d -> d.dump(System.out, 0);		
