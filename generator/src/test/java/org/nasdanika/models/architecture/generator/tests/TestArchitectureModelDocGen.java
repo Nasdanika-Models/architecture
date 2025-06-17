@@ -93,9 +93,12 @@ public class TestArchitectureModelDocGen {
 			
 		};		
 		
+		String pageTemplateResource = "page-template.yml";
+		URI pageTemplateURI = URI.createFileURI(new File(pageTemplateResource).getAbsolutePath());//.appendFragment("/");
+		
 		Map<String, Collection<String>> errors = actionSiteGenerator.generate(
 				rootActionURI, 
-				Theme.Cerulean.pageTemplateCdnURI, 
+				pageTemplateURI, 
 				siteMapDomain, 
 				new File("../docs"), 
 				new File("target/doc-site-work-dir"), 
