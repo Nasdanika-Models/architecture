@@ -3,6 +3,7 @@ package org.nasdanika.models.architecture.processors.doc;
 import java.util.Collection;
 import java.util.Map;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.ProgressMonitor;
@@ -19,7 +20,7 @@ public class ArchitectureElementNodeProcessor<T extends ArchitectureElement> ext
 	public ArchitectureElementNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
 		Context context,
-		java.util.function.Function<ProgressMonitor, Action> prototypeProvider) {
+		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		
 		super(config, context, prototypeProvider);
 	}
