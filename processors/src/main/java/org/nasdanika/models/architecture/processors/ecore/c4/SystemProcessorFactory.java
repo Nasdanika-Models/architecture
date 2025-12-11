@@ -39,7 +39,7 @@ public class SystemProcessorFactory {
 			icon = "https://img.icons8.com/external-wanicon-two-tone-wanicon/64/external-system-big-data-wanicon-two-tone-wanicon.png"
 	)
 	public EClassNodeProcessor createEClassNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider,
 			BiConsumer<Label, ProgressMonitor> labelConfigurator,
 			ProgressMonitor progressMonitor) {		

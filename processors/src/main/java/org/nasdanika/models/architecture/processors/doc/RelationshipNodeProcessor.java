@@ -13,7 +13,7 @@ import org.nasdanika.models.graph.processors.doc.DocumentedNamedConnectionNodePr
 public class RelationshipNodeProcessor<T extends Relationship> extends DocumentedNamedConnectionNodeProcessor<T> implements RelationshipNodeProcessorMixIn<T> {
 	
 	public RelationshipNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		

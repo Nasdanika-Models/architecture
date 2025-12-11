@@ -11,7 +11,7 @@ import org.nasdanika.models.architecture.Actor;
 public class ActorNodeProcessor<T extends Actor> extends ArchitectureElementNodeProcessor<T> implements ActorNodeProcessorMixIn<T> {
 	
 	public ActorNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		

@@ -13,7 +13,7 @@ import org.nasdanika.models.graph.processors.doc.DocumentedNamedGraphElementNode
 public class ArchitectureDescriptionElementNodeProcessor<T extends ArchitectureDescriptionElement> extends DocumentedNamedGraphElementNodeProcessor<T> implements ArchitectureDescriptionElementNodeProcessorMixIn<T> {
 	
 	public ArchitectureDescriptionElementNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		

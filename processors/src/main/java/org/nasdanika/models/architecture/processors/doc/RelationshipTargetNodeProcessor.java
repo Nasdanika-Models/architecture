@@ -11,7 +11,7 @@ import org.nasdanika.models.architecture.RelationshipTarget;
 public class RelationshipTargetNodeProcessor<T extends RelationshipTarget> extends ArchitectureDescriptionElementNodeProcessor<T> implements RelationshipTargetNodeProcessorMixIn<T> {
 	
 	public RelationshipTargetNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		

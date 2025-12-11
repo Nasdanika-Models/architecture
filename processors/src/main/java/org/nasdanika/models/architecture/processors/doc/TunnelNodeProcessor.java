@@ -13,7 +13,7 @@ import org.nasdanika.models.graph.processors.doc.DocumentedNamedTunnelNodeProces
 public class TunnelNodeProcessor<T extends Tunnel> extends DocumentedNamedTunnelNodeProcessor<T> implements TunnelNodeProcessorMixIn<T> {
 	
 	public TunnelNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		

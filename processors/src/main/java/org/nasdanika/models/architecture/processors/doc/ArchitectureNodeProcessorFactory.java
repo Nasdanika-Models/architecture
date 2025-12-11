@@ -41,7 +41,7 @@ public class ArchitectureNodeProcessorFactory {
 	protected Context context;
 	protected java.util.function.BiFunction<URI, ProgressMonitor, Label> prototypeProvider;
 
-	protected java.util.function.BiFunction<EObject, ProgressMonitor, Action> getPrototypeProvider(NodeProcessorConfig<WidgetFactory, WidgetFactory> config) {
+	protected java.util.function.BiFunction<EObject, ProgressMonitor, Action> getPrototypeProvider(NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config) {
 		return (eObject, progressMonitor) -> {
 			if (prototypeProvider != null) {
 				for (URI identifier: NcoreUtil.getIdentifiers(((EObjectNode) config.getElement()).get())) {
@@ -70,9 +70,9 @@ public class ArchitectureNodeProcessorFactory {
 	//	ArchitectureElement.java
 	@EObjectNodeProcessor(type = org.nasdanika.models.architecture.ArchitectureElement.class)
 	public Object createArchitectureElementNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new ArchitectureElementNodeProcessor<ArchitectureElement>(config, context, getPrototypeProvider(config));
@@ -81,9 +81,9 @@ public class ArchitectureNodeProcessorFactory {
 	//	ArchitectureDescription.java
 	@EObjectNodeProcessor(type = org.nasdanika.models.architecture.ArchitectureDescription.class)
 	public Object createArchitectureDescriptionNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new ArchitectureDescriptionNodeProcessor<ArchitectureDescription>(config, context, getPrototypeProvider(config));
@@ -92,9 +92,9 @@ public class ArchitectureNodeProcessorFactory {
 	//	ArchitectureDescriptionElement.java
 	@EObjectNodeProcessor(type = org.nasdanika.models.architecture.ArchitectureDescriptionElement.class)
 	public Object createArchitectureDescriptionElementNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new ArchitectureDescriptionElementNodeProcessor<ArchitectureDescriptionElement>(config, context, getPrototypeProvider(config));
@@ -103,9 +103,9 @@ public class ArchitectureNodeProcessorFactory {
 	//	Domain.java
 	@EObjectNodeProcessor(type = org.nasdanika.models.architecture.Domain.class)
 	public Object createDomainNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new DomainNodeProcessor<Domain>(config, context, getPrototypeProvider(config));
@@ -114,9 +114,9 @@ public class ArchitectureNodeProcessorFactory {
 	//	RelationshipSource.java
 	@EObjectNodeProcessor(type = org.nasdanika.models.architecture.RelationshipSource.class)
 	public Object createRelationshipSourceNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new RelationshipSourceNodeProcessor<RelationshipSource>(config, context, getPrototypeProvider(config));
@@ -125,9 +125,9 @@ public class ArchitectureNodeProcessorFactory {
 	//	RelationshipTarget.java
 	@EObjectNodeProcessor(type = org.nasdanika.models.architecture.RelationshipTarget.class)
 	public Object createRelationshipTargetNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new RelationshipTargetNodeProcessor<RelationshipTarget>(config, context, getPrototypeProvider(config));
@@ -136,9 +136,9 @@ public class ArchitectureNodeProcessorFactory {
 	//	CompositeRelationshipSource.java
 	@EObjectNodeProcessor(type = org.nasdanika.models.architecture.CompositeRelationshipSource.class)
 	public Object createCompositeRelationshipSourceNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new CompositeRelationshipSourceNodeProcessor<CompositeRelationshipSource>(config, context, getPrototypeProvider(config));
@@ -147,9 +147,9 @@ public class ArchitectureNodeProcessorFactory {
 	//	CompositeRelationshipTarget.java
 	@EObjectNodeProcessor(type = org.nasdanika.models.architecture.CompositeRelationshipTarget.class)
 	public Object createCompositeRelationshipTargetNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new CompositeRelationshipTargetNodeProcessor<CompositeRelationshipTarget>(config, context, getPrototypeProvider(config));
@@ -158,9 +158,9 @@ public class ArchitectureNodeProcessorFactory {
 	//	Node.java
 	@EObjectNodeProcessor(type = org.nasdanika.models.architecture.Node.class)
 	public Object createNodeNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new NodeNodeProcessor<Node>(config, context, getPrototypeProvider(config));
@@ -169,9 +169,9 @@ public class ArchitectureNodeProcessorFactory {
 	//	CompositeNode.java
 	@EObjectNodeProcessor(type = org.nasdanika.models.architecture.CompositeNode.class)
 	public Object createCompositeNodeNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new CompositeNodeNodeProcessor<CompositeNode>(config, context, getPrototypeProvider(config));
@@ -181,9 +181,9 @@ public class ArchitectureNodeProcessorFactory {
 	//	Relationship.java
 	@EObjectNodeProcessor(type = org.nasdanika.models.architecture.Relationship.class)
 	public Object createRelationshipNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new RelationshipNodeProcessor<Relationship>(config, context, getPrototypeProvider(config));
@@ -192,9 +192,9 @@ public class ArchitectureNodeProcessorFactory {
 	//	Tunnel.java	
 	@EObjectNodeProcessor(type = org.nasdanika.models.architecture.Tunnel.class)
 	public Object createTunnelNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new TunnelNodeProcessor<Tunnel>(config, context, getPrototypeProvider(config));
@@ -203,9 +203,9 @@ public class ArchitectureNodeProcessorFactory {
 	// Role
 	@EObjectNodeProcessor(type = org.nasdanika.models.architecture.Role.class)
 	public Object createRoleNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new RoleNodeProcessor<Role>(config, context, getPrototypeProvider(config));
@@ -214,9 +214,9 @@ public class ArchitectureNodeProcessorFactory {
 	// Actor
 	@EObjectNodeProcessor(type = org.nasdanika.models.architecture.Actor.class)
 	public Object createActorNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new ActorNodeProcessor<Actor>(config, context, getPrototypeProvider(config));

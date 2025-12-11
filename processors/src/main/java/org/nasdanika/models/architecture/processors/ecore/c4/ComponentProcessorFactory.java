@@ -39,7 +39,7 @@ public class ComponentProcessorFactory {
 			icon = "https://img.icons8.com/office/40/puzzle.png"
 	)
 	public EClassNodeProcessor createEClassNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider,
 			BiConsumer<Label, ProgressMonitor> labelConfigurator,
 			ProgressMonitor progressMonitor) {		

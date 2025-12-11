@@ -11,7 +11,7 @@ import org.nasdanika.models.architecture.Node;
 public class NodeNodeProcessor<T extends Node> extends RelationshipSourceNodeProcessor<T> implements NodeNodeProcessorMixIn<T> {
 	
 	public NodeNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		

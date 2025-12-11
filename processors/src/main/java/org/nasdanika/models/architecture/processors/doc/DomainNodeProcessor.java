@@ -11,7 +11,7 @@ import org.nasdanika.models.architecture.Domain;
 public class DomainNodeProcessor<T extends Domain> extends ArchitectureDescriptionElementNodeProcessor<T> implements DomainNodeProcessorMixIn<T> {
 	
 	public DomainNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		

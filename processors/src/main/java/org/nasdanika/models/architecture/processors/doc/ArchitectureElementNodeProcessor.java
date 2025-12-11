@@ -18,7 +18,7 @@ import org.nasdanika.models.architecture.ArchitectureElement;
 public class ArchitectureElementNodeProcessor<T extends ArchitectureElement> extends EObjectNodeProcessor<T> implements ArchitectureElementNodeProcessorMixIn<T> {
 	
 	public ArchitectureElementNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		

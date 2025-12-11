@@ -11,7 +11,7 @@ import org.nasdanika.models.architecture.CompositeNode;
 public class CompositeNodeNodeProcessor<T extends CompositeNode> extends DomainNodeProcessor<T> implements CompositeNodeNodeProcessorMixIn<T> {
 	
 	public CompositeNodeNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		
